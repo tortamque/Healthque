@@ -1,4 +1,4 @@
-package com.example.healthque.healthque
+package com.tortamque.healthque
 
 import io.flutter.embedding.android.FlutterActivity
 
