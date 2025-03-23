@@ -4,11 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/config/routes/router.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/features/authorization/presentation/bloc/auth_bloc.dart';
+import 'package:healthque/core/injection_container.dart';
 
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  initializeDependencies();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const HealthqueApp());
 }
