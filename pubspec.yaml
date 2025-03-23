@@ -15,6 +15,9 @@ dependencies:
   flutter_bloc: ^9.1.0
   freezed_annotation: ^3.0.0
   freezed: ^3.0.4
+  intl_utils: ^2.8.10
+  intl: ^0.20.2
+  
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +28,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  class_name: Strings
+  main_locale: en
+  arb_dir: lib/core/localization
+  output_dir: lib/core/localization/generated
