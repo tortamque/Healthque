@@ -47,18 +47,24 @@ class OnboardingLoginPage extends StatelessWidget {
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
                     if (state is AuthStateAuthenticated) {
-                      ElevatedButton.icon(
-                        onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
-                        label: Text(context.strings.logInWithGoogle),
-                        icon: const Icon(Icons.login),
+                      SizedBox(
+                        width: context.width,
+                        child: ElevatedButton.icon(
+                          onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
+                          label: Text(context.strings.logInWithGoogle),
+                          icon: const Icon(Icons.login),
+                        ),
                       );
                     }
 
-                    return ElevatedButton.icon(
-                      onPressed: () => context.push(Routes.onboardingNamePage),
-                      label: Text(context.strings.nextStep),
-                      icon: const Icon(Icons.arrow_forward_ios_rounded),
-                      iconAlignment: IconAlignment.end,
+                    return SizedBox(
+                      width: context.width,
+                      child: ElevatedButton.icon(
+                        onPressed: () => context.push(Routes.onboardingNamePage),
+                        label: Text(context.strings.nextStep),
+                        icon: const Icon(Icons.arrow_forward_ios_rounded),
+                        iconAlignment: IconAlignment.end,
+                      ),
                     );
                   },
                 ),

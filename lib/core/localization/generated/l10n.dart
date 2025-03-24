@@ -234,6 +234,46 @@ class Strings {
   String get female {
     return Intl.message('Female', name: 'female', desc: '', args: []);
   }
+
+  /// `Enter a valid number`
+  String get enterValidNumber {
+    return Intl.message(
+      'Enter a valid number',
+      name: 'enterValidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age must be valid and less than 120`
+  String get ageMustBeLessThan120 {
+    return Intl.message(
+      'Age must be valid and less than 120',
+      name: 'ageMustBeLessThan120',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height must be valid and less than 300 cm`
+  String get heightMustBeLessThan300 {
+    return Intl.message(
+      'Height must be valid and less than 300 cm',
+      name: 'heightMustBeLessThan300',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight must be valid and less than 500 kg`
+  String get weightMustBeLessThan500 {
+    return Intl.message(
+      'Weight must be valid and less than 500 kg',
+      name: 'weightMustBeLessThan500',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

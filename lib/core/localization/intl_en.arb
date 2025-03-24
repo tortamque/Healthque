@@ -21,5 +21,9 @@
   "weightInKg": "Weight (kg)",
   "selectGender": "Select Gender",
   "male": "Male",
-  "female": "Female"
+  "female": "Female",
+  "enterValidNumber": "Enter a valid number",
+  "ageMustBeLessThan120": "Age must be valid and less than 120",
+  "heightMustBeLessThan300": "Height must be valid and less than 300 cm",
+  "weightMustBeLessThan500": "Weight must be valid and less than 500 kg"
 }

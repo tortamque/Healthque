@@ -24,8 +24,8 @@ mixin _$OnboardingState {
   Gender? get gender;
   double? get height;
   double? get weight;
-  double? get dailyWaterIntake;
-  double? get calorieBurnTarget;
+  int? get waterConsumption;
+  int? get caloriesBurnInOneDay;
   int? get desiredSteps;
 
   /// Create a copy of OnboardingState
@@ -52,10 +52,10 @@ mixin _$OnboardingState {
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.dailyWaterIntake, dailyWaterIntake) ||
-                other.dailyWaterIntake == dailyWaterIntake) &&
-            (identical(other.calorieBurnTarget, calorieBurnTarget) ||
-                other.calorieBurnTarget == calorieBurnTarget) &&
+            (identical(other.waterConsumption, waterConsumption) ||
+                other.waterConsumption == waterConsumption) &&
+            (identical(other.caloriesBurnInOneDay, caloriesBurnInOneDay) ||
+                other.caloriesBurnInOneDay == caloriesBurnInOneDay) &&
             (identical(other.desiredSteps, desiredSteps) ||
                 other.desiredSteps == desiredSteps));
   }
@@ -72,13 +72,13 @@ mixin _$OnboardingState {
       gender,
       height,
       weight,
-      dailyWaterIntake,
-      calorieBurnTarget,
+      waterConsumption,
+      caloriesBurnInOneDay,
       desiredSteps);
 
   @override
   String toString() {
-    return 'OnboardingState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
+    return 'OnboardingState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -98,8 +98,8 @@ abstract mixin class $OnboardingStateCopyWith<$Res> {
       Gender? gender,
       double? height,
       double? weight,
-      double? dailyWaterIntake,
-      double? calorieBurnTarget,
+      int? waterConsumption,
+      int? caloriesBurnInOneDay,
       int? desiredSteps});
 }
 
@@ -125,8 +125,8 @@ class _$OnboardingStateCopyWithImpl<$Res>
     Object? gender = freezed,
     Object? height = freezed,
     Object? weight = freezed,
-    Object? dailyWaterIntake = freezed,
-    Object? calorieBurnTarget = freezed,
+    Object? waterConsumption = freezed,
+    Object? caloriesBurnInOneDay = freezed,
     Object? desiredSteps = freezed,
   }) {
     return _then(_self.copyWith(
@@ -166,14 +166,14 @@ class _$OnboardingStateCopyWithImpl<$Res>
           ? _self.weight
           : weight // ignore: cast_nullable_to_non_nullable
               as double?,
-      dailyWaterIntake: freezed == dailyWaterIntake
-          ? _self.dailyWaterIntake
-          : dailyWaterIntake // ignore: cast_nullable_to_non_nullable
-              as double?,
-      calorieBurnTarget: freezed == calorieBurnTarget
-          ? _self.calorieBurnTarget
-          : calorieBurnTarget // ignore: cast_nullable_to_non_nullable
-              as double?,
+      waterConsumption: freezed == waterConsumption
+          ? _self.waterConsumption
+          : waterConsumption // ignore: cast_nullable_to_non_nullable
+              as int?,
+      caloriesBurnInOneDay: freezed == caloriesBurnInOneDay
+          ? _self.caloriesBurnInOneDay
+          : caloriesBurnInOneDay // ignore: cast_nullable_to_non_nullable
+              as int?,
       desiredSteps: freezed == desiredSteps
           ? _self.desiredSteps
           : desiredSteps // ignore: cast_nullable_to_non_nullable
@@ -195,8 +195,8 @@ class OnboardingUserInfo extends OnboardingState {
       this.gender,
       this.height,
       this.weight,
-      this.dailyWaterIntake,
-      this.calorieBurnTarget,
+      this.waterConsumption,
+      this.caloriesBurnInOneDay,
       this.desiredSteps})
       : super._();
 
@@ -219,9 +219,9 @@ class OnboardingUserInfo extends OnboardingState {
   @override
   final double? weight;
   @override
-  final double? dailyWaterIntake;
+  final int? waterConsumption;
   @override
-  final double? calorieBurnTarget;
+  final int? caloriesBurnInOneDay;
   @override
   final int? desiredSteps;
 
@@ -249,10 +249,10 @@ class OnboardingUserInfo extends OnboardingState {
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.dailyWaterIntake, dailyWaterIntake) ||
-                other.dailyWaterIntake == dailyWaterIntake) &&
-            (identical(other.calorieBurnTarget, calorieBurnTarget) ||
-                other.calorieBurnTarget == calorieBurnTarget) &&
+            (identical(other.waterConsumption, waterConsumption) ||
+                other.waterConsumption == waterConsumption) &&
+            (identical(other.caloriesBurnInOneDay, caloriesBurnInOneDay) ||
+                other.caloriesBurnInOneDay == caloriesBurnInOneDay) &&
             (identical(other.desiredSteps, desiredSteps) ||
                 other.desiredSteps == desiredSteps));
   }
@@ -269,13 +269,13 @@ class OnboardingUserInfo extends OnboardingState {
       gender,
       height,
       weight,
-      dailyWaterIntake,
-      calorieBurnTarget,
+      waterConsumption,
+      caloriesBurnInOneDay,
       desiredSteps);
 
   @override
   String toString() {
-    return 'OnboardingState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
+    return 'OnboardingState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -297,8 +297,8 @@ abstract mixin class $OnboardingUserInfoCopyWith<$Res>
       Gender? gender,
       double? height,
       double? weight,
-      double? dailyWaterIntake,
-      double? calorieBurnTarget,
+      int? waterConsumption,
+      int? caloriesBurnInOneDay,
       int? desiredSteps});
 }
 
@@ -324,8 +324,8 @@ class _$OnboardingUserInfoCopyWithImpl<$Res>
     Object? gender = freezed,
     Object? height = freezed,
     Object? weight = freezed,
-    Object? dailyWaterIntake = freezed,
-    Object? calorieBurnTarget = freezed,
+    Object? waterConsumption = freezed,
+    Object? caloriesBurnInOneDay = freezed,
     Object? desiredSteps = freezed,
   }) {
     return _then(OnboardingUserInfo(
@@ -365,14 +365,14 @@ class _$OnboardingUserInfoCopyWithImpl<$Res>
           ? _self.weight
           : weight // ignore: cast_nullable_to_non_nullable
               as double?,
-      dailyWaterIntake: freezed == dailyWaterIntake
-          ? _self.dailyWaterIntake
-          : dailyWaterIntake // ignore: cast_nullable_to_non_nullable
-              as double?,
-      calorieBurnTarget: freezed == calorieBurnTarget
-          ? _self.calorieBurnTarget
-          : calorieBurnTarget // ignore: cast_nullable_to_non_nullable
-              as double?,
+      waterConsumption: freezed == waterConsumption
+          ? _self.waterConsumption
+          : waterConsumption // ignore: cast_nullable_to_non_nullable
+              as int?,
+      caloriesBurnInOneDay: freezed == caloriesBurnInOneDay
+          ? _self.caloriesBurnInOneDay
+          : caloriesBurnInOneDay // ignore: cast_nullable_to_non_nullable
+              as int?,
       desiredSteps: freezed == desiredSteps
           ? _self.desiredSteps
           : desiredSteps // ignore: cast_nullable_to_non_nullable

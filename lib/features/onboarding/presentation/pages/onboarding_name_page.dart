@@ -74,20 +74,23 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
                 hintText: context.strings.enterYourSurnameOptional,
                 labelText: context.strings.surname,
               ),
-              const Gap(16),
-              ElevatedButton.icon(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    context.read<OnboardingCubit>().saveNameAndSurname(
-                          name: nameController.text,
-                          surname: surnameController.text,
-                        );
-                    context.push(Routes.onboardingAgeGenderParamsPage);
-                  }
-                },
-                label: Text(context.strings.nextStep),
-                icon: const Icon(Icons.arrow_forward_ios_rounded),
-                iconAlignment: IconAlignment.end,
+              const Gap(32),
+              SizedBox(
+                width: context.width,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      context.read<OnboardingCubit>().saveNameAndSurname(
+                            name: nameController.text,
+                            surname: surnameController.text,
+                          );
+                      context.push(Routes.onboardingAgeGenderParamsPage);
+                    }
+                  },
+                  label: Text(context.strings.nextStep),
+                  icon: const Icon(Icons.arrow_forward_ios_rounded),
+                  iconAlignment: IconAlignment.end,
+                ),
               ),
             ],
           ),

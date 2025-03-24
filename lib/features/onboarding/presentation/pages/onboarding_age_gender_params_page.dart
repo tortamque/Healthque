@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
@@ -19,8 +21,15 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
   final TextEditingController weightController = TextEditingController();
   Gender _selectedGender = Gender.male;
 
-  bool get nextStepAvailable =>
-      ageController.text.isNotEmpty && heightController.text.isNotEmpty && weightController.text.isNotEmpty;
+  bool get nextStepAvailable {
+    if (ageController.text.isNotEmpty && heightController.text.isNotEmpty && weightController.text.isNotEmpty) {
+      final age = int.tryParse(ageController.text) ?? 0;
+      final height = double.tryParse(heightController.text) ?? 0;
+      final weight = double.tryParse(weightController.text) ?? 0;
+      return (age > 0 && age < 120) && (height > 0 && height < 300) && (weight > 0 && weight < 600);
+    }
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +44,7 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
               context.strings.letsGetToKnowYouBetter,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Gap(8),
+            const Gap(8),
             Text(
               context.strings.noteHeightInCmAndWeightInKg,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -67,7 +76,7 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
                     value: Gender.male,
                     groupValue: _selectedGender,
                     onChanged: (Gender? value) => setState(() => _selectedGender = value!),
-                    title: Text('Male'),
+                    title: Text(context.strings.male),
                   ),
                 ),
                 const Gap(16),
@@ -77,26 +86,30 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
                     value: Gender.female,
                     groupValue: _selectedGender,
                     onChanged: (Gender? value) => setState(() => _selectedGender = value!),
-                    title: Text('Female'),
+                    title: Text(context.strings.female),
                   ),
                 ),
               ],
             ),
             const Gap(16),
-            ElevatedButton.icon(
-              onPressed: nextStepAvailable
-                  ? () {
-                      context.read<OnboardingCubit>().saveAgeWeightHeightGender(
-                            age: int.parse(ageController.text),
-                            height: double.parse(heightController.text),
-                            weight: double.parse(weightController.text),
-                            gender: _selectedGender,
-                          );
-                    }
-                  : null,
-              label: Text(context.strings.nextStep),
-              icon: const Icon(Icons.arrow_forward_ios_rounded),
-              iconAlignment: IconAlignment.end,
+            SizedBox(
+              width: context.width,
+              child: ElevatedButton.icon(
+                onPressed: nextStepAvailable
+                    ? () {
+                        context.read<OnboardingCubit>().saveAgeWeightHeightGender(
+                              age: int.parse(ageController.text),
+                              height: double.parse(heightController.text),
+                              weight: double.parse(weightController.text),
+                              gender: _selectedGender,
+                            );
+                        context.push(Routes.onboardingWaterPage);
+                      }
+                    : null,
+                label: Text(context.strings.nextStep),
+                icon: const Icon(Icons.arrow_forward_ios_rounded),
+                iconAlignment: IconAlignment.end,
+              ),
             ),
           ],
         ),

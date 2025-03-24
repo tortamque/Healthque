@@ -14,8 +14,8 @@ sealed class OnboardingState with _$OnboardingState {
     Gender? gender,
     double? height,
     double? weight,
-    double? dailyWaterIntake,
-    double? calorieBurnTarget,
+    int? waterConsumption,
+    int? caloriesBurnInOneDay,
     int? desiredSteps,
   }) = OnboardingUserInfo;
 }

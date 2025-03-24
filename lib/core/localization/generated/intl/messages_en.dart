@@ -23,6 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "age": MessageLookupByLibrary.simpleMessage("Age"),
+    "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
+      "Age must be valid and less than 120",
+    ),
+    "enterValidNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter a valid number",
+    ),
     "enterYourAge": MessageLookupByLibrary.simpleMessage("Enter your age"),
     "enterYourHeight": MessageLookupByLibrary.simpleMessage(
       "Enter your height",
@@ -42,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "First things first!",
     ),
     "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
+    "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
+      "Height must be valid and less than 300 cm",
+    ),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
     ),
@@ -66,5 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
+    "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
+      "Weight must be valid and less than 500 kg",
+    ),
   };
 }

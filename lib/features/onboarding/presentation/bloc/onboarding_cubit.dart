@@ -49,4 +49,19 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       ),
     );
   }
+
+  void saveWaterConsumption({
+    required int waterConsumption,
+  }) =>
+      emit(OnboardingState.userInfo(waterConsumption: waterConsumption));
+
+  void saveCaloriesBurnInOneDay({
+    required int caloriesBurnInOneDay,
+  }) =>
+      emit(OnboardingState.userInfo(caloriesBurnInOneDay: caloriesBurnInOneDay));
+
+  void saveDesiredSteps({
+    required int desiredSteps,
+  }) =>
+      emit(OnboardingState.userInfo(desiredSteps: desiredSteps));
 }
