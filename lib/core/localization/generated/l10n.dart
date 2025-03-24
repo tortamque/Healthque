@@ -55,9 +55,34 @@ class Strings {
     return Localizations.of<Strings>(context, Strings);
   }
 
-  /// `Test string`
-  String get testString {
-    return Intl.message('Test string', name: 'testString', desc: '', args: []);
+  /// `First things first!`
+  String get firstThingsFirst {
+    return Intl.message(
+      'First things first!',
+      name: 'firstThingsFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's create account together!`
+  String get letsCreateAccount {
+    return Intl.message(
+      'Let\'s create account together!',
+      name: 'letsCreateAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in with Google`
+  String get logInWithGoogle {
+    return Intl.message(
+      'Log in with Google',
+      name: 'logInWithGoogle',
+      desc: '',
+      args: [],
+    );
   }
 }
 

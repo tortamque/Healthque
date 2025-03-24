@@ -48,7 +48,7 @@ class AuthCubit extends Cubit<AuthState> {
       if (user == null) {
         emit(const AuthState.failure('Sign in failed: user is null.'));
       } else {
-        emit(AuthState.authenticated(user));
+        //emit(AuthState.authenticated(user));
       }
     } catch (e) {
       emit(AuthState.failure(e.toString()));
@@ -60,7 +60,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       await FirebaseAuth.instance.signOut();
       await GoogleSignIn().signOut();
-      emit(const AuthState.unauthenticated());
+      //emit(const AuthState.unauthenticated());
     } catch (e) {
       emit(AuthState.failure(e.toString()));
     }

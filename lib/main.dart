@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/config/routes/router.dart';
+import 'package:healthque/config/theme/theme.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/features/authorization/presentation/bloc/auth_bloc.dart';
 import 'package:healthque/core/injection_container.dart';
@@ -23,6 +24,7 @@ class HealthqueApp extends StatelessWidget {
     return BlocProvider(
       create: (_) => AuthCubit(),
       child: MaterialApp.router(
+        theme: themeData,
         routerConfig: router,
         localizationsDelegates: [AppLocalizationDelegate()],
         supportedLocales: Strings.delegate.supportedLocales,

@@ -1,4 +1,6 @@
 {
   "@@locale" : "en",
-  "testString": "Test string"
+  "firstThingsFirst": "First things first!",
+  "letsCreateAccount": "Let's create account together!",
+  "logInWithGoogle": "Log in with Google"
 }
