@@ -9,6 +9,7 @@ sealed class OnboardingState with _$OnboardingState {
     String? avatarUrl,
     String? name,
     String? surname,
+    String? googleDisplayName,
     int? age,
     Gender? gender,
     double? height,

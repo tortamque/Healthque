@@ -84,6 +84,71 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Let's get to know each other`
+  String get letsGetToKnowEachOther {
+    return Intl.message(
+      'Let\'s get to know each other',
+      name: 'letsGetToKnowEachOther',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Name can't be empty`
+  String get nameCantBeEmpty {
+    return Intl.message(
+      'Name can\'t be empty',
+      name: 'nameCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your surname`
+  String get enterYourSurname {
+    return Intl.message(
+      'Enter your surname',
+      name: 'enterYourSurname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your surname (Optional)`
+  String get enterYourSurnameOptional {
+    return Intl.message(
+      'Enter your surname (Optional)',
+      name: 'enterYourSurnameOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message('Surname', name: 'surname', desc: '', args: []);
+  }
+
+  /// `Next Step`
+  String get nextStep {
+    return Intl.message('Next Step', name: 'nextStep', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

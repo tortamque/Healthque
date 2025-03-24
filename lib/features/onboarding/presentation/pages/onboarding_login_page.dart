@@ -17,11 +17,12 @@ class OnboardingLoginPage extends StatelessWidget {
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state case AuthStateAuthenticated(:final user)) {
+            print(user);
             context.read<OnboardingCubit>().saveEmailAndAvatar(
-                  user.email ?? '',
-                  user.photoURL ?? '',
+                  email: user.email ?? '',
+                  avatarUrl: user.photoURL ?? '',
+                  googleDisplayName: user.displayName ?? '',
                 );
-            print('pushing to onboardingNamePage');
             context.push(Routes.onboardingNamePage);
           }
         },
@@ -42,18 +43,24 @@ class OnboardingLoginPage extends StatelessWidget {
                 ),
               ),
               Gap(32),
-              ElevatedButton.icon(
-                onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
-                label: Text(context.strings.logInWithGoogle),
-                icon: const Icon(Icons.login),
-              ),
-              // REmove
-              ElevatedButton.icon(
-                onPressed: () => context.read<AuthCubit>().signOut(),
-                label: Text('log out'),
-                icon: const Icon(Icons.login),
-              ),
-              //
+              BlocBuilder<OnboardingCubit, OnboardingState>(
+                builder: (context, state) {
+                  if (state.email == null) {
+                    return ElevatedButton.icon(
+                      onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
+                      label: Text(context.strings.logInWithGoogle),
+                      icon: const Icon(Icons.login),
+                    );
+                  }
+
+                  return ElevatedButton.icon(
+                    onPressed: () => context.push(Routes.onboardingNamePage),
+                    label: Text(context.strings.nextStep),
+                    icon: const Icon(Icons.arrow_forward_ios_rounded),
+                    iconAlignment: IconAlignment.end,
+                  );
+                },
+              )
             ],
           ),
         ),

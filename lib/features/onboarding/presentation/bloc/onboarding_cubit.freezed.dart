@@ -19,6 +19,7 @@ mixin _$OnboardingState {
   String? get avatarUrl;
   String? get name;
   String? get surname;
+  String? get googleDisplayName;
   int? get age;
   Gender? get gender;
   double? get height;
@@ -45,6 +46,8 @@ mixin _$OnboardingState {
                 other.avatarUrl == avatarUrl) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
+            (identical(other.googleDisplayName, googleDisplayName) ||
+                other.googleDisplayName == googleDisplayName) &&
             (identical(other.age, age) || other.age == age) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
@@ -64,6 +67,7 @@ mixin _$OnboardingState {
       avatarUrl,
       name,
       surname,
+      googleDisplayName,
       age,
       gender,
       height,
@@ -74,7 +78,7 @@ mixin _$OnboardingState {
 
   @override
   String toString() {
-    return 'OnboardingState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
+    return 'OnboardingState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -89,6 +93,7 @@ abstract mixin class $OnboardingStateCopyWith<$Res> {
       String? avatarUrl,
       String? name,
       String? surname,
+      String? googleDisplayName,
       int? age,
       Gender? gender,
       double? height,
@@ -115,6 +120,7 @@ class _$OnboardingStateCopyWithImpl<$Res>
     Object? avatarUrl = freezed,
     Object? name = freezed,
     Object? surname = freezed,
+    Object? googleDisplayName = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? height = freezed,
@@ -139,6 +145,10 @@ class _$OnboardingStateCopyWithImpl<$Res>
       surname: freezed == surname
           ? _self.surname
           : surname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleDisplayName: freezed == googleDisplayName
+          ? _self.googleDisplayName
+          : googleDisplayName // ignore: cast_nullable_to_non_nullable
               as String?,
       age: freezed == age
           ? _self.age
@@ -180,6 +190,7 @@ class OnboardingUserInfo extends OnboardingState {
       this.avatarUrl,
       this.name,
       this.surname,
+      this.googleDisplayName,
       this.age,
       this.gender,
       this.height,
@@ -197,6 +208,8 @@ class OnboardingUserInfo extends OnboardingState {
   final String? name;
   @override
   final String? surname;
+  @override
+  final String? googleDisplayName;
   @override
   final int? age;
   @override
@@ -230,6 +243,8 @@ class OnboardingUserInfo extends OnboardingState {
                 other.avatarUrl == avatarUrl) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
+            (identical(other.googleDisplayName, googleDisplayName) ||
+                other.googleDisplayName == googleDisplayName) &&
             (identical(other.age, age) || other.age == age) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
@@ -249,6 +264,7 @@ class OnboardingUserInfo extends OnboardingState {
       avatarUrl,
       name,
       surname,
+      googleDisplayName,
       age,
       gender,
       height,
@@ -259,7 +275,7 @@ class OnboardingUserInfo extends OnboardingState {
 
   @override
   String toString() {
-    return 'OnboardingState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
+    return 'OnboardingState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, dailyWaterIntake: $dailyWaterIntake, calorieBurnTarget: $calorieBurnTarget, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -276,6 +292,7 @@ abstract mixin class $OnboardingUserInfoCopyWith<$Res>
       String? avatarUrl,
       String? name,
       String? surname,
+      String? googleDisplayName,
       int? age,
       Gender? gender,
       double? height,
@@ -302,6 +319,7 @@ class _$OnboardingUserInfoCopyWithImpl<$Res>
     Object? avatarUrl = freezed,
     Object? name = freezed,
     Object? surname = freezed,
+    Object? googleDisplayName = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? height = freezed,
@@ -326,6 +344,10 @@ class _$OnboardingUserInfoCopyWithImpl<$Res>
       surname: freezed == surname
           ? _self.surname
           : surname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleDisplayName: freezed == googleDisplayName
+          ? _self.googleDisplayName
+          : googleDisplayName // ignore: cast_nullable_to_non_nullable
               as String?,
       age: freezed == age
           ? _self.age

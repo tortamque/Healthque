@@ -2,5 +2,13 @@
   "@@locale" : "en",
   "firstThingsFirst": "First things first!",
   "letsCreateAccount": "Let's create account together!",
-  "logInWithGoogle": "Log in with Google"
+  "logInWithGoogle": "Log in with Google",
+  "letsGetToKnowEachOther": "Let's get to know each other",
+  "enterYourName": "Enter your name",
+  "name": "Name",
+  "nameCantBeEmpty": "Name can't be empty",
+  "enterYourSurname": "Enter your surname",
+  "enterYourSurnameOptional": "Enter your surname (Optional)",
+  "surname": "Surname",
+  "nextStep": "Next Step"
 }
