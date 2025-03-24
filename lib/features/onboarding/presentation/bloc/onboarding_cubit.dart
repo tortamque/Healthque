@@ -33,4 +33,20 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       ),
     );
   }
+
+  void saveAgeWeightHeightGender({
+    required int age,
+    required double height,
+    required double weight,
+    required Gender gender,
+  }) {
+    emit(
+      OnboardingState.userInfo(
+        age: age,
+        height: height,
+        weight: weight,
+        gender: gender,
+      ),
+    );
+  }
 }

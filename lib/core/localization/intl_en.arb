@@ -10,5 +10,16 @@
   "enterYourSurname": "Enter your surname",
   "enterYourSurnameOptional": "Enter your surname (Optional)",
   "surname": "Surname",
-  "nextStep": "Next Step"
+  "nextStep": "Next Step",
+  "letsGetToKnowYouBetter": "Let's get to know you better",
+  "noteHeightInCmAndWeightInKg": "Note: Height in cm and Weight in kg",
+  "enterYourAge": "Enter your age",
+  "age": "Age",
+  "enterYourHeight": "Enter your height",
+  "heightInCm": "Height (cm)",
+  "enterYourWeight": "Enter your weight",
+  "weightInKg": "Weight (kg)",
+  "selectGender": "Select Gender",
+  "male": "Male",
+  "female": "Female"
 }

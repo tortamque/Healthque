@@ -17,7 +17,6 @@ class OnboardingLoginPage extends StatelessWidget {
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state case AuthStateAuthenticated(:final user)) {
-            print(user);
             context.read<OnboardingCubit>().saveEmailAndAvatar(
                   email: user.email ?? '',
                   avatarUrl: user.photoURL ?? '',
@@ -28,40 +27,43 @@ class OnboardingLoginPage extends StatelessWidget {
         },
         child: SizedBox(
           width: context.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                context.strings.firstThingsFirst,
-                style: context.textTheme.headlineMedium,
-              ),
-              Gap(16),
-              Text(
-                context.strings.letsCreateAccount.capitalizeFirstofEach,
-                style: context.textTheme.bodyMedium?.copyWith(
-                  color: Colors.grey[600],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  context.strings.firstThingsFirst,
+                  style: context.textTheme.headlineMedium,
                 ),
-              ),
-              Gap(32),
-              BlocBuilder<OnboardingCubit, OnboardingState>(
-                builder: (context, state) {
-                  if (state.email == null) {
-                    return ElevatedButton.icon(
-                      onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
-                      label: Text(context.strings.logInWithGoogle),
-                      icon: const Icon(Icons.login),
-                    );
-                  }
+                Gap(16),
+                Text(
+                  context.strings.letsCreateAccount.capitalizeFirstofEach,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: Colors.grey[600],
+                  ),
+                ),
+                Gap(32),
+                BlocBuilder<AuthCubit, AuthState>(
+                  builder: (context, state) {
+                    if (state is AuthStateAuthenticated) {
+                      ElevatedButton.icon(
+                        onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
+                        label: Text(context.strings.logInWithGoogle),
+                        icon: const Icon(Icons.login),
+                      );
+                    }
 
-                  return ElevatedButton.icon(
-                    onPressed: () => context.push(Routes.onboardingNamePage),
-                    label: Text(context.strings.nextStep),
-                    icon: const Icon(Icons.arrow_forward_ios_rounded),
-                    iconAlignment: IconAlignment.end,
-                  );
-                },
-              )
-            ],
+                    return ElevatedButton.icon(
+                      onPressed: () => context.push(Routes.onboardingNamePage),
+                      label: Text(context.strings.nextStep),
+                      icon: const Icon(Icons.arrow_forward_ios_rounded),
+                      iconAlignment: IconAlignment.end,
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

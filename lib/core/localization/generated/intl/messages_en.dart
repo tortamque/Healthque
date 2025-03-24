@@ -22,6 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "age": MessageLookupByLibrary.simpleMessage("Age"),
+    "enterYourAge": MessageLookupByLibrary.simpleMessage("Enter your age"),
+    "enterYourHeight": MessageLookupByLibrary.simpleMessage(
+      "Enter your height",
+    ),
     "enterYourName": MessageLookupByLibrary.simpleMessage("Enter your name"),
     "enterYourSurname": MessageLookupByLibrary.simpleMessage(
       "Enter your surname",
@@ -29,23 +34,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourSurnameOptional": MessageLookupByLibrary.simpleMessage(
       "Enter your surname (Optional)",
     ),
+    "enterYourWeight": MessageLookupByLibrary.simpleMessage(
+      "Enter your weight",
+    ),
+    "female": MessageLookupByLibrary.simpleMessage("Female"),
     "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
       "First things first!",
     ),
+    "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
     ),
     "letsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage(
       "Let\'s get to know each other",
     ),
+    "letsGetToKnowYouBetter": MessageLookupByLibrary.simpleMessage(
+      "Let\'s get to know you better",
+    ),
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
+    "male": MessageLookupByLibrary.simpleMessage("Male"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
     ),
     "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
+    "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
+      "Note: Height in cm and Weight in kg",
+    ),
+    "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
   };
 }

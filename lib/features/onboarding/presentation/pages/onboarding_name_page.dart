@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
@@ -80,6 +82,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
                           name: nameController.text,
                           surname: surnameController.text,
                         );
+                    context.push(Routes.onboardingAgeGenderParamsPage);
                   }
                 },
                 label: Text(context.strings.nextStep),

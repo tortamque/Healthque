@@ -149,6 +149,91 @@ class Strings {
   String get nextStep {
     return Intl.message('Next Step', name: 'nextStep', desc: '', args: []);
   }
+
+  /// `Let's get to know you better`
+  String get letsGetToKnowYouBetter {
+    return Intl.message(
+      'Let\'s get to know you better',
+      name: 'letsGetToKnowYouBetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note: Height in cm and Weight in kg`
+  String get noteHeightInCmAndWeightInKg {
+    return Intl.message(
+      'Note: Height in cm and Weight in kg',
+      name: 'noteHeightInCmAndWeightInKg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your age`
+  String get enterYourAge {
+    return Intl.message(
+      'Enter your age',
+      name: 'enterYourAge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age`
+  String get age {
+    return Intl.message('Age', name: 'age', desc: '', args: []);
+  }
+
+  /// `Enter your height`
+  String get enterYourHeight {
+    return Intl.message(
+      'Enter your height',
+      name: 'enterYourHeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height (cm)`
+  String get heightInCm {
+    return Intl.message('Height (cm)', name: 'heightInCm', desc: '', args: []);
+  }
+
+  /// `Enter your weight`
+  String get enterYourWeight {
+    return Intl.message(
+      'Enter your weight',
+      name: 'enterYourWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight (kg)`
+  String get weightInKg {
+    return Intl.message('Weight (kg)', name: 'weightInKg', desc: '', args: []);
+  }
+
+  /// `Select Gender`
+  String get selectGender {
+    return Intl.message(
+      'Select Gender',
+      name: 'selectGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message('Male', name: 'male', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message('Female', name: 'female', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
