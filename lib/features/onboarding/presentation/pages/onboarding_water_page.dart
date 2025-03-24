@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/features/onboarding/presentation/bloc/onboarding_cubit.dart';
@@ -26,13 +28,13 @@ class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'How many glass of water you can drink in one day?'.capitalizeFirstofEach,
+              context.strings.howManyGlassOfWaterYouCanDrink.capitalizeFirstofEach,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16),
             Text(
-              'Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature',
+              context.strings.waterTip,
               style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),
@@ -57,6 +59,7 @@ class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
                   context.read<OnboardingCubit>().saveWaterConsumption(
                         waterConsumption: _waterConsumption.toInt(),
                       );
+                  context.push(Routes.onboardingKcalPage);
                 },
                 label: Text(context.strings.nextStep),
                 icon: const Icon(Icons.arrow_forward_ios_rounded),

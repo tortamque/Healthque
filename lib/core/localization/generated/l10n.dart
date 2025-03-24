@@ -274,6 +274,56 @@ class Strings {
       args: [],
     );
   }
+
+  /// `How many glass of water you can drink in one day?`
+  String get howManyGlassOfWaterYouCanDrink {
+    return Intl.message(
+      'How many glass of water you can drink in one day?',
+      name: 'howManyGlassOfWaterYouCanDrink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature`
+  String get waterTip {
+    return Intl.message(
+      'Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature',
+      name: 'waterTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?`
+  String get howMuchKcalYouCanBurn {
+    return Intl.message(
+      'How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?',
+      name: 'howMuchKcalYouCanBurn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: We calculated it for you ({bmr} calories/day). You can change it if you know your body better.`
+  String bmrTip(Object bmr) {
+    return Intl.message(
+      'Tip: We calculated it for you ($bmr calories/day). You can change it if you know your body better.',
+      name: 'bmrTip',
+      desc: '',
+      args: [bmr],
+    );
+  }
+
+  /// `Calculate BMR using formula'`
+  String get calculateBmrUsingFormula {
+    return Intl.message(
+      'Calculate BMR using formula\'',
+      name: 'calculateBmrUsingFormula',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

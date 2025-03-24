@@ -20,11 +20,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(bmr) =>
+      "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
+    ),
+    "bmrTip": m0,
+    "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
+      "Calculate BMR using formula\'",
     ),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
@@ -51,6 +58,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
+    "howManyGlassOfWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
+      "How many glass of water you can drink in one day?",
+    ),
+    "howMuchKcalYouCanBurn": MessageLookupByLibrary.simpleMessage(
+      "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
+    ),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
     ),
@@ -74,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "waterTip": MessageLookupByLibrary.simpleMessage(
+      "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
+    ),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",
