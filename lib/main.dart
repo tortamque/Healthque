@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/config/routes/router.dart';
 import 'package:healthque/config/theme/theme.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
-import 'package:healthque/features/authorization/presentation/bloc/auth_bloc.dart';
 import 'package:healthque/core/injection_container.dart';
-
+import 'features/authorization/authorization.dart';
+import 'features/health/health.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -21,8 +21,11 @@ class HealthqueApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => AuthCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => AuthCubit()),
+        BlocProvider(create: (_) => HealthCubit()),
+      ],
       child: MaterialApp.router(
         theme: themeData,
         routerConfig: router,
