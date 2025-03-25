@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "bmrTip": m0,
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
-      "Calculate BMR using formula\'",
+      "Calculate BMR using formula",
     ),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "howManyGlassOfWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
       "How many glass of water you can drink in one day?",
     ),
+    "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
+      "How many steps you can walk in one day?",
+    ),
     "howMuchKcalYouCanBurn": MessageLookupByLibrary.simpleMessage(
       "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
     ),
@@ -86,6 +89,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Note: Height in cm and Weight in kg",
     ),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "stepsTip": MessageLookupByLibrary.simpleMessage(
+      "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
+    ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",

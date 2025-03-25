@@ -28,13 +28,13 @@ class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'How many steps you can walk in one day?'.capitalizeFirstofEach,
+              context.strings.howManyStepsYouCanWalk.capitalizeFirstofEach,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16),
             Text(
-              'Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy—small steps can make a big difference!',
+              context.strings.stepsTip,
               style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),

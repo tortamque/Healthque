@@ -315,11 +315,31 @@ class Strings {
     );
   }
 
-  /// `Calculate BMR using formula'`
+  /// `Calculate BMR using formula`
   String get calculateBmrUsingFormula {
     return Intl.message(
-      'Calculate BMR using formula\'',
+      'Calculate BMR using formula',
       name: 'calculateBmrUsingFormula',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How many steps you can walk in one day?`
+  String get howManyStepsYouCanWalk {
+    return Intl.message(
+      'How many steps you can walk in one day?',
+      name: 'howManyStepsYouCanWalk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!`
+  String get stepsTip {
+    return Intl.message(
+      'Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!',
+      name: 'stepsTip',
       desc: '',
       args: [],
     );

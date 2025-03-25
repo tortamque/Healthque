@@ -30,5 +30,7 @@
   "waterTip": "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
   "howMuchKcalYouCanBurn": "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
   "bmrTip": "Tip: We calculated it for you ({bmr} calories/day). You can change it if you know your body better.",
-  "calculateBmrUsingFormula": "Calculate BMR using formula'"
+  "calculateBmrUsingFormula": "Calculate BMR using formula",
+  "howManyStepsYouCanWalk": "How many steps you can walk in one day?",
+  "stepsTip": "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!"
 }
