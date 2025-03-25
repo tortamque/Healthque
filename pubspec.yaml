@@ -23,6 +23,8 @@ dependencies:
   get_it: ^8.0.3
   gap: ^3.0.1
   syncfusion_flutter_sliders: ^28.2.12
+  health: ^12.1.0
+  permission_handler: ^11.4.0
   
 
 dev_dependencies:
@@ -31,9 +33,12 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   build_runner: ^2.4.15
   json_serializable: ^6.9.4
+  flutter_gen_runner: ^5.10.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/
 
 flutter_intl:
   enabled: true
@@ -41,3 +46,6 @@ flutter_intl:
   main_locale: en
   arb_dir: lib/core/localization
   output_dir: lib/core/localization/generated
+
+flutter_gen:
+  output: lib/core/

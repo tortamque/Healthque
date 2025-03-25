@@ -16,7 +16,7 @@ class OnboardingStepsPage extends StatefulWidget {
 }
 
 class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
-  int _steps = 4000;
+  int _steps = 10000;
 
   @override
   Widget build(BuildContext context) {

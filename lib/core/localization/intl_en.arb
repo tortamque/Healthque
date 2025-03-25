@@ -32,5 +32,11 @@
   "bmrTip": "Tip: We calculated it for you ({bmr} calories/day). You can change it if you know your body better.",
   "calculateBmrUsingFormula": "Calculate BMR using formula",
   "howManyStepsYouCanWalk": "How many steps you can walk in one day?",
-  "stepsTip": "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!"
+  "stepsTip": "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
+  "connectingToYourDevice": "Connecting to your wearable device. Please wait...",
+  "thisProcessMayTakeAFewSeconds": "This process may take a few seconds.",
+  "yourWearableDeviceIsConnected": "Your wearable device is connected.",
+  "youCanNowProceedToTheNextStep": "You can now proceed to the next step.",
+  "finishOnboarding": "Finish onboarding",
+  "oopsSomethingWentWrong": "Oops! Something went wrong."
 }

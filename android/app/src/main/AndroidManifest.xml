@@ -1,4 +1,100 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries>
+        <package android:name="com.google.android.apps.healthdata" />
+        <intent>
+            <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+    <!-- Permissions required for Health Connect access -->
+    <!-- Basic Health Data History permission -->
+    <uses-permission android:name="android.permission.health.READ_HEALTH_DATA_HISTORY" />
+    <!-- Activity recognition & location for workouts and steps -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Steps -->
+    <uses-permission android:name="android.permission.health.READ_STEPS" />
+    <!-- Active Calories Burned -->
+    <uses-permission android:name="android.permission.health.READ_ACTIVE_CALORIES_BURNED" />
+    <!-- Basal Body Temperature -->
+    <uses-permission android:name="android.permission.health.READ_BASAL_BODY_TEMPERATURE" />
+    <!-- Basal Metabolic Rate -->
+    <uses-permission android:name="android.permission.health.READ_BASAL_METABOLIC_RATE" />
+    <!-- Blood Glucose -->
+    <uses-permission android:name="android.permission.health.READ_BLOOD_GLUCOSE" />
+    <!-- Blood Pressure -->
+    <uses-permission android:name="android.permission.health.READ_BLOOD_PRESSURE" />
+    <!-- Body Fat -->
+    <uses-permission android:name="android.permission.health.READ_BODY_FAT" />
+    <!-- Body Temperature -->
+    <uses-permission android:name="android.permission.health.READ_BODY_TEMPERATURE" />
+    <!-- Body Water Mass -->
+    <uses-permission android:name="android.permission.health.READ_BODY_WATER_MASS" />
+    <!-- Bone Mass -->
+    <uses-permission android:name="android.permission.health.READ_BONE_MASS" />
+    <!-- Cervical Mucus -->
+    <uses-permission android:name="android.permission.health.READ_CERVICAL_MUCUS" />
+    <!-- Cycling/Pedaling Cadence (Exercise) -->
+    <uses-permission android:name="android.permission.health.READ_EXERCISE" />
+    <!-- Distance -->
+    <uses-permission android:name="android.permission.health.READ_DISTANCE" />
+    <!-- Elevation Gained -->
+    <uses-permission android:name="android.permission.health.READ_ELEVATION_GAINED" />
+    <!-- Exercise Session & Exercise Route -->
+    <uses-permission android:name="android.permission.health.READ_EXERCISE_ROUTE" />
+    <!-- Floors Climbed -->
+    <uses-permission android:name="android.permission.health.READ_FLOORS_CLIMBED" />
+    <!-- Heart Rate -->
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE" />
+    <!-- Heart Rate Variability (RMSSD) -->
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE_VARIABILITY" />
+    <!-- Height -->
+    <uses-permission android:name="android.permission.health.READ_HEIGHT" />
+    <!-- Hydration -->
+    <uses-permission android:name="android.permission.health.READ_HYDRATION" />
+    <!-- Intermenstrual Bleeding -->
+    <uses-permission
+        android:name="android.permission.health.READ_INTERMENSTRUAL_BLEEDING" />
+    <!-- Lean Body Mass -->
+    <uses-permission android:name="android.permission.health.READ_LEAN_BODY_MASS" />
+    <!-- Menstruation (Flow & Period) -->
+    <uses-permission android:name="android.permission.health.READ_MENSTRUATION" />
+    <!-- Nutrition -->
+    <uses-permission android:name="android.permission.health.READ_NUTRITION" />
+    <!-- Ovulation Test -->
+    <uses-permission android:name="android.permission.health.READ_OVULATION_TEST" />
+    <!-- Oxygen Saturation -->
+    <uses-permission android:name="android.permission.health.READ_OXYGEN_SATURATION" />
+    <!-- Planned Exercise -->
+    <uses-permission android:name="android.permission.health.READ_PLANNED_EXERCISE" />
+    <!-- Power -->
+    <uses-permission android:name="android.permission.health.READ_POWER" />
+    <!-- Respiratory Rate -->
+    <uses-permission android:name="android.permission.health.READ_RESPIRATORY_RATE" />
+    <!-- Resting Heart Rate -->
+    <uses-permission android:name="android.permission.health.READ_RESTING_HEART_RATE" />
+    <!-- Sexual Activity -->
+    <uses-permission android:name="android.permission.health.READ_SEXUAL_ACTIVITY" />
+    <!-- Skin Temperature -->
+    <uses-permission android:name="android.permission.health.READ_SKIN_TEMPERATURE" />
+    <!-- Sleep Session -->
+    <uses-permission android:name="android.permission.health.READ_SLEEP" />
+    <!-- Speed -->
+    <uses-permission android:name="android.permission.health.READ_SPEED" />
+    <!-- Total Calories Burned -->
+    <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
+    <!-- Vo2 Max -->
+    <uses-permission android:name="android.permission.health.READ_VO2_MAX" />
+    <!-- Weight -->
+    <uses-permission android:name="android.permission.health.READ_WEIGHT" />
+    <!-- Wheelchair Pushes -->
+    <uses-permission android:name="android.permission.health.READ_WHEELCHAIR_PUSHES" />
+
     <application
         android:label="healthque"
         android:name="${applicationName}"
@@ -24,7 +120,23 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+                        <!-- Intention to show Permissions screen for Health Connect API -->
+            <intent-filter>
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+            </intent-filter>
         </activity>
+
+        <activity-alias
+            android:name="ViewPermissionUsageActivity"
+            android:exported="true"
+            android:targetActivity=".MainActivity"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                    <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+                </intent-filter>
+        </activity-alias>
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

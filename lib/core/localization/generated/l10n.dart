@@ -344,6 +344,66 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Connecting to your wearable device. Please wait...`
+  String get connectingToYourDevice {
+    return Intl.message(
+      'Connecting to your wearable device. Please wait...',
+      name: 'connectingToYourDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This process may take a few seconds.`
+  String get thisProcessMayTakeAFewSeconds {
+    return Intl.message(
+      'This process may take a few seconds.',
+      name: 'thisProcessMayTakeAFewSeconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your wearable device is connected.`
+  String get yourWearableDeviceIsConnected {
+    return Intl.message(
+      'Your wearable device is connected.',
+      name: 'yourWearableDeviceIsConnected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can now proceed to the next step.`
+  String get youCanNowProceedToTheNextStep {
+    return Intl.message(
+      'You can now proceed to the next step.',
+      name: 'youCanNowProceedToTheNextStep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish onboarding`
+  String get finishOnboarding {
+    return Intl.message(
+      'Finish onboarding',
+      name: 'finishOnboarding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! Something went wrong.`
+  String get oopsSomethingWentWrong {
+    return Intl.message(
+      'Oops! Something went wrong.',
+      name: 'oopsSomethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

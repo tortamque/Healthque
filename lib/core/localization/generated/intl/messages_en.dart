@@ -33,6 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
     ),
+    "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
+      "Connecting to your wearable device. Please wait...",
+    ),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
     ),
@@ -51,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your weight",
     ),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
+    "finishOnboarding": MessageLookupByLibrary.simpleMessage(
+      "Finish onboarding",
+    ),
     "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
       "First things first!",
     ),
@@ -88,17 +94,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Note: Height in cm and Weight in kg",
     ),
+    "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "Oops! Something went wrong.",
+    ),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
+      "This process may take a few seconds.",
+    ),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
     ),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",
+    ),
+    "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
+      "You can now proceed to the next step.",
+    ),
+    "yourWearableDeviceIsConnected": MessageLookupByLibrary.simpleMessage(
+      "Your wearable device is connected.",
     ),
   };
 }
