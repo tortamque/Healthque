@@ -4,3 +4,4 @@ export 'onboarding_name_page.dart';
 export 'onboarding_water_page.dart';
 export 'onboarding_kcal_page.dart';
 export 'onboarding_steps_page.dart';
+export 'onboarding_health_connect_page.dart';

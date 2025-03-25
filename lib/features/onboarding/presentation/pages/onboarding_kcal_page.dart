@@ -96,7 +96,14 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
     final height = state.height ?? 170;
     final age = state.age ?? 30;
 
-    setState(() => _bmr = _calculateBmr(weight: weight, height: height, age: age, gender: gender));
+    double calculatedBmr = _calculateBmr(weight: weight, height: height, age: age, gender: gender);
+    if (calculatedBmr < 1000) {
+      calculatedBmr = 1000;
+    } else if (calculatedBmr > 3500) {
+      calculatedBmr = 3500;
+    }
+
+    setState(() => _bmr = calculatedBmr);
   }
 
   double _calculateBmr({

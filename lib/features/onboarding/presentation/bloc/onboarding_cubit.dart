@@ -14,7 +14,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     required String googleDisplayName,
   }) {
     emit(
-      OnboardingState.userInfo(
+      state.copyWith(
         email: email,
         avatarUrl: avatarUrl,
         googleDisplayName: googleDisplayName,
@@ -27,7 +27,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     required String? surname,
   }) {
     emit(
-      OnboardingState.userInfo(
+      state.copyWith(
         name: name,
         surname: (surname ?? '').isEmpty ? null : surname,
       ),
@@ -41,7 +41,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     required Gender gender,
   }) {
     emit(
-      OnboardingState.userInfo(
+      state.copyWith(
         age: age,
         height: height,
         weight: weight,
@@ -53,15 +53,15 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   void saveWaterConsumption({
     required int waterConsumption,
   }) =>
-      emit(OnboardingState.userInfo(waterConsumption: waterConsumption));
+      emit(state.copyWith(waterConsumption: waterConsumption));
 
   void saveCaloriesBurnInOneDay({
     required int caloriesBurnInOneDay,
   }) =>
-      emit(OnboardingState.userInfo(caloriesBurnInOneDay: caloriesBurnInOneDay));
+      emit(state.copyWith(caloriesBurnInOneDay: caloriesBurnInOneDay));
 
   void saveDesiredSteps({
     required int desiredSteps,
   }) =>
-      emit(OnboardingState.userInfo(desiredSteps: desiredSteps));
+      emit(state.copyWith(desiredSteps: desiredSteps));
 }

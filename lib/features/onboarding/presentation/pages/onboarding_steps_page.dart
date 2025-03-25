@@ -59,7 +59,7 @@ class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
                   context.read<OnboardingCubit>().saveDesiredSteps(
                         desiredSteps: _steps,
                       );
-                  //context.push(Routes.);
+                  context.push(Routes.onboardingHealthConnectPage);
                 },
                 label: Text(context.strings.nextStep),
                 icon: const Icon(Icons.arrow_forward_ios_rounded),

@@ -42,6 +42,10 @@ final GoRouter router = GoRouter(
           path: Routes.onboardingStepsPage,
           builder: (context, state) => OnboardingStepsPage(),
         ),
+        GoRoute(
+          path: Routes.onboardingHealthConnectPage,
+          builder: (context, state) => OnboardingHealthConnectPage(),
+        ),
       ],
     ),
 
