@@ -94,7 +94,7 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
             const Gap(16),
             SizedBox(
               width: context.width,
-              child: ElevatedButton.icon(
+              child: FilledButton.icon(
                 onPressed: nextStepAvailable
                     ? () {
                         context.read<OnboardingCubit>().saveAgeWeightHeightGender(

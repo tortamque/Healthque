@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/core/shared/domain/entities/gender_enum.dart';
@@ -69,11 +71,12 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
             Gap(8),
             SizedBox(
               width: context.width,
-              child: ElevatedButton.icon(
+              child: FilledButton.icon(
                 onPressed: () {
                   context.read<OnboardingCubit>().saveCaloriesBurnInOneDay(
                         caloriesBurnInOneDay: _bmr.toInt(),
                       );
+                  context.push(Routes.onboardingStepsPage);
                 },
                 label: Text(context.strings.nextStep),
                 icon: const Icon(Icons.arrow_forward_ios_rounded),

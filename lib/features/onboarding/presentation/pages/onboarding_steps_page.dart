@@ -8,15 +8,15 @@ import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-class OnboardingWaterPage extends StatefulWidget {
-  const OnboardingWaterPage({super.key});
+class OnboardingStepsPage extends StatefulWidget {
+  const OnboardingStepsPage({super.key});
 
   @override
-  State<OnboardingWaterPage> createState() => _OnboardingWaterPageState();
+  State<OnboardingStepsPage> createState() => _OnboardingStepsPageState();
 }
 
-class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
-  double _waterConsumption = 3000;
+class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
+  int _steps = 4000;
 
   @override
   Widget build(BuildContext context) {
@@ -28,38 +28,38 @@ class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.strings.howManyGlassOfWaterYouCanDrink.capitalizeFirstofEach,
+              'How many steps you can walk in one day?'.capitalizeFirstofEach,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16),
             Text(
-              context.strings.waterTip,
+              'Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy—small steps can make a big difference!',
               style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),
             Gap(32),
             SfSlider(
-              min: 1000,
-              max: 5000,
-              value: _waterConsumption,
-              interval: 1000,
-              stepSize: 100,
+              min: 0,
+              max: 30000,
+              value: _steps,
+              interval: 5000,
+              stepSize: 500,
               showTicks: true,
               showLabels: true,
               enableTooltip: true,
               minorTicksPerInterval: 1,
-              onChanged: (dynamic value) => setState(() => _waterConsumption = value),
+              onChanged: (dynamic value) => setState(() => _steps = (value as double).toInt()),
             ),
             Gap(32),
             SizedBox(
               width: context.width,
               child: FilledButton.icon(
                 onPressed: () {
-                  context.read<OnboardingCubit>().saveWaterConsumption(
-                        waterConsumption: _waterConsumption.toInt(),
+                  context.read<OnboardingCubit>().saveDesiredSteps(
+                        desiredSteps: _steps,
                       );
-                  context.push(Routes.onboardingKcalPage);
+                  //context.push(Routes.);
                 },
                 label: Text(context.strings.nextStep),
                 icon: const Icon(Icons.arrow_forward_ios_rounded),

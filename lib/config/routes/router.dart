@@ -38,6 +38,10 @@ final GoRouter router = GoRouter(
           path: Routes.onboardingKcalPage,
           builder: (context, state) => OnboardingKcalPage(),
         ),
+        GoRoute(
+          path: Routes.onboardingStepsPage,
+          builder: (context, state) => OnboardingStepsPage(),
+        ),
       ],
     ),
 

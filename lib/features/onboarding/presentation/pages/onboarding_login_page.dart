@@ -49,7 +49,7 @@ class OnboardingLoginPage extends StatelessWidget {
                     if (state is AuthStateAuthenticated) {
                       SizedBox(
                         width: context.width,
-                        child: ElevatedButton.icon(
+                        child: FilledButton.icon(
                           onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
                           label: Text(context.strings.logInWithGoogle),
                           icon: const Icon(Icons.login),
@@ -59,7 +59,7 @@ class OnboardingLoginPage extends StatelessWidget {
 
                     return SizedBox(
                       width: context.width,
-                      child: ElevatedButton.icon(
+                      child: FilledButton.icon(
                         onPressed: () => context.push(Routes.onboardingNamePage),
                         label: Text(context.strings.nextStep),
                         icon: const Icon(Icons.arrow_forward_ios_rounded),

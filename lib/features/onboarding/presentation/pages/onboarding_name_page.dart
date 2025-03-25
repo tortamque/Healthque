@@ -77,7 +77,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
               const Gap(32),
               SizedBox(
                 width: context.width,
-                child: ElevatedButton.icon(
+                child: FilledButton.icon(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       context.read<OnboardingCubit>().saveNameAndSurname(
