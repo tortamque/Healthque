@@ -404,6 +404,16 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Successfully logged in as {user}`
+  String loggedInAs(Object user) {
+    return Intl.message(
+      'Successfully logged in as $user',
+      name: 'loggedInAs',
+      desc: '',
+      args: [user],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'onboarding_cubit.dart';
+part of 'user_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,7 +14,7 @@ part of 'onboarding_cubit.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$OnboardingState {
+mixin _$UserState {
   String? get email;
   String? get avatarUrl;
   String? get name;
@@ -28,19 +28,18 @@ mixin _$OnboardingState {
   int? get caloriesBurnInOneDay;
   int? get desiredSteps;
 
-  /// Create a copy of OnboardingState
+  /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $OnboardingStateCopyWith<OnboardingState> get copyWith =>
-      _$OnboardingStateCopyWithImpl<OnboardingState>(
-          this as OnboardingState, _$identity);
+  $UserStateCopyWith<UserState> get copyWith =>
+      _$UserStateCopyWithImpl<UserState>(this as UserState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is OnboardingState &&
+            other is UserState &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
@@ -78,15 +77,14 @@ mixin _$OnboardingState {
 
   @override
   String toString() {
-    return 'OnboardingState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'UserState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
 /// @nodoc
-abstract mixin class $OnboardingStateCopyWith<$Res> {
-  factory $OnboardingStateCopyWith(
-          OnboardingState value, $Res Function(OnboardingState) _then) =
-      _$OnboardingStateCopyWithImpl;
+abstract mixin class $UserStateCopyWith<$Res> {
+  factory $UserStateCopyWith(UserState value, $Res Function(UserState) _then) =
+      _$UserStateCopyWithImpl;
   @useResult
   $Res call(
       {String? email,
@@ -104,14 +102,13 @@ abstract mixin class $OnboardingStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OnboardingStateCopyWithImpl<$Res>
-    implements $OnboardingStateCopyWith<$Res> {
-  _$OnboardingStateCopyWithImpl(this._self, this._then);
+class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
+  _$UserStateCopyWithImpl(this._self, this._then);
 
-  final OnboardingState _self;
-  final $Res Function(OnboardingState) _then;
+  final UserState _self;
+  final $Res Function(UserState) _then;
 
-  /// Create a copy of OnboardingState
+  /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -184,8 +181,8 @@ class _$OnboardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class OnboardingUserInfo extends OnboardingState {
-  const OnboardingUserInfo(
+class UserInfo extends UserState {
+  const UserInfo(
       {this.email,
       this.avatarUrl,
       this.name,
@@ -225,19 +222,19 @@ class OnboardingUserInfo extends OnboardingState {
   @override
   final int? desiredSteps;
 
-  /// Create a copy of OnboardingState
+  /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $OnboardingUserInfoCopyWith<OnboardingUserInfo> get copyWith =>
-      _$OnboardingUserInfoCopyWithImpl<OnboardingUserInfo>(this, _$identity);
+  $UserInfoCopyWith<UserInfo> get copyWith =>
+      _$UserInfoCopyWithImpl<UserInfo>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is OnboardingUserInfo &&
+            other is UserInfo &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
@@ -275,16 +272,15 @@ class OnboardingUserInfo extends OnboardingState {
 
   @override
   String toString() {
-    return 'OnboardingState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'UserState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
 /// @nodoc
-abstract mixin class $OnboardingUserInfoCopyWith<$Res>
-    implements $OnboardingStateCopyWith<$Res> {
-  factory $OnboardingUserInfoCopyWith(
-          OnboardingUserInfo value, $Res Function(OnboardingUserInfo) _then) =
-      _$OnboardingUserInfoCopyWithImpl;
+abstract mixin class $UserInfoCopyWith<$Res>
+    implements $UserStateCopyWith<$Res> {
+  factory $UserInfoCopyWith(UserInfo value, $Res Function(UserInfo) _then) =
+      _$UserInfoCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -303,14 +299,13 @@ abstract mixin class $OnboardingUserInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class _$OnboardingUserInfoCopyWithImpl<$Res>
-    implements $OnboardingUserInfoCopyWith<$Res> {
-  _$OnboardingUserInfoCopyWithImpl(this._self, this._then);
+class _$UserInfoCopyWithImpl<$Res> implements $UserInfoCopyWith<$Res> {
+  _$UserInfoCopyWithImpl(this._self, this._then);
 
-  final OnboardingUserInfo _self;
-  final $Res Function(OnboardingUserInfo) _then;
+  final UserInfo _self;
+  final $Res Function(UserInfo) _then;
 
-  /// Create a copy of OnboardingState
+  /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -328,7 +323,7 @@ class _$OnboardingUserInfoCopyWithImpl<$Res>
     Object? caloriesBurnInOneDay = freezed,
     Object? desiredSteps = freezed,
   }) {
-    return _then(OnboardingUserInfo(
+    return _then(UserInfo(
       email: freezed == email
           ? _self.email
           : email // ignore: cast_nullable_to_non_nullable

@@ -1,10 +1,10 @@
-part of 'onboarding_cubit.dart';
+part of 'user_cubit.dart';
 
 @freezed
-sealed class OnboardingState with _$OnboardingState {
-  const OnboardingState._();
+sealed class UserState with _$UserState {
+  const UserState._();
 
-  const factory OnboardingState.userInfo({
+  const factory UserState.userInfo({
     String? email,
     String? avatarUrl,
     String? name,
@@ -17,5 +17,5 @@ sealed class OnboardingState with _$OnboardingState {
     int? waterConsumption,
     int? caloriesBurnInOneDay,
     int? desiredSteps,
-  }) = OnboardingUserInfo;
+  }) = UserInfo;
 }

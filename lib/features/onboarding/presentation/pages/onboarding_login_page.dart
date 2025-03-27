@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
+import 'package:healthque/core/shared/presentation/presentation.dart';
 import 'package:healthque/features/authorization/authorization.dart';
-import 'package:healthque/features/onboarding/onboarding.dart';
 
 class OnboardingLoginPage extends StatelessWidget {
   const OnboardingLoginPage({super.key});
@@ -17,7 +17,7 @@ class OnboardingLoginPage extends StatelessWidget {
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state case AuthStateAuthenticated(:final user)) {
-            context.read<OnboardingCubit>().saveEmailAndAvatar(
+            context.read<UserCubit>().saveEmailAndAvatar(
                   email: user.email ?? '',
                   avatarUrl: user.photoURL ?? '',
                   googleDisplayName: user.displayName ?? '',
@@ -43,29 +43,40 @@ class OnboardingLoginPage extends StatelessWidget {
                     color: Colors.grey[600],
                   ),
                 ),
-                Gap(32),
+                Gap(16),
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
-                    if (state is AuthStateAuthenticated) {
-                      SizedBox(
-                        width: context.width,
-                        child: FilledButton.icon(
-                          onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
-                          label: Text(context.strings.logInWithGoogle),
-                          icon: const Icon(Icons.login),
+                    return switch (state) {
+                      AuthStateLoading() => UnifiedCircularProgressIndicator(),
+                      AuthStateAuthenticated() => Column(
+                          children: [
+                            Text(
+                              context.strings.loggedInAs(state.user.displayName ?? state.user.email ?? ''),
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                            Gap(16),
+                            SizedBox(
+                              width: context.width,
+                              child: FilledButton.icon(
+                                onPressed: () => context.push(Routes.onboardingNamePage),
+                                label: Text(context.strings.nextStep),
+                                icon: const Icon(Icons.arrow_forward_ios_rounded),
+                                iconAlignment: IconAlignment.end,
+                              ),
+                            ),
+                          ],
                         ),
-                      );
-                    }
-
-                    return SizedBox(
-                      width: context.width,
-                      child: FilledButton.icon(
-                        onPressed: () => context.push(Routes.onboardingNamePage),
-                        label: Text(context.strings.nextStep),
-                        icon: const Icon(Icons.arrow_forward_ios_rounded),
-                        iconAlignment: IconAlignment.end,
-                      ),
-                    );
+                      _ => SizedBox(
+                          width: context.width,
+                          child: FilledButton.icon(
+                            onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
+                            label: Text(context.strings.logInWithGoogle),
+                            icon: const Icon(Icons.login),
+                          ),
+                        ),
+                    };
                   },
                 ),
               ],

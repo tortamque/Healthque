@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
@@ -11,12 +10,7 @@ final GoRouter router = GoRouter(
   initialLocation: Routes.onboardingLoginPage,
   routes: [
     ShellRoute(
-      builder: (context, state, child) {
-        return BlocProvider<OnboardingCubit>(
-          create: (_) => OnboardingCubit(),
-          child: child,
-        );
-      },
+      builder: (context, state, child) => child,
       routes: [
         GoRoute(
           path: Routes.onboardingLoginPage,

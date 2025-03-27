@@ -6,7 +6,7 @@ import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/core/shared/domain/entities/gender_enum.dart';
-import 'package:healthque/features/onboarding/presentation/bloc/onboarding_cubit.dart';
+import 'package:healthque/core/shared/presentation/bloc/user_cubit/user_cubit.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class OnboardingKcalPage extends StatefulWidget {
@@ -73,7 +73,7 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
               width: context.width,
               child: FilledButton.icon(
                 onPressed: () {
-                  context.read<OnboardingCubit>().saveCaloriesBurnInOneDay(
+                  context.read<UserCubit>().saveCaloriesBurnInOneDay(
                         caloriesBurnInOneDay: _bmr.toInt(),
                       );
                   context.push(Routes.onboardingStepsPage);
@@ -90,7 +90,7 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
   }
 
   void calculateBmr() {
-    final state = context.read<OnboardingCubit>().state;
+    final state = context.read<UserCubit>().state;
     final gender = state.gender ?? Gender.male;
     final weight = state.weight ?? 70;
     final height = state.height ?? 170;

@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
-import 'package:healthque/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:healthque/core/shared/shared.dart';
 
 class OnboardingWaterPage extends StatefulWidget {
   const OnboardingWaterPage({super.key});
@@ -56,7 +56,7 @@ class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
               width: context.width,
               child: FilledButton.icon(
                 onPressed: () {
-                  context.read<OnboardingCubit>().saveWaterConsumption(
+                  context.read<UserCubit>().saveWaterConsumption(
                         waterConsumption: _waterConsumption.toInt(),
                       );
                   context.push(Routes.onboardingKcalPage);

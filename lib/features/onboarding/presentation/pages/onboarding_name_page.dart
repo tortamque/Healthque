@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/features/onboarding/onboarding.dart';
 
 class OnboardingNamePage extends StatefulWidget {
   const OnboardingNamePage({super.key});
@@ -22,7 +21,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
   @override
   void initState() {
     super.initState();
-    nameController.text = context.read<OnboardingCubit>().state.googleDisplayName ?? '';
+    nameController.text = context.read<UserCubit>().state.googleDisplayName ?? '';
   }
 
   @override
@@ -80,7 +79,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
                 child: FilledButton.icon(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      context.read<OnboardingCubit>().saveNameAndSurname(
+                      context.read<UserCubit>().saveNameAndSurname(
                             name: nameController.text,
                             surname: surnameController.text,
                           );

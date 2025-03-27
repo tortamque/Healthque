@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
-import 'package:healthque/features/onboarding/presentation/bloc/onboarding_cubit.dart';
+import 'package:healthque/core/shared/presentation/bloc/user_cubit/user_cubit.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class OnboardingStepsPage extends StatefulWidget {
@@ -56,7 +56,7 @@ class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
               width: context.width,
               child: FilledButton.icon(
                 onPressed: () {
-                  context.read<OnboardingCubit>().saveDesiredSteps(
+                  context.read<UserCubit>().saveDesiredSteps(
                         desiredSteps: _steps,
                       );
                   context.push(Routes.onboardingHealthConnectPage);

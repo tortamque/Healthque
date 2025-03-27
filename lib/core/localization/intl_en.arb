@@ -38,5 +38,6 @@
   "yourWearableDeviceIsConnected": "Your wearable device is connected.",
   "youCanNowProceedToTheNextStep": "You can now proceed to the next step.",
   "finishOnboarding": "Finish onboarding",
-  "oopsSomethingWentWrong": "Oops! Something went wrong."
+  "oopsSomethingWentWrong": "Oops! Something went wrong.",
+  "loggedInAs": "Successfully logged in as {user}"
 }

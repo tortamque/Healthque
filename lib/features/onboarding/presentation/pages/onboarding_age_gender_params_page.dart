@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/features/onboarding/onboarding.dart';
 
 class OnboardingAgeGenderParamsPage extends StatefulWidget {
   const OnboardingAgeGenderParamsPage({super.key});
@@ -97,7 +96,7 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
               child: FilledButton.icon(
                 onPressed: nextStepAvailable
                     ? () {
-                        context.read<OnboardingCubit>().saveAgeWeightHeightGender(
+                        context.read<UserCubit>().saveAgeWeightHeightGender(
                               age: int.parse(ageController.text),
                               height: double.parse(heightController.text),
                               weight: double.parse(weightController.text),

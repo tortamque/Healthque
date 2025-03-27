@@ -89,8 +89,10 @@ class _ConnectedLayout extends StatelessWidget {
           SizedBox(
             width: context.width,
             child: FilledButton.icon(
-              onPressed: () {
-                //
+              onPressed: () async {
+                await context.read<UserCubit>().storeUser();
+
+                // go to the main page
               },
               label: Text(context.strings.finishOnboarding.capitalizeFirstofEach),
               icon: const Icon(Icons.arrow_forward_ios_rounded),
