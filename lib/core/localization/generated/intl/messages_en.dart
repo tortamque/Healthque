@@ -20,8 +20,106 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(bmr) =>
+      "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
+
+  static String m1(user) => "Successfully logged in as ${user}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "testString": MessageLookupByLibrary.simpleMessage("Test string"),
+    "age": MessageLookupByLibrary.simpleMessage("Age"),
+    "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
+      "Age must be valid and less than 120",
+    ),
+    "bmrTip": m0,
+    "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
+      "Calculate BMR using formula",
+    ),
+    "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
+      "Connecting to your wearable device. Please wait...",
+    ),
+    "enterValidNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter a valid number",
+    ),
+    "enterYourAge": MessageLookupByLibrary.simpleMessage("Enter your age"),
+    "enterYourHeight": MessageLookupByLibrary.simpleMessage(
+      "Enter your height",
+    ),
+    "enterYourName": MessageLookupByLibrary.simpleMessage("Enter your name"),
+    "enterYourSurname": MessageLookupByLibrary.simpleMessage(
+      "Enter your surname",
+    ),
+    "enterYourSurnameOptional": MessageLookupByLibrary.simpleMessage(
+      "Enter your surname (Optional)",
+    ),
+    "enterYourWeight": MessageLookupByLibrary.simpleMessage(
+      "Enter your weight",
+    ),
+    "female": MessageLookupByLibrary.simpleMessage("Female"),
+    "finishOnboarding": MessageLookupByLibrary.simpleMessage(
+      "Finish onboarding",
+    ),
+    "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
+      "First things first!",
+    ),
+    "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
+    "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
+      "Height must be valid and less than 300 cm",
+    ),
+    "howManyGlassOfWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
+      "How many glass of water you can drink in one day?",
+    ),
+    "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
+      "How many steps you can walk in one day?",
+    ),
+    "howMuchKcalYouCanBurn": MessageLookupByLibrary.simpleMessage(
+      "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
+    ),
+    "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
+      "Let\'s create account together!",
+    ),
+    "letsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage(
+      "Let\'s get to know each other",
+    ),
+    "letsGetToKnowYouBetter": MessageLookupByLibrary.simpleMessage(
+      "Let\'s get to know you better",
+    ),
+    "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "Log in with Google",
+    ),
+    "loggedInAs": m1,
+    "male": MessageLookupByLibrary.simpleMessage("Male"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
+      "Name can\'t be empty",
+    ),
+    "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
+    "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
+      "Note: Height in cm and Weight in kg",
+    ),
+    "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "Oops! Something went wrong.",
+    ),
+    "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "stepsTip": MessageLookupByLibrary.simpleMessage(
+      "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
+    ),
+    "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
+      "This process may take a few seconds.",
+    ),
+    "waterTip": MessageLookupByLibrary.simpleMessage(
+      "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
+    ),
+    "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
+    "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
+      "Weight must be valid and less than 500 kg",
+    ),
+    "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
+      "You can now proceed to the next step.",
+    ),
+    "yourWearableDeviceIsConnected": MessageLookupByLibrary.simpleMessage(
+      "Your wearable device is connected.",
+    ),
   };
 }

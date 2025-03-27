@@ -55,9 +55,364 @@ class Strings {
     return Localizations.of<Strings>(context, Strings);
   }
 
-  /// `Test string`
-  String get testString {
-    return Intl.message('Test string', name: 'testString', desc: '', args: []);
+  /// `First things first!`
+  String get firstThingsFirst {
+    return Intl.message(
+      'First things first!',
+      name: 'firstThingsFirst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's create account together!`
+  String get letsCreateAccount {
+    return Intl.message(
+      'Let\'s create account together!',
+      name: 'letsCreateAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in with Google`
+  String get logInWithGoogle {
+    return Intl.message(
+      'Log in with Google',
+      name: 'logInWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's get to know each other`
+  String get letsGetToKnowEachOther {
+    return Intl.message(
+      'Let\'s get to know each other',
+      name: 'letsGetToKnowEachOther',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Name can't be empty`
+  String get nameCantBeEmpty {
+    return Intl.message(
+      'Name can\'t be empty',
+      name: 'nameCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your surname`
+  String get enterYourSurname {
+    return Intl.message(
+      'Enter your surname',
+      name: 'enterYourSurname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your surname (Optional)`
+  String get enterYourSurnameOptional {
+    return Intl.message(
+      'Enter your surname (Optional)',
+      name: 'enterYourSurnameOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message('Surname', name: 'surname', desc: '', args: []);
+  }
+
+  /// `Next Step`
+  String get nextStep {
+    return Intl.message('Next Step', name: 'nextStep', desc: '', args: []);
+  }
+
+  /// `Let's get to know you better`
+  String get letsGetToKnowYouBetter {
+    return Intl.message(
+      'Let\'s get to know you better',
+      name: 'letsGetToKnowYouBetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note: Height in cm and Weight in kg`
+  String get noteHeightInCmAndWeightInKg {
+    return Intl.message(
+      'Note: Height in cm and Weight in kg',
+      name: 'noteHeightInCmAndWeightInKg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your age`
+  String get enterYourAge {
+    return Intl.message(
+      'Enter your age',
+      name: 'enterYourAge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age`
+  String get age {
+    return Intl.message('Age', name: 'age', desc: '', args: []);
+  }
+
+  /// `Enter your height`
+  String get enterYourHeight {
+    return Intl.message(
+      'Enter your height',
+      name: 'enterYourHeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height (cm)`
+  String get heightInCm {
+    return Intl.message('Height (cm)', name: 'heightInCm', desc: '', args: []);
+  }
+
+  /// `Enter your weight`
+  String get enterYourWeight {
+    return Intl.message(
+      'Enter your weight',
+      name: 'enterYourWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight (kg)`
+  String get weightInKg {
+    return Intl.message('Weight (kg)', name: 'weightInKg', desc: '', args: []);
+  }
+
+  /// `Select Gender`
+  String get selectGender {
+    return Intl.message(
+      'Select Gender',
+      name: 'selectGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message('Male', name: 'male', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message('Female', name: 'female', desc: '', args: []);
+  }
+
+  /// `Enter a valid number`
+  String get enterValidNumber {
+    return Intl.message(
+      'Enter a valid number',
+      name: 'enterValidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age must be valid and less than 120`
+  String get ageMustBeLessThan120 {
+    return Intl.message(
+      'Age must be valid and less than 120',
+      name: 'ageMustBeLessThan120',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height must be valid and less than 300 cm`
+  String get heightMustBeLessThan300 {
+    return Intl.message(
+      'Height must be valid and less than 300 cm',
+      name: 'heightMustBeLessThan300',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight must be valid and less than 500 kg`
+  String get weightMustBeLessThan500 {
+    return Intl.message(
+      'Weight must be valid and less than 500 kg',
+      name: 'weightMustBeLessThan500',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How many glass of water you can drink in one day?`
+  String get howManyGlassOfWaterYouCanDrink {
+    return Intl.message(
+      'How many glass of water you can drink in one day?',
+      name: 'howManyGlassOfWaterYouCanDrink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature`
+  String get waterTip {
+    return Intl.message(
+      'Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature',
+      name: 'waterTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?`
+  String get howMuchKcalYouCanBurn {
+    return Intl.message(
+      'How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?',
+      name: 'howMuchKcalYouCanBurn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: We calculated it for you ({bmr} calories/day). You can change it if you know your body better.`
+  String bmrTip(Object bmr) {
+    return Intl.message(
+      'Tip: We calculated it for you ($bmr calories/day). You can change it if you know your body better.',
+      name: 'bmrTip',
+      desc: '',
+      args: [bmr],
+    );
+  }
+
+  /// `Calculate BMR using formula`
+  String get calculateBmrUsingFormula {
+    return Intl.message(
+      'Calculate BMR using formula',
+      name: 'calculateBmrUsingFormula',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How many steps you can walk in one day?`
+  String get howManyStepsYouCanWalk {
+    return Intl.message(
+      'How many steps you can walk in one day?',
+      name: 'howManyStepsYouCanWalk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!`
+  String get stepsTip {
+    return Intl.message(
+      'Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!',
+      name: 'stepsTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connecting to your wearable device. Please wait...`
+  String get connectingToYourDevice {
+    return Intl.message(
+      'Connecting to your wearable device. Please wait...',
+      name: 'connectingToYourDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This process may take a few seconds.`
+  String get thisProcessMayTakeAFewSeconds {
+    return Intl.message(
+      'This process may take a few seconds.',
+      name: 'thisProcessMayTakeAFewSeconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your wearable device is connected.`
+  String get yourWearableDeviceIsConnected {
+    return Intl.message(
+      'Your wearable device is connected.',
+      name: 'yourWearableDeviceIsConnected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can now proceed to the next step.`
+  String get youCanNowProceedToTheNextStep {
+    return Intl.message(
+      'You can now proceed to the next step.',
+      name: 'youCanNowProceedToTheNextStep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish onboarding`
+  String get finishOnboarding {
+    return Intl.message(
+      'Finish onboarding',
+      name: 'finishOnboarding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! Something went wrong.`
+  String get oopsSomethingWentWrong {
+    return Intl.message(
+      'Oops! Something went wrong.',
+      name: 'oopsSomethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully logged in as {user}`
+  String loggedInAs(Object user) {
+    return Intl.message(
+      'Successfully logged in as $user',
+      name: 'loggedInAs',
+      desc: '',
+      args: [user],
+    );
   }
 }
 
