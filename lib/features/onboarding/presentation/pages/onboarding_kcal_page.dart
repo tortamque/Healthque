@@ -90,11 +90,11 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
   }
 
   void calculateBmr() {
-    final state = context.read<UserCubit>().state;
-    final gender = state.gender ?? Gender.male;
-    final weight = state.weight ?? 70;
-    final height = state.height ?? 170;
-    final age = state.age ?? 30;
+    final user = context.read<UserCubit>().state.user;
+    final gender = user.gender ?? Gender.male;
+    final weight = user.weight ?? 70;
+    final height = user.height ?? 170;
+    final age = user.age ?? 30;
 
     double calculatedBmr = _calculateBmr(weight: weight, height: height, age: age, gender: gender);
     if (calculatedBmr < 1000) {

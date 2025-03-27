@@ -1,4 +1,5 @@
 class Routes {
+  static const String splashScreen = '/splashScreen';
   static const String onboardingLoginPage = '/onboarding/login';
   static const String onboardingNamePage = '/onboarding/name';
   static const String onboardingAgeGenderParamsPage = '/onboarding/ageGenderParams';

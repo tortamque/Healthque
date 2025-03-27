@@ -7,7 +7,9 @@ import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
 
 class OnboardingNamePage extends StatefulWidget {
-  const OnboardingNamePage({super.key});
+  const OnboardingNamePage({super.key, this.firstName = ''});
+
+  final String firstName;
 
   @override
   State<OnboardingNamePage> createState() => _OnboardingNamePageState();
@@ -21,7 +23,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
   @override
   void initState() {
     super.initState();
-    nameController.text = context.read<UserCubit>().state.googleDisplayName ?? '';
+    nameController.text = widget.firstName;
   }
 
   @override
@@ -81,7 +83,7 @@ class _OnboardingNamePageState extends State<OnboardingNamePage> {
                     if (_formKey.currentState!.validate()) {
                       context.read<UserCubit>().saveNameAndSurname(
                             name: nameController.text,
-                            surname: surnameController.text,
+                            surname: surnameController.text.isEmpty ? null : surnameController.text,
                           );
                       context.push(Routes.onboardingAgeGenderParamsPage);
                     }

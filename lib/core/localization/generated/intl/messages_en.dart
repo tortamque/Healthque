@@ -66,14 +66,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
-    "howManyGlassOfWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
-      "How many glass of water you can drink in one day?",
-    ),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
     ),
     "howMuchKcalYouCanBurn": MessageLookupByLibrary.simpleMessage(
       "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
+    ),
+    "howMuchWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
+      "How much water you can drink in one day?",
     ),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",

@@ -6,6 +6,7 @@ import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/core/shared/presentation/presentation.dart';
+import 'package:healthque/core/utils/shared_preferences/shared_preferences.dart';
 import 'package:healthque/features/health/health.dart';
 import 'package:healthque/core/assets.gen.dart';
 
@@ -93,6 +94,7 @@ class _ConnectedLayout extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () async {
                 await context.read<UserCubit>().storeUser();
+                await SharedPreferencesManager.storeValue<bool>(isOnboardingCompleted, true);
                 if (!context.mounted) return;
 
                 context.go(Routes.tempPage1);
