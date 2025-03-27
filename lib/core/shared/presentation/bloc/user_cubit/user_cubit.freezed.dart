@@ -15,18 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$UserState {
-  String? get email;
-  String? get avatarUrl;
-  String? get name;
-  String? get surname;
-  String? get googleDisplayName;
-  int? get age;
-  Gender? get gender;
-  double? get height;
-  double? get weight;
-  int? get waterConsumption;
-  int? get caloriesBurnInOneDay;
-  int? get desiredSteps;
+  User get user;
 
   /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
@@ -40,44 +29,15 @@ mixin _$UserState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UserState &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.avatarUrl, avatarUrl) ||
-                other.avatarUrl == avatarUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
-            (identical(other.googleDisplayName, googleDisplayName) ||
-                other.googleDisplayName == googleDisplayName) &&
-            (identical(other.age, age) || other.age == age) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.waterConsumption, waterConsumption) ||
-                other.waterConsumption == waterConsumption) &&
-            (identical(other.caloriesBurnInOneDay, caloriesBurnInOneDay) ||
-                other.caloriesBurnInOneDay == caloriesBurnInOneDay) &&
-            (identical(other.desiredSteps, desiredSteps) ||
-                other.desiredSteps == desiredSteps));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      email,
-      avatarUrl,
-      name,
-      surname,
-      googleDisplayName,
-      age,
-      gender,
-      height,
-      weight,
-      waterConsumption,
-      caloriesBurnInOneDay,
-      desiredSteps);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @override
   String toString() {
-    return 'UserState(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'UserState(user: $user)';
   }
 }
 
@@ -86,19 +46,9 @@ abstract mixin class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) _then) =
       _$UserStateCopyWithImpl;
   @useResult
-  $Res call(
-      {String? email,
-      String? avatarUrl,
-      String? name,
-      String? surname,
-      String? googleDisplayName,
-      int? age,
-      Gender? gender,
-      double? height,
-      double? weight,
-      int? waterConsumption,
-      int? caloriesBurnInOneDay,
-      int? desiredSteps});
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -113,266 +63,106 @@ class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? avatarUrl = freezed,
-    Object? name = freezed,
-    Object? surname = freezed,
-    Object? googleDisplayName = freezed,
-    Object? age = freezed,
-    Object? gender = freezed,
-    Object? height = freezed,
-    Object? weight = freezed,
-    Object? waterConsumption = freezed,
-    Object? caloriesBurnInOneDay = freezed,
-    Object? desiredSteps = freezed,
+    Object? user = null,
   }) {
     return _then(_self.copyWith(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      avatarUrl: freezed == avatarUrl
-          ? _self.avatarUrl
-          : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: freezed == surname
-          ? _self.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleDisplayName: freezed == googleDisplayName
-          ? _self.googleDisplayName
-          : googleDisplayName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      age: freezed == age
-          ? _self.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gender: freezed == gender
-          ? _self.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender?,
-      height: freezed == height
-          ? _self.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weight: freezed == weight
-          ? _self.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      waterConsumption: freezed == waterConsumption
-          ? _self.waterConsumption
-          : waterConsumption // ignore: cast_nullable_to_non_nullable
-              as int?,
-      caloriesBurnInOneDay: freezed == caloriesBurnInOneDay
-          ? _self.caloriesBurnInOneDay
-          : caloriesBurnInOneDay // ignore: cast_nullable_to_non_nullable
-              as int?,
-      desiredSteps: freezed == desiredSteps
-          ? _self.desiredSteps
-          : desiredSteps // ignore: cast_nullable_to_non_nullable
-              as int?,
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
+  }
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_self.user, (value) {
+      return _then(_self.copyWith(user: value));
+    });
   }
 }
 
 /// @nodoc
 
-class UserInfo extends UserState {
-  const UserInfo(
-      {this.email,
-      this.avatarUrl,
-      this.name,
-      this.surname,
-      this.googleDisplayName,
-      this.age,
-      this.gender,
-      this.height,
-      this.weight,
-      this.waterConsumption,
-      this.caloriesBurnInOneDay,
-      this.desiredSteps})
-      : super._();
+class UserStateUser extends UserState {
+  const UserStateUser({this.user = const User()}) : super._();
 
   @override
-  final String? email;
-  @override
-  final String? avatarUrl;
-  @override
-  final String? name;
-  @override
-  final String? surname;
-  @override
-  final String? googleDisplayName;
-  @override
-  final int? age;
-  @override
-  final Gender? gender;
-  @override
-  final double? height;
-  @override
-  final double? weight;
-  @override
-  final int? waterConsumption;
-  @override
-  final int? caloriesBurnInOneDay;
-  @override
-  final int? desiredSteps;
+  @JsonKey()
+  final User user;
 
   /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $UserInfoCopyWith<UserInfo> get copyWith =>
-      _$UserInfoCopyWithImpl<UserInfo>(this, _$identity);
+  $UserStateUserCopyWith<UserStateUser> get copyWith =>
+      _$UserStateUserCopyWithImpl<UserStateUser>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UserInfo &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.avatarUrl, avatarUrl) ||
-                other.avatarUrl == avatarUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
-            (identical(other.googleDisplayName, googleDisplayName) ||
-                other.googleDisplayName == googleDisplayName) &&
-            (identical(other.age, age) || other.age == age) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.waterConsumption, waterConsumption) ||
-                other.waterConsumption == waterConsumption) &&
-            (identical(other.caloriesBurnInOneDay, caloriesBurnInOneDay) ||
-                other.caloriesBurnInOneDay == caloriesBurnInOneDay) &&
-            (identical(other.desiredSteps, desiredSteps) ||
-                other.desiredSteps == desiredSteps));
+            other is UserStateUser &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      email,
-      avatarUrl,
-      name,
-      surname,
-      googleDisplayName,
-      age,
-      gender,
-      height,
-      weight,
-      waterConsumption,
-      caloriesBurnInOneDay,
-      desiredSteps);
+  int get hashCode => Object.hash(runtimeType, user);
 
   @override
   String toString() {
-    return 'UserState.userInfo(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, googleDisplayName: $googleDisplayName, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'UserState.user(user: $user)';
   }
 }
 
 /// @nodoc
-abstract mixin class $UserInfoCopyWith<$Res>
+abstract mixin class $UserStateUserCopyWith<$Res>
     implements $UserStateCopyWith<$Res> {
-  factory $UserInfoCopyWith(UserInfo value, $Res Function(UserInfo) _then) =
-      _$UserInfoCopyWithImpl;
+  factory $UserStateUserCopyWith(
+          UserStateUser value, $Res Function(UserStateUser) _then) =
+      _$UserStateUserCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String? email,
-      String? avatarUrl,
-      String? name,
-      String? surname,
-      String? googleDisplayName,
-      int? age,
-      Gender? gender,
-      double? height,
-      double? weight,
-      int? waterConsumption,
-      int? caloriesBurnInOneDay,
-      int? desiredSteps});
+  $Res call({User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$UserInfoCopyWithImpl<$Res> implements $UserInfoCopyWith<$Res> {
-  _$UserInfoCopyWithImpl(this._self, this._then);
+class _$UserStateUserCopyWithImpl<$Res>
+    implements $UserStateUserCopyWith<$Res> {
+  _$UserStateUserCopyWithImpl(this._self, this._then);
 
-  final UserInfo _self;
-  final $Res Function(UserInfo) _then;
+  final UserStateUser _self;
+  final $Res Function(UserStateUser) _then;
 
   /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? email = freezed,
-    Object? avatarUrl = freezed,
-    Object? name = freezed,
-    Object? surname = freezed,
-    Object? googleDisplayName = freezed,
-    Object? age = freezed,
-    Object? gender = freezed,
-    Object? height = freezed,
-    Object? weight = freezed,
-    Object? waterConsumption = freezed,
-    Object? caloriesBurnInOneDay = freezed,
-    Object? desiredSteps = freezed,
+    Object? user = null,
   }) {
-    return _then(UserInfo(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      avatarUrl: freezed == avatarUrl
-          ? _self.avatarUrl
-          : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: freezed == surname
-          ? _self.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleDisplayName: freezed == googleDisplayName
-          ? _self.googleDisplayName
-          : googleDisplayName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      age: freezed == age
-          ? _self.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gender: freezed == gender
-          ? _self.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender?,
-      height: freezed == height
-          ? _self.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weight: freezed == weight
-          ? _self.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      waterConsumption: freezed == waterConsumption
-          ? _self.waterConsumption
-          : waterConsumption // ignore: cast_nullable_to_non_nullable
-              as int?,
-      caloriesBurnInOneDay: freezed == caloriesBurnInOneDay
-          ? _self.caloriesBurnInOneDay
-          : caloriesBurnInOneDay // ignore: cast_nullable_to_non_nullable
-              as int?,
-      desiredSteps: freezed == desiredSteps
-          ? _self.desiredSteps
-          : desiredSteps // ignore: cast_nullable_to_non_nullable
-              as int?,
+    return _then(UserStateUser(
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
+  }
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_self.user, (value) {
+      return _then(_self.copyWith(user: value));
+    });
   }
 }
 

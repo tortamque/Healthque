@@ -46,7 +46,7 @@ class AuthCubit extends Cubit<AuthState> {
       final userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
       final user = userCredential.user;
       if (user == null) {
-        emit(const AuthState.failure('Sign in failed: user is null.'));
+        emit(const AuthState.failure('Sign in failed.'));
       } else {
         //emit(AuthState.authenticated(user));
       }

@@ -26,7 +26,7 @@
   "ageMustBeLessThan120": "Age must be valid and less than 120",
   "heightMustBeLessThan300": "Height must be valid and less than 300 cm",
   "weightMustBeLessThan500": "Weight must be valid and less than 500 kg",
-  "howManyGlassOfWaterYouCanDrink": "How many glass of water you can drink in one day?",
+  "howMuchWaterYouCanDrink": "How much water you can drink in one day?",
   "waterTip": "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
   "howMuchKcalYouCanBurn": "How much kcal you can burn in one day during idle time (so-called basal metabolic rate)?",
   "bmrTip": "Tip: We calculated it for you ({bmr} calories/day). You can change it if you know your body better.",

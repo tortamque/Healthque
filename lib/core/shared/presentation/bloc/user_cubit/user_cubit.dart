@@ -9,18 +9,27 @@ part 'user_state.dart';
 part 'user_cubit.freezed.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserState.userInfo());
+  UserCubit() : super(UserState.user()) {
+    _initUserFromPreferences();
+  }
+  void _initUserFromPreferences() {
+    final storedUser = retrieveUser();
+
+    if (storedUser != null) {
+      emit(state.copyWith(user: storedUser));
+    }
+  }
 
   void saveEmailAndAvatar({
     required String email,
     required String avatarUrl,
-    required String googleDisplayName,
   }) {
     emit(
       state.copyWith(
-        email: email,
-        avatarUrl: avatarUrl,
-        googleDisplayName: googleDisplayName,
+        user: state.user.copyWith(
+          email: email,
+          avatarUrl: avatarUrl,
+        ),
       ),
     );
   }
@@ -31,8 +40,10 @@ class UserCubit extends Cubit<UserState> {
   }) {
     emit(
       state.copyWith(
-        name: name,
-        surname: (surname ?? '').isEmpty ? null : surname,
+        user: state.user.copyWith(
+          name: name,
+          surname: surname,
+        ),
       ),
     );
   }
@@ -45,10 +56,12 @@ class UserCubit extends Cubit<UserState> {
   }) {
     emit(
       state.copyWith(
-        age: age,
-        height: height,
-        weight: weight,
-        gender: gender,
+        user: state.user.copyWith(
+          age: age,
+          height: height,
+          weight: weight,
+          gender: gender,
+        ),
       ),
     );
   }
@@ -56,48 +69,52 @@ class UserCubit extends Cubit<UserState> {
   void saveWaterConsumption({
     required int waterConsumption,
   }) =>
-      emit(state.copyWith(waterConsumption: waterConsumption));
+      emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            waterConsumption: waterConsumption,
+          ),
+        ),
+      );
 
   void saveCaloriesBurnInOneDay({
     required int caloriesBurnInOneDay,
   }) =>
-      emit(state.copyWith(caloriesBurnInOneDay: caloriesBurnInOneDay));
+      emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            caloriesBurnInOneDay: caloriesBurnInOneDay,
+          ),
+        ),
+      );
 
   void saveDesiredSteps({
     required int desiredSteps,
   }) =>
-      emit(state.copyWith(desiredSteps: desiredSteps));
+      emit(
+        state.copyWith(
+          user: state.user.copyWith(
+            desiredSteps: desiredSteps,
+          ),
+        ),
+      );
 
   Future<void> storeUser() async {
-    if (state.email == null ||
-        state.name == null ||
-        state.age == null ||
-        state.gender == null ||
-        state.height == null ||
-        state.weight == null ||
-        state.waterConsumption == null ||
-        state.caloriesBurnInOneDay == null ||
-        state.desiredSteps == null) {
+    if (state.user.email == null ||
+        state.user.name == null ||
+        state.user.age == null ||
+        state.user.gender == null ||
+        state.user.height == null ||
+        state.user.weight == null ||
+        state.user.waterConsumption == null ||
+        state.user.caloriesBurnInOneDay == null ||
+        state.user.desiredSteps == null) {
       throw Exception('Can\'t store user with null fields');
     }
 
-    final user = User(
-      email: state.email,
-      avatarUrl: state.avatarUrl,
-      name: state.name,
-      surname: state.surname,
-      age: state.age,
-      gender: state.gender,
-      height: state.height,
-      weight: state.weight,
-      waterConsumption: state.waterConsumption,
-      caloriesBurnInOneDay: state.caloriesBurnInOneDay,
-      desiredSteps: state.desiredSteps,
-    );
-
     await SharedPreferencesManager.storeValue<User>(
       sharedPreferencesUser,
-      user,
+      state.user,
       serialize: (u) => jsonEncode(u.toJson()),
     );
   }
@@ -107,3 +124,6 @@ class UserCubit extends Cubit<UserState> {
         deserialize: (json) => User.fromJson(json),
       );
 }
+
+
+// add is onboardingcompleted field in shared prefs and check it in splash screen

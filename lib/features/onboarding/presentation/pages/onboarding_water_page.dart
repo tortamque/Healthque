@@ -28,7 +28,7 @@ class _OnboardingWaterPageState extends State<OnboardingWaterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              context.strings.howManyGlassOfWaterYouCanDrink.capitalizeFirstofEach,
+              context.strings.howMuchWaterYouCanDrink.capitalizeFirstofEach,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),

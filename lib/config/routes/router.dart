@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
+import 'package:healthque/features/splash/splash.dart';
 import 'package:healthque/features/temp/temp.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 final GoRouter router = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: Routes.onboardingLoginPage,
+  initialLocation: Routes.splashScreen,
   routes: [
+    GoRoute(
+      path: Routes.splashScreen,
+      builder: (context, state) => const SplashScreen(),
+    ),
     ShellRoute(
       builder: (context, state, child) => child,
       routes: [
@@ -19,7 +24,11 @@ final GoRouter router = GoRouter(
         ),
         GoRoute(
           path: Routes.onboardingNamePage,
-          builder: (context, state) => const OnboardingNamePage(),
+          builder: (context, state) {
+            final extra = state.extra as String;
+
+            return OnboardingNamePage(firstName: extra);
+          },
         ),
         GoRoute(
           path: Routes.onboardingAgeGenderParamsPage,

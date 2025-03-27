@@ -275,11 +275,11 @@ class Strings {
     );
   }
 
-  /// `How many glass of water you can drink in one day?`
-  String get howManyGlassOfWaterYouCanDrink {
+  /// `How much water you can drink in one day?`
+  String get howMuchWaterYouCanDrink {
     return Intl.message(
-      'How many glass of water you can drink in one day?',
-      name: 'howManyGlassOfWaterYouCanDrink',
+      'How much water you can drink in one day?',
+      name: 'howMuchWaterYouCanDrink',
       desc: '',
       args: [],
     );
