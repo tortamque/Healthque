@@ -39,5 +39,9 @@
   "youCanNowProceedToTheNextStep": "You can now proceed to the next step.",
   "finishOnboarding": "Finish onboarding",
   "oopsSomethingWentWrong": "Oops! Something went wrong.",
-  "loggedInAs": "Successfully logged in as {user}"
+  "loggedInAs": "Successfully logged in as {user}",
+  "dashboard": "Dashboard",
+  "activity": "Activity",
+  "health": "Health",
+  "profile": "Profile"
 }
