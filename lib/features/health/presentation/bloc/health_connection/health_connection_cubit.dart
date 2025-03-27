@@ -28,7 +28,7 @@ class HealthConnectionCubit extends Cubit<HealthConnectionState> {
     emit(const HealthConnectionState.loading());
 
     if (throttle) {
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 2));
     }
 
     try {

@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class AuthLayout extends StatelessWidget {
-  const AuthLayout({super.key, required this.navigationShell});
+class TempPagesLayout extends StatelessWidget {
+  const TempPagesLayout({super.key, required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
 
@@ -19,8 +19,9 @@ class AuthLayout extends StatelessWidget {
           selectedIndex: navigationShell.currentIndex,
           onTabChange: (index) => navigationShell.goBranch(index),
           tabs: const [
-            GButton(icon: Icons.login, text: 'Auth'),
-            GButton(icon: Icons.person, text: 'User Info'),
+            GButton(icon: Icons.login, text: 'Temp Page 1'),
+            GButton(icon: Icons.person, text: 'Temp Page 2'),
+            GButton(icon: Icons.person, text: 'Temp Page 3'),
           ],
         ),
       ),

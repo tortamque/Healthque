@@ -66,15 +66,32 @@ class OnboardingLoginPage extends StatelessWidget {
                                 iconAlignment: IconAlignment.end,
                               ),
                             ),
+                            Gap(8),
+                            SizedBox(
+                              width: context.width,
+                              child: FilledButton.tonalIcon(
+                                onPressed: () async {
+                                  await context.read<AuthCubit>().signOut();
+                                  if (!context.mounted) return;
+                                  await context.read<AuthCubit>().signInWithGoogle();
+                                },
+                                label: Text('Log in with another account'),
+                                icon: const Icon(Icons.login),
+                              ),
+                            ),
                           ],
                         ),
-                      _ => SizedBox(
-                          width: context.width,
-                          child: FilledButton.icon(
-                            onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
-                            label: Text(context.strings.logInWithGoogle),
-                            icon: const Icon(Icons.login),
-                          ),
+                      _ => Column(
+                          children: [
+                            SizedBox(
+                              width: context.width,
+                              child: FilledButton.icon(
+                                onPressed: () => context.read<AuthCubit>().signInWithGoogle(),
+                                label: Text(context.strings.logInWithGoogle),
+                                icon: const Icon(Icons.login),
+                              ),
+                            ),
+                          ],
                         ),
                     };
                   },

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/extensions/string.dart';
 import 'package:healthque/core/shared/presentation/presentation.dart';
@@ -91,8 +93,9 @@ class _ConnectedLayout extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () async {
                 await context.read<UserCubit>().storeUser();
+                if (!context.mounted) return;
 
-                // go to the main page
+                context.go(Routes.tempPage1);
               },
               label: Text(context.strings.finishOnboarding.capitalizeFirstofEach),
               icon: const Icon(Icons.arrow_forward_ios_rounded),
