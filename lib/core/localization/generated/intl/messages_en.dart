@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "activity": MessageLookupByLibrary.simpleMessage("Activity"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
@@ -38,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
+    "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
     ),
@@ -62,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
       "First things first!",
     ),
+    "health": MessageLookupByLibrary.simpleMessage("Health"),
     "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
@@ -100,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",

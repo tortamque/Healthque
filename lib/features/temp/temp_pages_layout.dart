@@ -34,10 +34,31 @@ class TempPagesLayout extends StatelessWidget {
               color: activeColor,
               fontWeight: FontWeight.bold,
             ),
-            tabs: const [
-              GButton(icon: Icons.login, text: 'Temp Page 1'),
-              GButton(icon: Icons.person, text: 'Temp Page 2'),
-              GButton(icon: Icons.person, text: 'Temp Page 3'),
+            tabs: [
+              GButton(
+                icon: Icons.dashboard_rounded,
+                text: context.strings.dashboard,
+                iconActiveColor: activeColor,
+                iconColor: Colors.grey.shade500,
+              ),
+              GButton(
+                icon: Icons.directions_run_rounded,
+                text: context.strings.activity,
+                iconActiveColor: activeColor,
+                iconColor: Colors.grey.shade500,
+              ),
+              GButton(
+                icon: Icons.health_and_safety_rounded,
+                text: context.strings.health,
+                iconActiveColor: activeColor,
+                iconColor: Colors.grey.shade500,
+              ),
+              GButton(
+                icon: Icons.person_outline_rounded,
+                text: context.strings.profile,
+                iconActiveColor: activeColor,
+                iconColor: Colors.grey.shade500,
+              ),
             ],
           ),
         ),

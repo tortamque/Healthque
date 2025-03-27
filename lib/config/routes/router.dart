@@ -79,6 +79,14 @@ final GoRouter router = GoRouter(
             ),
           ],
         ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: Routes.tempPage4,
+              builder: (context, state) => const TempPage4(),
+            ),
+          ],
+        ),
       ],
     ),
   ],

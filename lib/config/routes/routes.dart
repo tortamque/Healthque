@@ -11,4 +11,5 @@ class Routes {
   static const String tempPage1 = '/tempPage1';
   static const String tempPage2 = '/tempPage2';
   static const String tempPage3 = '/tempPage3';
+  static const String tempPage4 = '/tempPage4';
 }
