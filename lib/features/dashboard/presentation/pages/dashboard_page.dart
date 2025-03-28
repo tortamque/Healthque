@@ -16,7 +16,45 @@ class DashboardPage extends StatelessWidget {
         child: BlocBuilder<HealthCubit, HealthState>(
           buildWhen: (previous, current) => previous != current,
           builder: (context, state) {
-            return Text("${state.runtimeType} $state");
+            if (state is HealthStateLoaded) {
+              final steps = state.workout;
+
+              return Column(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      context.read<HealthCubit>().fetchHealthData(
+                            customStart: DateTime(2025, 03, 22),
+                            customEnd: DateTime(2025, 03, 25),
+                          );
+                    },
+                    child: Text('Fetch more data 22 - 25'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      context.read<HealthCubit>().fetchHealthData(
+                            customStart: DateTime(2025, 03, 23),
+                            customEnd: DateTime(2025, 03, 26),
+                          );
+                    },
+                    child: Text('Fetch more data 23 - 26'),
+                  ),
+                  Column(
+                    spacing: 8,
+                    children: steps
+                        .map(
+                          (e) => Card(
+                            color: Colors.blue,
+                            child: Text(e.toString()),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ],
+              );
+            }
+
+            return const Center(child: CircularProgressIndicator());
           },
         ),
       ),

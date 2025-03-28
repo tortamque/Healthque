@@ -58,20 +58,66 @@ class HealthStateInitial extends HealthState {
 /// @nodoc
 
 class HealthStateLoading extends HealthState {
-  const HealthStateLoading() : super._();
+  const HealthStateLoading({this.previousData}) : super._();
+
+  final HealthStateLoaded? previousData;
+
+  /// Create a copy of HealthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $HealthStateLoadingCopyWith<HealthStateLoading> get copyWith =>
+      _$HealthStateLoadingCopyWithImpl<HealthStateLoading>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is HealthStateLoading);
+        (other.runtimeType == runtimeType &&
+            other is HealthStateLoading &&
+            const DeepCollectionEquality()
+                .equals(other.previousData, previousData));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(previousData));
 
   @override
   String toString() {
-    return 'HealthState.loading()';
+    return 'HealthState.loading(previousData: $previousData)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $HealthStateLoadingCopyWith<$Res>
+    implements $HealthStateCopyWith<$Res> {
+  factory $HealthStateLoadingCopyWith(
+          HealthStateLoading value, $Res Function(HealthStateLoading) _then) =
+      _$HealthStateLoadingCopyWithImpl;
+  @useResult
+  $Res call({HealthStateLoaded? previousData});
+}
+
+/// @nodoc
+class _$HealthStateLoadingCopyWithImpl<$Res>
+    implements $HealthStateLoadingCopyWith<$Res> {
+  _$HealthStateLoadingCopyWithImpl(this._self, this._then);
+
+  final HealthStateLoading _self;
+  final $Res Function(HealthStateLoading) _then;
+
+  /// Create a copy of HealthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? previousData = freezed,
+  }) {
+    return _then(HealthStateLoading(
+      previousData: freezed == previousData
+          ? _self.previousData
+          : previousData // ignore: cast_nullable_to_non_nullable
+              as HealthStateLoaded?,
+    ));
   }
 }
 

@@ -1,11 +1,11 @@
+// health_state.dart
 part of 'health_cubit.dart';
 
 @freezed
 sealed class HealthState with _$HealthState {
   const HealthState._();
-
   const factory HealthState.initial() = HealthStateInitial;
-  const factory HealthState.loading() = HealthStateLoading;
+  const factory HealthState.loading({HealthStateLoaded? previousData}) = HealthStateLoading;
   const factory HealthState.loaded({
     required List<HealthRecord> steps,
     required List<HealthRecord> calories,
