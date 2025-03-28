@@ -124,6 +124,3 @@ class UserCubit extends Cubit<UserState> {
         deserialize: (json) => User.fromJson(json),
       );
 }
-
-
-// add is onboardingcompleted field in shared prefs and check it in splash screen

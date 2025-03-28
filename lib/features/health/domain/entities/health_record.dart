@@ -11,4 +11,10 @@ class HealthRecord {
 
   @override
   String toString() => 'HealthRecord(date: $date, dataPoint: $dataPoint)';
+
+  @override
+  bool operator ==(Object other) => other is HealthRecord && other.dataPoint == dataPoint && other.date == date;
+
+  @override
+  int get hashCode => Object.hash(dataPoint, date);
 }

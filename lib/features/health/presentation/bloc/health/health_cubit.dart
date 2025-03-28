@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:health/health.dart';
@@ -132,12 +134,8 @@ class HealthCubit extends Cubit<HealthState> {
 
   List<HealthRecord> _mergeRecords(List<HealthRecord> oldRecords, List<HealthRecord> newRecords) {
     final combined = [...oldRecords, ...newRecords];
-    final Map<String, HealthRecord> uniqueMap = {};
-    for (var record in combined) {
-      final key = record.dataPoint.uuid;
-      uniqueMap[key] = record;
-    }
-    final merged = uniqueMap.values.toList();
+    final uniqueRecords = LinkedHashSet<HealthRecord>.of(combined);
+    final merged = uniqueRecords.toList();
     merged.sort((a, b) => a.date.compareTo(b.date));
     return merged;
   }

@@ -17,7 +17,7 @@ class DashboardPage extends StatelessWidget {
           buildWhen: (previous, current) => previous != current,
           builder: (context, state) {
             if (state is HealthStateLoaded) {
-              final steps = state.workout;
+              final sleep = state.sleep;
 
               return Column(
                 children: [
@@ -41,7 +41,7 @@ class DashboardPage extends StatelessWidget {
                   ),
                   Column(
                     spacing: 8,
-                    children: steps
+                    children: sleep
                         .map(
                           (e) => Card(
                             color: Colors.blue,
