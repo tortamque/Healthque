@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/core/extensions/context.dart';
-import 'package:healthque/core/shared/shared.dart';
+import 'package:healthque/features/health/health.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -12,12 +12,13 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.strings.dashboard),
       ),
-      body: BlocBuilder<UserCubit, UserState>(
-        builder: (context, state) {
-          final user = state.user;
-
-          return Text(user.toString());
-        },
+      body: SingleChildScrollView(
+        child: BlocBuilder<HealthCubit, HealthState>(
+          buildWhen: (previous, current) => previous != current,
+          builder: (context, state) {
+            return Text("${state.runtimeType} $state");
+          },
+        ),
       ),
     );
   }

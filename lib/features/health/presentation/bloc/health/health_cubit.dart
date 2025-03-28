@@ -32,7 +32,6 @@ class HealthCubit extends Cubit<HealthState> {
 
       bool? permissionStatus = await _health.hasPermissions(_dataTypes);
       bool authorized;
-
       if (!(permissionStatus ?? false)) {
         authorized = await _health.requestAuthorization(_dataTypes);
       } else {
@@ -51,18 +50,15 @@ class HealthCubit extends Cubit<HealthState> {
         endTime: now,
         types: _dataTypes,
       );
-
       healthData = _health.removeDuplicates(healthData);
 
-      int steps = 0;
-      double calories = 0.0;
-      Duration sleepDuration = Duration.zero;
-      Duration exerciseDuration = Duration.zero;
-      double exerciseDistance = 0.0;
-      double heartRateSum = 0.0;
-      int heartRateCount = 0;
-      double oxygenSum = 0.0;
-      int oxygenCount = 0;
+      final List<HealthRecord> stepsRecords = [];
+      final List<HealthRecord> caloriesRecords = [];
+      final List<HealthRecord> distanceRecords = [];
+      final List<HealthRecord> sleepRecords = [];
+      final List<HealthRecord> workoutRecords = [];
+      final List<HealthRecord> heartRateRecords = [];
+      final List<HealthRecord> bloodOxygenRecords = [];
 
       final Set<HealthDataType> sleepTypes = {
         HealthDataType.SLEEP_AWAKE,
@@ -72,39 +68,50 @@ class HealthCubit extends Cubit<HealthState> {
       };
 
       for (var data in healthData) {
+        final record = HealthRecord(dataPoint: data, date: data.dateFrom);
         if (data.type == HealthDataType.STEPS) {
-          steps += (data.value as NumericHealthValue).numericValue.toInt();
+          stepsRecords.add(record);
         } else if (data.type == HealthDataType.TOTAL_CALORIES_BURNED) {
-          calories += (data.value as NumericHealthValue).numericValue.toDouble();
+          caloriesRecords.add(record);
         } else if (data.type == HealthDataType.DISTANCE_DELTA) {
-          exerciseDistance += (data.value as NumericHealthValue).numericValue.toDouble();
+          distanceRecords.add(record);
         } else if (sleepTypes.contains(data.type)) {
-          sleepDuration += data.dateTo.difference(data.dateFrom);
+          sleepRecords.add(record);
         } else if (data.type == HealthDataType.WORKOUT) {
-          exerciseDuration += data.dateTo.difference(data.dateFrom);
+          workoutRecords.add(record);
         } else if (data.type == HealthDataType.HEART_RATE) {
-          heartRateSum += (data.value as NumericHealthValue).numericValue.toDouble();
-          heartRateCount++;
+          heartRateRecords.add(record);
         } else if (data.type == HealthDataType.BLOOD_OXYGEN) {
-          oxygenSum += (data.value as NumericHealthValue).numericValue.toDouble();
-          oxygenCount++;
+          bloodOxygenRecords.add(record);
         }
       }
 
-      final double averageHeartRate = heartRateCount > 0 ? heartRateSum / heartRateCount : 0.0;
-      final double averageBloodOxygen = oxygenCount > 0 ? oxygenSum / oxygenCount : 0.0;
-
       emit(HealthState.loaded(
-        steps: steps,
-        calories: calories,
-        sleepDuration: sleepDuration,
-        exerciseDuration: exerciseDuration,
-        exerciseDistance: exerciseDistance,
-        averageHeartRate: averageHeartRate,
-        averageBloodOxygen: averageBloodOxygen,
+        steps: stepsRecords,
+        calories: caloriesRecords,
+        distance: distanceRecords,
+        sleep: sleepRecords,
+        workout: workoutRecords,
+        heartRate: heartRateRecords,
+        bloodOxygen: bloodOxygenRecords,
       ));
     } catch (error) {
       emit(HealthState.error(error.toString()));
     }
+  }
+}
+
+class HealthRecord {
+  final HealthDataPoint dataPoint;
+  final DateTime date;
+
+  HealthRecord({
+    required this.dataPoint,
+    required this.date,
+  });
+
+  @override
+  String toString() {
+    return 'HealthRecord(date: $date, dataPoint: $dataPoint)';
   }
 }
