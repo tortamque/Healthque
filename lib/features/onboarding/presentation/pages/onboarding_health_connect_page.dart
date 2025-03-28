@@ -97,6 +97,7 @@ class _ConnectedLayout extends StatelessWidget {
                 await SharedPreferencesManager.storeValue<bool>(isOnboardingCompleted, true);
                 if (!context.mounted) return;
 
+                context.read<HealthCubit>().fetchHealthData();
                 context.go(Routes.tempPage1);
               },
               label: Text(context.strings.finishOnboarding.capitalizeFirstofEach),
