@@ -26,6 +26,8 @@ dependencies:
   health: ^12.1.0
   permission_handler: ^11.4.0
   shared_preferences: ^2.5.2
+  skeletonizer: ^1.4.3
+  fl_chart: ^0.70.2
   
 
 dev_dependencies:

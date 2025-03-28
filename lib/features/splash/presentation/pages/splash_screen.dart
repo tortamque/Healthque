@@ -28,7 +28,10 @@ class _SplashScreenState extends State<SplashScreen> {
         false;
 
     if (storedUser) {
-      context.read<HealthCubit>().fetchHealthData();
+      context.read<HealthCubit>().fetchHealthData(
+            customStart: DateTime.now().subtract(Duration(days: 3)),
+            customEnd: DateTime.now(),
+          );
       context.go(Routes.tempPage1);
     } else {
       context.go(Routes.onboardingLoginPage);
