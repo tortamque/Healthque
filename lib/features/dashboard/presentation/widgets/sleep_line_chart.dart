@@ -14,22 +14,26 @@ class SleepLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (sleepRecords.isEmpty) {
+    final groupedData = _groupSleepRecords();
+    final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
+
+    if (sortedDays.length < 2) {
       return NotEnoughDataPlaceholder(
         padding: const EdgeInsets.only(bottom: 20, top: 10),
       );
     }
 
-    final groupedData = _groupSleepRecords();
-    final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
+    final displayDays = sortedDays.length > 7 ? sortedDays.sublist(sortedDays.length - 7) : sortedDays;
 
     final List<FlSpot> spots = [];
     double maxY = 0;
-    for (int i = 0; i < sortedDays.length; i++) {
-      final value = groupedData[sortedDays[i]]!;
+    for (int i = 0; i < displayDays.length; i++) {
+      final value = groupedData[displayDays[i]]!;
       maxY = max(maxY, value);
       spots.add(FlSpot(i.toDouble(), value));
     }
+
+    final double dynamicInterval = maxY > 0 ? maxY / 5 : 1;
 
     return AspectRatio(
       aspectRatio: 1.5,
@@ -41,7 +45,7 @@ class SleepLineChart extends StatelessWidget {
               touchTooltipData: LineTouchTooltipData(
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((touchedSpot) {
-                    final dateLabel = sortedDays[touchedSpot.x.toInt()].split('-').reversed.join('.');
+                    final dateLabel = displayDays[touchedSpot.x.toInt()].split('-').reversed.join('.');
                     final sleepValue = _formatDuration(touchedSpot.y, context);
                     return LineTooltipItem(
                       "$dateLabel\n$sleepValue",
@@ -64,8 +68,8 @@ class SleepLineChart extends StatelessWidget {
                   reservedSize: 30,
                   interval: 1,
                   getTitlesWidget: (value, meta) {
-                    if (value.toInt() < sortedDays.length) {
-                      final parts = sortedDays[value.toInt()].split('-');
+                    if (value.toInt() < displayDays.length) {
+                      final parts = displayDays[value.toInt()].split('-');
                       final label = "${parts[2]}.${parts[1]}";
                       return SideTitleWidget(
                         meta: meta,
@@ -82,8 +86,9 @@ class SleepLineChart extends StatelessWidget {
               rightTitles: AxisTitles(
                 sideTitles: SideTitles(
                   showTitles: true,
-                  maxIncluded: false,
                   reservedSize: 60,
+                  interval: dynamicInterval,
+                  maxIncluded: false,
                   getTitlesWidget: (value, meta) {
                     return SideTitleWidget(
                       meta: meta,
@@ -99,9 +104,9 @@ class SleepLineChart extends StatelessWidget {
             ),
             borderData: FlBorderData(show: false),
             minX: 0,
-            maxX: sortedDays.isNotEmpty ? (sortedDays.length - 1).toDouble() : 0,
+            maxX: displayDays.isNotEmpty ? (displayDays.length - 1).toDouble() : 0,
             minY: 0,
-            maxY: maxY + 10,
+            maxY: maxY + maxY * 0.05,
             lineBarsData: [
               LineChartBarData(
                 isCurved: true,
