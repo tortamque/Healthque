@@ -56,5 +56,6 @@
   "bloodOxygenSaturation": "Blood oxygen saturation",
   "amountPercentage": "{ammount}%",
   "workoutsAmount": "Workouts amount",
-  "amountWorkouts": "{amount} workouts"
+  "amountWorkouts": "{amount} workouts",
+  "theresNotEnoughDataToBuildTheChart": "There's not enough data to build the chart"
 }

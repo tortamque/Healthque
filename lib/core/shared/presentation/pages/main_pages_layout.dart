@@ -34,6 +34,7 @@ class MainPagesLayout extends StatelessWidget {
               color: activeColor,
               fontWeight: FontWeight.bold,
             ),
+            duration: const Duration(milliseconds: 350),
             tabs: [
               GButton(
                 icon: Icons.dashboard_rounded,

@@ -54,7 +54,7 @@ class DashboardPage extends StatelessWidget {
                       DashboardItemTemplate(
                         icon: Icons.directions_walk_rounded,
                         title: context.strings.steps,
-                        child: StepsBarChart(records: steps),
+                        child: StepsBarChart(stepsRecords: steps),
                       ),
                       Gap(8),
                       DashboardItemTemplate(

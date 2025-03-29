@@ -136,6 +136,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "theresNotEnoughDataToBuildTheChart": MessageLookupByLibrary.simpleMessage(
+      "There\'s not enough data to build the chart",
+    ),
     "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
       "This process may take a few seconds.",
     ),

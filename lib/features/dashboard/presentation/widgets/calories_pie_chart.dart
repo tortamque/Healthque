@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:health/health.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class CaloriesPieChart extends StatefulWidget {
@@ -26,6 +27,12 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.caloriesRecords.isEmpty) {
+      return NotEnoughDataPlaceholder(
+        padding: const EdgeInsets.only(bottom: 20, top: 10),
+      );
+    }
+
     final groupedData = _groupCaloriesRecords(widget.caloriesRecords);
 
     final validData = groupedData.entries.where((e) => e.value > 0).toList();

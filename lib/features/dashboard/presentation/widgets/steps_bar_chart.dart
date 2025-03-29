@@ -2,18 +2,25 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:health/health.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class StepsBarChart extends StatelessWidget {
-  final List<HealthRecord> records;
+  final List<HealthRecord> stepsRecords;
 
-  const StepsBarChart({super.key, required this.records});
+  const StepsBarChart({super.key, required this.stepsRecords});
 
   @override
   Widget build(BuildContext context) {
+    if (stepsRecords.isEmpty) {
+      return NotEnoughDataPlaceholder(
+        padding: const EdgeInsets.only(bottom: 20, top: 10),
+      );
+    }
+
     final groups = _buildBarGroups(context);
     final Map<String, int> dailySteps = {};
-    for (var rec in records) {
+    for (var rec in stepsRecords) {
       final dateKey =
           "${rec.date.year}-${rec.date.month.toString().padLeft(2, '0')}-${rec.date.day.toString().padLeft(2, '0')}";
 
@@ -92,7 +99,7 @@ class StepsBarChart extends StatelessWidget {
 
   List<BarChartGroupData> _buildBarGroups(BuildContext context) {
     final Map<String, int> dailySteps = {};
-    for (var rec in records) {
+    for (var rec in stepsRecords) {
       final dateKey = "${rec.date.year}-${rec.date.month}-${rec.date.day}";
       final steps = (rec.dataPoint.value as NumericHealthValue).numericValue.toInt();
       dailySteps.update(dateKey, (prev) => prev + steps, ifAbsent: () => steps);

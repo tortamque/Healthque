@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class WorkoutPieChart extends StatefulWidget {
@@ -25,6 +26,12 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.workoutRecords.isEmpty) {
+      return NotEnoughDataPlaceholder(
+        padding: const EdgeInsets.only(bottom: 20, top: 10),
+      );
+    }
+
     final groupedData = _groupWorkoutRecords(widget.workoutRecords);
     final validData = groupedData.entries.where((e) => e.value > 0).toList();
     validData.sort((a, b) => a.key.compareTo(b.key));

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:health/health.dart';
 import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class BloodOxygenLineChart extends StatelessWidget {
@@ -13,6 +14,12 @@ class BloodOxygenLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (bloodOxygenRecords.isEmpty) {
+      return NotEnoughDataPlaceholder(
+        padding: const EdgeInsets.only(bottom: 20, top: 10),
+      );
+    }
+
     final groupedData = _groupAndAverageBloodOxygenRecords();
     final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
 

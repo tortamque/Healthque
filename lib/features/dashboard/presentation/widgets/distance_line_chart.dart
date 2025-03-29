@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:health/health.dart';
 import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class DistanceLineChart extends StatelessWidget {
@@ -13,6 +14,12 @@ class DistanceLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (distanceRecords.isEmpty) {
+      return NotEnoughDataPlaceholder(
+        padding: const EdgeInsets.only(bottom: 20, top: 10),
+      );
+    }
+
     final groupedData = _groupDistanceRecords();
     final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
 

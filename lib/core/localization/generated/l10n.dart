@@ -549,6 +549,16 @@ class Strings {
       args: [amount],
     );
   }
+
+  /// `There's not enough data to build the chart`
+  String get theresNotEnoughDataToBuildTheChart {
+    return Intl.message(
+      'There\'s not enough data to build the chart',
+      name: 'theresNotEnoughDataToBuildTheChart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
