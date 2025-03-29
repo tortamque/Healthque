@@ -98,7 +98,9 @@ class _ConnectedLayout extends StatelessWidget {
                 if (!context.mounted) return;
 
                 context.read<HealthCubit>().fetchHealthData(
-                      customStart: DateTime.now().subtract(Duration(days: 3)),
+                      customStart: DateTime.now()
+                          .subtract(Duration(days: 6))
+                          .copyWith(hour: 0, minute: 0, second: 0, millisecond: 0),
                       customEnd: DateTime.now(),
                     );
                 context.go(Routes.tempPage1);
