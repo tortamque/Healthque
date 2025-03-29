@@ -49,12 +49,14 @@ class DashboardPage extends StatelessWidget {
                         title: context.strings.steps,
                         child: StepsBarChart(records: steps),
                       ),
+                      Gap(8),
                       DashboardItemTemplate(
                         icon: Icons.bedtime_rounded,
                         title: context.strings.sleep,
                         innerPadding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                         child: SleepLineChart(sleepRecords: sleep),
                       ),
+                      Gap(8),
                       DashboardItemTemplate(
                         icon: Icons.location_on,
                         title: context.strings.distance,
