@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (storedUser) {
       context.read<HealthCubit>().fetchHealthData(
-            customStart: DateTime.now().subtract(Duration(days: 3)),
+            customStart: DateTime.now().subtract(Duration(days: 7)),
             customEnd: DateTime.now(),
           );
       context.go(Routes.tempPage1);

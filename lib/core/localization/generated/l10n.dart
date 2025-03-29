@@ -434,6 +434,36 @@ class Strings {
   String get profile {
     return Intl.message('Profile', name: 'profile', desc: '', args: []);
   }
+
+  /// `Your activities`
+  String get yourActivities {
+    return Intl.message(
+      'Your activities',
+      name: 'yourActivities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Steps`
+  String get steps {
+    return Intl.message('Steps', name: 'steps', desc: '', args: []);
+  }
+
+  /// `sleep`
+  String get sleep {
+    return Intl.message('sleep', name: 'sleep', desc: '', args: []);
+  }
+
+  /// `{hours}h {minutes}m`
+  String sleepDuration(Object hours, Object minutes) {
+    return Intl.message(
+      '${hours}h ${minutes}m',
+      name: 'sleepDuration',
+      desc: '',
+      args: [hours, minutes],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

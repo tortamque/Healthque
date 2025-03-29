@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(user) => "Successfully logged in as ${user}";
 
+  static String m2(hours, minutes) => "${hours}h ${minutes}m";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "activity": MessageLookupByLibrary.simpleMessage("Activity"),
@@ -105,6 +107,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "sleep": MessageLookupByLibrary.simpleMessage("sleep"),
+    "sleepDuration": m2,
+    "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
@@ -122,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
       "You can now proceed to the next step.",
     ),
+    "yourActivities": MessageLookupByLibrary.simpleMessage("Your activities"),
     "yourWearableDeviceIsConnected": MessageLookupByLibrary.simpleMessage(
       "Your wearable device is connected.",
     ),

@@ -41,14 +41,14 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
           children: [
             Text(
               context.strings.letsGetToKnowYouBetter,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: context.theme.textTheme.headlineMedium,
             ),
             const Gap(8),
             Text(
               context.strings.noteHeightInCmAndWeightInKg,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.grey[600],
-                  ),
+              style: context.theme.textTheme.bodyMedium?.copyWith(
+                color: Colors.grey[600],
+              ),
             ),
             const Gap(32),
             _AgeWeightHeightSection(
@@ -62,7 +62,7 @@ class _OnboardingAgeGenderParamsPageState extends State<OnboardingAgeGenderParam
               alignment: Alignment.centerLeft,
               child: Text(
                 context.strings.selectGender,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: context.theme.textTheme.bodyLarge,
               ),
             ),
             const Gap(8),

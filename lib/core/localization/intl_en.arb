@@ -43,5 +43,9 @@
   "dashboard": "Dashboard",
   "activity": "Activity",
   "health": "Health",
-  "profile": "Profile"
+  "profile": "Profile",
+  "yourActivities": "Your activities",
+  "steps": "Steps",
+  "sleep": "sleep",
+  "sleepDuration": "{hours}h {minutes}m"
 }
