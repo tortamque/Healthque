@@ -24,14 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(amount) => "${amount}m";
 
-  static String m2(amount) => "${amount}kcal";
+  static String m2(ammount) => "${ammount}%";
 
-  static String m3(bmr) =>
+  static String m3(amount) => "${amount}kcal";
+
+  static String m4(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m4(user) => "Successfully logged in as ${user}";
+  static String m5(user) => "Successfully logged in as ${user}";
 
-  static String m5(hours, minutes) => "${hours}h ${minutes}m";
+  static String m6(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -42,8 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "amountKm": m0,
     "amountM": m1,
-    "amoutKcal": m2,
-    "bmrTip": m3,
+    "amountOxygenSaturation": m2,
+    "amoutKcal": m3,
+    "bmrTip": m4,
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
     ),
@@ -105,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m4,
+    "loggedInAs": m5,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
@@ -118,10 +121,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
+    "oxygenSaturation": MessageLookupByLibrary.simpleMessage(
+      "Oxygen saturation",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m5,
+    "sleepDuration": m6,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",

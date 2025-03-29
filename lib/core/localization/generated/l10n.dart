@@ -509,6 +509,26 @@ class Strings {
       args: [amount],
     );
   }
+
+  /// `Oxygen saturation`
+  String get oxygenSaturation {
+    return Intl.message(
+      'Oxygen saturation',
+      name: 'oxygenSaturation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{ammount}%`
+  String amountOxygenSaturation(Object ammount) {
+    return Intl.message(
+      '$ammount%',
+      name: 'amountOxygenSaturation',
+      desc: '',
+      args: [ammount],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

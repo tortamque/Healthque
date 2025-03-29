@@ -70,6 +70,13 @@ class DashboardPage extends StatelessWidget {
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: DistanceLineChart(distanceRecords: distance),
                       ),
+                      Gap(8),
+                      DashboardItemTemplate(
+                        icon: Icons.air_rounded,
+                        title: context.strings.oxygenSaturation,
+                        innerPadding: const EdgeInsets.only(left: 10),
+                        child: BloodOxygenLineChart(bloodOxygenRecords: bloodOxygen),
+                      ),
                     ],
                   ),
                 HealthStateError(:final message) => Center(child: Text(message)),
