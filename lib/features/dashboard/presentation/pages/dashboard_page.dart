@@ -58,6 +58,13 @@ class DashboardPage extends StatelessWidget {
                       ),
                       Gap(8),
                       DashboardItemTemplate(
+                        icon: Icons.local_fire_department_rounded,
+                        title: context.strings.caloriesBurnedDuringWorkouts,
+                        innerPadding: const EdgeInsets.only(left: 10),
+                        child: CaloriesBarChart(caloriesRecords: calories),
+                      ),
+                      Gap(8),
+                      DashboardItemTemplate(
                         icon: Icons.location_on,
                         title: context.strings.distance,
                         innerPadding: const EdgeInsets.only(left: 10),

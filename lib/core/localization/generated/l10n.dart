@@ -489,6 +489,26 @@ class Strings {
   String get distance {
     return Intl.message('Distance', name: 'distance', desc: '', args: []);
   }
+
+  /// `Calories burned during workouts`
+  String get caloriesBurnedDuringWorkouts {
+    return Intl.message(
+      'Calories burned during workouts',
+      name: 'caloriesBurnedDuringWorkouts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{amount}kcal`
+  String amoutKcal(Object amount) {
+    return Intl.message(
+      '${amount}kcal',
+      name: 'amoutKcal',
+      desc: '',
+      args: [amount],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

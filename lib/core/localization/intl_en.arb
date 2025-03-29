@@ -50,5 +50,7 @@
   "sleepDuration": "{hours}h {minutes}m",
   "amountKm": "{amount}km",
   "amountM": "{amount}m",
-  "distance": "Distance"
+  "distance": "Distance",
+  "caloriesBurnedDuringWorkouts": "Calories burned during workouts",
+  "amoutKcal": "{amount}kcal"
 }
