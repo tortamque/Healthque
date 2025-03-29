@@ -34,9 +34,10 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
     }
 
     final groupedData = _groupCaloriesRecords(widget.caloriesRecords);
+    final validDataList = groupedData.entries.where((e) => e.value > 0).toList();
+    validDataList.sort((a, b) => a.key.compareTo(b.key));
 
-    final validData = groupedData.entries.where((e) => e.value > 0).toList();
-    validData.sort((a, b) => a.key.compareTo(b.key));
+    final validData = validDataList.length > 7 ? validDataList.sublist(validDataList.length - 7) : validDataList;
 
     final double totalCalories = validData.fold(0, (sum, entry) => sum + entry.value);
 
