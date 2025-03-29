@@ -77,30 +77,34 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
               final entry = validData[index];
               final parts = entry.key.split('-');
               final dateLabel = "${parts[2]}.${parts[1]}";
+              final bool isTouched = index == touchedIndex;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 16,
-                      height: 16,
+                      width: isTouched ? 20 : 16,
+                      height: isTouched ? 20 : 16,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: sectionColors[index % sectionColors.length],
                       ),
                     ),
-                    Gap(8),
-                    Text(
-                      "$dateLabel - ${context.strings.amoutKcal(entry.value.toInt())}",
-                      style: const TextStyle(fontSize: 12),
-                    ),
+                    const Gap(8),
+                    Text("$dateLabel - ${context.strings.amoutKcal(entry.value.toInt())}",
+                        style: context.textTheme.bodySmall?.copyWith(
+                          fontSize: isTouched ? 13 : 12,
+                          fontWeight: isTouched ? FontWeight.bold : FontWeight.normal,
+                          color:
+                              isTouched ? context.theme.colorScheme.primary : context.theme.colorScheme.inverseSurface,
+                        )),
                   ],
                 ),
               );
             }),
           ),
-          Gap(16),
+          const Gap(16),
         ],
       ),
     );
