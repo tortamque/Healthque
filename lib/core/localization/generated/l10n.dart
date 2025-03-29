@@ -500,10 +500,10 @@ class Strings {
     );
   }
 
-  /// `{amount}kcal`
+  /// `{amount} kcal`
   String amoutKcal(Object amount) {
     return Intl.message(
-      '${amount}kcal',
+      '$amount kcal',
       name: 'amoutKcal',
       desc: '',
       args: [amount],

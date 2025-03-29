@@ -26,7 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m2(ammount) => "${ammount}%";
 
-  static String m3(amount) => "${amount}kcal";
+  static String m3(amount) => "${amount} kcal";
 
   static String m4(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
