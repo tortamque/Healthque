@@ -46,6 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "amountM": m1,
     "amountOxygenSaturation": m2,
     "amoutKcal": m3,
+    "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
+      "Blood oxygen saturation",
+    ),
     "bmrTip": m4,
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
@@ -120,9 +123,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
-    ),
-    "oxygenSaturation": MessageLookupByLibrary.simpleMessage(
-      "Oxygen saturation",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),

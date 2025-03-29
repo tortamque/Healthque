@@ -510,11 +510,11 @@ class Strings {
     );
   }
 
-  /// `Oxygen saturation`
-  String get oxygenSaturation {
+  /// `Blood oxygen saturation`
+  String get bloodOxygenSaturation {
     return Intl.message(
-      'Oxygen saturation',
-      name: 'oxygenSaturation',
+      'Blood oxygen saturation',
+      name: 'bloodOxygenSaturation',
       desc: '',
       args: [],
     );

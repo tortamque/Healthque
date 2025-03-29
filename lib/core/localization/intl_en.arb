@@ -53,6 +53,6 @@
   "distance": "Distance",
   "caloriesBurnedDuringWorkouts": "Calories burned during workouts",
   "amoutKcal": "{amount} kcal",
-  "oxygenSaturation": "Oxygen saturation",
+  "bloodOxygenSaturation": "Blood oxygen saturation",
   "amountOxygenSaturation": "{ammount}%"
 }

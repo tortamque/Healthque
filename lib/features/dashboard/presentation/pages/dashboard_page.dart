@@ -31,7 +31,6 @@ class DashboardPage extends StatelessWidget {
                   :final distance,
                   :final sleep,
                   :final workout,
-                  :final heartRate,
                   :final bloodOxygen,
                 ) =>
                   Column(
@@ -45,12 +44,6 @@ class DashboardPage extends StatelessWidget {
                       ),
                       Gap(16),
                       DashboardItemTemplate(
-                        icon: Icons.directions_walk_rounded,
-                        title: context.strings.steps,
-                        child: StepsBarChart(records: steps),
-                      ),
-                      Gap(8),
-                      DashboardItemTemplate(
                         icon: Icons.bedtime_rounded,
                         title: context.strings.sleep,
                         innerPadding: const EdgeInsets.only(top: 10, left: 10, right: 10),
@@ -58,10 +51,9 @@ class DashboardPage extends StatelessWidget {
                       ),
                       Gap(8),
                       DashboardItemTemplate(
-                        icon: Icons.local_fire_department_rounded,
-                        title: context.strings.caloriesBurnedDuringWorkouts,
-                        innerPadding: const EdgeInsets.only(left: 10),
-                        child: CaloriesPieChart(caloriesRecords: calories),
+                        icon: Icons.directions_walk_rounded,
+                        title: context.strings.steps,
+                        child: StepsBarChart(records: steps),
                       ),
                       Gap(8),
                       DashboardItemTemplate(
@@ -72,8 +64,15 @@ class DashboardPage extends StatelessWidget {
                       ),
                       Gap(8),
                       DashboardItemTemplate(
-                        icon: Icons.air_rounded,
-                        title: context.strings.oxygenSaturation,
+                        icon: Icons.local_fire_department_rounded,
+                        title: context.strings.caloriesBurnedDuringWorkouts,
+                        innerPadding: const EdgeInsets.only(left: 10),
+                        child: CaloriesPieChart(caloriesRecords: calories),
+                      ),
+                      Gap(8),
+                      DashboardItemTemplate(
+                        icon: Icons.opacity_rounded,
+                        title: context.strings.bloodOxygenSaturation,
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: BloodOxygenLineChart(bloodOxygenRecords: bloodOxygen),
                       ),
