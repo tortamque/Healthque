@@ -18,16 +18,22 @@ class StepsBarChart extends StatelessWidget {
       );
     }
 
-    final groups = _buildBarGroups(context);
     final Map<String, int> dailySteps = {};
     for (var rec in stepsRecords) {
       final dateKey =
           "${rec.date.year}-${rec.date.month.toString().padLeft(2, '0')}-${rec.date.day.toString().padLeft(2, '0')}";
-
       final steps = (rec.dataPoint.value as NumericHealthValue).numericValue.toInt();
       dailySteps.update(dateKey, (prev) => prev + steps, ifAbsent: () => steps);
     }
     final sortedDates = dailySteps.keys.toList()..sort((a, b) => a.compareTo(b));
+    final List<String> displayDates =
+        sortedDates.length > 7 ? sortedDates.sublist(sortedDates.length - 7) : sortedDates;
+
+    final groups = _buildBarGroups(context, dailySteps, displayDates);
+
+    final double maxYVal = _getMaxY(groups);
+    final double dynamicInterval = maxYVal > 0 ? maxYVal / 5 : 1;
+
     return AspectRatio(
       aspectRatio: 1.5,
       child: Padding(
@@ -35,19 +41,18 @@ class StepsBarChart extends StatelessWidget {
         child: BarChart(
           BarChartData(
             alignment: BarChartAlignment.spaceAround,
-            maxY: _getMaxY(groups) + 1500,
+            maxY: maxYVal + 1500,
             barTouchData: BarTouchData(
               enabled: true,
               touchTooltipData: BarTouchTooltipData(
                 tooltipRoundedRadius: 8,
                 getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                  final color = context.theme.colorScheme.primary;
                   final textStyle = TextStyle(
-                    color: color,
+                    color: context.theme.colorScheme.primary,
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   );
-                  return BarTooltipItem("${rod.toY.toInt().toString()} steps", textStyle);
+                  return BarTooltipItem(context.strings.amountSteps(rod.toY.toInt()), textStyle);
                 },
                 getTooltipColor: (group) => context.theme.colorScheme.primaryContainer,
               ),
@@ -58,8 +63,8 @@ class StepsBarChart extends StatelessWidget {
                   showTitles: true,
                   reservedSize: 30,
                   getTitlesWidget: (value, meta) {
-                    if (value.toInt() < sortedDates.length) {
-                      final parts = sortedDates[value.toInt()].split('-');
+                    if (value.toInt() < displayDates.length) {
+                      final parts = displayDates[value.toInt()].split('-');
                       final label = "${parts[2]}.${parts[1].padLeft(2, '0')}";
                       return SideTitleWidget(
                         meta: meta,
@@ -75,13 +80,10 @@ class StepsBarChart extends StatelessWidget {
                 sideTitles: SideTitles(
                   showTitles: true,
                   reservedSize: 40,
-                  interval: 3000,
+                  interval: dynamicInterval,
                   maxIncluded: false,
                   getTitlesWidget: (value, meta) {
-                    return Text(
-                      value.toInt().toString(),
-                      style: const TextStyle(fontSize: 12),
-                    );
+                    return Text(value.toInt().toString(), style: const TextStyle(fontSize: 12));
                   },
                 ),
               ),
@@ -97,16 +99,13 @@ class StepsBarChart extends StatelessWidget {
     );
   }
 
-  List<BarChartGroupData> _buildBarGroups(BuildContext context) {
-    final Map<String, int> dailySteps = {};
-    for (var rec in stepsRecords) {
-      final dateKey = "${rec.date.year}-${rec.date.month}-${rec.date.day}";
-      final steps = (rec.dataPoint.value as NumericHealthValue).numericValue.toInt();
-      dailySteps.update(dateKey, (prev) => prev + steps, ifAbsent: () => steps);
-    }
-    final sortedKeys = dailySteps.keys.toList()..sort((a, b) => a.compareTo(b));
-    return List.generate(sortedKeys.length, (i) {
-      final value = (dailySteps[sortedKeys[i]] ?? 0).toDouble();
+  List<BarChartGroupData> _buildBarGroups(
+    BuildContext context,
+    Map<String, int> dailySteps,
+    List<String> displayDates,
+  ) {
+    return List.generate(displayDates.length, (i) {
+      final value = (dailySteps[displayDates[i]] ?? 0).toDouble();
       return BarChartGroupData(
         x: i,
         barRods: [

@@ -48,6 +48,7 @@
   "steps": "Steps",
   "sleep": "Sleep",
   "sleepDuration": "{hours}h {minutes}m",
+  "amountSteps": "{amount} steps",
   "amountKm": "{amount}km",
   "amountM": "{amount}m",
   "distance": "Distance",

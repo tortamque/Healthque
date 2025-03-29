@@ -465,6 +465,16 @@ class Strings {
     );
   }
 
+  /// `{amount} steps`
+  String amountSteps(Object amount) {
+    return Intl.message(
+      '$amount steps',
+      name: 'amountSteps',
+      desc: '',
+      args: [amount],
+    );
+  }
+
   /// `{amount}km`
   String amountKm(Object amount) {
     return Intl.message(
