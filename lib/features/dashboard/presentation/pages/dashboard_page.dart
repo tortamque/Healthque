@@ -26,6 +26,7 @@ class DashboardPage extends StatelessWidget {
                 HealthStateInitial() || HealthStateLoading() => const Center(
                     child: UnifiedCircularProgressIndicator(),
                   ),
+                HealthStateError(:final message) => Center(child: Text(message)),
                 HealthStateLoaded(
                   :final steps,
                   :final calories,
@@ -86,7 +87,6 @@ class DashboardPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                HealthStateError(:final message) => Center(child: Text(message)),
               };
             },
           ),

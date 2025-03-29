@@ -22,7 +22,6 @@ class DistanceLineChart extends StatelessWidget {
 
     final groupedData = _groupDistanceRecords();
     final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
-    // If there are more than 7 records, display only the last 7.
     final displayDays = sortedDays.length > 7 ? sortedDays.sublist(sortedDays.length - 7) : sortedDays;
 
     final List<FlSpot> spots = [];
@@ -44,7 +43,6 @@ class DistanceLineChart extends StatelessWidget {
                 getTooltipColor: (touchedSpot) => context.theme.colorScheme.primaryContainer,
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((touchedSpot) {
-                    // Format the date as dd.MM.yyyy from displayDays.
                     final dateLabel = displayDays[touchedSpot.x.toInt()].split('-').reversed.join('.');
                     final distanceLabel = _formatDistance(touchedSpot.y, context);
                     return LineTooltipItem(
@@ -135,7 +133,6 @@ class DistanceLineChart extends StatelessWidget {
       dailyDistance.update(dateKey, (existing) => existing + distanceValue, ifAbsent: () => distanceValue);
     }
 
-    // Ensure that even days without recorded data (within the range) are included.
     final dates =
         distanceRecords.map((record) => DateTime(record.date.year, record.date.month, record.date.day)).toList();
     final minDate = dates.reduce((a, b) => a.isBefore(b) ? a : b);

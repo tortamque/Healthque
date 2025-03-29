@@ -48,4 +48,5 @@ class User with _$User {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   String get formattedName => surname == null ? name! : '$name $surname';
+  int get safeDesiredSteps => desiredSteps ?? 0;
 }
