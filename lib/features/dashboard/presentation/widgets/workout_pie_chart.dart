@@ -36,7 +36,10 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
     final validData = groupedData.entries.where((e) => e.value > 0).toList();
     validData.sort((a, b) => a.key.compareTo(b.key));
 
-    final double totalWorkouts = validData.fold(0, (sum, entry) => sum + entry.value);
+    // If there are more than 7 records, show only the last 7.
+    final displayData = validData.length > 7 ? validData.sublist(validData.length - 7) : validData;
+
+    final double totalWorkouts = displayData.fold(0, (sum, entry) => sum + entry.value);
 
     return AspectRatio(
       aspectRatio: 1.6,
@@ -65,7 +68,7 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
                   centerSpaceRadius: 40,
                   sections: _buildPieSections(
                     context,
-                    validData,
+                    displayData,
                     totalWorkouts,
                     sectionColors,
                   ),
@@ -78,9 +81,9 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(validData.length, (index) {
-              final entry = validData[index];
-              final parts = entry.key.split('-');
+            children: List.generate(displayData.length, (index) {
+              final entry = displayData[index];
+              final parts = entry.key.split('-'); // keys are in "yyyy-MM-dd" format
               final dateLabel = "${parts[2]}.${parts[1]}";
               final bool isTouched = index == touchedIndex;
               return Padding(
