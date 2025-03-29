@@ -76,7 +76,7 @@ class DistanceLineChart extends StatelessWidget {
                 sideTitles: SideTitles(
                   showTitles: true,
                   maxIncluded: false,
-                  reservedSize: 60,
+                  reservedSize: 55,
                   getTitlesWidget: (value, meta) {
                     return SideTitleWidget(
                       meta: meta,
@@ -97,7 +97,7 @@ class DistanceLineChart extends StatelessWidget {
             maxY: maxY + maxY * 0.1,
             lineBarsData: [
               LineChartBarData(
-                isCurved: true,
+                isCurved: false,
                 spots: spots,
                 barWidth: 4,
                 color: context.theme.colorScheme.primary,
@@ -116,19 +116,39 @@ class DistanceLineChart extends StatelessWidget {
 
   Map<String, double> _groupDistanceRecords() {
     final Map<String, double> dailyDistance = {};
+    if (distanceRecords.isEmpty) return dailyDistance;
+
     for (var record in distanceRecords) {
       final dateKey =
           "${record.date.year}-${record.date.month.toString().padLeft(2, '0')}-${record.date.day.toString().padLeft(2, '0')}";
       final distanceValue = (record.dataPoint.value as NumericHealthValue).numericValue.toDouble();
       dailyDistance.update(dateKey, (existing) => existing + distanceValue, ifAbsent: () => distanceValue);
     }
+
+    final dates = distanceRecords.map((record) => DateTime(record.date.year, record.date.month, record.date.day));
+    final minDate = dates.reduce((a, b) => a.isBefore(b) ? a : b);
+    final maxDate = dates.reduce((a, b) => a.isAfter(b) ? a : b);
+
+    for (DateTime d = minDate; !d.isAfter(maxDate); d = d.add(const Duration(days: 1))) {
+      final key = "${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}";
+      if (!dailyDistance.containsKey(key)) {
+        dailyDistance[key] = 0.0;
+      }
+    }
+
     return dailyDistance;
   }
 
   String _formatDistance(double distance, BuildContext context) {
     if (distance >= 1000) {
       final km = distance / 1000;
-      return context.strings.amountKm(km.toStringAsFixed(1));
+      String kmStr = km.toStringAsFixed(2);
+      if (kmStr.endsWith(".00")) {
+        kmStr = km.toStringAsFixed(0);
+      } else if (kmStr.endsWith("0")) {
+        kmStr = km.toStringAsFixed(1);
+      }
+      return context.strings.amountKm(kmStr);
     }
     return context.strings.amountM(distance.toStringAsFixed(0));
   }
