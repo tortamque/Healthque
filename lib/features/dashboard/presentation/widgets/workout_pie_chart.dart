@@ -36,7 +36,6 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
     final validData = groupedData.entries.where((e) => e.value > 0).toList();
     validData.sort((a, b) => a.key.compareTo(b.key));
 
-    // If there are more than 7 records, show only the last 7.
     final displayData = validData.length > 7 ? validData.sublist(validData.length - 7) : validData;
 
     final double totalWorkouts = displayData.fold(0, (sum, entry) => sum + entry.value);
@@ -83,7 +82,7 @@ class _WorkoutPieChartState extends State<WorkoutPieChart> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(displayData.length, (index) {
               final entry = displayData[index];
-              final parts = entry.key.split('-'); // keys are in "yyyy-MM-dd" format
+              final parts = entry.key.split('-');
               final dateLabel = "${parts[2]}.${parts[1]}";
               final bool isTouched = index == touchedIndex;
               return Padding(
