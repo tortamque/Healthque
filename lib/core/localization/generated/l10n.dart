@@ -450,9 +450,9 @@ class Strings {
     return Intl.message('Steps', name: 'steps', desc: '', args: []);
   }
 
-  /// `sleep`
+  /// `Sleep`
   String get sleep {
-    return Intl.message('sleep', name: 'sleep', desc: '', args: []);
+    return Intl.message('Sleep', name: 'sleep', desc: '', args: []);
   }
 
   /// `{hours}h {minutes}m`
@@ -463,6 +463,31 @@ class Strings {
       desc: '',
       args: [hours, minutes],
     );
+  }
+
+  /// `{amount}km`
+  String amountKm(Object amount) {
+    return Intl.message(
+      '${amount}km',
+      name: 'amountKm',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount}m`
+  String amountM(Object amount) {
+    return Intl.message(
+      '${amount}m',
+      name: 'amountM',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Distance`
+  String get distance {
+    return Intl.message('Distance', name: 'distance', desc: '', args: []);
   }
 }
 

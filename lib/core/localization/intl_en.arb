@@ -46,6 +46,9 @@
   "profile": "Profile",
   "yourActivities": "Your activities",
   "steps": "Steps",
-  "sleep": "sleep",
-  "sleepDuration": "{hours}h {minutes}m"
+  "sleep": "Sleep",
+  "sleepDuration": "{hours}h {minutes}m",
+  "amountKm": "{amount}km",
+  "amountM": "{amount}m",
+  "distance": "Distance"
 }

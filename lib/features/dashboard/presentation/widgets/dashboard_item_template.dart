@@ -8,8 +8,8 @@ class DashboardItemTemplate extends StatelessWidget {
     required this.child,
     required this.icon,
     required this.title,
-    required this.outerPadding,
-    required this.innerPadding,
+    this.outerPadding = const EdgeInsets.only(top: 16, left: 16),
+    this.innerPadding = const EdgeInsets.all(0),
   });
 
   final Widget child;

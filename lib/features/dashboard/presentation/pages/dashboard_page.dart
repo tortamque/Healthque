@@ -15,9 +15,9 @@ class DashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.strings.dashboard),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
           child: BlocBuilder<HealthCubit, HealthState>(
             buildWhen: (previous, current) => previous != current,
             builder: (context, state) {
@@ -47,16 +47,19 @@ class DashboardPage extends StatelessWidget {
                       DashboardItemTemplate(
                         icon: Icons.directions_walk_rounded,
                         title: context.strings.steps,
-                        outerPadding: const EdgeInsets.only(top: 16, left: 16),
-                        innerPadding: EdgeInsets.zero,
                         child: StepsBarChart(records: steps),
                       ),
                       DashboardItemTemplate(
-                        icon: Icons.bed_outlined,
+                        icon: Icons.bedtime_rounded,
                         title: context.strings.sleep,
-                        outerPadding: const EdgeInsets.only(top: 16, left: 16),
                         innerPadding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                         child: SleepLineChart(sleepRecords: sleep),
+                      ),
+                      DashboardItemTemplate(
+                        icon: Icons.location_on,
+                        title: context.strings.distance,
+                        innerPadding: const EdgeInsets.only(left: 10),
+                        child: DistanceLineChart(distanceRecords: distance),
                       ),
                     ],
                   ),
