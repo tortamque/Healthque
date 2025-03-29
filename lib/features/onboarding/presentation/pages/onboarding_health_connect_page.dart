@@ -140,6 +140,18 @@ class _ErrorLayout extends StatelessWidget {
           ),
           Gap(32),
           Assets.watch.image(width: 250),
+          Gap(32),
+          SizedBox(
+            width: context.width,
+            child: FilledButton.icon(
+              onPressed: () {
+                context.read<HealthConnectionCubit>().checkHealthConnectStatus(throttle: true);
+              },
+              label: Text('Connect Again'),
+              icon: const Icon(Icons.restore_rounded),
+              iconAlignment: IconAlignment.end,
+            ),
+          ),
         ],
       ),
     );

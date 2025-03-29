@@ -45,7 +45,7 @@ class HealthConnectionCubit extends Cubit<HealthConnectionState> {
       }
       if (!authorized) {
         emit(const HealthConnectionState.error(
-            "Health Connect is not connected. Please set up Health Connect to proceed."));
+            "Health Connect is not connected. Please set up Health Connect to proceed or allow the required permissions."));
       } else {
         emit(const HealthConnectionState.connected());
       }
