@@ -521,12 +521,32 @@ class Strings {
   }
 
   /// `{ammount}%`
-  String amountOxygenSaturation(Object ammount) {
+  String amountPercentage(Object ammount) {
     return Intl.message(
       '$ammount%',
-      name: 'amountOxygenSaturation',
+      name: 'amountPercentage',
       desc: '',
       args: [ammount],
+    );
+  }
+
+  /// `Workouts amount`
+  String get workoutsAmount {
+    return Intl.message(
+      'Workouts amount',
+      name: 'workoutsAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{amount} workouts`
+  String amountWorkouts(Object amount) {
+    return Intl.message(
+      '$amount workouts',
+      name: 'amountWorkouts',
+      desc: '',
+      args: [amount],
     );
   }
 }

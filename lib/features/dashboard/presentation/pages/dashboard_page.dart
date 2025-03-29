@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/presentation/widgets/widgets.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
+import 'package:healthque/features/dashboard/presentation/widgets/workout_pie_chart.dart';
 import 'package:healthque/features/health/health.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -75,6 +76,13 @@ class DashboardPage extends StatelessWidget {
                         title: context.strings.bloodOxygenSaturation,
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: BloodOxygenLineChart(bloodOxygenRecords: bloodOxygen),
+                      ),
+                      Gap(8),
+                      DashboardItemTemplate(
+                        icon: Icons.fitness_center_rounded,
+                        title: context.strings.workoutsAmount,
+                        innerPadding: const EdgeInsets.only(left: 10),
+                        child: WorkoutPieChart(workoutRecords: workout),
                       ),
                     ],
                   ),

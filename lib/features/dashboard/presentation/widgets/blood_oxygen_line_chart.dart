@@ -42,7 +42,7 @@ class BloodOxygenLineChart extends StatelessWidget {
                     final dateKey = sortedDays[touchedSpot.x.toInt()];
                     final parts = dateKey.split('-');
                     final formattedDate = "${parts[2]}.${parts[1]}.${parts[0]}";
-                    final oxygenLabel = context.strings.amountOxygenSaturation(touchedSpot.y.toInt());
+                    final oxygenLabel = context.strings.amountPercentage(touchedSpot.y.toInt());
                     return LineTooltipItem(
                       "$formattedDate\n$oxygenLabel",
                       TextStyle(
@@ -91,7 +91,7 @@ class BloodOxygenLineChart extends StatelessWidget {
                       meta: meta,
                       space: 12,
                       child: Text(
-                        context.strings.amountOxygenSaturation(value.toInt()),
+                        context.strings.amountPercentage(value.toInt()),
                         style: const TextStyle(fontSize: 12),
                       ),
                     );

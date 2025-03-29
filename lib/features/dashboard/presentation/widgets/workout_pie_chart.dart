@@ -1,20 +1,19 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:health/health.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/features/health/health.dart';
 
-class CaloriesPieChart extends StatefulWidget {
-  final List<HealthRecord> caloriesRecords;
+class WorkoutPieChart extends StatefulWidget {
+  final List<HealthRecord> workoutRecords;
 
-  const CaloriesPieChart({super.key, required this.caloriesRecords});
+  const WorkoutPieChart({super.key, required this.workoutRecords});
 
   @override
-  State<CaloriesPieChart> createState() => _CaloriesPieChartState();
+  State<WorkoutPieChart> createState() => _WorkoutPieChartState();
 }
 
-class _CaloriesPieChartState extends State<CaloriesPieChart> {
+class _WorkoutPieChartState extends State<WorkoutPieChart> {
   int touchedIndex = -1;
 
   List<Color> get sectionColors => [
@@ -26,12 +25,11 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
 
   @override
   Widget build(BuildContext context) {
-    final groupedData = _groupCaloriesRecords(widget.caloriesRecords);
-
+    final groupedData = _groupWorkoutRecords(widget.workoutRecords);
     final validData = groupedData.entries.where((e) => e.value > 0).toList();
     validData.sort((a, b) => a.key.compareTo(b.key));
 
-    final double totalCalories = validData.fold(0, (sum, entry) => sum + entry.value);
+    final double totalWorkouts = validData.fold(0, (sum, entry) => sum + entry.value);
 
     return AspectRatio(
       aspectRatio: 1.6,
@@ -61,7 +59,7 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
                   sections: _buildPieSections(
                     context,
                     validData,
-                    totalCalories,
+                    totalWorkouts,
                     sectionColors,
                   ),
                 ),
@@ -84,8 +82,8 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: isTouched ? 20 : 16,
-                      height: isTouched ? 20 : 16,
+                      width: isTouched ? 18 : 16,
+                      height: isTouched ? 18 : 16,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: sectionColors[index % sectionColors.length],
@@ -93,7 +91,7 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
                     ),
                     const Gap(8),
                     Text(
-                      "$dateLabel - ${context.strings.amoutKcal(entry.value.toInt())}",
+                      "$dateLabel - ${context.strings.amountWorkouts(entry.value.toInt())}",
                       style: context.textTheme.bodySmall?.copyWith(
                         fontSize: isTouched ? 13 : 12,
                         fontWeight: isTouched ? FontWeight.bold : FontWeight.normal,
@@ -111,21 +109,20 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
     );
   }
 
-  Map<String, double> _groupCaloriesRecords(List<HealthRecord> records) {
-    final Map<String, double> dailyCalories = {};
+  Map<String, double> _groupWorkoutRecords(List<HealthRecord> records) {
+    final Map<String, double> dailyWorkouts = {};
     for (var record in records) {
       final dateKey =
           "${record.date.year}-${record.date.month.toString().padLeft(2, '0')}-${record.date.day.toString().padLeft(2, '0')}";
-      final calorieValue = (record.dataPoint.value as NumericHealthValue).numericValue.toDouble();
-      dailyCalories.update(dateKey, (existing) => existing + calorieValue, ifAbsent: () => calorieValue);
+      dailyWorkouts.update(dateKey, (existing) => existing + 1, ifAbsent: () => 1);
     }
-    return dailyCalories;
+    return dailyWorkouts;
   }
 
   List<PieChartSectionData> _buildPieSections(
     BuildContext context,
     List<MapEntry<String, double>> data,
-    double totalCalories,
+    double totalWorkouts,
     List<Color> sectionColors,
   ) {
     return List.generate(data.length, (i) {
@@ -133,12 +130,11 @@ class _CaloriesPieChartState extends State<CaloriesPieChart> {
       final double fontSize = isTouched ? 18.0 : 14.0;
       final double radius = isTouched ? 60.0 : 50.0;
       final double value = data[i].value;
-      final percentage = (value / totalCalories * 100).toStringAsFixed(0);
-
+      final percentage = (value / totalWorkouts * 100).toStringAsFixed(0);
       return PieChartSectionData(
         color: sectionColors[i % sectionColors.length],
         value: value,
-        title: "$percentage%",
+        title: context.strings.amountPercentage(percentage),
         radius: radius,
         titleStyle: TextStyle(
           fontSize: fontSize,

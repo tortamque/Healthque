@@ -54,5 +54,7 @@
   "caloriesBurnedDuringWorkouts": "Calories burned during workouts",
   "amoutKcal": "{amount} kcal",
   "bloodOxygenSaturation": "Blood oxygen saturation",
-  "amountOxygenSaturation": "{ammount}%"
+  "amountPercentage": "{ammount}%",
+  "workoutsAmount": "Workouts amount",
+  "amountWorkouts": "{amount} workouts"
 }
