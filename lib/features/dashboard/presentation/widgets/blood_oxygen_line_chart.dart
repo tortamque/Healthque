@@ -14,7 +14,7 @@ class BloodOxygenLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (bloodOxygenRecords.isEmpty) {
+    if (bloodOxygenRecords.length < 2) {
       return NotEnoughDataPlaceholder(
         padding: const EdgeInsets.only(bottom: 20, top: 10),
       );
@@ -23,10 +23,13 @@ class BloodOxygenLineChart extends StatelessWidget {
     final groupedData = _groupAndAverageBloodOxygenRecords();
     final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
 
+    // If there are more than 7 records, display only the last 7 days.
+    final displayDays = sortedDays.length > 7 ? sortedDays.sublist(sortedDays.length - 7) : sortedDays;
+
     final List<FlSpot> spots = [];
     double maxY = 0, minY = double.infinity;
-    for (int i = 0; i < sortedDays.length; i++) {
-      final value = groupedData[sortedDays[i]]!;
+    for (int i = 0; i < displayDays.length; i++) {
+      final value = groupedData[displayDays[i]]!;
       maxY = max(maxY, value);
       minY = min(minY, value);
       spots.add(FlSpot(i.toDouble(), value));
@@ -46,7 +49,8 @@ class BloodOxygenLineChart extends StatelessWidget {
                 getTooltipColor: (touchedSpot) => context.theme.colorScheme.primaryContainer,
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((touchedSpot) {
-                    final dateKey = sortedDays[touchedSpot.x.toInt()];
+                    // Format the date as dd.MM.yyyy using displayDays.
+                    final dateKey = displayDays[touchedSpot.x.toInt()];
                     final parts = dateKey.split('-');
                     final formattedDate = "${parts[2]}.${parts[1]}.${parts[0]}";
                     final oxygenLabel = context.strings.amountPercentage(touchedSpot.y.toInt());
@@ -70,8 +74,9 @@ class BloodOxygenLineChart extends StatelessWidget {
                   reservedSize: 40,
                   interval: 1,
                   getTitlesWidget: (value, meta) {
-                    if (value.toInt() < sortedDays.length) {
-                      final parts = sortedDays[value.toInt()].split('-');
+                    if (value.toInt() < displayDays.length) {
+                      final parts = displayDays[value.toInt()].split('-');
+                      // Format as dd.MM.
                       final label = "${parts[2]}.${parts[1]}";
                       return SideTitleWidget(
                         meta: meta,
@@ -108,7 +113,7 @@ class BloodOxygenLineChart extends StatelessWidget {
             ),
             borderData: FlBorderData(show: false),
             minX: 0,
-            maxX: sortedDays.isNotEmpty ? (sortedDays.length - 1).toDouble() : 0,
+            maxX: displayDays.isNotEmpty ? (displayDays.length - 1).toDouble() : 0,
             minY: paddedMinY,
             maxY: paddedMaxY,
             lineBarsData: [
