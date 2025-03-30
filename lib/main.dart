@@ -35,7 +35,7 @@ class HealthqueApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
-        BlocProvider<UserCubit>(create: (_) => UserCubit())
+        BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl()))
       ],
       child: MaterialApp.router(
         theme: themeData,

@@ -1,16 +1,20 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/core/utils/hive/user_hive_manager.dart';
 
 part 'user_state.dart';
 part 'user_cubit.freezed.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserState.user()) {
+  UserCubit(
+    this._getUserUsecase,
+    this._saveUserUsecase,
+  ) : super(UserState.user()) {
     _initUserFromHive();
   }
+
+  final GetUserUsecase _getUserUsecase;
+  final SaveUserUsecase _saveUserUsecase;
 
   void _initUserFromHive() {
     final storedUser = retrieveUser();
@@ -112,8 +116,8 @@ class UserCubit extends Cubit<UserState> {
       throw Exception('Can\'t store user with null fields');
     }
 
-    await sl<UserHiveManager>().userBox.put('user', state.user);
+    await _saveUserUsecase.call(state.user);
   }
 
-  User? retrieveUser() => sl<UserHiveManager>().userBox.get('user');
+  User? retrieveUser() => _getUserUsecase.call(null);
 }
