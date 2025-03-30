@@ -569,6 +569,16 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Amount of each workout type`
+  String get amountOfEachWorkoutType {
+    return Intl.message(
+      'Amount of each workout type',
+      name: 'amountOfEachWorkoutType',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

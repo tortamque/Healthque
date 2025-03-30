@@ -2,19 +2,19 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/context.dart';
-import 'package:healthque/features/dashboard/dashboard.dart';
+import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/health/health.dart';
 
-class WorkoutPieChart extends StatefulWidget {
+class WorkoutsAmountPieChart extends StatefulWidget {
   final List<HealthRecord> workoutRecords;
 
-  const WorkoutPieChart({super.key, required this.workoutRecords});
+  const WorkoutsAmountPieChart({super.key, required this.workoutRecords});
 
   @override
-  State<WorkoutPieChart> createState() => _WorkoutPieChartState();
+  State<WorkoutsAmountPieChart> createState() => _WorkoutsAmountPieChartState();
 }
 
-class _WorkoutPieChartState extends State<WorkoutPieChart> {
+class _WorkoutsAmountPieChartState extends State<WorkoutsAmountPieChart> {
   int touchedIndex = -1;
 
   List<Color> get sectionColors => [

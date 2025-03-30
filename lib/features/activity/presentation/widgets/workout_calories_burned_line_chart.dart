@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:health/health.dart';
@@ -7,35 +8,33 @@ import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/health/health.dart';
 
-class BloodOxygenLineChart extends StatelessWidget {
-  final List<HealthRecord> bloodOxygenRecords;
+class WorkoutCaloriesBurnedLineChart extends StatelessWidget {
+  final List<HealthRecord> workoutRecords;
 
-  const BloodOxygenLineChart({super.key, required this.bloodOxygenRecords});
+  const WorkoutCaloriesBurnedLineChart({super.key, required this.workoutRecords});
 
   @override
   Widget build(BuildContext context) {
-    if (bloodOxygenRecords.length < 2) {
+    final Map<String, double> dailyEnergy = _groupEnergyRecords();
+    final sortedDays = dailyEnergy.keys.toList()..sort((a, b) => a.compareTo(b));
+
+    if (sortedDays.length < 2) {
       return NotEnoughDataPlaceholder(
         padding: const EdgeInsets.only(bottom: 20, top: 10),
       );
     }
 
-    final groupedData = _groupAndAverageBloodOxygenRecords();
-    final sortedDays = groupedData.keys.toList()..sort((a, b) => a.compareTo(b));
-
     final displayDays = sortedDays.length > 7 ? sortedDays.sublist(sortedDays.length - 7) : sortedDays;
 
     final List<FlSpot> spots = [];
-    double maxY = 0, minY = double.infinity;
+    double maxY = 0;
     for (int i = 0; i < displayDays.length; i++) {
-      final value = groupedData[displayDays[i]]!;
+      final value = dailyEnergy[displayDays[i]]!;
       maxY = max(maxY, value);
-      minY = min(minY, value);
       spots.add(FlSpot(i.toDouble(), value));
     }
 
-    final double paddedMinY = (minY == double.infinity) ? 0 : (minY - 2);
-    final double paddedMaxY = maxY + 2;
+    final double dynamicInterval = maxY > 0 ? maxY / 5 : 1;
 
     return AspectRatio(
       aspectRatio: 1.5,
@@ -45,15 +44,15 @@ class BloodOxygenLineChart extends StatelessWidget {
           LineChartData(
             lineTouchData: LineTouchData(
               touchTooltipData: LineTouchTooltipData(
-                getTooltipColor: (touchedSpot) => context.theme.colorScheme.primaryContainer,
+                tooltipHorizontalAlignment: FLHorizontalAlignment.right,
                 getTooltipItems: (touchedSpots) {
                   return touchedSpots.map((touchedSpot) {
-                    final dateKey = displayDays[touchedSpot.x.toInt()];
-                    final parts = dateKey.split('-');
-                    final formattedDate = "${parts[2]}.${parts[1]}.${parts[0]}";
-                    final oxygenLabel = context.strings.amountPercentage(touchedSpot.y.toInt());
+                    final parts = displayDays[touchedSpot.x.toInt()].split('-');
+                    final dateLabel = "${parts[2]}.${parts[1]}.${parts[0]}";
+                    final energyLabel = context.strings.amoutKcal(touchedSpot.y.toInt());
+
                     return LineTooltipItem(
-                      "$formattedDate\n$oxygenLabel",
+                      "$dateLabel\n$energyLabel",
                       TextStyle(
                         color: context.theme.colorScheme.primary,
                         fontWeight: FontWeight.bold,
@@ -62,6 +61,7 @@ class BloodOxygenLineChart extends StatelessWidget {
                     );
                   }).toList();
                 },
+                getTooltipColor: (touchedSpot) => context.theme.colorScheme.primaryContainer,
               ),
             ),
             gridData: FlGridData(show: false),
@@ -75,6 +75,7 @@ class BloodOxygenLineChart extends StatelessWidget {
                     if (value.toInt() < displayDays.length) {
                       final parts = displayDays[value.toInt()].split('-');
                       final label = "${parts[2]}.${parts[1]}";
+
                       return SideTitleWidget(
                         meta: meta,
                         space: 8,
@@ -85,22 +86,20 @@ class BloodOxygenLineChart extends StatelessWidget {
                   },
                 ),
               ),
-              leftTitles: AxisTitles(
-                sideTitles: SideTitles(showTitles: false),
-              ),
-              topTitles: AxisTitles(
-                sideTitles: SideTitles(showTitles: false),
-              ),
+              leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
               rightTitles: AxisTitles(
                 sideTitles: SideTitles(
                   showTitles: true,
-                  reservedSize: 55,
+                  reservedSize: 75,
+                  interval: dynamicInterval,
+                  maxIncluded: false,
                   getTitlesWidget: (value, meta) {
                     return SideTitleWidget(
                       meta: meta,
-                      space: 12,
+                      space: 16,
                       child: Text(
-                        context.strings.amountPercentage(value.toInt()),
+                        context.strings.amoutKcal(value.toInt()),
                         style: const TextStyle(fontSize: 12),
                       ),
                     );
@@ -111,8 +110,8 @@ class BloodOxygenLineChart extends StatelessWidget {
             borderData: FlBorderData(show: false),
             minX: 0,
             maxX: displayDays.isNotEmpty ? (displayDays.length - 1).toDouble() : 0,
-            minY: paddedMinY,
-            maxY: paddedMaxY,
+            minY: 0,
+            maxY: maxY + maxY * 0.1,
             lineBarsData: [
               LineChartBarData(
                 isCurved: true,
@@ -132,25 +131,15 @@ class BloodOxygenLineChart extends StatelessWidget {
     );
   }
 
-  Map<String, double> _groupAndAverageBloodOxygenRecords() {
-    final Map<String, List<double>> groupedValues = {};
-
-    for (var record in bloodOxygenRecords) {
+  Map<String, double> _groupEnergyRecords() {
+    final Map<String, double> dailyEnergy = {};
+    for (var record in workoutRecords) {
+      final workoutValue = record.dataPoint.value as WorkoutHealthValue;
+      final energy = workoutValue.totalEnergyBurned ?? 0;
       final dateKey =
           "${record.date.year}-${record.date.month.toString().padLeft(2, '0')}-${record.date.day.toString().padLeft(2, '0')}";
-      final value = (record.dataPoint.value as NumericHealthValue).numericValue.toDouble();
-      if (groupedValues.containsKey(dateKey)) {
-        groupedValues[dateKey]!.add(value);
-      } else {
-        groupedValues[dateKey] = [value];
-      }
+      dailyEnergy.update(dateKey, (existing) => existing + energy.toDouble(), ifAbsent: () => energy.toDouble());
     }
-
-    final Map<String, double> averagedValues = {};
-    groupedValues.forEach((key, list) {
-      final average = list.reduce((a, b) => a + b) / list.length;
-      averagedValues[key] = average;
-    });
-    return averagedValues;
+    return dailyEnergy;
   }
 }

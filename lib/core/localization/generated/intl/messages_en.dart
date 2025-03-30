@@ -48,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "amountKm": m0,
     "amountM": m1,
+    "amountOfEachWorkoutType": MessageLookupByLibrary.simpleMessage(
+      "Amount of each workout type",
+    ),
     "amountPercentage": m2,
     "amountSteps": m3,
     "amountWorkouts": m4,

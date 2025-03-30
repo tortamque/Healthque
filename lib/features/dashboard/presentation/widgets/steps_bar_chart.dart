@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health/health.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
 
 class StepsBarChart extends StatelessWidget {
