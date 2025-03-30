@@ -5,6 +5,7 @@ import 'package:healthque/config/routes/router.dart';
 import 'package:healthque/config/theme/theme.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/core/injection_container.dart';
+import 'package:healthque/core/utils/hive/user_hive_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/shared/shared.dart';
 import 'core/utils/shared_preferences/shared_preferences.dart';
@@ -17,7 +18,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferencesManager.init();
   await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
+  Hive.registerAdapter(GenderAdapter());
   initializeDependencies();
+  sl<UserHiveManager>().init();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const HealthqueApp());
 }

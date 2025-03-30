@@ -15,16 +15,27 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$User {
+  @HiveField(0)
   String? get email;
+  @HiveField(1)
   String? get avatarUrl;
+  @HiveField(2)
   String? get name;
+  @HiveField(3)
   String? get surname;
+  @HiveField(4)
   int? get age;
+  @HiveField(5)
   Gender? get gender;
+  @HiveField(6)
   double? get height;
+  @HiveField(7)
   double? get weight;
+  @HiveField(8)
   int? get waterConsumption;
+  @HiveField(9)
   int? get caloriesBurnInOneDay;
+  @HiveField(10)
   int? get desiredSteps;
 
   /// Create a copy of User
@@ -33,6 +44,9 @@ mixin _$User {
   @pragma('vm:prefer-inline')
   $UserCopyWith<User> get copyWith =>
       _$UserCopyWithImpl<User>(this as User, _$identity);
+
+  /// Serializes this User to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
@@ -84,17 +98,17 @@ abstract mixin class $UserCopyWith<$Res> {
       _$UserCopyWithImpl;
   @useResult
   $Res call(
-      {String? email,
-      String? avatarUrl,
-      String? name,
-      String? surname,
-      int? age,
-      Gender? gender,
-      double? height,
-      double? weight,
-      int? waterConsumption,
-      int? caloriesBurnInOneDay,
-      int? desiredSteps});
+      {@HiveField(0) String? email,
+      @HiveField(1) String? avatarUrl,
+      @HiveField(2) String? name,
+      @HiveField(3) String? surname,
+      @HiveField(4) int? age,
+      @HiveField(5) Gender? gender,
+      @HiveField(6) double? height,
+      @HiveField(7) double? weight,
+      @HiveField(8) int? waterConsumption,
+      @HiveField(9) int? caloriesBurnInOneDay,
+      @HiveField(10) int? desiredSteps});
 }
 
 /// @nodoc
@@ -121,7 +135,211 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? caloriesBurnInOneDay = freezed,
     Object? desiredSteps = freezed,
   }) {
-    return _then(User(
+    return _then(_self.copyWith(
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatarUrl: freezed == avatarUrl
+          ? _self.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      surname: freezed == surname
+          ? _self.surname
+          : surname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      age: freezed == age
+          ? _self.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as int?,
+      gender: freezed == gender
+          ? _self.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      weight: freezed == weight
+          ? _self.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterConsumption: freezed == waterConsumption
+          ? _self.waterConsumption
+          : waterConsumption // ignore: cast_nullable_to_non_nullable
+              as int?,
+      caloriesBurnInOneDay: freezed == caloriesBurnInOneDay
+          ? _self.caloriesBurnInOneDay
+          : caloriesBurnInOneDay // ignore: cast_nullable_to_non_nullable
+              as int?,
+      desiredSteps: freezed == desiredSteps
+          ? _self.desiredSteps
+          : desiredSteps // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+@HiveType(typeId: 0, adapterName: 'UserAdapter')
+class _User implements User {
+  const _User(
+      {@HiveField(0) this.email,
+      @HiveField(1) this.avatarUrl,
+      @HiveField(2) this.name,
+      @HiveField(3) this.surname,
+      @HiveField(4) this.age,
+      @HiveField(5) this.gender,
+      @HiveField(6) this.height,
+      @HiveField(7) this.weight,
+      @HiveField(8) this.waterConsumption,
+      @HiveField(9) this.caloriesBurnInOneDay,
+      @HiveField(10) this.desiredSteps});
+  factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  @override
+  @HiveField(0)
+  final String? email;
+  @override
+  @HiveField(1)
+  final String? avatarUrl;
+  @override
+  @HiveField(2)
+  final String? name;
+  @override
+  @HiveField(3)
+  final String? surname;
+  @override
+  @HiveField(4)
+  final int? age;
+  @override
+  @HiveField(5)
+  final Gender? gender;
+  @override
+  @HiveField(6)
+  final double? height;
+  @override
+  @HiveField(7)
+  final double? weight;
+  @override
+  @HiveField(8)
+  final int? waterConsumption;
+  @override
+  @HiveField(9)
+  final int? caloriesBurnInOneDay;
+  @override
+  @HiveField(10)
+  final int? desiredSteps;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UserCopyWith<_User> get copyWith =>
+      __$UserCopyWithImpl<_User>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UserToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _User &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.avatarUrl, avatarUrl) ||
+                other.avatarUrl == avatarUrl) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.surname, surname) || other.surname == surname) &&
+            (identical(other.age, age) || other.age == age) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.waterConsumption, waterConsumption) ||
+                other.waterConsumption == waterConsumption) &&
+            (identical(other.caloriesBurnInOneDay, caloriesBurnInOneDay) ||
+                other.caloriesBurnInOneDay == caloriesBurnInOneDay) &&
+            (identical(other.desiredSteps, desiredSteps) ||
+                other.desiredSteps == desiredSteps));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      avatarUrl,
+      name,
+      surname,
+      age,
+      gender,
+      height,
+      weight,
+      waterConsumption,
+      caloriesBurnInOneDay,
+      desiredSteps);
+
+  @override
+  String toString() {
+    return 'User(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) _then) =
+      __$UserCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@HiveField(0) String? email,
+      @HiveField(1) String? avatarUrl,
+      @HiveField(2) String? name,
+      @HiveField(3) String? surname,
+      @HiveField(4) int? age,
+      @HiveField(5) Gender? gender,
+      @HiveField(6) double? height,
+      @HiveField(7) double? weight,
+      @HiveField(8) int? waterConsumption,
+      @HiveField(9) int? caloriesBurnInOneDay,
+      @HiveField(10) int? desiredSteps});
+}
+
+/// @nodoc
+class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(this._self, this._then);
+
+  final _User _self;
+  final $Res Function(_User) _then;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? email = freezed,
+    Object? avatarUrl = freezed,
+    Object? name = freezed,
+    Object? surname = freezed,
+    Object? age = freezed,
+    Object? gender = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? waterConsumption = freezed,
+    Object? caloriesBurnInOneDay = freezed,
+    Object? desiredSteps = freezed,
+  }) {
+    return _then(_User(
       email: freezed == email
           ? _self.email
           : email // ignore: cast_nullable_to_non_nullable

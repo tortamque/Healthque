@@ -1,52 +1,31 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'entities.dart';
+import 'package:healthque/core/shared/shared.dart';
+import 'package:hive/hive.dart';
 
-part 'user.g.dart';
 part 'user.freezed.dart';
+part 'user.g.dart';
 
 @freezed
-@JsonSerializable()
-class User with _$User {
-  @override
-  final String? email;
-  @override
-  final String? avatarUrl;
-  @override
-  final String? name;
-  @override
-  final String? surname;
-  @override
-  final int? age;
-  @override
-  final Gender? gender;
-  @override
-  final double? height;
-  @override
-  final double? weight;
-  @override
-  final int? waterConsumption;
-  @override
-  final int? caloriesBurnInOneDay;
-  @override
-  final int? desiredSteps;
-
-  const User({
-    this.email,
-    this.avatarUrl,
-    this.name,
-    this.surname,
-    this.age,
-    this.gender,
-    this.height,
-    this.weight,
-    this.waterConsumption,
-    this.caloriesBurnInOneDay,
-    this.desiredSteps,
-  });
+abstract class User with _$User {
+  @HiveType(typeId: 0, adapterName: 'UserAdapter')
+  const factory User({
+    @HiveField(0) String? email,
+    @HiveField(1) String? avatarUrl,
+    @HiveField(2) String? name,
+    @HiveField(3) String? surname,
+    @HiveField(4) int? age,
+    @HiveField(5) Gender? gender,
+    @HiveField(6) double? height,
+    @HiveField(7) double? weight,
+    @HiveField(8) int? waterConsumption,
+    @HiveField(9) int? caloriesBurnInOneDay,
+    @HiveField(10) int? desiredSteps,
+  }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
 
+extension UserExtension on User {
   String get formattedName => surname == null ? name! : '$name $surname';
   int get safeDesiredSteps => desiredSteps ?? 0;
 }
