@@ -1,6 +1,9 @@
+import 'dart:collection';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:health/health.dart';
+import 'package:healthque/features/health/health.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 part 'health_state.dart';
@@ -24,9 +27,20 @@ class HealthCubit extends Cubit<HealthState> {
     HealthDataType.BLOOD_OXYGEN,
   ];
 
-  Future<void> fetchHealthData() async {
-    emit(const HealthState.loading());
+  Future<void> fetchHealthData({DateTime? customStart, DateTime? customEnd}) async {
+    HealthStateLoaded? previousData;
+
+    if (state is HealthStateLoaded) {
+      previousData = state as HealthStateLoaded;
+    }
+
+    emit(HealthState.loading(previousData: previousData));
+
     try {
+      final DateTime now = DateTime.now();
+      final DateTime start = customStart ?? DateTime(now.year, now.month, now.day);
+      final DateTime end = customEnd ?? now;
+
       await Permission.activityRecognition.request();
       await Permission.location.request();
 
@@ -43,26 +57,21 @@ class HealthCubit extends Cubit<HealthState> {
         return;
       }
 
-      final DateTime now = DateTime.now();
-      final DateTime start = DateTime(now.year, now.month, now.day);
-
       List<HealthDataPoint> healthData = await _health.getHealthDataFromTypes(
         startTime: start,
-        endTime: now,
+        endTime: end,
         types: _dataTypes,
       );
 
       healthData = _health.removeDuplicates(healthData);
 
-      int steps = 0;
-      double calories = 0.0;
-      Duration sleepDuration = Duration.zero;
-      Duration exerciseDuration = Duration.zero;
-      double exerciseDistance = 0.0;
-      double heartRateSum = 0.0;
-      int heartRateCount = 0;
-      double oxygenSum = 0.0;
-      int oxygenCount = 0;
+      final List<HealthRecord> newSteps = [];
+      final List<HealthRecord> newCalories = [];
+      final List<HealthRecord> newDistance = [];
+      final List<HealthRecord> newSleep = [];
+      final List<HealthRecord> newWorkout = [];
+      final List<HealthRecord> newHeartRate = [];
+      final List<HealthRecord> newBloodOxygen = [];
 
       final Set<HealthDataType> sleepTypes = {
         HealthDataType.SLEEP_AWAKE,
@@ -72,39 +81,62 @@ class HealthCubit extends Cubit<HealthState> {
       };
 
       for (var data in healthData) {
+        final record = HealthRecord(
+          dataPoint: data,
+          date: data.dateFrom,
+        );
         if (data.type == HealthDataType.STEPS) {
-          steps += (data.value as NumericHealthValue).numericValue.toInt();
+          newSteps.add(record);
         } else if (data.type == HealthDataType.TOTAL_CALORIES_BURNED) {
-          calories += (data.value as NumericHealthValue).numericValue.toDouble();
+          newCalories.add(record);
         } else if (data.type == HealthDataType.DISTANCE_DELTA) {
-          exerciseDistance += (data.value as NumericHealthValue).numericValue.toDouble();
+          newDistance.add(record);
         } else if (sleepTypes.contains(data.type)) {
-          sleepDuration += data.dateTo.difference(data.dateFrom);
+          newSleep.add(record);
         } else if (data.type == HealthDataType.WORKOUT) {
-          exerciseDuration += data.dateTo.difference(data.dateFrom);
+          newWorkout.add(record);
         } else if (data.type == HealthDataType.HEART_RATE) {
-          heartRateSum += (data.value as NumericHealthValue).numericValue.toDouble();
-          heartRateCount++;
+          newHeartRate.add(record);
         } else if (data.type == HealthDataType.BLOOD_OXYGEN) {
-          oxygenSum += (data.value as NumericHealthValue).numericValue.toDouble();
-          oxygenCount++;
+          newBloodOxygen.add(record);
         }
       }
 
-      final double averageHeartRate = heartRateCount > 0 ? heartRateSum / heartRateCount : 0.0;
-      final double averageBloodOxygen = oxygenCount > 0 ? oxygenSum / oxygenCount : 0.0;
+      final List<HealthRecord> stepsExisting = previousData?.steps ?? [];
+      final List<HealthRecord> caloriesExisting = previousData?.calories ?? [];
+      final List<HealthRecord> distanceExisting = previousData?.distance ?? [];
+      final List<HealthRecord> sleepExisting = previousData?.sleep ?? [];
+      final List<HealthRecord> workoutExisting = previousData?.workout ?? [];
+      final List<HealthRecord> heartRateExisting = previousData?.heartRate ?? [];
+      final List<HealthRecord> bloodOxygenExisting = previousData?.bloodOxygen ?? [];
+
+      final mergedSteps = _mergeRecords(stepsExisting, newSteps);
+      final mergedCalories = _mergeRecords(caloriesExisting, newCalories);
+      final mergedDistance = _mergeRecords(distanceExisting, newDistance);
+      final mergedSleep = _mergeRecords(sleepExisting, newSleep);
+      final mergedWorkout = _mergeRecords(workoutExisting, newWorkout);
+      final mergedHeartRate = _mergeRecords(heartRateExisting, newHeartRate);
+      final mergedBloodOxygen = _mergeRecords(bloodOxygenExisting, newBloodOxygen);
 
       emit(HealthState.loaded(
-        steps: steps,
-        calories: calories,
-        sleepDuration: sleepDuration,
-        exerciseDuration: exerciseDuration,
-        exerciseDistance: exerciseDistance,
-        averageHeartRate: averageHeartRate,
-        averageBloodOxygen: averageBloodOxygen,
+        steps: mergedSteps,
+        calories: mergedCalories,
+        distance: mergedDistance,
+        sleep: mergedSleep,
+        workout: mergedWorkout,
+        heartRate: mergedHeartRate,
+        bloodOxygen: mergedBloodOxygen,
       ));
     } catch (error) {
       emit(HealthState.error(error.toString()));
     }
+  }
+
+  List<HealthRecord> _mergeRecords(List<HealthRecord> oldRecords, List<HealthRecord> newRecords) {
+    final combined = [...oldRecords, ...newRecords];
+    final uniqueRecords = LinkedHashSet<HealthRecord>.of(combined);
+    final merged = uniqueRecords.toList();
+    merged.sort((a, b) => a.date.compareTo(b.date));
+    return merged;
   }
 }

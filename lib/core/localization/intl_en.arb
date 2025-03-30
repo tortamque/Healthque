@@ -43,5 +43,20 @@
   "dashboard": "Dashboard",
   "activity": "Activity",
   "health": "Health",
-  "profile": "Profile"
+  "profile": "Profile",
+  "yourActivities": "Your activities",
+  "steps": "Steps",
+  "sleep": "Sleep",
+  "sleepDuration": "{hours}h {minutes}m",
+  "amountSteps": "{amount} steps",
+  "amountKm": "{amount}km",
+  "amountM": "{amount}m",
+  "distance": "Distance",
+  "caloriesBurnedDuringWorkouts": "Calories burned during workouts",
+  "amoutKcal": "{amount} kcal",
+  "bloodOxygenSaturation": "Blood oxygen saturation",
+  "amountPercentage": "{ammount}%",
+  "workoutsAmount": "Workouts amount",
+  "amountWorkouts": "{amount} workouts",
+  "theresNotEnoughDataToBuildTheChart": "There's not enough data to build the chart"
 }

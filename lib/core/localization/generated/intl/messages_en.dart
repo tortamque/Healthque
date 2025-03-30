@@ -20,10 +20,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(bmr) =>
+  static String m0(amount) => "${amount}km";
+
+  static String m1(amount) => "${amount}m";
+
+  static String m2(ammount) => "${ammount}%";
+
+  static String m3(amount) => "${amount} steps";
+
+  static String m4(amount) => "${amount} workouts";
+
+  static String m5(amount) => "${amount} kcal";
+
+  static String m6(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m1(user) => "Successfully logged in as ${user}";
+  static String m7(user) => "Successfully logged in as ${user}";
+
+  static String m8(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -32,14 +46,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
     ),
-    "bmrTip": m0,
+    "amountKm": m0,
+    "amountM": m1,
+    "amountPercentage": m2,
+    "amountSteps": m3,
+    "amountWorkouts": m4,
+    "amoutKcal": m5,
+    "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
+      "Blood oxygen saturation",
+    ),
+    "bmrTip": m6,
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
+    ),
+    "caloriesBurnedDuringWorkouts": MessageLookupByLibrary.simpleMessage(
+      "Calories burned during workouts",
     ),
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
     ),
@@ -90,7 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m1,
+    "loggedInAs": m7,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
@@ -105,10 +132,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
+    "sleepDuration": m8,
+    "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "theresNotEnoughDataToBuildTheChart": MessageLookupByLibrary.simpleMessage(
+      "There\'s not enough data to build the chart",
+    ),
     "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
       "This process may take a few seconds.",
     ),
@@ -119,9 +152,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",
     ),
+    "workoutsAmount": MessageLookupByLibrary.simpleMessage("Workouts amount"),
     "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
       "You can now proceed to the next step.",
     ),
+    "yourActivities": MessageLookupByLibrary.simpleMessage("Your activities"),
     "yourWearableDeviceIsConnected": MessageLookupByLibrary.simpleMessage(
       "Your wearable device is connected.",
     ),

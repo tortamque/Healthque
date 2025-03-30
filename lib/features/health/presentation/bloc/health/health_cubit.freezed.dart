@@ -58,20 +58,66 @@ class HealthStateInitial extends HealthState {
 /// @nodoc
 
 class HealthStateLoading extends HealthState {
-  const HealthStateLoading() : super._();
+  const HealthStateLoading({this.previousData}) : super._();
+
+  final HealthStateLoaded? previousData;
+
+  /// Create a copy of HealthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $HealthStateLoadingCopyWith<HealthStateLoading> get copyWith =>
+      _$HealthStateLoadingCopyWithImpl<HealthStateLoading>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is HealthStateLoading);
+        (other.runtimeType == runtimeType &&
+            other is HealthStateLoading &&
+            const DeepCollectionEquality()
+                .equals(other.previousData, previousData));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(previousData));
 
   @override
   String toString() {
-    return 'HealthState.loading()';
+    return 'HealthState.loading(previousData: $previousData)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $HealthStateLoadingCopyWith<$Res>
+    implements $HealthStateCopyWith<$Res> {
+  factory $HealthStateLoadingCopyWith(
+          HealthStateLoading value, $Res Function(HealthStateLoading) _then) =
+      _$HealthStateLoadingCopyWithImpl;
+  @useResult
+  $Res call({HealthStateLoaded? previousData});
+}
+
+/// @nodoc
+class _$HealthStateLoadingCopyWithImpl<$Res>
+    implements $HealthStateLoadingCopyWith<$Res> {
+  _$HealthStateLoadingCopyWithImpl(this._self, this._then);
+
+  final HealthStateLoading _self;
+  final $Res Function(HealthStateLoading) _then;
+
+  /// Create a copy of HealthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? previousData = freezed,
+  }) {
+    return _then(HealthStateLoading(
+      previousData: freezed == previousData
+          ? _self.previousData
+          : previousData // ignore: cast_nullable_to_non_nullable
+              as HealthStateLoaded?,
+    ));
   }
 }
 
@@ -79,22 +125,70 @@ class HealthStateLoading extends HealthState {
 
 class HealthStateLoaded extends HealthState {
   const HealthStateLoaded(
-      {required this.steps,
-      required this.calories,
-      required this.sleepDuration,
-      required this.exerciseDuration,
-      required this.exerciseDistance,
-      required this.averageHeartRate,
-      required this.averageBloodOxygen})
-      : super._();
+      {required final List<HealthRecord> steps,
+      required final List<HealthRecord> calories,
+      required final List<HealthRecord> distance,
+      required final List<HealthRecord> sleep,
+      required final List<HealthRecord> workout,
+      required final List<HealthRecord> heartRate,
+      required final List<HealthRecord> bloodOxygen})
+      : _steps = steps,
+        _calories = calories,
+        _distance = distance,
+        _sleep = sleep,
+        _workout = workout,
+        _heartRate = heartRate,
+        _bloodOxygen = bloodOxygen,
+        super._();
 
-  final int steps;
-  final double calories;
-  final Duration sleepDuration;
-  final Duration exerciseDuration;
-  final double exerciseDistance;
-  final double averageHeartRate;
-  final double averageBloodOxygen;
+  final List<HealthRecord> _steps;
+  List<HealthRecord> get steps {
+    if (_steps is EqualUnmodifiableListView) return _steps;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_steps);
+  }
+
+  final List<HealthRecord> _calories;
+  List<HealthRecord> get calories {
+    if (_calories is EqualUnmodifiableListView) return _calories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_calories);
+  }
+
+  final List<HealthRecord> _distance;
+  List<HealthRecord> get distance {
+    if (_distance is EqualUnmodifiableListView) return _distance;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_distance);
+  }
+
+  final List<HealthRecord> _sleep;
+  List<HealthRecord> get sleep {
+    if (_sleep is EqualUnmodifiableListView) return _sleep;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sleep);
+  }
+
+  final List<HealthRecord> _workout;
+  List<HealthRecord> get workout {
+    if (_workout is EqualUnmodifiableListView) return _workout;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_workout);
+  }
+
+  final List<HealthRecord> _heartRate;
+  List<HealthRecord> get heartRate {
+    if (_heartRate is EqualUnmodifiableListView) return _heartRate;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_heartRate);
+  }
+
+  final List<HealthRecord> _bloodOxygen;
+  List<HealthRecord> get bloodOxygen {
+    if (_bloodOxygen is EqualUnmodifiableListView) return _bloodOxygen;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_bloodOxygen);
+  }
 
   /// Create a copy of HealthState
   /// with the given fields replaced by the non-null parameter values.
@@ -108,28 +202,31 @@ class HealthStateLoaded extends HealthState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is HealthStateLoaded &&
-            (identical(other.steps, steps) || other.steps == steps) &&
-            (identical(other.calories, calories) ||
-                other.calories == calories) &&
-            (identical(other.sleepDuration, sleepDuration) ||
-                other.sleepDuration == sleepDuration) &&
-            (identical(other.exerciseDuration, exerciseDuration) ||
-                other.exerciseDuration == exerciseDuration) &&
-            (identical(other.exerciseDistance, exerciseDistance) ||
-                other.exerciseDistance == exerciseDistance) &&
-            (identical(other.averageHeartRate, averageHeartRate) ||
-                other.averageHeartRate == averageHeartRate) &&
-            (identical(other.averageBloodOxygen, averageBloodOxygen) ||
-                other.averageBloodOxygen == averageBloodOxygen));
+            const DeepCollectionEquality().equals(other._steps, _steps) &&
+            const DeepCollectionEquality().equals(other._calories, _calories) &&
+            const DeepCollectionEquality().equals(other._distance, _distance) &&
+            const DeepCollectionEquality().equals(other._sleep, _sleep) &&
+            const DeepCollectionEquality().equals(other._workout, _workout) &&
+            const DeepCollectionEquality()
+                .equals(other._heartRate, _heartRate) &&
+            const DeepCollectionEquality()
+                .equals(other._bloodOxygen, _bloodOxygen));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, steps, calories, sleepDuration,
-      exerciseDuration, exerciseDistance, averageHeartRate, averageBloodOxygen);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_steps),
+      const DeepCollectionEquality().hash(_calories),
+      const DeepCollectionEquality().hash(_distance),
+      const DeepCollectionEquality().hash(_sleep),
+      const DeepCollectionEquality().hash(_workout),
+      const DeepCollectionEquality().hash(_heartRate),
+      const DeepCollectionEquality().hash(_bloodOxygen));
 
   @override
   String toString() {
-    return 'HealthState.loaded(steps: $steps, calories: $calories, sleepDuration: $sleepDuration, exerciseDuration: $exerciseDuration, exerciseDistance: $exerciseDistance, averageHeartRate: $averageHeartRate, averageBloodOxygen: $averageBloodOxygen)';
+    return 'HealthState.loaded(steps: $steps, calories: $calories, distance: $distance, sleep: $sleep, workout: $workout, heartRate: $heartRate, bloodOxygen: $bloodOxygen)';
   }
 }
 
@@ -141,13 +238,13 @@ abstract mixin class $HealthStateLoadedCopyWith<$Res>
       _$HealthStateLoadedCopyWithImpl;
   @useResult
   $Res call(
-      {int steps,
-      double calories,
-      Duration sleepDuration,
-      Duration exerciseDuration,
-      double exerciseDistance,
-      double averageHeartRate,
-      double averageBloodOxygen});
+      {List<HealthRecord> steps,
+      List<HealthRecord> calories,
+      List<HealthRecord> distance,
+      List<HealthRecord> sleep,
+      List<HealthRecord> workout,
+      List<HealthRecord> heartRate,
+      List<HealthRecord> bloodOxygen});
 }
 
 /// @nodoc
@@ -164,41 +261,41 @@ class _$HealthStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? steps = null,
     Object? calories = null,
-    Object? sleepDuration = null,
-    Object? exerciseDuration = null,
-    Object? exerciseDistance = null,
-    Object? averageHeartRate = null,
-    Object? averageBloodOxygen = null,
+    Object? distance = null,
+    Object? sleep = null,
+    Object? workout = null,
+    Object? heartRate = null,
+    Object? bloodOxygen = null,
   }) {
     return _then(HealthStateLoaded(
       steps: null == steps
-          ? _self.steps
+          ? _self._steps
           : steps // ignore: cast_nullable_to_non_nullable
-              as int,
+              as List<HealthRecord>,
       calories: null == calories
-          ? _self.calories
+          ? _self._calories
           : calories // ignore: cast_nullable_to_non_nullable
-              as double,
-      sleepDuration: null == sleepDuration
-          ? _self.sleepDuration
-          : sleepDuration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      exerciseDuration: null == exerciseDuration
-          ? _self.exerciseDuration
-          : exerciseDuration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      exerciseDistance: null == exerciseDistance
-          ? _self.exerciseDistance
-          : exerciseDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-      averageHeartRate: null == averageHeartRate
-          ? _self.averageHeartRate
-          : averageHeartRate // ignore: cast_nullable_to_non_nullable
-              as double,
-      averageBloodOxygen: null == averageBloodOxygen
-          ? _self.averageBloodOxygen
-          : averageBloodOxygen // ignore: cast_nullable_to_non_nullable
-              as double,
+              as List<HealthRecord>,
+      distance: null == distance
+          ? _self._distance
+          : distance // ignore: cast_nullable_to_non_nullable
+              as List<HealthRecord>,
+      sleep: null == sleep
+          ? _self._sleep
+          : sleep // ignore: cast_nullable_to_non_nullable
+              as List<HealthRecord>,
+      workout: null == workout
+          ? _self._workout
+          : workout // ignore: cast_nullable_to_non_nullable
+              as List<HealthRecord>,
+      heartRate: null == heartRate
+          ? _self._heartRate
+          : heartRate // ignore: cast_nullable_to_non_nullable
+              as List<HealthRecord>,
+      bloodOxygen: null == bloodOxygen
+          ? _self._bloodOxygen
+          : bloodOxygen // ignore: cast_nullable_to_non_nullable
+              as List<HealthRecord>,
     ));
   }
 }

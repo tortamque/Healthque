@@ -4,8 +4,8 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
 
-class TempPagesLayout extends StatelessWidget {
-  const TempPagesLayout({super.key, required this.navigationShell});
+class MainPagesLayout extends StatelessWidget {
+  const MainPagesLayout({super.key, required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
 
@@ -34,6 +34,7 @@ class TempPagesLayout extends StatelessWidget {
               color: activeColor,
               fontWeight: FontWeight.bold,
             ),
+            duration: const Duration(milliseconds: 350),
             tabs: [
               GButton(
                 icon: Icons.dashboard_rounded,

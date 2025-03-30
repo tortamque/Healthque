@@ -434,6 +434,141 @@ class Strings {
   String get profile {
     return Intl.message('Profile', name: 'profile', desc: '', args: []);
   }
+
+  /// `Your activities`
+  String get yourActivities {
+    return Intl.message(
+      'Your activities',
+      name: 'yourActivities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Steps`
+  String get steps {
+    return Intl.message('Steps', name: 'steps', desc: '', args: []);
+  }
+
+  /// `Sleep`
+  String get sleep {
+    return Intl.message('Sleep', name: 'sleep', desc: '', args: []);
+  }
+
+  /// `{hours}h {minutes}m`
+  String sleepDuration(Object hours, Object minutes) {
+    return Intl.message(
+      '${hours}h ${minutes}m',
+      name: 'sleepDuration',
+      desc: '',
+      args: [hours, minutes],
+    );
+  }
+
+  /// `{amount} steps`
+  String amountSteps(Object amount) {
+    return Intl.message(
+      '$amount steps',
+      name: 'amountSteps',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount}km`
+  String amountKm(Object amount) {
+    return Intl.message(
+      '${amount}km',
+      name: 'amountKm',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount}m`
+  String amountM(Object amount) {
+    return Intl.message(
+      '${amount}m',
+      name: 'amountM',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Distance`
+  String get distance {
+    return Intl.message('Distance', name: 'distance', desc: '', args: []);
+  }
+
+  /// `Calories burned during workouts`
+  String get caloriesBurnedDuringWorkouts {
+    return Intl.message(
+      'Calories burned during workouts',
+      name: 'caloriesBurnedDuringWorkouts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{amount} kcal`
+  String amoutKcal(Object amount) {
+    return Intl.message(
+      '$amount kcal',
+      name: 'amoutKcal',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Blood oxygen saturation`
+  String get bloodOxygenSaturation {
+    return Intl.message(
+      'Blood oxygen saturation',
+      name: 'bloodOxygenSaturation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{ammount}%`
+  String amountPercentage(Object ammount) {
+    return Intl.message(
+      '$ammount%',
+      name: 'amountPercentage',
+      desc: '',
+      args: [ammount],
+    );
+  }
+
+  /// `Workouts amount`
+  String get workoutsAmount {
+    return Intl.message(
+      'Workouts amount',
+      name: 'workoutsAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{amount} workouts`
+  String amountWorkouts(Object amount) {
+    return Intl.message(
+      '$amount workouts',
+      name: 'amountWorkouts',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `There's not enough data to build the chart`
+  String get theresNotEnoughDataToBuildTheChart {
+    return Intl.message(
+      'There\'s not enough data to build the chart',
+      name: 'theresNotEnoughDataToBuildTheChart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

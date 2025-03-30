@@ -97,6 +97,12 @@ class _ConnectedLayout extends StatelessWidget {
                 await SharedPreferencesManager.storeValue<bool>(isOnboardingCompleted, true);
                 if (!context.mounted) return;
 
+                context.read<HealthCubit>().fetchHealthData(
+                      customStart: DateTime.now()
+                          .subtract(Duration(days: 6))
+                          .copyWith(hour: 0, minute: 0, second: 0, millisecond: 0),
+                      customEnd: DateTime.now(),
+                    );
                 context.go(Routes.tempPage1);
               },
               label: Text(context.strings.finishOnboarding.capitalizeFirstofEach),
@@ -134,6 +140,18 @@ class _ErrorLayout extends StatelessWidget {
           ),
           Gap(32),
           Assets.watch.image(width: 250),
+          Gap(32),
+          SizedBox(
+            width: context.width,
+            child: FilledButton.icon(
+              onPressed: () {
+                context.read<HealthConnectionCubit>().checkHealthConnectStatus(throttle: true);
+              },
+              label: Text('Connect Again'),
+              icon: const Icon(Icons.restore_rounded),
+              iconAlignment: IconAlignment.end,
+            ),
+          ),
         ],
       ),
     );

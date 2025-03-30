@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
+import 'package:healthque/core/shared/shared.dart';
+import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
 import 'package:healthque/features/splash/splash.dart';
 import 'package:healthque/features/temp/temp.dart';
@@ -53,13 +55,13 @@ final GoRouter router = GoRouter(
       ],
     ),
     StatefulShellRoute.indexedStack(
-      builder: (context, state, navigationShell) => TempPagesLayout(navigationShell: navigationShell),
+      builder: (context, state, navigationShell) => MainPagesLayout(navigationShell: navigationShell),
       branches: [
         StatefulShellBranch(
           routes: [
             GoRoute(
               path: Routes.tempPage1,
-              builder: (context, state) => const TempPage1(),
+              builder: (context, state) => const DashboardPage(),
             ),
           ],
         ),
