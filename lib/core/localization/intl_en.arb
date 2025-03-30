@@ -64,5 +64,6 @@
   "metersShort": "m",
   "milesShort": "mi",
   "allYourActivitiesText": "All your activities",
-  "activityAnalysisText": "Activity analysis"
+  "activityAnalysisText": "Activity analysis",
+  "addANewWorkout": "Add a new workout"
 }

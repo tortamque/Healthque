@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "activityAnalysisText": MessageLookupByLibrary.simpleMessage(
       "Activity analysis",
     ),
+    "addANewWorkout": MessageLookupByLibrary.simpleMessage("Add a new workout"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",

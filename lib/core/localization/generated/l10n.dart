@@ -619,6 +619,16 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Add a new workout`
+  String get addANewWorkout {
+    return Intl.message(
+      'Add a new workout',
+      name: 'addANewWorkout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

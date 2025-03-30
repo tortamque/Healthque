@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/activity/activity.dart';
@@ -14,6 +16,17 @@ class ActivityPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Activity'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.bookmark_rounded),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => context.push(Routes.addWorkoutPage),
+        tooltip: context.strings.addANewWorkout,
+        child: Icon(Icons.add_rounded),
       ),
       body: SingleChildScrollView(
         child: Padding(
