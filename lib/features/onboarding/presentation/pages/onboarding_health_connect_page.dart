@@ -103,7 +103,7 @@ class _ConnectedLayout extends StatelessWidget {
                           .copyWith(hour: 0, minute: 0, second: 0, millisecond: 0),
                       customEnd: DateTime.now(),
                     );
-                context.go(Routes.tempPage1);
+                context.go(Routes.dashboardPage);
               },
               label: Text(context.strings.finishOnboarding.capitalizeFirstofEach),
               icon: const Icon(Icons.arrow_forward_ios_rounded),

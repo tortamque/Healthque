@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/shared/shared.dart';
+import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
 import 'package:healthque/features/splash/splash.dart';
@@ -60,7 +61,7 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: Routes.tempPage1,
+              path: Routes.dashboardPage,
               builder: (context, state) => const DashboardPage(),
             ),
           ],
@@ -68,8 +69,8 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: Routes.tempPage2,
-              builder: (context, state) => const TempPage2(),
+              path: Routes.activityPage,
+              builder: (context, state) => const ActivityPage(),
             ),
           ],
         ),
