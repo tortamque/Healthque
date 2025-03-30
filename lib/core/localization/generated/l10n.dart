@@ -579,6 +579,46 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Energy Burned`
+  String get energyBurned {
+    return Intl.message(
+      'Energy Burned',
+      name: 'energyBurned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `m`
+  String get metersShort {
+    return Intl.message('m', name: 'metersShort', desc: '', args: []);
+  }
+
+  /// `mi`
+  String get milesShort {
+    return Intl.message('mi', name: 'milesShort', desc: '', args: []);
+  }
+
+  /// `All your activities`
+  String get allYourActivitiesText {
+    return Intl.message(
+      'All your activities',
+      name: 'allYourActivitiesText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity analysis`
+  String get activityAnalysisText {
+    return Intl.message(
+      'Activity analysis',
+      name: 'activityAnalysisText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

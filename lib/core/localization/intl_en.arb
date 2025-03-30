@@ -59,5 +59,10 @@
   "workoutsAmount": "Workouts amount",
   "amountWorkouts": "{amount} workouts",
   "theresNotEnoughDataToBuildTheChart": "There's not enough data to build the chart",
-  "amountOfEachWorkoutType": "Amount of each workout type"
+  "amountOfEachWorkoutType": "Amount of each workout type",
+  "energyBurned": "Energy Burned",
+  "metersShort": "m",
+  "milesShort": "mi",
+  "allYourActivitiesText": "All your activities",
+  "activityAnalysisText": "Activity analysis"
 }

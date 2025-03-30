@@ -42,9 +42,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "activity": MessageLookupByLibrary.simpleMessage("Activity"),
+    "activityAnalysisText": MessageLookupByLibrary.simpleMessage(
+      "Activity analysis",
+    ),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
+    ),
+    "allYourActivitiesText": MessageLookupByLibrary.simpleMessage(
+      "All your activities",
     ),
     "amountKm": m0,
     "amountM": m1,
@@ -70,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
+    "energyBurned": MessageLookupByLibrary.simpleMessage("Energy Burned"),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
     ),
@@ -122,6 +129,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loggedInAs": m7,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
+    "metersShort": MessageLookupByLibrary.simpleMessage("m"),
+    "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",

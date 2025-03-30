@@ -30,6 +30,14 @@ class ActivityPage extends StatelessWidget {
                 ) =>
                   Column(
                     children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          context.strings.activityAnalysisText,
+                          style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.normal),
+                        ),
+                      ),
+                      Gap(16),
                       ChartWrapperCard(
                         icon: Icons.fitness_center_rounded,
                         title: context.strings.workoutsAmount,
@@ -53,6 +61,18 @@ class ActivityPage extends StatelessWidget {
                         child: WorkoutTypeBarChart(
                           workoutRecords: workout,
                         ),
+                      ),
+                      Gap(32),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          context.strings.allYourActivitiesText,
+                          style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.normal),
+                        ),
+                      ),
+                      Gap(16),
+                      Column(
+                        children: workout.map((record) => WorkoutCard(record: record)).toList(),
                       ),
                     ],
                   )

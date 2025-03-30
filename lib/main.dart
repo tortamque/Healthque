@@ -9,6 +9,7 @@ import 'core/shared/shared.dart';
 import 'core/utils/shared_preferences/shared_preferences.dart';
 import 'features/authorization/authorization.dart';
 import 'features/health/health.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -33,7 +34,12 @@ class HealthqueApp extends StatelessWidget {
       child: MaterialApp.router(
         theme: themeData,
         routerConfig: router,
-        localizationsDelegates: [AppLocalizationDelegate()],
+        localizationsDelegates: [
+          Strings.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         supportedLocales: Strings.delegate.supportedLocales,
         locale: const Locale('en'),
       ),
