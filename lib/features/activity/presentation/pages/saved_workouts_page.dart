@@ -13,13 +13,20 @@ class SavedWorkoutsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.strings.savedWorkouts)),
+      appBar: AppBar(
+        title: Text(context.strings.savedWorkouts),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.filter_list),
+            onPressed: () => _showFilterSheet(context),
+          ),
+        ],
+      ),
       body: BlocBuilder<ActivityCubit, ActivityState>(
         builder: (context, state) {
           if (state.isLoading) {
             return const Center(child: UnifiedCircularProgressIndicator());
           }
-
           if (state.errorMessage != null) {
             return Center(
               child: Text(
@@ -49,10 +56,7 @@ class SavedWorkoutsPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   onTap: () => context.push(Routes.workoutDetailsPage, extra: workout),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 16,
-                      horizontal: 12,
-                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -60,12 +64,15 @@ class SavedWorkoutsPage extends StatelessWidget {
                           workout.workoutType.displayName(context),
                           style: context.theme.textTheme.titleMedium,
                         ),
-                        Gap(8),
+                        const Gap(8),
                         Text(
-                            '${context.strings.duration}: ${context.strings.minutesAmountLong(workout.durationMinutes)}'),
-                        Gap(8),
-                        Text("${context.strings.trainingEvaluation}:"),
-                        Gap(8),
+                          '${context.strings.duration}: ${context.strings.minutesAmountLong(workout.durationMinutes)}',
+                        ),
+                        const Gap(8),
+                        Text(
+                          "${context.strings.trainingEvaluation}:",
+                        ),
+                        const Gap(8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: List.generate(
@@ -88,6 +95,31 @@ class SavedWorkoutsPage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  void _showFilterSheet(BuildContext context) {
+    WorkoutType? selectedType;
+    DateTime? selectedDate;
+
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext ctx) {
+        return StatefulBuilder(builder: (context, setState) {
+          return FiltersBottomSheetBody(
+            selectedType: selectedType,
+            selectedDate: selectedDate,
+            onTypeChanged: (value) => setState(() {
+              selectedType = value;
+            }),
+            onAfterDatePicker: (pickedDate) {
+              setState(() {
+                selectedDate = pickedDate;
+              });
+            },
+          );
+        });
+      },
     );
   }
 }

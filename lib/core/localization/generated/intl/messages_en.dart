@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
     ),
+    "all": MessageLookupByLibrary.simpleMessage("All"),
     "allYourActivitiesText": MessageLookupByLibrary.simpleMessage(
       "All your activities",
     ),
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "amountSteps": m3,
     "amountWorkouts": m4,
     "amoutKcal": m5,
+    "applyFilter": MessageLookupByLibrary.simpleMessage("Apply Filter"),
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Blood oxygen saturation",
     ),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Calories burned during workouts",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "clearFilter": MessageLookupByLibrary.simpleMessage("Clear Filter"),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
@@ -128,6 +131,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
+    "filterByDate": MessageLookupByLibrary.simpleMessage("Filter by Date"),
+    "filterByType": MessageLookupByLibrary.simpleMessage("Filter by Type"),
     "finishOnboarding": MessageLookupByLibrary.simpleMessage(
       "Finish onboarding",
     ),
@@ -198,9 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
+    "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
-      "Select workout type",
+      "Select Workout Type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
     "sleepDuration": m11,

@@ -88,4 +88,35 @@ class ActivityCubit extends Cubit<ActivityState> {
       ));
     }
   }
+
+  Future<void> filterWorkouts({WorkoutType? type, DateTime? date}) async {
+    emit(state.copyWith(isLoading: true, errorMessage: null));
+    try {
+      final fetched = _getWorkoutsUseCase.call(null);
+      final originalWorkouts = fetched?.workouts ?? [];
+
+      final filteredWorkouts = originalWorkouts.where((workout) {
+        final typeMatches = type == null || workout.workoutType == type;
+        final dateMatches = date == null
+            ? true
+            : (workout.createdAt.year == date.year &&
+                workout.createdAt.month == date.month &&
+                workout.createdAt.day == date.day);
+        return typeMatches && dateMatches;
+      }).toList();
+
+      filteredWorkouts.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+
+      emit(state.copyWith(
+        workouts: Workouts(workouts: filteredWorkouts),
+        isLoading: false,
+        errorMessage: null,
+      ));
+    } catch (error) {
+      emit(state.copyWith(
+        isLoading: false,
+        errorMessage: error.toString(),
+      ));
+    }
+  }
 }

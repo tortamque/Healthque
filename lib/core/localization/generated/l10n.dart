@@ -805,10 +805,10 @@ class Strings {
     );
   }
 
-  /// `Select workout type`
+  /// `Select Workout Type`
   String get selectWorkoutType {
     return Intl.message(
-      'Select workout type',
+      'Select Workout Type',
       name: 'selectWorkoutType',
       desc: '',
       args: [],
@@ -973,6 +973,56 @@ class Strings {
   /// `Delete`
   String get delete {
     return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Filter by Type`
+  String get filterByType {
+    return Intl.message(
+      'Filter by Type',
+      name: 'filterByType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter by Date`
+  String get filterByDate {
+    return Intl.message(
+      'Filter by Date',
+      name: 'filterByDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
+  }
+
+  /// `Apply Filter`
+  String get applyFilter {
+    return Intl.message(
+      'Apply Filter',
+      name: 'applyFilter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear Filter`
+  String get clearFilter {
+    return Intl.message(
+      'Clear Filter',
+      name: 'clearFilter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get selectDate {
+    return Intl.message('Select Date', name: 'selectDate', desc: '', args: []);
   }
 }
 
