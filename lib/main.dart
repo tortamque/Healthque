@@ -1,3 +1,4 @@
+import 'package:timezone/data/latest.dart' as tz;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,13 +6,11 @@ import 'package:healthque/config/routes/router.dart';
 import 'package:healthque/config/theme/theme.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/core/injection_container.dart';
-import 'package:healthque/core/utils/hive/user_hive_manager.dart';
+import 'package:healthque/core/utils/utils.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:toastification/toastification.dart';
 import 'core/shared/shared.dart';
-import 'core/utils/hive/workouts_hive_manager.dart';
-import 'core/utils/shared_preferences/shared_preferences.dart';
 import 'features/authorization/authorization.dart';
 import 'features/health/health.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -19,6 +18,8 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
+  await LocalNotificationService().init();
   await SharedPreferencesManager.init();
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
