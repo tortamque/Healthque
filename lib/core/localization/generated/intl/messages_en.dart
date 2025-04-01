@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m9(minutes) => "${minutes} m";
 
-  static String m10(hours, minutes) => "${hours}h ${minutes}m";
+  static String m10(minutes) => "${minutes} minutes";
+
+  static String m11(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
+    "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
@@ -117,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourWeight": MessageLookupByLibrary.simpleMessage(
       "Enter your weight",
     ),
+    "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
     "finishOnboarding": MessageLookupByLibrary.simpleMessage(
       "Finish onboarding",
@@ -160,14 +164,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
     "minutesAmount": m9,
+    "minutesAmountLong": m10,
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
     ),
     "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
+    "noSavedWorkoutsYet": MessageLookupByLibrary.simpleMessage(
+      "No saved workouts yet.",
+    ),
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Note: Height in cm and Weight in kg",
     ),
+    "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
@@ -181,18 +191,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
+    "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select workout type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m10,
+    "sleepDuration": m11,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
+    "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
       "Tags (comma separated)",
     ),
@@ -203,6 +215,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
       "This process may take a few seconds.",
     ),
+    "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
+      "Training evaluation",
+    ),
     "walking": MessageLookupByLibrary.simpleMessage("Walking"),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
@@ -212,9 +227,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Weight must be valid and less than 500 kg",
     ),
     "weightTraining": MessageLookupByLibrary.simpleMessage("Weight Training"),
+    "workoutDetails": MessageLookupByLibrary.simpleMessage("Workout Details"),
     "workoutSaved": MessageLookupByLibrary.simpleMessage("Workout saved"),
     "workoutType": MessageLookupByLibrary.simpleMessage("Workout Type"),
     "workoutsAmount": MessageLookupByLibrary.simpleMessage("Workouts amount"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
       "You can now proceed to the next step.",
     ),

@@ -21,10 +21,13 @@ class ActivityCubit extends Cubit<ActivityState> {
     try {
       final fetched = _getWorkoutsUseCase.call(null);
       final fetchedWorkouts = fetched ?? Workouts(workouts: []);
+      final sortedList = List<Workout>.from(fetchedWorkouts.workouts)
+        ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
       emit(state.copyWith(
-        workouts: fetchedWorkouts,
+        workouts: Workouts(workouts: sortedList),
         isLoading: false,
+        errorMessage: null,
       ));
     } catch (error) {
       emit(state.copyWith(
@@ -37,6 +40,7 @@ class ActivityCubit extends Cubit<ActivityState> {
   Future<void> addWorkout(Workout newWorkout) async {
     final currentList = state.workouts.workouts;
     final updatedList = List<Workout>.from(currentList)..add(newWorkout);
+    updatedList.sort((a, b) => b.createdAt.compareTo(a.createdAt));
     final updatedWorkouts = Workouts(workouts: updatedList);
 
     emit(state.copyWith(
@@ -50,6 +54,7 @@ class ActivityCubit extends Cubit<ActivityState> {
 
       emit(state.copyWith(
         isLoading: false,
+        errorMessage: null,
         workouts: updatedWorkouts,
       ));
     } catch (error) {

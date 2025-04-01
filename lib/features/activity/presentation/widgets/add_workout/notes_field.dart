@@ -13,7 +13,7 @@ class MultiLineNotesField extends StatelessWidget {
       children: [
         Text(
           context.strings.additionalNotes,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: context.theme.textTheme.bodyMedium,
         ),
         const Gap(8),
         TextFormField(

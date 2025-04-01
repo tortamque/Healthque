@@ -94,5 +94,18 @@
   "walking": "Walking",
   "tennis": "Tennis",
   "gymnastics": "Gymnastics",
-  "bouldering": "Bouldering"
+  "bouldering": "Bouldering",
+  "activity": "Activity",
+  "noSavedWorkoutsYet": "No saved workouts yet.",
+  "savedWorkouts": "Saved Workouts",
+  "minutesAmountLong": "{minutes} minutes",
+  "trainingEvaluation": "Training evaluation",
+  "workoutDetails": "Workout Details",
+  "intensity": "Intensity",
+  "tags": "Tags",
+  "favorite": "Favorite",
+  "yes": "Yes",
+  "no": "No",
+  "notes": "Notes",
+  "createdAt": "Created At"
 }

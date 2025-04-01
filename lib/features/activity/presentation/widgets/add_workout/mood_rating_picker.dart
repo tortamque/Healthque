@@ -16,7 +16,7 @@ class MoodRatingPicker extends StatelessWidget {
       children: [
         Text(
           context.strings.howDidYouFeel,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: context.theme.textTheme.bodyMedium,
         ),
         const Gap(8),
         Row(

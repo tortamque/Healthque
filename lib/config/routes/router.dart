@@ -76,6 +76,16 @@ final GoRouter router = GoRouter(
               path: Routes.addWorkoutPage,
               builder: (context, state) => const AddWorkoutPage(),
             ),
+            GoRoute(
+              path: Routes.savedWorkoutsPage,
+              builder: (context, state) => SavedWorkoutsPage(),
+            ),
+            GoRoute(
+              path: Routes.workoutDetailsPage,
+              builder: (context, state) => SavedWorkoutDetailsPage(
+                workout: state.extra as Workout,
+              ),
+            ),
           ],
         ),
         StatefulShellBranch(

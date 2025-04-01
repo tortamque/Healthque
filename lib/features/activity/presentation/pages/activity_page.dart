@@ -15,11 +15,11 @@ class ActivityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Activity'),
+        title: Text(context.strings.activity),
         actions: [
           IconButton(
             icon: Icon(Icons.bookmark_rounded),
-            onPressed: () {},
+            onPressed: () => context.push(Routes.savedWorkoutsPage),
           ),
         ],
       ),

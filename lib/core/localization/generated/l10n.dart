@@ -869,6 +869,86 @@ class Strings {
   String get bouldering {
     return Intl.message('Bouldering', name: 'bouldering', desc: '', args: []);
   }
+
+  /// `No saved workouts yet.`
+  String get noSavedWorkoutsYet {
+    return Intl.message(
+      'No saved workouts yet.',
+      name: 'noSavedWorkoutsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved Workouts`
+  String get savedWorkouts {
+    return Intl.message(
+      'Saved Workouts',
+      name: 'savedWorkouts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{minutes} minutes`
+  String minutesAmountLong(Object minutes) {
+    return Intl.message(
+      '$minutes minutes',
+      name: 'minutesAmountLong',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `Training evaluation`
+  String get trainingEvaluation {
+    return Intl.message(
+      'Training evaluation',
+      name: 'trainingEvaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Workout Details`
+  String get workoutDetails {
+    return Intl.message(
+      'Workout Details',
+      name: 'workoutDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tags`
+  String get tags {
+    return Intl.message('Tags', name: 'tags', desc: '', args: []);
+  }
+
+  /// `Favorite`
+  String get favorite {
+    return Intl.message('Favorite', name: 'favorite', desc: '', args: []);
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message('Notes', name: 'notes', desc: '', args: []);
+  }
+
+  /// `Created At`
+  String get createdAt {
+    return Intl.message('Created At', name: 'createdAt', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
