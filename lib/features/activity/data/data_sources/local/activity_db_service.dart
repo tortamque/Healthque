@@ -4,6 +4,7 @@ import 'package:healthque/core/utils/hive/hive.dart';
 abstract class ActivityDbService {
   Workouts? getWorkouts();
   Future<void> saveWorkouts(Workouts workouts);
+  Future<void> deleteWorkout(Workout workout);
 }
 
 class ActivityDbServiceImpl implements ActivityDbService {
@@ -16,4 +17,17 @@ class ActivityDbServiceImpl implements ActivityDbService {
 
   @override
   Future<void> saveWorkouts(Workouts workouts) => _manager.workoutsBox.put(_manager.hiveKey, workouts);
+
+  @override
+  Future<void> deleteWorkout(Workout workout) async {
+    final currentWorkouts = getWorkouts();
+    if (currentWorkouts != null) {
+      final updatedList = List<Workout>.from(currentWorkouts.workouts);
+
+      updatedList.remove(workout);
+
+      final updatedWorkouts = Workouts(workouts: updatedList);
+      await saveWorkouts(updatedWorkouts);
+    }
+  }
 }

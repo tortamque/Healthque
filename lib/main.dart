@@ -44,7 +44,7 @@ class HealthqueApp extends StatelessWidget {
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
         BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl())),
         BlocProvider<ActivityCubit>(
-          create: (_) => ActivityCubit(sl(), sl())..fetchWorkouts(),
+          create: (_) => ActivityCubit(sl(), sl(), sl())..fetchWorkouts(),
           lazy: false,
         )
       ],

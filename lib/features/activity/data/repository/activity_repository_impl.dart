@@ -11,4 +11,7 @@ class ActivityRepositoryImpl implements ActivityRepository {
 
   @override
   Future<void> saveWorkouts(Workouts workouts) => _activityDbService.saveWorkouts(workouts);
+
+  @override
+  Future<void> deleteWorkout(Workout workout) => _activityDbService.deleteWorkout(workout);
 }

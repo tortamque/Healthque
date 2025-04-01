@@ -81,12 +81,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "caloriesBurnedDuringWorkouts": MessageLookupByLibrary.simpleMessage(
       "Calories burned during workouts",
     ),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
     "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "deleteConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete this workout?",
+    ),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "distanceKm": MessageLookupByLibrary.simpleMessage("Distance (km)"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),

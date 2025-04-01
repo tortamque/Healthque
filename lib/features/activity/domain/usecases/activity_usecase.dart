@@ -19,3 +19,12 @@ class SaveWorkoutsUseCase implements AsyncUseCase<void, Workouts> {
   @override
   Future<void> call(Workouts params) => repository.saveWorkouts(params);
 }
+
+class DeleteWorkoutsUseCase implements AsyncUseCase<void, Workout> {
+  final ActivityRepository repository;
+
+  DeleteWorkoutsUseCase(this.repository);
+
+  @override
+  Future<void> call(Workout params) => repository.deleteWorkout(params);
+}

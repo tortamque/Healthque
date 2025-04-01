@@ -949,6 +949,31 @@ class Strings {
   String get createdAt {
     return Intl.message('Created At', name: 'createdAt', desc: '', args: []);
   }
+
+  /// `Are you sure you want to delete this workout?`
+  String get deleteConfirmation {
+    return Intl.message(
+      'Are you sure you want to delete this workout?',
+      name: 'deleteConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

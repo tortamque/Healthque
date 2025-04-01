@@ -23,7 +23,8 @@ void initializeDependencies() {
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
     ..registerSingleton<SaveUserUsecase>(SaveUserUsecase(sl()))
     ..registerSingleton<GetWorkoutsUseCase>(GetWorkoutsUseCase(sl()))
-    ..registerSingleton<SaveWorkoutsUseCase>(SaveWorkoutsUseCase(sl()));
+    ..registerSingleton<SaveWorkoutsUseCase>(SaveWorkoutsUseCase(sl()))
+    ..registerSingleton<DeleteWorkoutsUseCase>(DeleteWorkoutsUseCase(sl()));
 
   // Blocs
 }
