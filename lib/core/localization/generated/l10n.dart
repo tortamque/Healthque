@@ -629,6 +629,246 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Add Workout`
+  String get addWorkout {
+    return Intl.message('Add Workout', name: 'addWorkout', desc: '', args: []);
+  }
+
+  /// `Save workout`
+  String get saveWorkout {
+    return Intl.message(
+      'Save workout',
+      name: 'saveWorkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Workout saved`
+  String get workoutSaved {
+    return Intl.message(
+      'Workout saved',
+      name: 'workoutSaved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Distance (km)`
+  String get distanceKm {
+    return Intl.message(
+      'Distance (km)',
+      name: 'distanceKm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter distance in km`
+  String get enterDistanceInKm {
+    return Intl.message(
+      'Enter distance in km',
+      name: 'enterDistanceInKm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter distance`
+  String get pleaseEnterDistance {
+    return Intl.message(
+      'Please enter distance',
+      name: 'pleaseEnterDistance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid distance`
+  String get enterAValidDistance {
+    return Intl.message(
+      'Enter a valid distance',
+      name: 'enterAValidDistance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duration`
+  String get duration {
+    return Intl.message('Duration', name: 'duration', desc: '', args: []);
+  }
+
+  /// `{hours} h {minutes} m`
+  String hoursAndMinutesAmount(Object hours, Object minutes) {
+    return Intl.message(
+      '$hours h $minutes m',
+      name: 'hoursAndMinutesAmount',
+      desc: '',
+      args: [hours, minutes],
+    );
+  }
+
+  /// `{minutes} m`
+  String minutesAmount(Object minutes) {
+    return Intl.message(
+      '$minutes m',
+      name: 'minutesAmount',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `Pick Duration`
+  String get pickDuration {
+    return Intl.message(
+      'Pick Duration',
+      name: 'pickDuration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Favorite`
+  String get markAsFavorite {
+    return Intl.message(
+      'Mark as Favorite',
+      name: 'markAsFavorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Intensity`
+  String get intensity {
+    return Intl.message('Intensity', name: 'intensity', desc: '', args: []);
+  }
+
+  /// `How did you feel?`
+  String get howDidYouFeel {
+    return Intl.message(
+      'How did you feel?',
+      name: 'howDidYouFeel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional Notes`
+  String get additionalNotes {
+    return Intl.message(
+      'Additional Notes',
+      name: 'additionalNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter any extra details...`
+  String get enterAnyExtraDetails {
+    return Intl.message(
+      'Enter any extra details...',
+      name: 'enterAnyExtraDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tags (comma separated)`
+  String get tagsCommaSeparated {
+    return Intl.message(
+      'Tags (comma separated)',
+      name: 'tagsCommaSeparated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `.g., morning, HIIT, recovery`
+  String get egMorningHIIT {
+    return Intl.message(
+      '.g., morning, HIIT, recovery',
+      name: 'egMorningHIIT',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Workout Type`
+  String get workoutType {
+    return Intl.message(
+      'Workout Type',
+      name: 'workoutType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select workout type`
+  String get selectWorkoutType {
+    return Intl.message(
+      'Select workout type',
+      name: 'selectWorkoutType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a workout type`
+  String get pleaseSelectAWorkoutType {
+    return Intl.message(
+      'Please select a workout type',
+      name: 'pleaseSelectAWorkoutType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Running`
+  String get running {
+    return Intl.message('Running', name: 'running', desc: '', args: []);
+  }
+
+  /// `Swimming`
+  String get swimming {
+    return Intl.message('Swimming', name: 'swimming', desc: '', args: []);
+  }
+
+  /// `Cycling`
+  String get cycling {
+    return Intl.message('Cycling', name: 'cycling', desc: '', args: []);
+  }
+
+  /// `Weight Training`
+  String get weightTraining {
+    return Intl.message(
+      'Weight Training',
+      name: 'weightTraining',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Walking`
+  String get walking {
+    return Intl.message('Walking', name: 'walking', desc: '', args: []);
+  }
+
+  /// `Tennis`
+  String get tennis {
+    return Intl.message('Tennis', name: 'tennis', desc: '', args: []);
+  }
+
+  /// `Gymnastics`
+  String get gymnastics {
+    return Intl.message('Gymnastics', name: 'gymnastics', desc: '', args: []);
+  }
+
+  /// `Bouldering`
+  String get bouldering {
+    return Intl.message('Bouldering', name: 'bouldering', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

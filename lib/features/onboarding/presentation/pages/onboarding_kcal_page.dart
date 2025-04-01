@@ -39,7 +39,7 @@ class _OnboardingKcalPageState extends State<OnboardingKcalPage> {
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16),
+            const Gap(16),
             Text(
               context.strings.bmrTip(_bmr.toInt()).capitalizeFirstofEach,
               style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),

@@ -1,4 +1,5 @@
 part of 'health_cubit.dart';
+
 @freezed
 sealed class HealthState with _$HealthState {
   const HealthState._();

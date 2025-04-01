@@ -35,9 +35,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m6(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m7(user) => "Successfully logged in as ${user}";
+  static String m7(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m8(hours, minutes) => "${hours}h ${minutes}m";
+  static String m8(user) => "Successfully logged in as ${user}";
+
+  static String m9(minutes) => "${minutes} m";
+
+  static String m10(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -46,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Activity analysis",
     ),
     "addANewWorkout": MessageLookupByLibrary.simpleMessage("Add a new workout"),
+    "addWorkout": MessageLookupByLibrary.simpleMessage("Add Workout"),
+    "additionalNotes": MessageLookupByLibrary.simpleMessage("Additional Notes"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
       "Age must be valid and less than 120",
@@ -66,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Blood oxygen saturation",
     ),
     "bmrTip": m6,
+    "bouldering": MessageLookupByLibrary.simpleMessage("Bouldering"),
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
     ),
@@ -75,9 +82,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
+    "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
+    "distanceKm": MessageLookupByLibrary.simpleMessage("Distance (km)"),
+    "duration": MessageLookupByLibrary.simpleMessage("Duration"),
+    "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
+      ".g., morning, HIIT, recovery",
+    ),
     "energyBurned": MessageLookupByLibrary.simpleMessage("Energy Burned"),
+    "enterAValidDistance": MessageLookupByLibrary.simpleMessage(
+      "Enter a valid distance",
+    ),
+    "enterAnyExtraDetails": MessageLookupByLibrary.simpleMessage(
+      "Enter any extra details...",
+    ),
+    "enterDistanceInKm": MessageLookupByLibrary.simpleMessage(
+      "Enter distance in km",
+    ),
     "enterValidNumber": MessageLookupByLibrary.simpleMessage(
       "Enter a valid number",
     ),
@@ -102,11 +124,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
       "First things first!",
     ),
+    "gymnastics": MessageLookupByLibrary.simpleMessage("Gymnastics"),
     "health": MessageLookupByLibrary.simpleMessage("Health"),
     "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
+    "hoursAndMinutesAmount": m7,
+    "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
     ),
@@ -116,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "howMuchWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
       "How much water you can drink in one day?",
     ),
+    "intensity": MessageLookupByLibrary.simpleMessage("Intensity"),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
     ),
@@ -128,10 +154,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m7,
+    "loggedInAs": m8,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
+    "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
+    "minutesAmount": m9,
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
@@ -143,21 +171,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
+    "pickDuration": MessageLookupByLibrary.simpleMessage("Pick Duration"),
+    "pleaseEnterDistance": MessageLookupByLibrary.simpleMessage(
+      "Please enter distance",
+    ),
+    "pleaseSelectAWorkoutType": MessageLookupByLibrary.simpleMessage(
+      "Please select a workout type",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "running": MessageLookupByLibrary.simpleMessage("Running"),
+    "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
+      "Select workout type",
+    ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m8,
+    "sleepDuration": m10,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+    "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
+    "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
+      "Tags (comma separated)",
+    ),
+    "tennis": MessageLookupByLibrary.simpleMessage("Tennis"),
     "theresNotEnoughDataToBuildTheChart": MessageLookupByLibrary.simpleMessage(
       "There\'s not enough data to build the chart",
     ),
     "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
       "This process may take a few seconds.",
     ),
+    "walking": MessageLookupByLibrary.simpleMessage("Walking"),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
     ),
@@ -165,6 +211,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",
     ),
+    "weightTraining": MessageLookupByLibrary.simpleMessage("Weight Training"),
+    "workoutSaved": MessageLookupByLibrary.simpleMessage("Workout saved"),
+    "workoutType": MessageLookupByLibrary.simpleMessage("Workout Type"),
     "workoutsAmount": MessageLookupByLibrary.simpleMessage("Workouts amount"),
     "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(
       "You can now proceed to the next step.",

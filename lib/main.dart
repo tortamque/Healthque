@@ -6,8 +6,11 @@ import 'package:healthque/config/theme/theme.dart';
 import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/utils/hive/user_hive_manager.dart';
+import 'package:healthque/features/activity/activity.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:toastification/toastification.dart';
 import 'core/shared/shared.dart';
+import 'core/utils/hive/workouts_hive_manager.dart';
 import 'core/utils/shared_preferences/shared_preferences.dart';
 import 'features/authorization/authorization.dart';
 import 'features/health/health.dart';
@@ -20,8 +23,12 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(GenderAdapter());
+  Hive.registerAdapter(WorkoutAdapter());
+  Hive.registerAdapter(WorkoutTypeAdapter());
+  Hive.registerAdapter(WorkoutsAdapter());
   initializeDependencies();
-  sl<UserHiveManager>().init();
+  await sl<UserHiveManager>().init();
+  await sl<WorkoutsHiveManager>().init();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const HealthqueApp());
 }
@@ -35,19 +42,25 @@ class HealthqueApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
-        BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl()))
+        BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl())),
+        BlocProvider<ActivityCubit>(
+          create: (_) => ActivityCubit(sl(), sl())..fetchWorkouts(),
+          lazy: false,
+        )
       ],
-      child: MaterialApp.router(
-        theme: themeData,
-        routerConfig: router,
-        localizationsDelegates: [
-          Strings.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: Strings.delegate.supportedLocales,
-        locale: const Locale('en'),
+      child: ToastificationWrapper(
+        child: MaterialApp.router(
+          theme: themeData,
+          routerConfig: router,
+          localizationsDelegates: [
+            Strings.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: Strings.delegate.supportedLocales,
+          locale: const Locale('en'),
+        ),
       ),
     );
   }
