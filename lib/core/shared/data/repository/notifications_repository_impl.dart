@@ -11,4 +11,7 @@ class NotificationsRepositoryImpl implements NotificationsRepository {
   @override
   Future<void> saveNotifications(LocalNotifications notifications) =>
       _notificationsDbService.saveNotifications(notifications);
+
+  @override
+  Future<void> deleteNotificationById(int id) => _notificationsDbService.deleteNotificationById(id);
 }

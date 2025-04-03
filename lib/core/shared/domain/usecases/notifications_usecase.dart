@@ -18,3 +18,12 @@ class SaveNotificationsUseCase implements AsyncUseCase<void, LocalNotifications>
   @override
   Future<void> call(LocalNotifications params) => repository.saveNotifications(params);
 }
+
+class DeleteNotificationByIdUseCase implements AsyncUseCase<void, int> {
+  final NotificationsRepository repository;
+
+  DeleteNotificationByIdUseCase(this.repository);
+
+  @override
+  Future<void> call(int params) => repository.deleteNotificationById(params);
+}
