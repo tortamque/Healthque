@@ -21,7 +21,11 @@ class RemindersCubit extends Cubit<RemindersState> {
   fetchNotifications() {
     final notifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
     emit(
-      RemindersState.reminders(notifications: notifications),
+      RemindersState.reminders(
+        notifications: notifications,
+        errorMessage: null,
+        isLoading: false,
+      ),
     );
   }
 
@@ -56,6 +60,10 @@ class RemindersCubit extends Cubit<RemindersState> {
 
     await _saveNotificationUseCase.call(updatedNotifications);
 
-    emit(RemindersState.reminders(notifications: updatedNotifications));
+    emit(RemindersState.reminders(
+      notifications: updatedNotifications,
+      errorMessage: null,
+      isLoading: false,
+    ));
   }
 }
