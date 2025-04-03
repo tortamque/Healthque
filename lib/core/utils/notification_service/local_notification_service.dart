@@ -39,6 +39,7 @@ class LocalNotificationService {
 
   Future<void> scheduleNotification({
     int id = 0,
+    DateTimeComponents matchDateTimeComponents = DateTimeComponents.dayOfWeekAndTime,
     required String title,
     required String body,
     required DateTime scheduledDate,
@@ -51,6 +52,7 @@ class LocalNotificationService {
         _notificationDetails,
         uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        matchDateTimeComponents: matchDateTimeComponents,
       );
 
   Future<void> showRepeatingNotification({

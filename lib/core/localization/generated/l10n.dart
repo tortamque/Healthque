@@ -1024,6 +1024,111 @@ class Strings {
   String get selectDate {
     return Intl.message('Select Date', name: 'selectDate', desc: '', args: []);
   }
+
+  /// `Configure Workout Reminder`
+  String get configureWorkoutReminder {
+    return Intl.message(
+      'Configure Workout Reminder',
+      name: 'configureWorkoutReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a workout type.`
+  String get workoutTypeValidationMessage {
+    return Intl.message(
+      'Please select a workout type.',
+      name: 'workoutTypeValidationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a date.`
+  String get dateValidationMessage {
+    return Intl.message(
+      'Please select a date.',
+      name: 'dateValidationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Time`
+  String get selectTime {
+    return Intl.message('Select Time', name: 'selectTime', desc: '', args: []);
+  }
+
+  /// `Please select a time.`
+  String get timeValidationMessage {
+    return Intl.message(
+      'Please select a time.',
+      name: 'timeValidationMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Title (Optional)`
+  String get reminderTitleOptional {
+    return Intl.message(
+      'Reminder Title (Optional)',
+      name: 'reminderTitleOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Body (Optional)`
+  String get reminderBodyOptional {
+    return Intl.message(
+      'Reminder Body (Optional)',
+      name: 'reminderBodyOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Reminder`
+  String get saveReminder {
+    return Intl.message(
+      'Save Reminder',
+      name: 'saveReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Workout Reminder`
+  String get defaultWorkoutReminderTitle {
+    return Intl.message(
+      'Workout Reminder',
+      name: 'defaultWorkoutReminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't forget your {type} workout today!`
+  String defaultWorkoutReminderBody(Object type) {
+    return Intl.message(
+      'Don\'t forget your $type workout today!',
+      name: 'defaultWorkoutReminderBody',
+      desc: '',
+      args: [type],
+    );
+  }
+
+  /// `Workout reminder scheduled successfully!`
+  String get workoutReminderScheduled {
+    return Intl.message(
+      'Workout reminder scheduled successfully!',
+      name: 'workoutReminderScheduled',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

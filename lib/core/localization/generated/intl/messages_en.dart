@@ -35,15 +35,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m6(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m7(hours, minutes) => "${hours} h ${minutes} m";
+  static String m7(type) => "Don\'t forget your ${type} workout today!";
 
-  static String m8(user) => "Successfully logged in as ${user}";
+  static String m8(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m9(minutes) => "${minutes} m";
+  static String m9(user) => "Successfully logged in as ${user}";
 
-  static String m10(minutes) => "${minutes} minutes";
+  static String m10(minutes) => "${minutes} m";
 
-  static String m11(hours, minutes) => "${hours}h ${minutes}m";
+  static String m11(minutes) => "${minutes} minutes";
+
+  static String m12(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -85,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "clearFilter": MessageLookupByLibrary.simpleMessage("Clear Filter"),
+    "configureWorkoutReminder": MessageLookupByLibrary.simpleMessage(
+      "Configure Workout Reminder",
+    ),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
@@ -92,6 +97,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
+      "Please select a date.",
+    ),
+    "defaultWorkoutReminderBody": m7,
+    "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
+      "Workout Reminder",
+    ),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "deleteConfirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete this workout?",
@@ -145,7 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
-    "hoursAndMinutesAmount": m7,
+    "hoursAndMinutesAmount": m8,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
@@ -169,13 +181,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m8,
+    "loggedInAs": m9,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
-    "minutesAmount": m9,
-    "minutesAmountLong": m10,
+    "minutesAmount": m10,
+    "minutesAmountLong": m11,
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
@@ -200,16 +212,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a workout type",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "reminderBodyOptional": MessageLookupByLibrary.simpleMessage(
+      "Reminder Body (Optional)",
+    ),
+    "reminderTitleOptional": MessageLookupByLibrary.simpleMessage(
+      "Reminder Title (Optional)",
+    ),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
+    "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m11,
+    "sleepDuration": m12,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
@@ -227,6 +247,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "thisProcessMayTakeAFewSeconds": MessageLookupByLibrary.simpleMessage(
       "This process may take a few seconds.",
     ),
+    "timeValidationMessage": MessageLookupByLibrary.simpleMessage(
+      "Please select a time.",
+    ),
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Training evaluation",
     ),
@@ -240,8 +263,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "weightTraining": MessageLookupByLibrary.simpleMessage("Weight Training"),
     "workoutDetails": MessageLookupByLibrary.simpleMessage("Workout Details"),
+    "workoutReminderScheduled": MessageLookupByLibrary.simpleMessage(
+      "Workout reminder scheduled successfully!",
+    ),
     "workoutSaved": MessageLookupByLibrary.simpleMessage("Workout saved"),
     "workoutType": MessageLookupByLibrary.simpleMessage("Workout Type"),
+    "workoutTypeValidationMessage": MessageLookupByLibrary.simpleMessage(
+      "Please select a workout type.",
+    ),
     "workoutsAmount": MessageLookupByLibrary.simpleMessage("Workouts amount"),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "youCanNowProceedToTheNextStep": MessageLookupByLibrary.simpleMessage(

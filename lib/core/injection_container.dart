@@ -10,21 +10,25 @@ void initializeDependencies() {
     // Other
     ..registerSingleton<UserHiveManager>(UserHiveManager())
     ..registerSingleton<WorkoutsHiveManager>(WorkoutsHiveManager())
+    ..registerSingleton<NotificationsHiveManager>(NotificationsHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
     ..registerSingleton<ActivityDbService>(ActivityDbServiceImpl(sl()))
+    ..registerSingleton<NotificationsDbService>(NotificationsDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
     ..registerSingleton<ActivityRepository>(ActivityRepositoryImpl(sl()))
+    ..registerSingleton<NotificationsRepository>(NotificationsRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
     ..registerSingleton<SaveUserUsecase>(SaveUserUsecase(sl()))
     ..registerSingleton<GetWorkoutsUseCase>(GetWorkoutsUseCase(sl()))
     ..registerSingleton<SaveWorkoutsUseCase>(SaveWorkoutsUseCase(sl()))
-    ..registerSingleton<DeleteWorkoutsUseCase>(DeleteWorkoutsUseCase(sl()));
-
+    ..registerSingleton<DeleteWorkoutsUseCase>(DeleteWorkoutsUseCase(sl()))
+    ..registerSingleton<GetNotificationsUseCase>(GetNotificationsUseCase(sl()))
+    ..registerSingleton<SaveNotificationsUseCase>(SaveNotificationsUseCase(sl()));
   // Blocs
 }

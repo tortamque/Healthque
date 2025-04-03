@@ -9,10 +9,13 @@ class Routes {
   static const String onboardingHealthConnectPage = '/onboarding/healthConnect';
 
   static const String dashboardPage = '/dashboardPage';
+
   static const String activityPage = '/activityPage';
   static const String addWorkoutPage = '/addworkoutPage';
   static const String savedWorkoutsPage = '/savedWorkoutsPage';
   static const String workoutDetailsPage = '/workoutDetailsPage';
+  static const String workoutReminderPage = '/workoutReminderPage';
+
   static const String tempPage3 = '/tempPage3';
   static const String tempPage4 = '/tempPage4';
 }

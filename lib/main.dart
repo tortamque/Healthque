@@ -21,15 +21,11 @@ void main() async {
   tz.initializeTimeZones();
   await LocalNotificationService().init();
   await SharedPreferencesManager.init();
-  await Hive.initFlutter();
-  Hive.registerAdapter(UserAdapter());
-  Hive.registerAdapter(GenderAdapter());
-  Hive.registerAdapter(WorkoutAdapter());
-  Hive.registerAdapter(WorkoutTypeAdapter());
-  Hive.registerAdapter(WorkoutsAdapter());
+  await _initHive();
   initializeDependencies();
   await sl<UserHiveManager>().init();
   await sl<WorkoutsHiveManager>().init();
+  await sl<NotificationsHiveManager>().init();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const HealthqueApp());
 }
@@ -65,4 +61,16 @@ class HealthqueApp extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<void> _initHive() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
+  Hive.registerAdapter(GenderAdapter());
+  Hive.registerAdapter(WorkoutAdapter());
+  Hive.registerAdapter(WorkoutTypeAdapter());
+  Hive.registerAdapter(WorkoutsAdapter());
+  Hive.registerAdapter(LocalNotificationAdapter());
+  Hive.registerAdapter(LocalNotificationsAdapter());
+  Hive.registerAdapter(LocalNotificationTypeAdapter());
 }

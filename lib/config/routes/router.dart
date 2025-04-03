@@ -86,6 +86,10 @@ final GoRouter router = GoRouter(
                 workout: state.extra as Workout,
               ),
             ),
+            GoRoute(
+              path: Routes.workoutReminderPage,
+              builder: (context, state) => const WorkoutReminderPage(),
+            ),
           ],
         ),
         StatefulShellBranch(
