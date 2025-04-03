@@ -11,20 +11,22 @@ class RemindersCubit extends Cubit<RemindersState> {
   RemindersCubit(
     this._getNotificationsUseCase,
     this._saveNotificationUseCase,
+    this._deleteNotificationByIdUseCase,
   ) : super(RemindersState.reminders());
 
   final GetNotificationsUseCase _getNotificationsUseCase;
   final SaveNotificationsUseCase _saveNotificationUseCase;
+  final DeleteNotificationByIdUseCase _deleteNotificationByIdUseCase;
 
   final LocalNotificationService _notificationService = LocalNotificationService();
 
-  fetchNotifications() {
+  void fetchNotifications() {
     final notifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
     emit(
       RemindersState.reminders(
         notifications: notifications,
-        errorMessage: null,
         isLoading: false,
+        errorMessage: null,
       ),
     );
   }
@@ -60,10 +62,26 @@ class RemindersCubit extends Cubit<RemindersState> {
 
     await _saveNotificationUseCase.call(updatedNotifications);
 
-    emit(RemindersState.reminders(
-      notifications: updatedNotifications,
-      errorMessage: null,
-      isLoading: false,
-    ));
+    emit(
+      RemindersState.reminders(
+        notifications: updatedNotifications,
+        isLoading: false,
+        errorMessage: null,
+      ),
+    );
+  }
+
+  Future<void> deleteReminder(int notificationId) async {
+    await _deleteNotificationByIdUseCase.call(notificationId);
+
+    final updatedNotifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
+
+    emit(
+      RemindersState.reminders(
+        notifications: updatedNotifications,
+        isLoading: false,
+        errorMessage: null,
+      ),
+    );
   }
 }

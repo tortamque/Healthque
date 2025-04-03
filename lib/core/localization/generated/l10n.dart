@@ -1129,6 +1129,51 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Your Reminders`
+  String get yourReminders {
+    return Intl.message(
+      'Your Reminders',
+      name: 'yourReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No workout reminders available.`
+  String get noReminders {
+    return Intl.message(
+      'No workout reminders available.',
+      name: 'noReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scheduled at`
+  String get scheduledAt {
+    return Intl.message(
+      'Scheduled at',
+      name: 'scheduledAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get reminderType {
+    return Intl.message('Type', name: 'reminderType', desc: '', args: []);
+  }
+
+  /// `Reminder deleted successfully`
+  String get reminderDeleted {
+    return Intl.message(
+      'Reminder deleted successfully',
+      name: 'reminderDeleted',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

@@ -19,7 +19,7 @@ class ActivityPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.alarm_rounded),
-            onPressed: () => context.push(Routes.workoutReminderPage),
+            onPressed: () => context.push(Routes.workoutRemindersListPage),
           ),
           IconButton(
             icon: Icon(Icons.bookmark_rounded),

@@ -45,7 +45,7 @@ class HealthqueApp extends StatelessWidget {
           lazy: false,
         ),
         BlocProvider<RemindersCubit>(
-          create: (_) => RemindersCubit(sl(), sl())..fetchNotifications(),
+          create: (_) => RemindersCubit(sl(), sl(), sl())..fetchNotifications(),
         ),
       ],
       child: ToastificationWrapper(

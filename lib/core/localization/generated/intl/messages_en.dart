@@ -194,6 +194,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "noReminders": MessageLookupByLibrary.simpleMessage(
+      "No workout reminders available.",
+    ),
     "noSavedWorkoutsYet": MessageLookupByLibrary.simpleMessage(
       "No saved workouts yet.",
     ),
@@ -215,13 +218,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "reminderBodyOptional": MessageLookupByLibrary.simpleMessage(
       "Reminder Body (Optional)",
     ),
+    "reminderDeleted": MessageLookupByLibrary.simpleMessage(
+      "Reminder deleted successfully",
+    ),
     "reminderTitleOptional": MessageLookupByLibrary.simpleMessage(
       "Reminder Title (Optional)",
     ),
+    "reminderType": MessageLookupByLibrary.simpleMessage("Type"),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
+    "scheduledAt": MessageLookupByLibrary.simpleMessage("Scheduled at"),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
@@ -277,6 +285,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You can now proceed to the next step.",
     ),
     "yourActivities": MessageLookupByLibrary.simpleMessage("Your activities"),
+    "yourReminders": MessageLookupByLibrary.simpleMessage("Your Reminders"),
     "yourWearableDeviceIsConnected": MessageLookupByLibrary.simpleMessage(
       "Your wearable device is connected.",
     ),

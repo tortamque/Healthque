@@ -140,5 +140,10 @@
   "defaultWorkoutReminderTitle": "Workout Reminder",
   "defaultWorkoutReminderBody": "Don't forget your {type} workout today!",
   "workoutReminderScheduled": "Workout reminder scheduled successfully!",
-  "workoutSaved": "Workout saved"
+  "workoutSaved": "Workout saved",
+  "yourReminders": "Your Reminders",
+  "noReminders": "No workout reminders available.",
+  "scheduledAt": "Scheduled at",
+  "reminderType": "Type",
+  "reminderDeleted": "Reminder deleted successfully"
 }
