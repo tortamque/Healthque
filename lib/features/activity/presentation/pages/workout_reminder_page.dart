@@ -164,7 +164,6 @@ class _WorkoutReminderPageState extends State<WorkoutReminderPage> {
     );
 
     await context.read<RemindersCubit>().scheduleReminder(
-          workoutType: _selectedWorkoutType!,
           scheduledDateTime: scheduledDateTime,
           title: title,
           body: body,

@@ -35,10 +35,10 @@ class RemindersCubit extends Cubit<RemindersState> {
   }
 
   Future<void> scheduleReminder({
-    required WorkoutType workoutType,
     required DateTime scheduledDateTime,
     required String title,
     required String body,
+    DateTimeComponents matchDateTimeComponents = DateTimeComponents.dayOfWeekAndTime,
   }) async {
     final currentNotifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
     final int newId = currentNotifications.notifications.length + 1;
@@ -48,7 +48,7 @@ class RemindersCubit extends Cubit<RemindersState> {
       title: title,
       body: body,
       scheduledDate: scheduledDateTime,
-      matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
+      matchDateTimeComponents: matchDateTimeComponents,
     );
 
     final newNotification = LocalNotification(
