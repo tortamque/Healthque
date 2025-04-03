@@ -22,9 +22,12 @@ class RemindersCubit extends Cubit<RemindersState> {
 
   void fetchNotifications() {
     final notifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
+    final workoutNotifications =
+        notifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
     emit(
       RemindersState.reminders(
-        notifications: notifications,
+        allNotifications: notifications,
+        workoutNotifications: workoutNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -62,9 +65,13 @@ class RemindersCubit extends Cubit<RemindersState> {
 
     await _saveNotificationUseCase.call(updatedNotifications);
 
+    final workoutNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
+
     emit(
       RemindersState.reminders(
-        notifications: updatedNotifications,
+        allNotifications: updatedNotifications,
+        workoutNotifications: workoutNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -75,10 +82,13 @@ class RemindersCubit extends Cubit<RemindersState> {
     await _deleteNotificationByIdUseCase.call(notificationId);
 
     final updatedNotifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
+    final workoutNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
 
     emit(
       RemindersState.reminders(
-        notifications: updatedNotifications,
+        allNotifications: updatedNotifications,
+        workoutNotifications: workoutNotifications,
         isLoading: false,
         errorMessage: null,
       ),

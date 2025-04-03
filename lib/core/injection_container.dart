@@ -31,6 +31,7 @@ void initializeDependencies() {
     ..registerSingleton<DeleteWorkoutsUseCase>(DeleteWorkoutsUseCase(sl()))
     ..registerSingleton<GetNotificationsUseCase>(GetNotificationsUseCase(sl()))
     ..registerSingleton<SaveNotificationsUseCase>(SaveNotificationsUseCase(sl()))
+    ..registerSingleton<GetNotificationsByTypeUseCase>(GetNotificationsByTypeUseCase(sl()))
     ..registerSingleton<DeleteNotificationByIdUseCase>(DeleteNotificationByIdUseCase(sl()));
   // Blocs
 }

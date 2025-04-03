@@ -15,7 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RemindersState {
-  LocalNotifications get notifications;
+  LocalNotifications get allNotifications;
+  dynamic get workoutNotifications;
   bool get isLoading;
   String? get errorMessage;
 
@@ -32,8 +33,10 @@ mixin _$RemindersState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RemindersState &&
-            (identical(other.notifications, notifications) ||
-                other.notifications == notifications) &&
+            (identical(other.allNotifications, allNotifications) ||
+                other.allNotifications == allNotifications) &&
+            const DeepCollectionEquality()
+                .equals(other.workoutNotifications, workoutNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -41,12 +44,16 @@ mixin _$RemindersState {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, notifications, isLoading, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      allNotifications,
+      const DeepCollectionEquality().hash(workoutNotifications),
+      isLoading,
+      errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState(notifications: $notifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -57,9 +64,12 @@ abstract mixin class $RemindersStateCopyWith<$Res> {
       _$RemindersStateCopyWithImpl;
   @useResult
   $Res call(
-      {LocalNotifications notifications, bool isLoading, String? errorMessage});
+      {LocalNotifications allNotifications,
+      dynamic workoutNotifications,
+      bool isLoading,
+      String? errorMessage});
 
-  $LocalNotificationsCopyWith<$Res> get notifications;
+  $LocalNotificationsCopyWith<$Res> get allNotifications;
 }
 
 /// @nodoc
@@ -75,15 +85,20 @@ class _$RemindersStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? notifications = null,
+    Object? allNotifications = null,
+    Object? workoutNotifications = freezed,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_self.copyWith(
-      notifications: null == notifications
-          ? _self.notifications
-          : notifications // ignore: cast_nullable_to_non_nullable
+      allNotifications: null == allNotifications
+          ? _self.allNotifications
+          : allNotifications // ignore: cast_nullable_to_non_nullable
               as LocalNotifications,
+      workoutNotifications: freezed == workoutNotifications
+          ? _self.workoutNotifications
+          : workoutNotifications // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       isLoading: null == isLoading
           ? _self.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -99,9 +114,9 @@ class _$RemindersStateCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LocalNotificationsCopyWith<$Res> get notifications {
-    return $LocalNotificationsCopyWith<$Res>(_self.notifications, (value) {
-      return _then(_self.copyWith(notifications: value));
+  $LocalNotificationsCopyWith<$Res> get allNotifications {
+    return $LocalNotificationsCopyWith<$Res>(_self.allNotifications, (value) {
+      return _then(_self.copyWith(allNotifications: value));
     });
   }
 }
@@ -110,13 +125,17 @@ class _$RemindersStateCopyWithImpl<$Res>
 
 class RemindersStateReminders implements RemindersState {
   const RemindersStateReminders(
-      {this.notifications = const LocalNotifications(notifications: []),
+      {this.allNotifications = const LocalNotifications(notifications: []),
+      this.workoutNotifications = const <LocalNotification>[],
       this.isLoading = false,
       this.errorMessage});
 
   @override
   @JsonKey()
-  final LocalNotifications notifications;
+  final LocalNotifications allNotifications;
+  @override
+  @JsonKey()
+  final dynamic workoutNotifications;
   @override
   @JsonKey()
   final bool isLoading;
@@ -137,8 +156,10 @@ class RemindersStateReminders implements RemindersState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is RemindersStateReminders &&
-            (identical(other.notifications, notifications) ||
-                other.notifications == notifications) &&
+            (identical(other.allNotifications, allNotifications) ||
+                other.allNotifications == allNotifications) &&
+            const DeepCollectionEquality()
+                .equals(other.workoutNotifications, workoutNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -146,12 +167,16 @@ class RemindersStateReminders implements RemindersState {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, notifications, isLoading, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      allNotifications,
+      const DeepCollectionEquality().hash(workoutNotifications),
+      isLoading,
+      errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState.reminders(notifications: $notifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState.reminders(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -164,10 +189,13 @@ abstract mixin class $RemindersStateRemindersCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {LocalNotifications notifications, bool isLoading, String? errorMessage});
+      {LocalNotifications allNotifications,
+      dynamic workoutNotifications,
+      bool isLoading,
+      String? errorMessage});
 
   @override
-  $LocalNotificationsCopyWith<$Res> get notifications;
+  $LocalNotificationsCopyWith<$Res> get allNotifications;
 }
 
 /// @nodoc
@@ -183,15 +211,19 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? notifications = null,
+    Object? allNotifications = null,
+    Object? workoutNotifications = freezed,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
     return _then(RemindersStateReminders(
-      notifications: null == notifications
-          ? _self.notifications
-          : notifications // ignore: cast_nullable_to_non_nullable
+      allNotifications: null == allNotifications
+          ? _self.allNotifications
+          : allNotifications // ignore: cast_nullable_to_non_nullable
               as LocalNotifications,
+      workoutNotifications: freezed == workoutNotifications
+          ? _self.workoutNotifications!
+          : workoutNotifications,
       isLoading: null == isLoading
           ? _self.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -207,9 +239,9 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LocalNotificationsCopyWith<$Res> get notifications {
-    return $LocalNotificationsCopyWith<$Res>(_self.notifications, (value) {
-      return _then(_self.copyWith(notifications: value));
+  $LocalNotificationsCopyWith<$Res> get allNotifications {
+    return $LocalNotificationsCopyWith<$Res>(_self.allNotifications, (value) {
+      return _then(_self.copyWith(allNotifications: value));
     });
   }
 }

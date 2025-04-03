@@ -37,7 +37,7 @@ class _WorkoutRemindersListPageState extends State<WorkoutRemindersListPage> {
           if (state.isLoading) {
             return const Center(child: CircularProgressIndicator());
           }
-          final reminders = state.notifications.notifications;
+          final reminders = state.workoutNotifications as List<LocalNotification>;
           if (reminders.isEmpty) {
             return Center(
               child: Text(

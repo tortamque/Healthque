@@ -10,6 +10,15 @@ class GetNotificationsUseCase implements UseCase<LocalNotifications?, void> {
   LocalNotifications? call(void params) => repository.getNotifications();
 }
 
+class GetNotificationsByTypeUseCase implements UseCase<List<LocalNotification>, LocalNotificationType> {
+  final NotificationsRepository repository;
+
+  GetNotificationsByTypeUseCase(this.repository);
+
+  @override
+  List<LocalNotification> call(LocalNotificationType params) => repository.getNotificationsByType(params);
+}
+
 class SaveNotificationsUseCase implements AsyncUseCase<void, LocalNotifications> {
   final NotificationsRepository repository;
 
