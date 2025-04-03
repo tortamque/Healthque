@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/core/extensions/context.dart';
-import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/core/utils/utils.dart';
-import 'package:healthque/features/activity/activity.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:toastification/toastification.dart';
 
@@ -26,8 +23,6 @@ class _WorkoutReminderPageState extends State<WorkoutReminderPage> {
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _timeController = TextEditingController();
 
-  final LocalNotificationService _notificationService = LocalNotificationService();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +32,7 @@ class _WorkoutReminderPageState extends State<WorkoutReminderPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: ListView(
@@ -168,35 +163,12 @@ class _WorkoutReminderPageState extends State<WorkoutReminderPage> {
       _selectedTime!.minute,
     );
 
-    final GetNotificationsUseCase getNotificationsUseCase = sl<GetNotificationsUseCase>();
-    final SaveNotificationsUseCase saveNotificationsUseCase = sl<SaveNotificationsUseCase>();
-
-    final LocalNotifications localNotifications =
-        getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
-
-    final int newId = localNotifications.notifications.length + 1;
-
-    await _notificationService.scheduleNotification(
-      id: newId,
-      title: title,
-      body: body,
-      scheduledDate: scheduledDateTime,
-      matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
-    );
-
-    final newNotification = LocalNotification(
-      id: newId,
-      type: LocalNotificationType.workout,
-      scheduledDate: scheduledDateTime,
-      title: title,
-      body: body,
-    );
-
-    final updatedNotifications = localNotifications.copyWith(
-      notifications: List.from(localNotifications.notifications)..add(newNotification),
-    );
-
-    await saveNotificationsUseCase.call(updatedNotifications);
+    await context.read<RemindersCubit>().scheduleReminder(
+          workoutType: _selectedWorkoutType!,
+          scheduledDateTime: scheduledDateTime,
+          title: title,
+          body: body,
+        );
 
     if (!mounted) return;
 

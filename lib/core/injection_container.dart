@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/core/utils/hive/hive.dart';
+import 'package:healthque/core/utils/utils.dart';
 import 'package:healthque/features/activity/activity.dart';
 
 final sl = GetIt.instance;

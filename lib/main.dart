@@ -43,7 +43,10 @@ class HealthqueApp extends StatelessWidget {
         BlocProvider<ActivityCubit>(
           create: (_) => ActivityCubit(sl(), sl(), sl())..fetchWorkouts(),
           lazy: false,
-        )
+        ),
+        BlocProvider<RemindersCubit>(
+          create: (_) => RemindersCubit(sl(), sl())..fetchNotifications(),
+        ),
       ],
       child: ToastificationWrapper(
         child: MaterialApp.router(
