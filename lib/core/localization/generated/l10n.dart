@@ -1175,10 +1175,10 @@ class Strings {
     );
   }
 
-  /// `Medication Tracking'`
+  /// `Medication tracking`
   String get medicationTracking {
     return Intl.message(
-      'Medication Tracking\'',
+      'Medication tracking',
       name: 'medicationTracking',
       desc: '',
       args: [],

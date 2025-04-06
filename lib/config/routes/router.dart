@@ -104,6 +104,10 @@ final GoRouter router = GoRouter(
               path: Routes.healthPage,
               builder: (context, state) => const HealthPage(),
             ),
+            GoRoute(
+              path: Routes.medicationTracking,
+              builder: (context, state) => const MedicationTrackingPage(),
+            ),
           ],
         ),
         StatefulShellBranch(

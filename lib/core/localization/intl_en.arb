@@ -147,5 +147,7 @@
   "reminderType": "Type",
   "reminderDeleted": "Reminder deleted successfully",
   "medicationTracking": "Medication Tracking'",
-  "medicationTrackingDescription": "Keep track of your medications, dosages, and schedules."
+  "medicationTrackingDescription": "Keep track of your medications, dosages, and schedules.",
+  "health": "Health",
+  "medicationTracking": "Medication tracking"
 }

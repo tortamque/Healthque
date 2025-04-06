@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/features/health/health.dart';
 
@@ -9,7 +11,7 @@ class HealthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Temp Page 3'),
+        title: Text(context.strings.health),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -20,9 +22,7 @@ class HealthPage extends StatelessWidget {
                 title: context.strings.medicationTracking,
                 subtitle: context.strings.medicationTrackingDescription,
                 icon: Icons.medical_services,
-                onTap: () {
-                  print('Medication Tracking tapped');
-                },
+                onTap: () => context.push(Routes.medicationTracking),
               ),
             ],
           ),

@@ -18,6 +18,7 @@ class Routes {
   static const String workoutRemindersListPage = '/workoutRemindersListPage';
 
   static const String healthPage = '/healthPage';
+  static const String medicationTracking = '/medicationTracking';
 
   static const String tempPage4 = '/tempPage4';
 }

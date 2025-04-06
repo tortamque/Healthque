@@ -185,7 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "medicationTracking": MessageLookupByLibrary.simpleMessage(
-      "Medication Tracking\'",
+      "Medication tracking",
     ),
     "medicationTrackingDescription": MessageLookupByLibrary.simpleMessage(
       "Keep track of your medications, dosages, and schedules.",
