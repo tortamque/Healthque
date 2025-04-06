@@ -1,18 +1,22 @@
-import 'dart:convert';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/core/utils/shared_preferences/shared_preferences.dart';
 
 part 'user_state.dart';
 part 'user_cubit.freezed.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(UserState.user()) {
-    _initUserFromPreferences();
+  UserCubit(
+    this._getUserUsecase,
+    this._saveUserUsecase,
+  ) : super(UserState.user()) {
+    _initUserFromHive();
   }
-  void _initUserFromPreferences() {
+
+  final GetUserUsecase _getUserUsecase;
+  final SaveUserUsecase _saveUserUsecase;
+
+  void _initUserFromHive() {
     final storedUser = retrieveUser();
 
     if (storedUser != null) {
@@ -112,15 +116,8 @@ class UserCubit extends Cubit<UserState> {
       throw Exception('Can\'t store user with null fields');
     }
 
-    await SharedPreferencesManager.storeValue<User>(
-      sharedPreferencesUser,
-      state.user,
-      serialize: (u) => jsonEncode(u.toJson()),
-    );
+    await _saveUserUsecase.call(state.user);
   }
 
-  User? retrieveUser() => SharedPreferencesManager.retrieveValue<User>(
-        sharedPreferencesUser,
-        deserialize: (json) => User.fromJson(json),
-      );
+  User? retrieveUser() => _getUserUsecase.call(null);
 }

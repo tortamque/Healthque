@@ -32,7 +32,7 @@ class _OnboardingStepsPageState extends State<OnboardingStepsPage> {
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16),
+            const Gap(16),
             Text(
               context.strings.stepsTip,
               style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),

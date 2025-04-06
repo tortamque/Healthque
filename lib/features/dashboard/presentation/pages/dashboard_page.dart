@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:healthque/core/shared/presentation/widgets/widgets.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
-import 'package:healthque/features/dashboard/presentation/widgets/workout_pie_chart.dart';
 import 'package:healthque/features/health/health.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -45,45 +44,45 @@ class DashboardPage extends StatelessWidget {
                         ),
                       ),
                       Gap(16),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.bedtime_rounded,
                         title: context.strings.sleep,
                         innerPadding: const EdgeInsets.only(top: 10, left: 10, right: 10),
                         child: SleepLineChart(sleepRecords: sleep),
                       ),
                       Gap(8),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.directions_walk_rounded,
                         title: context.strings.steps,
                         child: StepsBarChart(stepsRecords: steps),
                       ),
                       Gap(8),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.location_on,
                         title: context.strings.distance,
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: DistanceLineChart(distanceRecords: distance),
                       ),
                       Gap(8),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.local_fire_department_rounded,
                         title: context.strings.caloriesBurnedDuringWorkouts,
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: CaloriesPieChart(caloriesRecords: calories),
                       ),
                       Gap(8),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.opacity_rounded,
                         title: context.strings.bloodOxygenSaturation,
                         innerPadding: const EdgeInsets.only(left: 10),
                         child: BloodOxygenLineChart(bloodOxygenRecords: bloodOxygen),
                       ),
                       Gap(8),
-                      DashboardItemTemplate(
+                      ChartWrapperCard(
                         icon: Icons.fitness_center_rounded,
                         title: context.strings.workoutsAmount,
                         innerPadding: const EdgeInsets.only(left: 10),
-                        child: WorkoutPieChart(workoutRecords: workout),
+                        child: WorkoutsAmountPieChart(workoutRecords: workout),
                       ),
                     ],
                   ),

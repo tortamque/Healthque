@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/context.dart';
 
-class DashboardItemTemplate extends StatelessWidget {
-  const DashboardItemTemplate({
+class ChartWrapperCard extends StatelessWidget {
+  const ChartWrapperCard({
     super.key,
-    required this.child,
     required this.icon,
     required this.title,
+    required this.child,
     this.outerPadding = const EdgeInsets.only(top: 16, left: 16),
     this.innerPadding = const EdgeInsets.all(0),
   });

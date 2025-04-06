@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
             customEnd: DateTime.now(),
           );
-      context.go(Routes.tempPage1);
+      context.go(Routes.dashboardPage);
     } else {
       context.go(Routes.onboardingLoginPage);
     }
