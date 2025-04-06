@@ -8,6 +8,8 @@ import 'package:healthque/features/onboarding/onboarding.dart';
 import 'package:healthque/features/splash/splash.dart';
 import 'package:healthque/features/temp/temp.dart';
 
+import '../../features/health/health.dart';
+
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 final GoRouter router = GoRouter(
@@ -99,8 +101,8 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: Routes.tempPage3,
-              builder: (context, state) => const TempPage3(),
+              path: Routes.healthPage,
+              builder: (context, state) => const HealthPage(),
             ),
           ],
         ),

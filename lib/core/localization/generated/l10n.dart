@@ -1174,6 +1174,26 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Medication Tracking'`
+  String get medicationTracking {
+    return Intl.message(
+      'Medication Tracking\'',
+      name: 'medicationTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Keep track of your medications, dosages, and schedules.`
+  String get medicationTrackingDescription {
+    return Intl.message(
+      'Keep track of your medications, dosages, and schedules.',
+      name: 'medicationTrackingDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

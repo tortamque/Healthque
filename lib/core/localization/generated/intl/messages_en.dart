@@ -184,6 +184,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "loggedInAs": m9,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
+    "medicationTracking": MessageLookupByLibrary.simpleMessage(
+      "Medication Tracking\'",
+    ),
+    "medicationTrackingDescription": MessageLookupByLibrary.simpleMessage(
+      "Keep track of your medications, dosages, and schedules.",
+    ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
     "minutesAmount": m10,

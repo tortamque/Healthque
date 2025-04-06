@@ -145,5 +145,7 @@
   "noReminders": "No workout reminders available.",
   "scheduledAt": "Scheduled at",
   "reminderType": "Type",
-  "reminderDeleted": "Reminder deleted successfully"
+  "reminderDeleted": "Reminder deleted successfully",
+  "medicationTracking": "Medication Tracking'",
+  "medicationTrackingDescription": "Keep track of your medications, dosages, and schedules."
 }
