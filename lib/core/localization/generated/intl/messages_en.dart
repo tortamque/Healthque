@@ -54,7 +54,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Activity analysis",
     ),
     "addANewWorkout": MessageLookupByLibrary.simpleMessage("Add a new workout"),
+    "addMedication": MessageLookupByLibrary.simpleMessage("Add Medication"),
+    "addMedicationButton": MessageLookupByLibrary.simpleMessage(
+      "Add Medication",
+    ),
     "addWorkout": MessageLookupByLibrary.simpleMessage("Add Workout"),
+    "addedOn": MessageLookupByLibrary.simpleMessage("Added on"),
     "additionalNotes": MessageLookupByLibrary.simpleMessage("Additional Notes"),
     "age": MessageLookupByLibrary.simpleMessage("Age"),
     "ageMustBeLessThan120": MessageLookupByLibrary.simpleMessage(
@@ -86,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Calories burned during workouts",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "capsule": MessageLookupByLibrary.simpleMessage("Capsule"),
     "clearFilter": MessageLookupByLibrary.simpleMessage("Clear Filter"),
     "configureWorkoutReminder": MessageLookupByLibrary.simpleMessage(
       "Configure Workout Reminder",
@@ -93,6 +99,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
+    ),
+    "courseOfTreatment": MessageLookupByLibrary.simpleMessage(
+      "Course of Treatment",
+    ),
+    "courseValidation": MessageLookupByLibrary.simpleMessage(
+      "Please enter the course of treatment",
     ),
     "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
@@ -110,6 +122,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "distanceKm": MessageLookupByLibrary.simpleMessage("Distance (km)"),
+    "dosage": MessageLookupByLibrary.simpleMessage("Dosage"),
+    "dosageValidation": MessageLookupByLibrary.simpleMessage(
+      "Please enter the dosage",
+    ),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
@@ -168,6 +184,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "howMuchWaterYouCanDrink": MessageLookupByLibrary.simpleMessage(
       "How much water you can drink in one day?",
     ),
+    "injection": MessageLookupByLibrary.simpleMessage("Injection"),
     "intensity": MessageLookupByLibrary.simpleMessage("Intensity"),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
@@ -184,22 +201,36 @@ class MessageLookup extends MessageLookupByLibrary {
     "loggedInAs": m9,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
+    "medicationAdded": MessageLookupByLibrary.simpleMessage(
+      "Medication added successfully",
+    ),
+    "medicationHistory": MessageLookupByLibrary.simpleMessage(
+      "Medication History",
+    ),
     "medicationTracking": MessageLookupByLibrary.simpleMessage(
-      "Medication tracking",
+      "Medication Tracking",
     ),
     "medicationTrackingDescription": MessageLookupByLibrary.simpleMessage(
       "Keep track of your medications, dosages, and schedules.",
+    ),
+    "medicationType": MessageLookupByLibrary.simpleMessage("Medication Type"),
+    "medicationTypeValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select a medication type",
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
     "minutesAmount": m10,
     "minutesAmountLong": m11,
+    "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
     ),
     "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "noMedications": MessageLookupByLibrary.simpleMessage(
+      "No medications found.",
+    ),
     "noReminders": MessageLookupByLibrary.simpleMessage(
       "No workout reminders available.",
     ),
@@ -213,7 +244,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "pickDuration": MessageLookupByLibrary.simpleMessage("Pick Duration"),
+    "pieces": MessageLookupByLibrary.simpleMessage("pieces"),
     "pleaseEnterDistance": MessageLookupByLibrary.simpleMessage(
       "Please enter distance",
     ),
@@ -250,6 +283,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
+    "syrup": MessageLookupByLibrary.simpleMessage("Syrup"),
+    "tablet": MessageLookupByLibrary.simpleMessage("Tablet"),
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
       "Tags (comma separated)",
@@ -267,6 +302,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Training evaluation",
     ),
+    "units": MessageLookupByLibrary.simpleMessage("units"),
     "walking": MessageLookupByLibrary.simpleMessage("Walking"),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",

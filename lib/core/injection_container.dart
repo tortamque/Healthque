@@ -3,6 +3,7 @@ import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/core/utils/hive/hive.dart';
 import 'package:healthque/core/utils/utils.dart';
 import 'package:healthque/features/activity/activity.dart';
+import 'package:healthque/features/health/health.dart';
 
 final sl = GetIt.instance;
 
@@ -12,16 +13,19 @@ void initializeDependencies() {
     ..registerSingleton<UserHiveManager>(UserHiveManager())
     ..registerSingleton<WorkoutsHiveManager>(WorkoutsHiveManager())
     ..registerSingleton<NotificationsHiveManager>(NotificationsHiveManager())
+    ..registerSingleton<MedicationTrackingHiveManager>(MedicationTrackingHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
     ..registerSingleton<ActivityDbService>(ActivityDbServiceImpl(sl()))
     ..registerSingleton<NotificationsDbService>(NotificationsDbServiceImpl(sl()))
+    ..registerSingleton<MedicationTrackingDbService>(MedicationTrackingDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
     ..registerSingleton<ActivityRepository>(ActivityRepositoryImpl(sl()))
     ..registerSingleton<NotificationsRepository>(NotificationsRepositoryImpl(sl()))
+    ..registerSingleton<MedicationTrackingRepository>(MedicationTrackingRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -31,7 +35,11 @@ void initializeDependencies() {
     ..registerSingleton<DeleteWorkoutsUseCase>(DeleteWorkoutsUseCase(sl()))
     ..registerSingleton<GetNotificationsUseCase>(GetNotificationsUseCase(sl()))
     ..registerSingleton<SaveNotificationsUseCase>(SaveNotificationsUseCase(sl()))
+    ..registerSingleton<GetMedicationTrackingUseCase>(GetMedicationTrackingUseCase(sl()))
     ..registerSingleton<GetNotificationsByTypeUseCase>(GetNotificationsByTypeUseCase(sl()))
-    ..registerSingleton<DeleteNotificationByIdUseCase>(DeleteNotificationByIdUseCase(sl()));
+    ..registerSingleton<SaveMedicationTrackingUseCase>(SaveMedicationTrackingUseCase(sl()))
+    ..registerSingleton<DeleteNotificationByIdUseCase>(DeleteNotificationByIdUseCase(sl()))
+    ..registerSingleton<DeleteMedicationTrackingUseCase>(DeleteMedicationTrackingUseCase(sl()));
+
   // Blocs
 }

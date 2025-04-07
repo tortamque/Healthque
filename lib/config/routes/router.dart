@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
+import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
@@ -105,9 +107,11 @@ final GoRouter router = GoRouter(
               builder: (context, state) => const HealthPage(),
             ),
             GoRoute(
-              path: Routes.medicationTracking,
-              builder: (context, state) => const MedicationTrackingPage(),
-            ),
+                path: Routes.medicationTracking,
+                builder: (context, state) => BlocProvider(
+                      create: (context) => MedicationTrackingCubit(sl(), sl(), sl())..fetchMedications(),
+                      child: const MedicationTrackingPage(),
+                    )),
           ],
         ),
         StatefulShellBranch(

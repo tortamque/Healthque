@@ -1175,10 +1175,10 @@ class Strings {
     );
   }
 
-  /// `Medication tracking`
+  /// `Medication Tracking`
   String get medicationTracking {
     return Intl.message(
-      'Medication tracking',
+      'Medication Tracking',
       name: 'medicationTracking',
       desc: '',
       args: [],
@@ -1193,6 +1193,156 @@ class Strings {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Add Medication`
+  String get addMedication {
+    return Intl.message(
+      'Add Medication',
+      name: 'addMedication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication Type`
+  String get medicationType {
+    return Intl.message(
+      'Medication Type',
+      name: 'medicationType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a medication type`
+  String get medicationTypeValidation {
+    return Intl.message(
+      'Please select a medication type',
+      name: 'medicationTypeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dosage`
+  String get dosage {
+    return Intl.message('Dosage', name: 'dosage', desc: '', args: []);
+  }
+
+  /// `Please enter the dosage`
+  String get dosageValidation {
+    return Intl.message(
+      'Please enter the dosage',
+      name: 'dosageValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course of Treatment`
+  String get courseOfTreatment {
+    return Intl.message(
+      'Course of Treatment',
+      name: 'courseOfTreatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the course of treatment`
+  String get courseValidation {
+    return Intl.message(
+      'Please enter the course of treatment',
+      name: 'courseValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Medication`
+  String get addMedicationButton {
+    return Intl.message(
+      'Add Medication',
+      name: 'addMedicationButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication History`
+  String get medicationHistory {
+    return Intl.message(
+      'Medication History',
+      name: 'medicationHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No medications found.`
+  String get noMedications {
+    return Intl.message(
+      'No medications found.',
+      name: 'noMedications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication added successfully`
+  String get medicationAdded {
+    return Intl.message(
+      'Medication added successfully',
+      name: 'medicationAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added on`
+  String get addedOn {
+    return Intl.message('Added on', name: 'addedOn', desc: '', args: []);
+  }
+
+  /// `pieces`
+  String get pieces {
+    return Intl.message('pieces', name: 'pieces', desc: '', args: []);
+  }
+
+  /// `ml`
+  String get ml {
+    return Intl.message('ml', name: 'ml', desc: '', args: []);
+  }
+
+  /// `units`
+  String get units {
+    return Intl.message('units', name: 'units', desc: '', args: []);
+  }
+
+  /// `Tablet`
+  String get tablet {
+    return Intl.message('Tablet', name: 'tablet', desc: '', args: []);
+  }
+
+  /// `Capsule`
+  String get capsule {
+    return Intl.message('Capsule', name: 'capsule', desc: '', args: []);
+  }
+
+  /// `Injection`
+  String get injection {
+    return Intl.message('Injection', name: 'injection', desc: '', args: []);
+  }
+
+  /// `Syrup`
+  String get syrup {
+    return Intl.message('Syrup', name: 'syrup', desc: '', args: []);
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
   }
 }
 
