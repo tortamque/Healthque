@@ -27,6 +27,7 @@ void main() async {
   await sl<WorkoutsHiveManager>().init();
   await sl<NotificationsHiveManager>().init();
   await sl<MedicationTrackingHiveManager>().init();
+  await sl<CourseTreatmentHiveManager>().init();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const HealthqueApp());
 }
@@ -80,4 +81,8 @@ Future<void> _initHive() async {
   Hive.registerAdapter(MedicationTypeAdapter());
   Hive.registerAdapter(MedicationAdapter());
   Hive.registerAdapter(MedicationsAdapter());
+  Hive.registerAdapter(CourseTreatmentsAdapter());
+  Hive.registerAdapter(CourseTreatmentEntryAdapter());
+  Hive.registerAdapter(CourseTreatmentAdapter());
+  Hive.registerAdapter(DateTimeComponentsAdapter());
 }

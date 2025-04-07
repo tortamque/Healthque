@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/core/extensions/date_time_components.dart';
 import 'package:healthque/features/health/health.dart';
 import 'package:intl/intl.dart';
-import 'package:healthque/core/extensions/context.dart';
 
-class MedicationCard extends StatelessWidget {
-  final Medication medication;
+class CourseTreatmentCard extends StatelessWidget {
+  final CourseTreatment course;
   final VoidCallback? onDelete;
 
-  const MedicationCard({
-    super.key,
-    required this.medication,
-    this.onDelete,
-  });
+  const CourseTreatmentCard({super.key, required this.course, this.onDelete});
 
   @override
   Widget build(BuildContext context) {
-    final String createdDate = DateFormat('dd.MM.yyyy HH:mm').format(medication.createdAt);
+    final startDate = DateFormat('dd.MM.yyyy').format(course.courseStart);
+    final endDate = DateFormat('dd.MM.yyyy').format(course.courseEnd);
+    final medicationTime = TimeOfDay.fromDateTime(course.medicationTime).format(context);
+    final drugsDescription = course.entries
+        .map((e) => '${e.medicationType.displayName(context)} (${e.dosage} ${e.medicationType.defaultUnit(context)})')
+        .join(', ');
     return Card(
       elevation: 4,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -30,7 +32,7 @@ class MedicationCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  medication.type.displayName(context),
+                  context.strings.courseTreatment,
                   style: context.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 if (onDelete != null)
@@ -43,25 +45,23 @@ class MedicationCard extends StatelessWidget {
             ),
             const Gap(8),
             Text(
-              '${context.strings.dosage}: ${medication.dosage} ${medication.type.defaultUnit(context)}',
+              '${context.strings.courseDuration}: $startDate - $endDate',
               style: context.textTheme.bodyLarge,
             ),
             const Gap(4),
             Text(
-              '${context.strings.courseOfTreatment}: ${medication.course}',
+              '${context.strings.medicationTime}: $medicationTime',
               style: context.textTheme.bodyLarge,
             ),
-            if (medication.notes != null && medication.notes!.isNotEmpty) ...[
-              const Gap(8),
-              Text(
-                '${context.strings.notes}: ${medication.notes}',
-                style: context.textTheme.bodyLarge,
-              ),
-            ],
+            const Gap(4),
+            Text(
+              '${context.strings.repeatInterval}: ${course.repeatInterval.translate(context)}',
+              style: context.textTheme.bodyLarge,
+            ),
             const Gap(8),
             Text(
-              '${context.strings.addedOn}: $createdDate',
-              style: context.textTheme.bodySmall,
+              '${context.strings.drugs}: $drugsDescription',
+              style: context.textTheme.bodyMedium,
             ),
           ],
         ),

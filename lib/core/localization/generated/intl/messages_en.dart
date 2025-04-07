@@ -35,17 +35,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m6(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m7(type) => "Don\'t forget your ${type} workout today!";
+  static String m7(drugs) => "Time to take your medications: ${drugs}";
 
-  static String m8(hours, minutes) => "${hours} h ${minutes} m";
+  static String m8(type) => "Don\'t forget your ${type} workout today!";
 
-  static String m9(user) => "Successfully logged in as ${user}";
+  static String m9(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m10(minutes) => "${minutes} m";
+  static String m10(user) => "Successfully logged in as ${user}";
 
-  static String m11(minutes) => "${minutes} minutes";
+  static String m11(minutes) => "${minutes} m";
 
-  static String m12(hours, minutes) => "${hours}h ${minutes}m";
+  static String m12(minutes) => "${minutes} minutes";
+
+  static String m13(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -53,7 +55,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "activityAnalysisText": MessageLookupByLibrary.simpleMessage(
       "Activity analysis",
     ),
+    "add": MessageLookupByLibrary.simpleMessage("Add"),
     "addANewWorkout": MessageLookupByLibrary.simpleMessage("Add a new workout"),
+    "addCourse": MessageLookupByLibrary.simpleMessage("Add Course"),
+    "addDrug": MessageLookupByLibrary.simpleMessage("Add Drug"),
+    "addDrugs": MessageLookupByLibrary.simpleMessage("Add Drugs"),
     "addMedication": MessageLookupByLibrary.simpleMessage("Add Medication"),
     "addMedicationButton": MessageLookupByLibrary.simpleMessage(
       "Add Medication",
@@ -100,19 +106,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectingToYourDevice": MessageLookupByLibrary.simpleMessage(
       "Connecting to your wearable device. Please wait...",
     ),
+    "courseAdded": MessageLookupByLibrary.simpleMessage(
+      "Course treatment added successfully",
+    ),
+    "courseDeleted": MessageLookupByLibrary.simpleMessage(
+      "Course treatment deleted successfully",
+    ),
+    "courseDuration": MessageLookupByLibrary.simpleMessage("Course Duration"),
     "courseOfTreatment": MessageLookupByLibrary.simpleMessage(
       "Course of Treatment",
+    ),
+    "courseReminderBody": m7,
+    "courseReminderTitle": MessageLookupByLibrary.simpleMessage(
+      "Course Treatment Reminder",
+    ),
+    "courseTreatment": MessageLookupByLibrary.simpleMessage("Course Treatment"),
+    "courseTreatments": MessageLookupByLibrary.simpleMessage(
+      "Course Treatments",
     ),
     "courseValidation": MessageLookupByLibrary.simpleMessage(
       "Please enter the course of treatment",
     ),
     "createdAt": MessageLookupByLibrary.simpleMessage("Created At"),
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
+    "daily": MessageLookupByLibrary.simpleMessage("Daily"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
     "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a date.",
     ),
-    "defaultWorkoutReminderBody": m7,
+    "defaultWorkoutReminderBody": m8,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Workout Reminder",
     ),
@@ -126,6 +148,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "dosageValidation": MessageLookupByLibrary.simpleMessage(
       "Please enter the dosage",
     ),
+    "drugEntryValidation": MessageLookupByLibrary.simpleMessage(
+      "Please fill in all fields correctly.",
+    ),
+    "drugName": MessageLookupByLibrary.simpleMessage("Drug Name"),
+    "drugNameValidation": MessageLookupByLibrary.simpleMessage(
+      "Please enter the drug name",
+    ),
+    "drugs": MessageLookupByLibrary.simpleMessage("Drugs"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
@@ -173,7 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
-    "hoursAndMinutesAmount": m8,
+    "hoursAndMinutesAmount": m9,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
@@ -198,7 +228,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m9,
+    "loggedInAs": m10,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "medicationAdded": MessageLookupByLibrary.simpleMessage(
@@ -210,6 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "medicationHistory": MessageLookupByLibrary.simpleMessage(
       "Medication History",
     ),
+    "medicationTime": MessageLookupByLibrary.simpleMessage("Medication Time"),
     "medicationTracking": MessageLookupByLibrary.simpleMessage(
       "Medication tracking",
     ),
@@ -222,15 +253,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
-    "minutesAmount": m10,
-    "minutesAmountLong": m11,
+    "minutesAmount": m11,
+    "minutesAmountLong": m12,
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
+    "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
     ),
     "nextStep": MessageLookupByLibrary.simpleMessage("Next Step"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "noCourses": MessageLookupByLibrary.simpleMessage(
+      "No course treatments available.",
+    ),
+    "noDrugsValidation": MessageLookupByLibrary.simpleMessage(
+      "Please add at least one drug.",
+    ),
     "noMedications": MessageLookupByLibrary.simpleMessage(
       "No medications found.",
     ),
@@ -244,6 +282,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Note: Height in cm and Weight in kg",
     ),
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
+    "once": MessageLookupByLibrary.simpleMessage("Once"),
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
     ),
@@ -267,19 +306,42 @@ class MessageLookup extends MessageLookupByLibrary {
       "Reminder Title (Optional)",
     ),
     "reminderType": MessageLookupByLibrary.simpleMessage("Type"),
+    "repeatInterval": MessageLookupByLibrary.simpleMessage("Repeat Interval"),
+    "repeatIntervalValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select a repeat interval",
+    ),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
+    "saveCourse": MessageLookupByLibrary.simpleMessage("Save course"),
     "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
     "scheduledAt": MessageLookupByLibrary.simpleMessage("Scheduled at"),
+    "selectCourseEnd": MessageLookupByLibrary.simpleMessage(
+      "Select Course End Date",
+    ),
+    "selectCourseEndValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select the course end date.",
+    ),
+    "selectCourseStart": MessageLookupByLibrary.simpleMessage(
+      "Select Course Start Date",
+    ),
+    "selectCourseStartValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select the course start date.",
+    ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
+    "selectMedicationTime": MessageLookupByLibrary.simpleMessage(
+      "Select Medication Time",
+    ),
+    "selectMedicationTimeValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select the medication time.",
+    ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m12,
+    "sleepDuration": m13,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
@@ -310,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
     ),
+    "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",

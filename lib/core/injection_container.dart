@@ -14,18 +14,21 @@ void initializeDependencies() {
     ..registerSingleton<WorkoutsHiveManager>(WorkoutsHiveManager())
     ..registerSingleton<NotificationsHiveManager>(NotificationsHiveManager())
     ..registerSingleton<MedicationTrackingHiveManager>(MedicationTrackingHiveManager())
+    ..registerSingleton<CourseTreatmentHiveManager>(CourseTreatmentHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
     ..registerSingleton<ActivityDbService>(ActivityDbServiceImpl(sl()))
     ..registerSingleton<NotificationsDbService>(NotificationsDbServiceImpl(sl()))
     ..registerSingleton<MedicationTrackingDbService>(MedicationTrackingDbServiceImpl(sl()))
+    ..registerSingleton<CourseTreatmentDbService>(CourseTreatmentDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
     ..registerSingleton<ActivityRepository>(ActivityRepositoryImpl(sl()))
     ..registerSingleton<NotificationsRepository>(NotificationsRepositoryImpl(sl()))
     ..registerSingleton<MedicationTrackingRepository>(MedicationTrackingRepositoryImpl(sl()))
+    ..registerSingleton<CourseTreatmentRepository>(CourseTreatmentRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -39,7 +42,10 @@ void initializeDependencies() {
     ..registerSingleton<GetNotificationsByTypeUseCase>(GetNotificationsByTypeUseCase(sl()))
     ..registerSingleton<SaveMedicationTrackingUseCase>(SaveMedicationTrackingUseCase(sl()))
     ..registerSingleton<DeleteNotificationByIdUseCase>(DeleteNotificationByIdUseCase(sl()))
-    ..registerSingleton<DeleteMedicationTrackingUseCase>(DeleteMedicationTrackingUseCase(sl()));
+    ..registerSingleton<DeleteMedicationTrackingUseCase>(DeleteMedicationTrackingUseCase(sl()))
+    ..registerSingleton<GetCourseTreatmentsUseCase>(GetCourseTreatmentsUseCase(sl()))
+    ..registerSingleton<SaveCourseTreatmentsUseCase>(SaveCourseTreatmentsUseCase(sl()))
+    ..registerSingleton<DeleteCourseTreatmentUseCase>(DeleteCourseTreatmentUseCase(sl()));
 
   // Blocs
 }

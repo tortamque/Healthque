@@ -107,11 +107,26 @@ final GoRouter router = GoRouter(
               builder: (context, state) => const HealthPage(),
             ),
             GoRoute(
-                path: Routes.medicationTracking,
-                builder: (context, state) => BlocProvider(
-                      create: (context) => MedicationTrackingCubit(sl(), sl(), sl())..fetchMedications(),
-                      child: const MedicationTrackingPage(),
-                    )),
+              path: Routes.medicationTracking,
+              builder: (context, state) => BlocProvider(
+                create: (context) => MedicationTrackingCubit(sl(), sl(), sl())..fetchMedications(),
+                child: const MedicationTrackingPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.courseTreatmentList,
+              builder: (context, state) => BlocProvider(
+                create: (context) => CourseTreatmentCubit(sl(), sl(), sl())..fetchCourses(),
+                child: const CoursesListPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addCourseTreatment,
+              builder: (context, state) => BlocProvider(
+                create: (context) => CourseTreatmentCubit(sl(), sl(), sl())..fetchCourses(),
+                child: const AddCourseTreatmentPage(),
+              ),
+            ),
           ],
         ),
         StatefulShellBranch(

@@ -1,3 +1,5 @@
+import 'package:go_router/go_router.dart';
+import 'package:healthque/config/routes/routes.dart';
 import 'package:toastification/toastification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +27,12 @@ class _MedicationTrackingPageState extends State<MedicationTrackingPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(context.strings.medicationTracking),
+        actions: [
+          IconButton(
+            onPressed: () => context.push(Routes.courseTreatmentList),
+            icon: Icon(Icons.history_outlined),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

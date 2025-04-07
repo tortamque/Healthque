@@ -19,6 +19,8 @@ class Routes {
 
   static const String healthPage = '/healthPage';
   static const String medicationTracking = '/medicationTracking';
+  static const String courseTreatmentList = '/courseTreatmentList';
+  static const String addCourseTreatment = '/addCourseTreatment';
 
   static const String tempPage4 = '/tempPage4';
 }
