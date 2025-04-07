@@ -47,4 +47,12 @@ class MedicationTrackingCubit extends Cubit<MedicationTrackingState> {
     await _saveMedicationTrackingUseCase.call(updatedMeds);
     emit(MedicationTrackingState(medications: updatedMeds, isLoading: false));
   }
+
+  Future<void> deleteMedication(Medication medication) async {
+    await _deleteMedicationTrackingUseCase.call(medication);
+
+    final updatedMeds = _getMedicationTrackingUseCase.call(null) ?? Medications(medications: []);
+
+    emit(MedicationTrackingState(medications: updatedMeds, isLoading: false));
+  }
 }

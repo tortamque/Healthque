@@ -141,8 +141,25 @@ class _MedicationTrackingPageState extends State<MedicationTrackingPage> {
                     separatorBuilder: (_, __) => const Gap(12),
                     itemBuilder: (context, index) {
                       final med = meds[index];
+                      return MedicationCard(
+                        medication: med,
+                        onDelete: () async {
+                          await context.read<MedicationTrackingCubit>().deleteMedication(med);
 
-                      return MedicationCard(medication: med);
+                          if (!context.mounted) return;
+                          toastification.show(
+                            context: context,
+                            style: ToastificationStyle.simple,
+                            type: ToastificationType.success,
+                            title: Text(context.strings.medicationDeleted),
+                            alignment: Alignment.bottomCenter,
+                            closeButton: ToastCloseButton(
+                              buttonBuilder: (context, onClose) => SizedBox.shrink(),
+                            ),
+                            autoCloseDuration: const Duration(seconds: 3),
+                          );
+                        },
+                      );
                     },
                   );
                 },

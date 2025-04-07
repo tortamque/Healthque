@@ -150,8 +150,6 @@
   "medicationTrackingDescription": "Keep track of your medications, dosages, and schedules.",
   "health": "Health",
   "medicationTracking": "Medication tracking",
-
-  "medicationTracking": "Medication Tracking",
   "addMedication": "Add Medication",
   "medicationType": "Medication Type",
   "medicationTypeValidation": "Please select a medication type",
@@ -172,5 +170,6 @@
   "capsule": "Capsule",
   "injection": "Injection",
   "syrup": "Syrup",
-  "other": "Other"
+  "other": "Other",
+  "medicationDeleted": "Medication deleted successfully"
 }

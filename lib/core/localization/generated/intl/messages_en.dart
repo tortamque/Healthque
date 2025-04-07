@@ -204,11 +204,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "medicationAdded": MessageLookupByLibrary.simpleMessage(
       "Medication added successfully",
     ),
+    "medicationDeleted": MessageLookupByLibrary.simpleMessage(
+      "Medication deleted successfully",
+    ),
     "medicationHistory": MessageLookupByLibrary.simpleMessage(
       "Medication History",
     ),
     "medicationTracking": MessageLookupByLibrary.simpleMessage(
-      "Medication Tracking",
+      "Medication tracking",
     ),
     "medicationTrackingDescription": MessageLookupByLibrary.simpleMessage(
       "Keep track of your medications, dosages, and schedules.",

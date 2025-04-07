@@ -1175,10 +1175,10 @@ class Strings {
     );
   }
 
-  /// `Medication Tracking`
+  /// `Medication tracking`
   String get medicationTracking {
     return Intl.message(
-      'Medication Tracking',
+      'Medication tracking',
       name: 'medicationTracking',
       desc: '',
       args: [],
@@ -1343,6 +1343,16 @@ class Strings {
   /// `Other`
   String get other {
     return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `Medication deleted successfully`
+  String get medicationDeleted {
+    return Intl.message(
+      'Medication deleted successfully',
+      name: 'medicationDeleted',
+      desc: '',
+      args: [],
+    );
   }
 }
 

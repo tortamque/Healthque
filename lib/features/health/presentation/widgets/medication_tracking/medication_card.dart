@@ -6,8 +6,13 @@ import 'package:healthque/core/extensions/context.dart';
 
 class MedicationCard extends StatelessWidget {
   final Medication medication;
+  final VoidCallback? onDelete;
 
-  const MedicationCard({super.key, required this.medication});
+  const MedicationCard({
+    super.key,
+    required this.medication,
+    this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +26,24 @@ class MedicationCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              medication.type.displayName(context),
-              style: context.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  medication.type.displayName(context),
+                  style: context.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                if (onDelete != null)
+                  IconButton(
+                    onPressed: onDelete,
+                    icon: const Icon(Icons.delete_outline),
+                    color: context.theme.colorScheme.primary,
+                  ),
+              ],
             ),
             const Gap(8),
             Text(
-              '${context.strings.dosage}: ${medication.dosage} ${medication.type.defaultUnit}',
+              '${context.strings.dosage}: ${medication.dosage} ${medication.type.defaultUnit(context)}',
               style: context.textTheme.bodyLarge,
             ),
             const Gap(4),
