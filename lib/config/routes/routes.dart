@@ -17,6 +17,10 @@ class Routes {
   static const String workoutReminderPage = '/workoutReminderPage';
   static const String workoutRemindersListPage = '/workoutRemindersListPage';
 
-  static const String tempPage3 = '/tempPage3';
+  static const String healthPage = '/healthPage';
+  static const String medicationTracking = '/medicationTracking';
+  static const String courseTreatmentList = '/courseTreatmentList';
+  static const String addCourseTreatment = '/addCourseTreatment';
+
   static const String tempPage4 = '/tempPage4';
 }

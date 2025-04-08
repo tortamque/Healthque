@@ -1174,6 +1174,441 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Medication tracking`
+  String get medicationTracking {
+    return Intl.message(
+      'Medication tracking',
+      name: 'medicationTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Keep track of your medications, dosages, and schedules.`
+  String get medicationTrackingDescription {
+    return Intl.message(
+      'Keep track of your medications, dosages, and schedules.',
+      name: 'medicationTrackingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Medication`
+  String get addMedication {
+    return Intl.message(
+      'Add Medication',
+      name: 'addMedication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication Type`
+  String get medicationType {
+    return Intl.message(
+      'Medication Type',
+      name: 'medicationType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a medication type`
+  String get medicationTypeValidation {
+    return Intl.message(
+      'Please select a medication type',
+      name: 'medicationTypeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dosage`
+  String get dosage {
+    return Intl.message('Dosage', name: 'dosage', desc: '', args: []);
+  }
+
+  /// `Please enter the dosage`
+  String get dosageValidation {
+    return Intl.message(
+      'Please enter the dosage',
+      name: 'dosageValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course of Treatment`
+  String get courseOfTreatment {
+    return Intl.message(
+      'Course of Treatment',
+      name: 'courseOfTreatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the course of treatment`
+  String get courseValidation {
+    return Intl.message(
+      'Please enter the course of treatment',
+      name: 'courseValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Medication`
+  String get addMedicationButton {
+    return Intl.message(
+      'Add Medication',
+      name: 'addMedicationButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication History`
+  String get medicationHistory {
+    return Intl.message(
+      'Medication History',
+      name: 'medicationHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No medications found.`
+  String get noMedications {
+    return Intl.message(
+      'No medications found.',
+      name: 'noMedications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication added successfully`
+  String get medicationAdded {
+    return Intl.message(
+      'Medication added successfully',
+      name: 'medicationAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added on`
+  String get addedOn {
+    return Intl.message('Added on', name: 'addedOn', desc: '', args: []);
+  }
+
+  /// `pieces`
+  String get pieces {
+    return Intl.message('pieces', name: 'pieces', desc: '', args: []);
+  }
+
+  /// `ml`
+  String get ml {
+    return Intl.message('ml', name: 'ml', desc: '', args: []);
+  }
+
+  /// `units`
+  String get units {
+    return Intl.message('units', name: 'units', desc: '', args: []);
+  }
+
+  /// `Tablet`
+  String get tablet {
+    return Intl.message('Tablet', name: 'tablet', desc: '', args: []);
+  }
+
+  /// `Capsule`
+  String get capsule {
+    return Intl.message('Capsule', name: 'capsule', desc: '', args: []);
+  }
+
+  /// `Injection`
+  String get injection {
+    return Intl.message('Injection', name: 'injection', desc: '', args: []);
+  }
+
+  /// `Syrup`
+  String get syrup {
+    return Intl.message('Syrup', name: 'syrup', desc: '', args: []);
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `Medication deleted successfully`
+  String get medicationDeleted {
+    return Intl.message(
+      'Medication deleted successfully',
+      name: 'medicationDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course Treatment`
+  String get courseTreatment {
+    return Intl.message(
+      'Course Treatment',
+      name: 'courseTreatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Course`
+  String get addCourse {
+    return Intl.message('Add Course', name: 'addCourse', desc: '', args: []);
+  }
+
+  /// `Select Course Start Date`
+  String get selectCourseStart {
+    return Intl.message(
+      'Select Course Start Date',
+      name: 'selectCourseStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Course End Date`
+  String get selectCourseEnd {
+    return Intl.message(
+      'Select Course End Date',
+      name: 'selectCourseEnd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Medication Time`
+  String get selectMedicationTime {
+    return Intl.message(
+      'Select Medication Time',
+      name: 'selectMedicationTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat Interval`
+  String get repeatInterval {
+    return Intl.message(
+      'Repeat Interval',
+      name: 'repeatInterval',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a repeat interval`
+  String get repeatIntervalValidation {
+    return Intl.message(
+      'Please select a repeat interval',
+      name: 'repeatIntervalValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Drugs`
+  String get addDrugs {
+    return Intl.message('Add Drugs', name: 'addDrugs', desc: '', args: []);
+  }
+
+  /// `Add Drug`
+  String get addDrug {
+    return Intl.message('Add Drug', name: 'addDrug', desc: '', args: []);
+  }
+
+  /// `Course Duration`
+  String get courseDuration {
+    return Intl.message(
+      'Course Duration',
+      name: 'courseDuration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medication Time`
+  String get medicationTime {
+    return Intl.message(
+      'Medication Time',
+      name: 'medicationTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drugs`
+  String get drugs {
+    return Intl.message('Drugs', name: 'drugs', desc: '', args: []);
+  }
+
+  /// `Course Treatments`
+  String get courseTreatments {
+    return Intl.message(
+      'Course Treatments',
+      name: 'courseTreatments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No course treatments available.`
+  String get noCourses {
+    return Intl.message(
+      'No course treatments available.',
+      name: 'noCourses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course Treatment Reminder`
+  String get courseReminderTitle {
+    return Intl.message(
+      'Course Treatment Reminder',
+      name: 'courseReminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time to take your medications: {drugs}`
+  String courseReminderBody(Object drugs) {
+    return Intl.message(
+      'Time to take your medications: $drugs',
+      name: 'courseReminderBody',
+      desc: '',
+      args: [drugs],
+    );
+  }
+
+  /// `Course treatment added successfully`
+  String get courseAdded {
+    return Intl.message(
+      'Course treatment added successfully',
+      name: 'courseAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Course treatment deleted successfully`
+  String get courseDeleted {
+    return Intl.message(
+      'Course treatment deleted successfully',
+      name: 'courseDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message('Add', name: 'add', desc: '', args: []);
+  }
+
+  /// `Save course`
+  String get saveCourse {
+    return Intl.message('Save course', name: 'saveCourse', desc: '', args: []);
+  }
+
+  /// `Please select the course start date.`
+  String get selectCourseStartValidation {
+    return Intl.message(
+      'Please select the course start date.',
+      name: 'selectCourseStartValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select the course end date.`
+  String get selectCourseEndValidation {
+    return Intl.message(
+      'Please select the course end date.',
+      name: 'selectCourseEndValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select the medication time.`
+  String get selectMedicationTimeValidation {
+    return Intl.message(
+      'Please select the medication time.',
+      name: 'selectMedicationTimeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add at least one drug.`
+  String get noDrugsValidation {
+    return Intl.message(
+      'Please add at least one drug.',
+      name: 'noDrugsValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drug Name`
+  String get drugName {
+    return Intl.message('Drug Name', name: 'drugName', desc: '', args: []);
+  }
+
+  /// `Please enter the drug name`
+  String get drugNameValidation {
+    return Intl.message(
+      'Please enter the drug name',
+      name: 'drugNameValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill in all fields correctly.`
+  String get drugEntryValidation {
+    return Intl.message(
+      'Please fill in all fields correctly.',
+      name: 'drugEntryValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Once`
+  String get once {
+    return Intl.message('Once', name: 'once', desc: '', args: []);
+  }
+
+  /// `Monthly`
+  String get monthly {
+    return Intl.message('Monthly', name: 'monthly', desc: '', args: []);
+  }
+
+  /// `Weekly`
+  String get weekly {
+    return Intl.message('Weekly', name: 'weekly', desc: '', args: []);
+  }
+
+  /// `Daily`
+  String get daily {
+    return Intl.message('Daily', name: 'daily', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
