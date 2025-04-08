@@ -22,32 +22,38 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(amount) => "${amount}km";
 
-  static String m1(amount) => "${amount}m";
+  static String m1(amount) => "${amount} L";
 
-  static String m2(ammount) => "${ammount}%";
+  static String m2(amount) => "${amount}m";
 
-  static String m3(amount) => "${amount} steps";
+  static String m3(amount) => "${amount} ml";
 
-  static String m4(amount) => "${amount} workouts";
+  static String m4(amount) => "${amount} (ml)";
 
-  static String m5(amount) => "${amount} kcal";
+  static String m5(ammount) => "${ammount}%";
 
-  static String m6(bmr) =>
+  static String m6(amount) => "${amount} steps";
+
+  static String m7(amount) => "${amount} workouts";
+
+  static String m8(amount) => "${amount} kcal";
+
+  static String m9(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m7(drugs) => "Time to take your medications: ${drugs}";
+  static String m10(drugs) => "Time to take your medications: ${drugs}";
 
-  static String m8(type) => "Don\'t forget your ${type} workout today!";
+  static String m11(type) => "Don\'t forget your ${type} workout today!";
 
-  static String m9(hours, minutes) => "${hours} h ${minutes} m";
+  static String m12(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m10(user) => "Successfully logged in as ${user}";
+  static String m13(user) => "Successfully logged in as ${user}";
 
-  static String m11(minutes) => "${minutes} m";
+  static String m14(minutes) => "${minutes} m";
 
-  static String m12(minutes) => "${minutes} minutes";
+  static String m15(minutes) => "${minutes} minutes";
 
-  static String m13(hours, minutes) => "${hours}h ${minutes}m";
+  static String m16(hours, minutes) => "${hours}h ${minutes}m";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -77,19 +83,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "All your activities",
     ),
     "amountKm": m0,
-    "amountM": m1,
+    "amountL": m1,
+    "amountM": m2,
+    "amountMl": m3,
+    "amountMlInBraces": m4,
     "amountOfEachWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Amount of each workout type",
     ),
-    "amountPercentage": m2,
-    "amountSteps": m3,
-    "amountWorkouts": m4,
-    "amoutKcal": m5,
+    "amountPercentage": m5,
+    "amountSteps": m6,
+    "amountWorkouts": m7,
+    "amoutKcal": m8,
     "applyFilter": MessageLookupByLibrary.simpleMessage("Apply Filter"),
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Blood oxygen saturation",
     ),
-    "bmrTip": m6,
+    "bmrTip": m9,
     "bouldering": MessageLookupByLibrary.simpleMessage("Bouldering"),
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
@@ -117,7 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courseOfTreatment": MessageLookupByLibrary.simpleMessage(
       "Course of Treatment",
     ),
-    "courseReminderBody": m7,
+    "courseReminderBody": m10,
     "courseReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Course Treatment Reminder",
     ),
@@ -135,7 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a date.",
     ),
-    "defaultWorkoutReminderBody": m8,
+    "defaultWorkoutReminderBody": m11,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Workout Reminder",
     ),
@@ -204,7 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
-    "hoursAndMinutesAmount": m9,
+    "hoursAndMinutesAmount": m12,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
@@ -229,7 +238,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m10,
+    "loggedInAs": m13,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "medicationAdded": MessageLookupByLibrary.simpleMessage(
@@ -254,8 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
-    "minutesAmount": m11,
-    "minutesAmountLong": m12,
+    "minutesAmount": m14,
+    "minutesAmountLong": m15,
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -339,6 +348,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select the course start date.",
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
+    "selectDateTimeValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select both date and time.",
+    ),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "selectMedicationTime": MessageLookupByLibrary.simpleMessage(
       "Select Medication Time",
@@ -351,7 +363,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select Workout Type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m13,
+    "sleepDuration": m16,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",

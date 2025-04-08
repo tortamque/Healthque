@@ -1690,6 +1690,16 @@ class Strings {
     );
   }
 
+  /// `Please select both date and time.`
+  String get selectDateTimeValidation {
+    return Intl.message(
+      'Please select both date and time.',
+      name: 'selectDateTimeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Save Water Record`
   String get saveWaterRecord {
     return Intl.message(
@@ -1698,6 +1708,31 @@ class Strings {
       desc: '',
       args: [],
     );
+  }
+
+  /// `{amount} ml`
+  String amountMl(Object amount) {
+    return Intl.message(
+      '$amount ml',
+      name: 'amountMl',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount} (ml)`
+  String amountMlInBraces(Object amount) {
+    return Intl.message(
+      '$amount (ml)',
+      name: 'amountMlInBraces',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount} L`
+  String amountL(Object amount) {
+    return Intl.message('$amount L', name: 'amountL', desc: '', args: [amount]);
   }
 }
 

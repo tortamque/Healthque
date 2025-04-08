@@ -205,7 +205,6 @@
   "monthly": "Monthly",
   "weekly": "Weekly",
   "daily": "Daily",
-  
   "waterTracking": "Water Tracking",
   "noWaterRecords": "No water records found.",
   "waterRecordAdded": "Water record added successfully",
@@ -214,6 +213,9 @@
   "waterAmount": "Water Amount",
   "waterAmountValidation": "Please enter a valid water amount",
   "orEnterCustom": "Or enter custom water consumption",
-  "selectDate": "Select Date",
-  "saveWaterRecord": "Save Water Record"
+  "selectDateTimeValidation": "Please select both date and time.",
+  "saveWaterRecord": "Save Water Record",
+  "amountMl": "{amount} ml",
+  "amountMlInBraces": "{amount} (ml)",
+  "amountL": "{amount} L"
 }

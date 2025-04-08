@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:intl/intl.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/features/health/health.dart';
-import 'package:intl/intl.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:toastification/toastification.dart';
 
@@ -50,10 +50,10 @@ class WaterRecordsListPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   child: ListTile(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
                     title: Text(
-                      '${record.amount.toStringAsFixed(2)} L',
+                      _formatWater(record.amount, context),
                       style: context.textTheme.headlineSmall,
                     ),
                     subtitle: Text(
@@ -61,8 +61,9 @@ class WaterRecordsListPage extends StatelessWidget {
                       style: context.textTheme.bodySmall,
                     ),
                     trailing: IconButton(
+                      padding: EdgeInsets.only(left: 8, top: 8, bottom: 8),
                       icon: const Icon(Icons.delete),
-                      color: Colors.red,
+                      color: context.theme.colorScheme.primary,
                       onPressed: () async {
                         await context.read<WaterTrackingCubit>().deleteWaterRecord(record);
 
@@ -88,5 +89,14 @@ class WaterRecordsListPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _formatWater(double amount, BuildContext context) {
+    final ml = amount * 1000;
+    if (ml < 1000) {
+      return context.strings.amountMl(ml);
+    } else {
+      return context.strings.amountL(amount.toStringAsFixed(2));
+    }
   }
 }
