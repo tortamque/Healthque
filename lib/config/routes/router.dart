@@ -106,6 +106,8 @@ final GoRouter router = GoRouter(
               path: Routes.healthPage,
               builder: (context, state) => const HealthPage(),
             ),
+
+            // Medication Tracking
             GoRoute(
               path: Routes.medicationTracking,
               builder: (context, state) => BlocProvider(
@@ -125,6 +127,22 @@ final GoRouter router = GoRouter(
               builder: (context, state) => BlocProvider(
                 create: (context) => CourseTreatmentCubit(sl(), sl(), sl())..fetchCourses(),
                 child: const AddCourseTreatmentPage(),
+              ),
+            ),
+
+            // Water Tracking
+            GoRoute(
+              path: Routes.waterRecordsList,
+              builder: (context, state) => BlocProvider(
+                create: (context) => WaterTrackingCubit(sl(), sl(), sl())..fetchWaterRecords(),
+                child: const WaterRecordsListPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addWaterRecord,
+              builder: (context, state) => BlocProvider(
+                create: (context) => WaterTrackingCubit(sl(), sl(), sl()),
+                child: const AddWaterRecordPage(),
               ),
             ),
           ],

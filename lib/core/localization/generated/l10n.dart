@@ -1609,6 +1609,96 @@ class Strings {
   String get daily {
     return Intl.message('Daily', name: 'daily', desc: '', args: []);
   }
+
+  /// `Water Tracking`
+  String get waterTracking {
+    return Intl.message(
+      'Water Tracking',
+      name: 'waterTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No water records found.`
+  String get noWaterRecords {
+    return Intl.message(
+      'No water records found.',
+      name: 'noWaterRecords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water record added successfully`
+  String get waterRecordAdded {
+    return Intl.message(
+      'Water record added successfully',
+      name: 'waterRecordAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water record deleted successfully`
+  String get waterRecordDeleted {
+    return Intl.message(
+      'Water record deleted successfully',
+      name: 'waterRecordDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Water Record`
+  String get addWaterRecord {
+    return Intl.message(
+      'Add Water Record',
+      name: 'addWaterRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water Amount`
+  String get waterAmount {
+    return Intl.message(
+      'Water Amount',
+      name: 'waterAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid water amount`
+  String get waterAmountValidation {
+    return Intl.message(
+      'Please enter a valid water amount',
+      name: 'waterAmountValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or enter custom water consumption`
+  String get orEnterCustom {
+    return Intl.message(
+      'Or enter custom water consumption',
+      name: 'orEnterCustom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Water Record`
+  String get saveWaterRecord {
+    return Intl.message(
+      'Save Water Record',
+      name: 'saveWaterRecord',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

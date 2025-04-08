@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "addMedicationButton": MessageLookupByLibrary.simpleMessage(
       "Add Medication",
     ),
+    "addWaterRecord": MessageLookupByLibrary.simpleMessage("Add Water Record"),
     "addWorkout": MessageLookupByLibrary.simpleMessage("Add Workout"),
     "addedOn": MessageLookupByLibrary.simpleMessage("Added on"),
     "additionalNotes": MessageLookupByLibrary.simpleMessage("Additional Notes"),
@@ -278,6 +279,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noSavedWorkoutsYet": MessageLookupByLibrary.simpleMessage(
       "No saved workouts yet.",
     ),
+    "noWaterRecords": MessageLookupByLibrary.simpleMessage(
+      "No water records found.",
+    ),
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Note: Height in cm and Weight in kg",
     ),
@@ -285,6 +289,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
+    ),
+    "orEnterCustom": MessageLookupByLibrary.simpleMessage(
+      "Or enter custom water consumption",
     ),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "pickDuration": MessageLookupByLibrary.simpleMessage("Pick Duration"),
@@ -313,6 +320,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveCourse": MessageLookupByLibrary.simpleMessage("Save course"),
     "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
+    "saveWaterRecord": MessageLookupByLibrary.simpleMessage(
+      "Save Water Record",
+    ),
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
     "scheduledAt": MessageLookupByLibrary.simpleMessage("Scheduled at"),
@@ -369,9 +379,20 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "units": MessageLookupByLibrary.simpleMessage("units"),
     "walking": MessageLookupByLibrary.simpleMessage("Walking"),
+    "waterAmount": MessageLookupByLibrary.simpleMessage("Water Amount"),
+    "waterAmountValidation": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid water amount",
+    ),
+    "waterRecordAdded": MessageLookupByLibrary.simpleMessage(
+      "Water record added successfully",
+    ),
+    "waterRecordDeleted": MessageLookupByLibrary.simpleMessage(
+      "Water record deleted successfully",
+    ),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
     ),
+    "waterTracking": MessageLookupByLibrary.simpleMessage("Water Tracking"),
     "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
