@@ -25,7 +25,6 @@ class HealthPage extends StatelessWidget {
                 onTap: () => context.push(Routes.medicationTracking),
               ),
               HealthActionCard(
-                // TODO: Extract to strings
                 title: context.strings.waterTracking,
                 subtitle: context.strings.waterTrackingDescription,
                 icon: Icons.water_drop_rounded,
