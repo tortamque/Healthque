@@ -26,8 +26,8 @@ class HealthPage extends StatelessWidget {
               ),
               HealthActionCard(
                 // TODO: Extract to strings
-                title: 'Water tracking',
-                subtitle: 'Water is essential to maintain blood volume and regulate body temperature',
+                title: context.strings.waterTracking,
+                subtitle: context.strings.waterTrackingDescription,
                 icon: Icons.water_drop_rounded,
                 onTap: () => context.push(Routes.waterRecordsList),
               ),

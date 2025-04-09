@@ -76,4 +76,6 @@ Map<String, dynamic> _$LocalNotificationToJson(_LocalNotification instance) =>
 
 const _$LocalNotificationTypeEnumMap = {
   LocalNotificationType.workout: 'workout',
+  LocalNotificationType.water: 'water',
+  LocalNotificationType.courseTreatment: 'courseTreatment',
 };

@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "addMedicationButton": MessageLookupByLibrary.simpleMessage(
       "Add Medication",
     ),
+    "addNotification": MessageLookupByLibrary.simpleMessage("Add Notification"),
     "addWaterRecord": MessageLookupByLibrary.simpleMessage("Add Water Record"),
     "addWorkout": MessageLookupByLibrary.simpleMessage("Add Workout"),
     "addedOn": MessageLookupByLibrary.simpleMessage("Added on"),
@@ -144,6 +145,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a date.",
     ),
+    "defaultReminderBody": MessageLookupByLibrary.simpleMessage(
+      "Time to drink water",
+    ),
+    "defaultReminderTitle": MessageLookupByLibrary.simpleMessage("Drink Water"),
     "defaultWorkoutReminderBody": m11,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Workout Reminder",
@@ -199,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
     "female": MessageLookupByLibrary.simpleMessage("Female"),
+    "fieldCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
+      "This field cannot be empty.",
+    ),
     "filterByDate": MessageLookupByLibrary.simpleMessage("Filter by Date"),
     "filterByType": MessageLookupByLibrary.simpleMessage("Filter by Type"),
     "finishOnboarding": MessageLookupByLibrary.simpleMessage(
@@ -282,6 +290,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noMedications": MessageLookupByLibrary.simpleMessage(
       "No medications found.",
     ),
+    "noNotifications": MessageLookupByLibrary.simpleMessage(
+      "No notifications set.",
+    ),
     "noReminders": MessageLookupByLibrary.simpleMessage(
       "No workout reminders available.",
     ),
@@ -295,6 +306,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Note: Height in cm and Weight in kg",
     ),
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
+    "notificationAdded": MessageLookupByLibrary.simpleMessage(
+      "Notification added.",
+    ),
+    "notificationDeleted": MessageLookupByLibrary.simpleMessage(
+      "Notification deleted.",
+    ),
     "once": MessageLookupByLibrary.simpleMessage("Once"),
     "oopsSomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Oops! Something went wrong.",
@@ -312,12 +329,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a workout type",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "reminderBody": MessageLookupByLibrary.simpleMessage("Reminder Body"),
     "reminderBodyOptional": MessageLookupByLibrary.simpleMessage(
       "Reminder Body (Optional)",
     ),
     "reminderDeleted": MessageLookupByLibrary.simpleMessage(
       "Reminder deleted successfully",
     ),
+    "reminderTitle": MessageLookupByLibrary.simpleMessage("Reminder Title"),
     "reminderTitleOptional": MessageLookupByLibrary.simpleMessage(
       "Reminder Title (Optional)",
     ),
@@ -328,6 +347,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveCourse": MessageLookupByLibrary.simpleMessage("Save course"),
+    "saveNotification": MessageLookupByLibrary.simpleMessage(
+      "Save Notification",
+    ),
     "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
     "saveWaterRecord": MessageLookupByLibrary.simpleMessage(
       "Save Water Record",
@@ -335,6 +357,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "saveWorkout": MessageLookupByLibrary.simpleMessage("Save workout"),
     "savedWorkouts": MessageLookupByLibrary.simpleMessage("Saved Workouts"),
     "scheduledAt": MessageLookupByLibrary.simpleMessage("Scheduled at"),
+    "scheduledTime": MessageLookupByLibrary.simpleMessage("Scheduled Time"),
     "selectCourseEnd": MessageLookupByLibrary.simpleMessage(
       "Select Course End Date",
     ),
@@ -359,6 +382,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select the medication time.",
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
+    "selectTimeValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select a time for the notification.",
+    ),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",
     ),
@@ -401,10 +427,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "waterRecordDeleted": MessageLookupByLibrary.simpleMessage(
       "Water record deleted successfully",
     ),
+    "waterReminders": MessageLookupByLibrary.simpleMessage("Water Reminders"),
     "waterTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Drinking water is important for your health. It helps you to stay hydrated and maintain your body temperature",
     ),
     "waterTracking": MessageLookupByLibrary.simpleMessage("Water Tracking"),
+    "waterTrackingDescription": MessageLookupByLibrary.simpleMessage(
+      "Water is essential to maintain blood volume and regulate body temperature",
+    ),
     "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(

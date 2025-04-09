@@ -167,6 +167,7 @@ class _WorkoutReminderPageState extends State<WorkoutReminderPage> {
           scheduledDateTime: scheduledDateTime,
           title: title,
           body: body,
+          type: LocalNotificationType.workout,
         );
 
     if (!mounted) return;

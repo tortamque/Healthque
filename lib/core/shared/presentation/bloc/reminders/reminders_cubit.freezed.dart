@@ -17,6 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$RemindersState {
   LocalNotifications get allNotifications;
   List<LocalNotification> get workoutNotifications;
+  List<LocalNotification> get waterNotifications;
   bool get isLoading;
   String? get errorMessage;
 
@@ -37,6 +38,8 @@ mixin _$RemindersState {
                 other.allNotifications == allNotifications) &&
             const DeepCollectionEquality()
                 .equals(other.workoutNotifications, workoutNotifications) &&
+            const DeepCollectionEquality()
+                .equals(other.waterNotifications, waterNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -48,12 +51,13 @@ mixin _$RemindersState {
       runtimeType,
       allNotifications,
       const DeepCollectionEquality().hash(workoutNotifications),
+      const DeepCollectionEquality().hash(waterNotifications),
       isLoading,
       errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -66,6 +70,7 @@ abstract mixin class $RemindersStateCopyWith<$Res> {
   $Res call(
       {LocalNotifications allNotifications,
       List<LocalNotification> workoutNotifications,
+      List<LocalNotification> waterNotifications,
       bool isLoading,
       String? errorMessage});
 
@@ -87,6 +92,7 @@ class _$RemindersStateCopyWithImpl<$Res>
   $Res call({
     Object? allNotifications = null,
     Object? workoutNotifications = null,
+    Object? waterNotifications = null,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
@@ -98,6 +104,10 @@ class _$RemindersStateCopyWithImpl<$Res>
       workoutNotifications: null == workoutNotifications
           ? _self.workoutNotifications
           : workoutNotifications // ignore: cast_nullable_to_non_nullable
+              as List<LocalNotification>,
+      waterNotifications: null == waterNotifications
+          ? _self.waterNotifications
+          : waterNotifications // ignore: cast_nullable_to_non_nullable
               as List<LocalNotification>,
       isLoading: null == isLoading
           ? _self.isLoading
@@ -128,9 +138,12 @@ class RemindersStateReminders implements RemindersState {
       {this.allNotifications = const LocalNotifications(notifications: []),
       final List<LocalNotification> workoutNotifications =
           const <LocalNotification>[],
+      final List<LocalNotification> waterNotifications =
+          const <LocalNotification>[],
       this.isLoading = false,
       this.errorMessage})
-      : _workoutNotifications = workoutNotifications;
+      : _workoutNotifications = workoutNotifications,
+        _waterNotifications = waterNotifications;
 
   @override
   @JsonKey()
@@ -143,6 +156,16 @@ class RemindersStateReminders implements RemindersState {
       return _workoutNotifications;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_workoutNotifications);
+  }
+
+  final List<LocalNotification> _waterNotifications;
+  @override
+  @JsonKey()
+  List<LocalNotification> get waterNotifications {
+    if (_waterNotifications is EqualUnmodifiableListView)
+      return _waterNotifications;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_waterNotifications);
   }
 
   @override
@@ -169,6 +192,8 @@ class RemindersStateReminders implements RemindersState {
                 other.allNotifications == allNotifications) &&
             const DeepCollectionEquality()
                 .equals(other._workoutNotifications, _workoutNotifications) &&
+            const DeepCollectionEquality()
+                .equals(other._waterNotifications, _waterNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -180,12 +205,13 @@ class RemindersStateReminders implements RemindersState {
       runtimeType,
       allNotifications,
       const DeepCollectionEquality().hash(_workoutNotifications),
+      const DeepCollectionEquality().hash(_waterNotifications),
       isLoading,
       errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState.reminders(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState.reminders(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -200,6 +226,7 @@ abstract mixin class $RemindersStateRemindersCopyWith<$Res>
   $Res call(
       {LocalNotifications allNotifications,
       List<LocalNotification> workoutNotifications,
+      List<LocalNotification> waterNotifications,
       bool isLoading,
       String? errorMessage});
 
@@ -222,6 +249,7 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
   $Res call({
     Object? allNotifications = null,
     Object? workoutNotifications = null,
+    Object? waterNotifications = null,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
@@ -233,6 +261,10 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
       workoutNotifications: null == workoutNotifications
           ? _self._workoutNotifications
           : workoutNotifications // ignore: cast_nullable_to_non_nullable
+              as List<LocalNotification>,
+      waterNotifications: null == waterNotifications
+          ? _self._waterNotifications
+          : waterNotifications // ignore: cast_nullable_to_non_nullable
               as List<LocalNotification>,
       isLoading: null == isLoading
           ? _self.isLoading

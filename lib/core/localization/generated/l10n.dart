@@ -1620,6 +1620,16 @@ class Strings {
     );
   }
 
+  /// `Water is essential to maintain blood volume and regulate body temperature`
+  String get waterTrackingDescription {
+    return Intl.message(
+      'Water is essential to maintain blood volume and regulate body temperature',
+      name: 'waterTrackingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No water records found.`
   String get noWaterRecords {
     return Intl.message(
@@ -1733,6 +1743,136 @@ class Strings {
   /// `{amount} L`
   String amountL(Object amount) {
     return Intl.message('$amount L', name: 'amountL', desc: '', args: [amount]);
+  }
+
+  /// `Water Reminders`
+  String get waterReminders {
+    return Intl.message(
+      'Water Reminders',
+      name: 'waterReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications set.`
+  String get noNotifications {
+    return Intl.message(
+      'No notifications set.',
+      name: 'noNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Notification`
+  String get addNotification {
+    return Intl.message(
+      'Add Notification',
+      name: 'addNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Title`
+  String get reminderTitle {
+    return Intl.message(
+      'Reminder Title',
+      name: 'reminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Body`
+  String get reminderBody {
+    return Intl.message(
+      'Reminder Body',
+      name: 'reminderBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scheduled Time`
+  String get scheduledTime {
+    return Intl.message(
+      'Scheduled Time',
+      name: 'scheduledTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Notification`
+  String get saveNotification {
+    return Intl.message(
+      'Save Notification',
+      name: 'saveNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification deleted.`
+  String get notificationDeleted {
+    return Intl.message(
+      'Notification deleted.',
+      name: 'notificationDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification added.`
+  String get notificationAdded {
+    return Intl.message(
+      'Notification added.',
+      name: 'notificationAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a time for the notification.`
+  String get selectTimeValidation {
+    return Intl.message(
+      'Please select a time for the notification.',
+      name: 'selectTimeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field cannot be empty.`
+  String get fieldCannotBeEmpty {
+    return Intl.message(
+      'This field cannot be empty.',
+      name: 'fieldCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drink Water`
+  String get defaultReminderTitle {
+    return Intl.message(
+      'Drink Water',
+      name: 'defaultReminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time to drink water`
+  String get defaultReminderBody {
+    return Intl.message(
+      'Time to drink water',
+      name: 'defaultReminderBody',
+      desc: '',
+      args: [],
+    );
   }
 }
 

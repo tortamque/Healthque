@@ -24,10 +24,13 @@ class RemindersCubit extends Cubit<RemindersState> {
     final notifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
     final workoutNotifications =
         notifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
+    final waterNotifications = notifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
+
     emit(
       RemindersState.reminders(
         allNotifications: notifications,
         workoutNotifications: workoutNotifications,
+        waterNotifications: waterNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -38,6 +41,7 @@ class RemindersCubit extends Cubit<RemindersState> {
     required DateTime scheduledDateTime,
     required String title,
     required String body,
+    required LocalNotificationType type,
     DateTimeComponents matchDateTimeComponents = DateTimeComponents.dayOfWeekAndTime,
   }) async {
     final currentNotifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
@@ -53,7 +57,7 @@ class RemindersCubit extends Cubit<RemindersState> {
 
     final newNotification = LocalNotification(
       id: newId,
-      type: LocalNotificationType.workout,
+      type: type,
       scheduledDate: scheduledDateTime,
       title: title,
       body: body,
@@ -67,11 +71,14 @@ class RemindersCubit extends Cubit<RemindersState> {
 
     final workoutNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
+    final waterNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
 
     emit(
       RemindersState.reminders(
         allNotifications: updatedNotifications,
         workoutNotifications: workoutNotifications,
+        waterNotifications: waterNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -80,15 +87,19 @@ class RemindersCubit extends Cubit<RemindersState> {
 
   Future<void> deleteReminder(int notificationId) async {
     await _deleteNotificationByIdUseCase.call(notificationId);
+    await _notificationService.cancelNotification(id: notificationId);
 
     final updatedNotifications = _getNotificationsUseCase.call(null) ?? LocalNotifications(notifications: []);
     final workoutNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
+    final waterNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
 
     emit(
       RemindersState.reminders(
         allNotifications: updatedNotifications,
         workoutNotifications: workoutNotifications,
+        waterNotifications: waterNotifications,
         isLoading: false,
         errorMessage: null,
       ),

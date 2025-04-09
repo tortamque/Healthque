@@ -206,6 +206,7 @@
   "weekly": "Weekly",
   "daily": "Daily",
   "waterTracking": "Water Tracking",
+  "waterTrackingDescription": "Water is essential to maintain blood volume and regulate body temperature",
   "noWaterRecords": "No water records found.",
   "waterRecordAdded": "Water record added successfully",
   "waterRecordDeleted": "Water record deleted successfully",
@@ -218,5 +219,19 @@
   "amountMl": "{amount} ml",
   "amountMlInBraces": "{amount} (ml)",
   "amountL": "{amount} L",
-  "clearFilter": "Clear filter"
+  "clearFilter": "Clear filter",
+  "waterReminders": "Water Reminders",
+  "noNotifications": "No notifications set.",
+  "addNotification": "Add Notification",
+  "reminderTitle": "Reminder Title",
+  "reminderBody": "Reminder Body",
+  "scheduledTime": "Scheduled Time",
+  "selectTime": "Select Time",
+  "saveNotification": "Save Notification",
+  "notificationDeleted": "Notification deleted.",
+  "notificationAdded": "Notification added.",
+  "selectTimeValidation": "Please select a time for the notification.",
+  "fieldCannotBeEmpty": "This field cannot be empty.",
+  "defaultReminderTitle": "Drink Water",
+  "defaultReminderBody": "Time to drink water"
 }

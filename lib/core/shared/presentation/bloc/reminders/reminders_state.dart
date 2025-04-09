@@ -5,6 +5,7 @@ sealed class RemindersState with _$RemindersState {
   const factory RemindersState.reminders({
     @Default(LocalNotifications(notifications: [])) LocalNotifications allNotifications,
     @Default(<LocalNotification>[]) List<LocalNotification> workoutNotifications,
+    @Default(<LocalNotification>[]) List<LocalNotification> waterNotifications,
     @Default(false) bool isLoading,
     String? errorMessage,
   }) = RemindersStateReminders;

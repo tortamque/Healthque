@@ -356,6 +356,7 @@ class _AddCourseTreatmentPageState extends State<AddCourseTreatmentPage> {
           title: reminderTitle,
           body: reminderBody,
           matchDateTimeComponents: _selectedRepeat!,
+          type: LocalNotificationType.courseTreatment,
         );
 
     if (!mounted) return;

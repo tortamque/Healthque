@@ -145,6 +145,10 @@ final GoRouter router = GoRouter(
                 child: const AddWaterRecordPage(),
               ),
             ),
+            GoRoute(
+              path: Routes.waterReminder,
+              builder: (context, state) => const WaterRemindersPage(),
+            ),
           ],
         ),
         StatefulShellBranch(

@@ -15,6 +15,10 @@ class LocalNotificationTypeAdapter extends TypeAdapter<LocalNotificationType> {
     switch (reader.readByte()) {
       case 0:
         return LocalNotificationType.workout;
+      case 1:
+        return LocalNotificationType.water;
+      case 2:
+        return LocalNotificationType.courseTreatment;
       default:
         return LocalNotificationType.workout;
     }
@@ -25,6 +29,12 @@ class LocalNotificationTypeAdapter extends TypeAdapter<LocalNotificationType> {
     switch (obj) {
       case LocalNotificationType.workout:
         writer.writeByte(0);
+        break;
+      case LocalNotificationType.water:
+        writer.writeByte(1);
+        break;
+      case LocalNotificationType.courseTreatment:
+        writer.writeByte(2);
         break;
     }
   }

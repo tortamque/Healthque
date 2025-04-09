@@ -23,6 +23,12 @@ class _WaterRecordsListPageState extends State<WaterRecordsListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(context.strings.waterTracking),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.alarm_rounded),
+            onPressed: () => context.push(Routes.waterReminder),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.push(Routes.addWaterRecord).then((_) {
