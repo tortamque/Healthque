@@ -8,8 +8,15 @@ import 'package:healthque/core/extensions/context.dart';
 import 'package:intl/intl.dart';
 import 'package:toastification/toastification.dart';
 
-class WaterRecordsListPage extends StatelessWidget {
+class WaterRecordsListPage extends StatefulWidget {
   const WaterRecordsListPage({super.key});
+
+  @override
+  State<WaterRecordsListPage> createState() => _WaterRecordsListPageState();
+}
+
+class _WaterRecordsListPageState extends State<WaterRecordsListPage> {
+  DateTime? _filterDate;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,7 @@ class WaterRecordsListPage extends StatelessWidget {
           if (!context.mounted) return;
           context.read<WaterTrackingCubit>().fetchWaterRecords();
         }),
-        child: Icon(Icons.add_rounded),
+        child: const Icon(Icons.add_rounded),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -31,33 +38,57 @@ class WaterRecordsListPage extends StatelessWidget {
             if (state.isLoading) {
               return const Center(child: CircularProgressIndicator());
             }
-            final records = state.records.records;
-            if (records.isEmpty) {
-              return Center(
-                child: Text(
-                  context.strings.noWaterRecords,
-                  style: context.textTheme.bodyLarge,
-                ),
-              );
-            }
+            final List<WaterRecord> records = List.from(state.records.records)
+              ..sort((a, b) => b.datetime.compareTo(a.datetime));
+
+            final filteredRecords = _filterDate != null
+                ? records.where((record) {
+                    final recordDate = DateFormat('yyyy-MM-dd').format(record.datetime);
+                    final filterDate = DateFormat('yyyy-MM-dd').format(_filterDate!);
+                    return recordDate == filterDate;
+                  }).toList()
+                : records;
+
             return SingleChildScrollView(
               child: Column(
                 children: [
-                  Gap(16),
-                  WaterLineChart(records: records),
                   const Gap(16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      OutlinedButton(
+                        onPressed: () => _pickFilterDate(context),
+                        child: Text(
+                          _filterDate != null
+                              ? DateFormat('dd.MM.yyyy').format(_filterDate!)
+                              : context.strings.selectDate,
+                        ),
+                      ),
+                      if (_filterDate != null)
+                        TextButton(
+                          onPressed: _clearFilter,
+                          child: Text(context.strings.clearFilter),
+                        ),
+                    ],
+                  ),
+                  const Gap(16),
+                  if (_filterDate == null) ...[
+                    WaterLineChart(records: records),
+                    const Gap(16),
+                  ],
                   ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: records.length,
+                    itemCount: filteredRecords.length,
                     separatorBuilder: (_, __) => const Gap(12),
                     itemBuilder: (context, index) {
-                      final record = records[index];
+                      final record = filteredRecords[index];
                       return Card(
                         elevation: 4,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
+                        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: ListTile(
                           contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
                           title: Text(
@@ -93,7 +124,7 @@ class WaterRecordsListPage extends StatelessWidget {
                       );
                     },
                   ),
-                  Gap(62),
+                  const Gap(62),
                 ],
               ),
             );
@@ -110,5 +141,26 @@ class WaterRecordsListPage extends StatelessWidget {
     } else {
       return context.strings.amountL(amount.toStringAsFixed(2));
     }
+  }
+
+  Future<void> _pickFilterDate(BuildContext context) async {
+    final now = DateTime.now();
+    final selected = await showDatePicker(
+      context: context,
+      initialDate: _filterDate ?? now,
+      firstDate: now.subtract(const Duration(days: 365)),
+      lastDate: now.add(const Duration(days: 365)),
+    );
+    if (selected != null) {
+      setState(() {
+        _filterDate = selected;
+      });
+    }
+  }
+
+  void _clearFilter() {
+    setState(() {
+      _filterDate = null;
+    });
   }
 }

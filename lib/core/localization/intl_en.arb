@@ -217,5 +217,6 @@
   "saveWaterRecord": "Save Water Record",
   "amountMl": "{amount} ml",
   "amountMlInBraces": "{amount} (ml)",
-  "amountL": "{amount} L"
+  "amountL": "{amount} L",
+  "clearFilter": "Clear filter"
 }

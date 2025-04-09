@@ -1010,10 +1010,10 @@ class Strings {
     );
   }
 
-  /// `Clear Filter`
+  /// `Clear filter`
   String get clearFilter {
     return Intl.message(
-      'Clear Filter',
+      'Clear filter',
       name: 'clearFilter',
       desc: '',
       args: [],

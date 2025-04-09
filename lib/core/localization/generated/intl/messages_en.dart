@@ -108,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "capsule": MessageLookupByLibrary.simpleMessage("Capsule"),
-    "clearFilter": MessageLookupByLibrary.simpleMessage("Clear Filter"),
+    "clearFilter": MessageLookupByLibrary.simpleMessage("Clear filter"),
     "configureWorkoutReminder": MessageLookupByLibrary.simpleMessage(
       "Configure Workout Reminder",
     ),
