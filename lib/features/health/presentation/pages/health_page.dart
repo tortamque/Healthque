@@ -24,6 +24,12 @@ class HealthPage extends StatelessWidget {
                 icon: Icons.medical_services,
                 onTap: () => context.push(Routes.medicationTracking),
               ),
+              HealthActionCard(
+                title: context.strings.waterTracking,
+                subtitle: context.strings.waterTrackingDescription,
+                icon: Icons.water_drop_rounded,
+                onTap: () => context.push(Routes.waterRecordsList),
+              ),
             ],
           ),
         ),

@@ -1010,10 +1010,10 @@ class Strings {
     );
   }
 
-  /// `Clear Filter`
+  /// `Clear filter`
   String get clearFilter {
     return Intl.message(
-      'Clear Filter',
+      'Clear filter',
       name: 'clearFilter',
       desc: '',
       args: [],
@@ -1608,6 +1608,271 @@ class Strings {
   /// `Daily`
   String get daily {
     return Intl.message('Daily', name: 'daily', desc: '', args: []);
+  }
+
+  /// `Water Tracking`
+  String get waterTracking {
+    return Intl.message(
+      'Water Tracking',
+      name: 'waterTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water is essential to maintain blood volume and regulate body temperature`
+  String get waterTrackingDescription {
+    return Intl.message(
+      'Water is essential to maintain blood volume and regulate body temperature',
+      name: 'waterTrackingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No water records found.`
+  String get noWaterRecords {
+    return Intl.message(
+      'No water records found.',
+      name: 'noWaterRecords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water record added successfully`
+  String get waterRecordAdded {
+    return Intl.message(
+      'Water record added successfully',
+      name: 'waterRecordAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water record deleted successfully`
+  String get waterRecordDeleted {
+    return Intl.message(
+      'Water record deleted successfully',
+      name: 'waterRecordDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Water Record`
+  String get addWaterRecord {
+    return Intl.message(
+      'Add Water Record',
+      name: 'addWaterRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Water Amount`
+  String get waterAmount {
+    return Intl.message(
+      'Water Amount',
+      name: 'waterAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid water amount`
+  String get waterAmountValidation {
+    return Intl.message(
+      'Please enter a valid water amount',
+      name: 'waterAmountValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or enter custom water consumption`
+  String get orEnterCustom {
+    return Intl.message(
+      'Or enter custom water consumption',
+      name: 'orEnterCustom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select both date and time.`
+  String get selectDateTimeValidation {
+    return Intl.message(
+      'Please select both date and time.',
+      name: 'selectDateTimeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Water Record`
+  String get saveWaterRecord {
+    return Intl.message(
+      'Save Water Record',
+      name: 'saveWaterRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{amount} ml`
+  String amountMl(Object amount) {
+    return Intl.message(
+      '$amount ml',
+      name: 'amountMl',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount} (ml)`
+  String amountMlInBraces(Object amount) {
+    return Intl.message(
+      '$amount (ml)',
+      name: 'amountMlInBraces',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `{amount} L`
+  String amountL(Object amount) {
+    return Intl.message('$amount L', name: 'amountL', desc: '', args: [amount]);
+  }
+
+  /// `Water Reminders`
+  String get waterReminders {
+    return Intl.message(
+      'Water Reminders',
+      name: 'waterReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications set.`
+  String get noNotifications {
+    return Intl.message(
+      'No notifications set.',
+      name: 'noNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Notification`
+  String get addNotification {
+    return Intl.message(
+      'Add Notification',
+      name: 'addNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Title`
+  String get reminderTitle {
+    return Intl.message(
+      'Reminder Title',
+      name: 'reminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder Body`
+  String get reminderBody {
+    return Intl.message(
+      'Reminder Body',
+      name: 'reminderBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scheduled Time`
+  String get scheduledTime {
+    return Intl.message(
+      'Scheduled Time',
+      name: 'scheduledTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Notification`
+  String get saveNotification {
+    return Intl.message(
+      'Save Notification',
+      name: 'saveNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification deleted.`
+  String get notificationDeleted {
+    return Intl.message(
+      'Notification deleted.',
+      name: 'notificationDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification added.`
+  String get notificationAdded {
+    return Intl.message(
+      'Notification added.',
+      name: 'notificationAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a time for the notification.`
+  String get selectTimeValidation {
+    return Intl.message(
+      'Please select a time for the notification.',
+      name: 'selectTimeValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field cannot be empty.`
+  String get fieldCannotBeEmpty {
+    return Intl.message(
+      'This field cannot be empty.',
+      name: 'fieldCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drink Water`
+  String get defaultReminderTitle {
+    return Intl.message(
+      'Drink Water',
+      name: 'defaultReminderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time to drink water`
+  String get defaultReminderBody {
+    return Intl.message(
+      'Time to drink water',
+      name: 'defaultReminderBody',
+      desc: '',
+      args: [],
+    );
   }
 }
 

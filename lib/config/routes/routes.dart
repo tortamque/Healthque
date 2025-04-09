@@ -22,5 +22,9 @@ class Routes {
   static const String courseTreatmentList = '/courseTreatmentList';
   static const String addCourseTreatment = '/addCourseTreatment';
 
+  static const String waterRecordsList = '/waterRecordsList';
+  static const String addWaterRecord = '/addWaterRecord';
+  static const String waterReminder = '/waterReminder';
+
   static const String tempPage4 = '/tempPage4';
 }

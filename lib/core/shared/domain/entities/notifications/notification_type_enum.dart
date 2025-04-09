@@ -6,4 +6,8 @@ part 'notification_type_enum.g.dart';
 enum LocalNotificationType {
   @HiveField(0)
   workout,
+  @HiveField(1)
+  water,
+  @HiveField(2)
+  courseTreatment,
 }

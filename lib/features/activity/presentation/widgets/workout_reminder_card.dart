@@ -6,7 +6,6 @@ import 'package:healthque/core/shared/shared.dart';
 import 'package:intl/intl.dart';
 import 'package:toastification/toastification.dart';
 import 'package:healthque/core/extensions/context.dart';
-import 'package:healthque/core/utils/utils.dart';
 
 class WorkoutReminderCard extends StatelessWidget {
   const WorkoutReminderCard({super.key, required this.reminder});
@@ -37,7 +36,6 @@ class WorkoutReminderCard extends StatelessWidget {
                   color: context.theme.colorScheme.primary,
                   onPressed: () async {
                     await context.read<RemindersCubit>().deleteReminder(reminder.id);
-                    LocalNotificationService().cancelNotification(id: reminder.id);
 
                     if (!context.mounted) return;
                     toastification.show(
