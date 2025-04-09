@@ -19,6 +19,8 @@ class LocalNotificationTypeAdapter extends TypeAdapter<LocalNotificationType> {
         return LocalNotificationType.water;
       case 2:
         return LocalNotificationType.courseTreatment;
+      case 3:
+        return LocalNotificationType.temperature;
       default:
         return LocalNotificationType.workout;
     }
@@ -35,6 +37,9 @@ class LocalNotificationTypeAdapter extends TypeAdapter<LocalNotificationType> {
         break;
       case LocalNotificationType.courseTreatment:
         writer.writeByte(2);
+        break;
+      case LocalNotificationType.temperature:
+        writer.writeByte(3);
         break;
     }
   }

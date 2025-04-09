@@ -78,4 +78,5 @@ const _$LocalNotificationTypeEnumMap = {
   LocalNotificationType.workout: 'workout',
   LocalNotificationType.water: 'water',
   LocalNotificationType.courseTreatment: 'courseTreatment',
+  LocalNotificationType.temperature: 'temperature',
 };

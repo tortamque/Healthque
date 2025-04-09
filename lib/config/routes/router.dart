@@ -6,7 +6,6 @@ import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
-import 'package:healthque/features/health/presentation/bloc/temperature_tracking/temperature_tracking_cubit.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
 import 'package:healthque/features/splash/splash.dart';
 import 'package:healthque/features/temp/temp.dart';
@@ -165,6 +164,10 @@ final GoRouter router = GoRouter(
                 create: (context) => TemperatureTrackingCubit(sl(), sl(), sl()),
                 child: const AddTemperaturePage(),
               ),
+            ),
+            GoRoute(
+              path: Routes.temperatureReminder,
+              builder: (context, state) => const TemperatureRemindersPage(),
             ),
           ],
         ),

@@ -18,6 +18,12 @@ class TemperatureTrackingPage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text(context.strings.temperatureTracking),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.alarm_rounded),
+                onPressed: () => context.push(Routes.temperatureReminder),
+              ),
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => context.push(Routes.addTemperatureTrack).then((_) {

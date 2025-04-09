@@ -10,4 +10,6 @@ enum LocalNotificationType {
   water,
   @HiveField(2)
   courseTreatment,
+  @HiveField(3)
+  temperature,
 }

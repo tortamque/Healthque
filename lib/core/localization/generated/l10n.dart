@@ -1984,6 +1984,16 @@ class Strings {
   String get eg366 {
     return Intl.message('e.g. 36.6', name: 'eg366', desc: '', args: []);
   }
+
+  /// `Temperature Reminders`
+  String get temperatureReminders {
+    return Intl.message(
+      'Temperature Reminders',
+      name: 'temperatureReminders',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

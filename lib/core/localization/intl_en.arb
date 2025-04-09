@@ -250,5 +250,6 @@
   "noMeasurements": "No measurements recorded.",
   "selectTimeValidation": "Please select both date and time for measurement.",
   "notEnoughData": "Not enough data for graph.",
-  "eg366": "e.g. 36.6"
+  "eg366": "e.g. 36.6",
+  "temperatureReminders": "Temperature Reminders"
 }

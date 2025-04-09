@@ -427,6 +427,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "temperatureMeasurementDescription": MessageLookupByLibrary.simpleMessage(
       "Temperature is the measurement of the hotness and coldness of a body",
     ),
+    "temperatureReminders": MessageLookupByLibrary.simpleMessage(
+      "Temperature Reminders",
+    ),
     "temperatureTracking": MessageLookupByLibrary.simpleMessage(
       "Temperature Tracking",
     ),
