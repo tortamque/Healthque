@@ -5,3 +5,4 @@ export 'courses_list_page.dart';
 export 'water_records_list_page.dart';
 export 'add_water_record_page.dart';
 export 'water_reminders_page.dart';
+export 'add_temperature_page.dart';

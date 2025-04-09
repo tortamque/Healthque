@@ -26,5 +26,8 @@ class Routes {
   static const String addWaterRecord = '/addWaterRecord';
   static const String waterReminder = '/waterReminder';
 
+  static const String temperatureTracking = '/temperatureTracking';
+  static const String addTemperatureTrack = '/addTemperatureTrack';
+
   static const String tempPage4 = '/tempPage4';
 }
