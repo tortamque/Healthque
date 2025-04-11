@@ -14,6 +14,7 @@ import 'core/shared/shared.dart';
 import 'features/authorization/authorization.dart';
 import 'features/health/health.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'features/profile/profile.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -35,6 +36,7 @@ class HealthqueApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
         BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl())),
@@ -46,19 +48,25 @@ class HealthqueApp extends StatelessWidget {
           create: (_) => RemindersCubit(sl(), sl(), sl())..fetchNotifications(),
         ),
       ],
-      child: ToastificationWrapper(
-        child: MaterialApp.router(
-          theme: themeData,
-          routerConfig: router,
-          localizationsDelegates: [
-            Strings.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: Strings.delegate.supportedLocales,
-          locale: const Locale('en'),
-        ),
+      child: BlocBuilder<ThemeCubit, Color>(
+        builder: (context, state) {
+          final themeColor = state;
+
+          return ToastificationWrapper(
+            child: MaterialApp.router(
+              theme: themeData(color: themeColor),
+              routerConfig: router,
+              localizationsDelegates: [
+                Strings.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: Strings.delegate.supportedLocales,
+              locale: const Locale('en'),
+            ),
+          );
+        },
       ),
     );
   }
