@@ -1700,10 +1700,10 @@ class Strings {
     );
   }
 
-  /// `Please select both date and time.`
+  /// `Please select both date and time for measurement, or leave both empty.`
   String get selectDateTimeValidation {
     return Intl.message(
-      'Please select both date and time.',
+      'Please select both date and time for measurement, or leave both empty.',
       name: 'selectDateTimeValidation',
       desc: '',
       args: [],
@@ -1835,10 +1835,10 @@ class Strings {
     );
   }
 
-  /// `Please select both date and time for measurement.`
+  /// `Please select a time for the reminder.`
   String get selectTimeValidation {
     return Intl.message(
-      'Please select both date and time for measurement.',
+      'Please select a time for the reminder.',
       name: 'selectTimeValidation',
       desc: '',
       args: [],
@@ -1980,9 +1980,14 @@ class Strings {
     );
   }
 
-  /// `e.g. 36.6`
-  String get eg366 {
-    return Intl.message('e.g. 36.6', name: 'eg366', desc: '', args: []);
+  /// `e.g. {amount}`
+  String egAmount(Object amount) {
+    return Intl.message(
+      'e.g. $amount',
+      name: 'egAmount',
+      desc: '',
+      args: [amount],
+    );
   }
 
   /// `Temperature Reminders`
@@ -1990,6 +1995,136 @@ class Strings {
     return Intl.message(
       'Temperature Reminders',
       name: 'temperatureReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood pressure is the amount of force your blood uses to get through your arteries`
+  String get bloodPressureTrackingDescription {
+    return Intl.message(
+      'Blood pressure is the amount of force your blood uses to get through your arteries',
+      name: 'bloodPressureTrackingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood Pressure Tracking`
+  String get bloodPressureTracking {
+    return Intl.message(
+      'Blood Pressure Tracking',
+      name: 'bloodPressureTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Blood Pressure Measurement`
+  String get addBloodPressureMeasurement {
+    return Intl.message(
+      'Add Blood Pressure Measurement',
+      name: 'addBloodPressureMeasurement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Systolic`
+  String get systolic {
+    return Intl.message('Systolic', name: 'systolic', desc: '', args: []);
+  }
+
+  /// `Diastolic`
+  String get diastolic {
+    return Intl.message('Diastolic', name: 'diastolic', desc: '', args: []);
+  }
+
+  /// `Please enter a valid number.`
+  String get invalidNumber {
+    return Intl.message(
+      'Please enter a valid number.',
+      name: 'invalidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recheck Blood Pressure`
+  String get recheckBloodPressure {
+    return Intl.message(
+      'Recheck Blood Pressure',
+      name: 'recheckBloodPressure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your blood pressure deviated from the normal range. Please recheck it.`
+  String get recheckBloodPressureDesc {
+    return Intl.message(
+      'Your blood pressure deviated from the normal range. Please recheck it.',
+      name: 'recheckBloodPressureDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sys. {amount} mmHg`
+  String systolicShortAmount(Object amount) {
+    return Intl.message(
+      'Sys. $amount mmHg',
+      name: 'systolicShortAmount',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Dias. {amount} mmHg`
+  String diastolicShortAmount(Object amount) {
+    return Intl.message(
+      'Dias. $amount mmHg',
+      name: 'diastolicShortAmount',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Systolic: {sys} mmHg, Diastolic: {diastolic} mmHg`
+  String systolicAndDiastolic(Object sys, Object diastolic) {
+    return Intl.message(
+      'Systolic: $sys mmHg, Diastolic: $diastolic mmHg',
+      name: 'systolicAndDiastolic',
+      desc: '',
+      args: [sys, diastolic],
+    );
+  }
+
+  /// `Blood Pressure Reminders`
+  String get bloodPressureReminders {
+    return Intl.message(
+      'Blood Pressure Reminders',
+      name: 'bloodPressureReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recheck Blood Pressure`
+  String get defaultReminderTitleBP {
+    return Intl.message(
+      'Recheck Blood Pressure',
+      name: 'defaultReminderTitleBP',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your blood pressure deviated from normal range. Please recheck in 1 hour.`
+  String get defaultReminderBodyBP {
+    return Intl.message(
+      'Your blood pressure deviated from normal range. Please recheck in 1 hour.',
+      name: 'defaultReminderBodyBP',
       desc: '',
       args: [],
     );

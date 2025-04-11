@@ -12,4 +12,6 @@ enum LocalNotificationType {
   courseTreatment,
   @HiveField(3)
   temperature,
+  @HiveField(4)
+  bloodPressure,
 }

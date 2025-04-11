@@ -37,6 +37,12 @@ class HealthPage extends StatelessWidget {
                 icon: Icons.thermostat_outlined,
                 onTap: () => context.push(Routes.temperatureTracking),
               ),
+              HealthActionCard(
+                title: context.strings.bloodPressureTracking,
+                subtitle: context.strings.bloodPressureTrackingDescription,
+                icon: Icons.bloodtype_rounded,
+                onTap: () => context.push(Routes.bloodPressurePage),
+              ),
             ],
           ),
         ),

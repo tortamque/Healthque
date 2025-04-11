@@ -7,6 +7,7 @@ sealed class RemindersState with _$RemindersState {
     @Default(<LocalNotification>[]) List<LocalNotification> workoutNotifications,
     @Default(<LocalNotification>[]) List<LocalNotification> waterNotifications,
     @Default(<LocalNotification>[]) List<LocalNotification> temperatureNotifications,
+    @Default(<LocalNotification>[]) List<LocalNotification> bloodPressureNotifications,
     @Default(false) bool isLoading,
     String? errorMessage,
   }) = RemindersStateReminders;

@@ -36,7 +36,7 @@ class _TemperatureEntryFormState extends State<TemperatureEntryForm> {
             controller: _tempController,
             decoration: InputDecoration(
               labelText: context.strings.temperature,
-              hintText: context.strings.eg366,
+              hintText: context.strings.egAmount(36.6),
             ),
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             validator: (value) {

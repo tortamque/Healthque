@@ -154,7 +154,7 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: Routes.temperatureTracking,
               builder: (context, state) => BlocProvider(
-                create: (context) => TemperatureTrackingCubit(sl(), sl(), sl()),
+                create: (context) => TemperatureTrackingCubit(sl(), sl(), sl())..fetchTemperatureRecords(),
                 child: const TemperatureTrackingPage(),
               ),
             ),
@@ -168,6 +168,26 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: Routes.temperatureReminder,
               builder: (context, state) => const TemperatureRemindersPage(),
+            ),
+
+            // Blood Pressure Tracking
+            GoRoute(
+              path: Routes.bloodPressurePage,
+              builder: (context, state) => BlocProvider(
+                create: (context) => BloodPressureTrackingCubit(sl(), sl(), sl())..fetchBloodPressureRecords(),
+                child: const BloodPressurePage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addBloodPressurePage,
+              builder: (context, state) => BlocProvider(
+                create: (context) => BloodPressureTrackingCubit(sl(), sl(), sl()),
+                child: const AddBloodPressurePage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.bloodPressureReminder,
+              builder: (context, state) => const BloodPressureRemindersPage(),
             ),
           ],
         ),

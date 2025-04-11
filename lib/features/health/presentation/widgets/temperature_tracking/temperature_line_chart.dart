@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/features/health/health.dart';
 import 'package:intl/intl.dart';
 import 'package:healthque/core/extensions/context.dart';
@@ -143,7 +144,7 @@ class TemperatureLineChart extends StatelessWidget {
                 dotData: FlDotData(show: true),
                 belowBarData: BarAreaData(
                   show: true,
-                  color: context.theme.colorScheme.primary.withOpacity(0.3),
+                  color: context.theme.colorScheme.primary.customOpacity(0.3),
                 ),
               )
             ],
