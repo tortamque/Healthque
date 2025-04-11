@@ -233,5 +233,23 @@
   "selectTimeValidation": "Please select a time for the notification.",
   "fieldCannotBeEmpty": "This field cannot be empty.",
   "defaultReminderTitle": "Drink Water",
-  "defaultReminderBody": "Time to drink water"
+  "defaultReminderBody": "Time to drink water",
+  "temperatureMeasurement": "Temperature measurement",
+  "temperatureMeasurementDescription": "Temperature is the measurement of the hotness and coldness of a body",
+  
+  "temperatureTracking": "Temperature Tracking",
+  "addMeasurement": "Add Measurement",
+  "temperature": "Temperature",
+  "selectDate": "Select Date",
+  "selectTime": "Select Time",
+  "saveMeasurement": "Save Measurement",
+  "measurementDeleted": "Measurement deleted.",
+  "measurementAdded": "Measurement added.",
+  "fieldCannotBeEmpty": "This field cannot be empty.",
+  "invalidTemperature": "Please enter a valid temperature.",
+  "noMeasurements": "No measurements recorded.",
+  "selectTimeValidation": "Please select both date and time for measurement.",
+  "notEnoughData": "Not enough data for graph.",
+  "eg366": "e.g. 36.6",
+  "temperatureReminders": "Temperature Reminders"
 }

@@ -1835,10 +1835,10 @@ class Strings {
     );
   }
 
-  /// `Please select a time for the notification.`
+  /// `Please select both date and time for measurement.`
   String get selectTimeValidation {
     return Intl.message(
-      'Please select a time for the notification.',
+      'Please select both date and time for measurement.',
       name: 'selectTimeValidation',
       desc: '',
       args: [],
@@ -1870,6 +1870,126 @@ class Strings {
     return Intl.message(
       'Time to drink water',
       name: 'defaultReminderBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature measurement`
+  String get temperatureMeasurement {
+    return Intl.message(
+      'Temperature measurement',
+      name: 'temperatureMeasurement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature is the measurement of the hotness and coldness of a body`
+  String get temperatureMeasurementDescription {
+    return Intl.message(
+      'Temperature is the measurement of the hotness and coldness of a body',
+      name: 'temperatureMeasurementDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature Tracking`
+  String get temperatureTracking {
+    return Intl.message(
+      'Temperature Tracking',
+      name: 'temperatureTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Measurement`
+  String get addMeasurement {
+    return Intl.message(
+      'Add Measurement',
+      name: 'addMeasurement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temperature`
+  String get temperature {
+    return Intl.message('Temperature', name: 'temperature', desc: '', args: []);
+  }
+
+  /// `Save Measurement`
+  String get saveMeasurement {
+    return Intl.message(
+      'Save Measurement',
+      name: 'saveMeasurement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Measurement deleted.`
+  String get measurementDeleted {
+    return Intl.message(
+      'Measurement deleted.',
+      name: 'measurementDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Measurement added.`
+  String get measurementAdded {
+    return Intl.message(
+      'Measurement added.',
+      name: 'measurementAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid temperature.`
+  String get invalidTemperature {
+    return Intl.message(
+      'Please enter a valid temperature.',
+      name: 'invalidTemperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No measurements recorded.`
+  String get noMeasurements {
+    return Intl.message(
+      'No measurements recorded.',
+      name: 'noMeasurements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not enough data for graph.`
+  String get notEnoughData {
+    return Intl.message(
+      'Not enough data for graph.',
+      name: 'notEnoughData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g. 36.6`
+  String get eg366 {
+    return Intl.message('e.g. 36.6', name: 'eg366', desc: '', args: []);
+  }
+
+  /// `Temperature Reminders`
+  String get temperatureReminders {
+    return Intl.message(
+      'Temperature Reminders',
+      name: 'temperatureReminders',
       desc: '',
       args: [],
     );

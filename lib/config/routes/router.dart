@@ -149,6 +149,26 @@ final GoRouter router = GoRouter(
               path: Routes.waterReminder,
               builder: (context, state) => const WaterRemindersPage(),
             ),
+
+            // Temperature Tracking
+            GoRoute(
+              path: Routes.temperatureTracking,
+              builder: (context, state) => BlocProvider(
+                create: (context) => TemperatureTrackingCubit(sl(), sl(), sl()),
+                child: const TemperatureTrackingPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addTemperatureTrack,
+              builder: (context, state) => BlocProvider(
+                create: (context) => TemperatureTrackingCubit(sl(), sl(), sl()),
+                child: const AddTemperaturePage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.temperatureReminder,
+              builder: (context, state) => const TemperatureRemindersPage(),
+            ),
           ],
         ),
         StatefulShellBranch(

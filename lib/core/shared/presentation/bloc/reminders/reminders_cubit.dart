@@ -25,12 +25,15 @@ class RemindersCubit extends Cubit<RemindersState> {
     final workoutNotifications =
         notifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
     final waterNotifications = notifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
+    final temperatureNotifications =
+        notifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
 
     emit(
       RemindersState.reminders(
         allNotifications: notifications,
         workoutNotifications: workoutNotifications,
         waterNotifications: waterNotifications,
+        temperatureNotifications: temperatureNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -73,12 +76,15 @@ class RemindersCubit extends Cubit<RemindersState> {
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
     final waterNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
+    final temperatureNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
 
     emit(
       RemindersState.reminders(
         allNotifications: updatedNotifications,
         workoutNotifications: workoutNotifications,
         waterNotifications: waterNotifications,
+        temperatureNotifications: temperatureNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -94,12 +100,15 @@ class RemindersCubit extends Cubit<RemindersState> {
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.workout).toList();
     final waterNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.water).toList();
+    final temperatureNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
 
     emit(
       RemindersState.reminders(
         allNotifications: updatedNotifications,
         workoutNotifications: workoutNotifications,
         waterNotifications: waterNotifications,
+        temperatureNotifications: temperatureNotifications,
         isLoading: false,
         errorMessage: null,
       ),

@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "addCourse": MessageLookupByLibrary.simpleMessage("Add Course"),
     "addDrug": MessageLookupByLibrary.simpleMessage("Add Drug"),
     "addDrugs": MessageLookupByLibrary.simpleMessage("Add Drugs"),
+    "addMeasurement": MessageLookupByLibrary.simpleMessage("Add Measurement"),
     "addMedication": MessageLookupByLibrary.simpleMessage("Add Medication"),
     "addMedicationButton": MessageLookupByLibrary.simpleMessage(
       "Add Medication",
@@ -172,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "drugs": MessageLookupByLibrary.simpleMessage("Drugs"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
+    "eg366": MessageLookupByLibrary.simpleMessage("e.g. 36.6"),
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
     ),
@@ -234,6 +236,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "injection": MessageLookupByLibrary.simpleMessage("Injection"),
     "intensity": MessageLookupByLibrary.simpleMessage("Intensity"),
+    "invalidTemperature": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid temperature.",
+    ),
     "letsCreateAccount": MessageLookupByLibrary.simpleMessage(
       "Let\'s create account together!",
     ),
@@ -249,6 +254,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "loggedInAs": m13,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
+    "measurementAdded": MessageLookupByLibrary.simpleMessage(
+      "Measurement added.",
+    ),
+    "measurementDeleted": MessageLookupByLibrary.simpleMessage(
+      "Measurement deleted.",
+    ),
     "medicationAdded": MessageLookupByLibrary.simpleMessage(
       "Medication added successfully",
     ),
@@ -287,6 +298,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noDrugsValidation": MessageLookupByLibrary.simpleMessage(
       "Please add at least one drug.",
     ),
+    "noMeasurements": MessageLookupByLibrary.simpleMessage(
+      "No measurements recorded.",
+    ),
     "noMedications": MessageLookupByLibrary.simpleMessage(
       "No medications found.",
     ),
@@ -301,6 +315,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noWaterRecords": MessageLookupByLibrary.simpleMessage(
       "No water records found.",
+    ),
+    "notEnoughData": MessageLookupByLibrary.simpleMessage(
+      "Not enough data for graph.",
     ),
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Note: Height in cm and Weight in kg",
@@ -347,6 +364,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "running": MessageLookupByLibrary.simpleMessage("Running"),
     "saveCourse": MessageLookupByLibrary.simpleMessage("Save course"),
+    "saveMeasurement": MessageLookupByLibrary.simpleMessage("Save Measurement"),
     "saveNotification": MessageLookupByLibrary.simpleMessage(
       "Save Notification",
     ),
@@ -383,7 +401,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "selectTimeValidation": MessageLookupByLibrary.simpleMessage(
-      "Please select a time for the notification.",
+      "Please select both date and time for measurement.",
     ),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",
@@ -401,6 +419,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
       "Tags (comma separated)",
+    ),
+    "temperature": MessageLookupByLibrary.simpleMessage("Temperature"),
+    "temperatureMeasurement": MessageLookupByLibrary.simpleMessage(
+      "Temperature measurement",
+    ),
+    "temperatureMeasurementDescription": MessageLookupByLibrary.simpleMessage(
+      "Temperature is the measurement of the hotness and coldness of a body",
+    ),
+    "temperatureReminders": MessageLookupByLibrary.simpleMessage(
+      "Temperature Reminders",
+    ),
+    "temperatureTracking": MessageLookupByLibrary.simpleMessage(
+      "Temperature Tracking",
     ),
     "tennis": MessageLookupByLibrary.simpleMessage("Tennis"),
     "theresNotEnoughDataToBuildTheChart": MessageLookupByLibrary.simpleMessage(

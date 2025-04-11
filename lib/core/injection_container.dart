@@ -16,6 +16,7 @@ void initializeDependencies() {
     ..registerSingleton<MedicationTrackingHiveManager>(MedicationTrackingHiveManager())
     ..registerSingleton<CourseTreatmentHiveManager>(CourseTreatmentHiveManager())
     ..registerSingleton<WaterTrackingHiveManager>(WaterTrackingHiveManager())
+    ..registerSingleton<TemperatureTrackingHiveManager>(TemperatureTrackingHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
@@ -24,6 +25,7 @@ void initializeDependencies() {
     ..registerSingleton<MedicationTrackingDbService>(MedicationTrackingDbServiceImpl(sl()))
     ..registerSingleton<CourseTreatmentDbService>(CourseTreatmentDbServiceImpl(sl()))
     ..registerSingleton<WaterTrackingDbService>(WaterTrackingDbServiceImpl(sl()))
+    ..registerSingleton<TemperatureTrackingDbService>(TemperatureTrackingDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -32,6 +34,7 @@ void initializeDependencies() {
     ..registerSingleton<MedicationTrackingRepository>(MedicationTrackingRepositoryImpl(sl()))
     ..registerSingleton<CourseTreatmentRepository>(CourseTreatmentRepositoryImpl(sl()))
     ..registerSingleton<WaterTrackingRepository>(WaterTrackingRepositoryImpl(sl()))
+    ..registerSingleton<TemperatureTrackingRepository>(TemperatureTrackingRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -51,7 +54,10 @@ void initializeDependencies() {
     ..registerSingleton<DeleteCourseTreatmentUseCase>(DeleteCourseTreatmentUseCase(sl()))
     ..registerSingleton<GetWaterRecordsUseCase>(GetWaterRecordsUseCase(sl()))
     ..registerSingleton<SaveWaterRecordsUseCase>(SaveWaterRecordsUseCase(sl()))
-    ..registerSingleton<DeleteWaterRecordUseCase>(DeleteWaterRecordUseCase(sl()));
+    ..registerSingleton<DeleteWaterRecordUseCase>(DeleteWaterRecordUseCase(sl()))
+    ..registerSingleton<GetTemperatureRecordsUseCase>(GetTemperatureRecordsUseCase(sl()))
+    ..registerSingleton<SaveTemperatureRecordsUseCase>(SaveTemperatureRecordsUseCase(sl()))
+    ..registerSingleton<DeleteTemperatureRecordUseCase>(DeleteTemperatureRecordUseCase(sl()));
 
   // Blocs
 }

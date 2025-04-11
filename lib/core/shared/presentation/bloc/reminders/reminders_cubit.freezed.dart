@@ -18,6 +18,7 @@ mixin _$RemindersState {
   LocalNotifications get allNotifications;
   List<LocalNotification> get workoutNotifications;
   List<LocalNotification> get waterNotifications;
+  List<LocalNotification> get temperatureNotifications;
   bool get isLoading;
   String? get errorMessage;
 
@@ -40,6 +41,8 @@ mixin _$RemindersState {
                 .equals(other.workoutNotifications, workoutNotifications) &&
             const DeepCollectionEquality()
                 .equals(other.waterNotifications, waterNotifications) &&
+            const DeepCollectionEquality().equals(
+                other.temperatureNotifications, temperatureNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -52,12 +55,13 @@ mixin _$RemindersState {
       allNotifications,
       const DeepCollectionEquality().hash(workoutNotifications),
       const DeepCollectionEquality().hash(waterNotifications),
+      const DeepCollectionEquality().hash(temperatureNotifications),
       isLoading,
       errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, temperatureNotifications: $temperatureNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -71,6 +75,7 @@ abstract mixin class $RemindersStateCopyWith<$Res> {
       {LocalNotifications allNotifications,
       List<LocalNotification> workoutNotifications,
       List<LocalNotification> waterNotifications,
+      List<LocalNotification> temperatureNotifications,
       bool isLoading,
       String? errorMessage});
 
@@ -93,6 +98,7 @@ class _$RemindersStateCopyWithImpl<$Res>
     Object? allNotifications = null,
     Object? workoutNotifications = null,
     Object? waterNotifications = null,
+    Object? temperatureNotifications = null,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
@@ -108,6 +114,10 @@ class _$RemindersStateCopyWithImpl<$Res>
       waterNotifications: null == waterNotifications
           ? _self.waterNotifications
           : waterNotifications // ignore: cast_nullable_to_non_nullable
+              as List<LocalNotification>,
+      temperatureNotifications: null == temperatureNotifications
+          ? _self.temperatureNotifications
+          : temperatureNotifications // ignore: cast_nullable_to_non_nullable
               as List<LocalNotification>,
       isLoading: null == isLoading
           ? _self.isLoading
@@ -140,10 +150,13 @@ class RemindersStateReminders implements RemindersState {
           const <LocalNotification>[],
       final List<LocalNotification> waterNotifications =
           const <LocalNotification>[],
+      final List<LocalNotification> temperatureNotifications =
+          const <LocalNotification>[],
       this.isLoading = false,
       this.errorMessage})
       : _workoutNotifications = workoutNotifications,
-        _waterNotifications = waterNotifications;
+        _waterNotifications = waterNotifications,
+        _temperatureNotifications = temperatureNotifications;
 
   @override
   @JsonKey()
@@ -166,6 +179,16 @@ class RemindersStateReminders implements RemindersState {
       return _waterNotifications;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_waterNotifications);
+  }
+
+  final List<LocalNotification> _temperatureNotifications;
+  @override
+  @JsonKey()
+  List<LocalNotification> get temperatureNotifications {
+    if (_temperatureNotifications is EqualUnmodifiableListView)
+      return _temperatureNotifications;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_temperatureNotifications);
   }
 
   @override
@@ -194,6 +217,8 @@ class RemindersStateReminders implements RemindersState {
                 .equals(other._workoutNotifications, _workoutNotifications) &&
             const DeepCollectionEquality()
                 .equals(other._waterNotifications, _waterNotifications) &&
+            const DeepCollectionEquality().equals(
+                other._temperatureNotifications, _temperatureNotifications) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -206,12 +231,13 @@ class RemindersStateReminders implements RemindersState {
       allNotifications,
       const DeepCollectionEquality().hash(_workoutNotifications),
       const DeepCollectionEquality().hash(_waterNotifications),
+      const DeepCollectionEquality().hash(_temperatureNotifications),
       isLoading,
       errorMessage);
 
   @override
   String toString() {
-    return 'RemindersState.reminders(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
+    return 'RemindersState.reminders(allNotifications: $allNotifications, workoutNotifications: $workoutNotifications, waterNotifications: $waterNotifications, temperatureNotifications: $temperatureNotifications, isLoading: $isLoading, errorMessage: $errorMessage)';
   }
 }
 
@@ -227,6 +253,7 @@ abstract mixin class $RemindersStateRemindersCopyWith<$Res>
       {LocalNotifications allNotifications,
       List<LocalNotification> workoutNotifications,
       List<LocalNotification> waterNotifications,
+      List<LocalNotification> temperatureNotifications,
       bool isLoading,
       String? errorMessage});
 
@@ -250,6 +277,7 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
     Object? allNotifications = null,
     Object? workoutNotifications = null,
     Object? waterNotifications = null,
+    Object? temperatureNotifications = null,
     Object? isLoading = null,
     Object? errorMessage = freezed,
   }) {
@@ -265,6 +293,10 @@ class _$RemindersStateRemindersCopyWithImpl<$Res>
       waterNotifications: null == waterNotifications
           ? _self._waterNotifications
           : waterNotifications // ignore: cast_nullable_to_non_nullable
+              as List<LocalNotification>,
+      temperatureNotifications: null == temperatureNotifications
+          ? _self._temperatureNotifications
+          : temperatureNotifications // ignore: cast_nullable_to_non_nullable
               as List<LocalNotification>,
       isLoading: null == isLoading
           ? _self.isLoading
