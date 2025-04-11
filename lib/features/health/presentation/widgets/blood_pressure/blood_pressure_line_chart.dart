@@ -61,7 +61,7 @@ class BloodPressureLineChart extends StatelessWidget {
                     String label;
                     if (spot.barIndex == 0) {
                       label =
-                          "${DateFormat('dd.MM.yyyy HH:mm').format(record.measurementTime)}\nS${context.strings.systolicShortAmount(record.systolic)}";
+                          "${DateFormat('dd.MM.yyyy HH:mm').format(record.measurementTime)}\n${context.strings.systolicShortAmount(record.systolic)}";
                     } else {
                       label = context.strings.diastolicShortAmount(record.diastolic);
                     }

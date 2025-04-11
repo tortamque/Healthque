@@ -272,7 +272,6 @@
   "systolicShortAmount": "Sys. {amount} mmHg",
   "diastolicShortAmount": "Dias. {amount} mmHg",
   "systolicAndDiastolic": "Systolic: {sys} mmHg, Diastolic: {diastolic} mmHg",
-
   "bloodPressureReminders": "Blood Pressure Reminders",
   "defaultReminderTitleBP": "Recheck Blood Pressure",
   "defaultReminderBodyBP": "Your blood pressure deviated from normal range. Please recheck in 1 hour.",
