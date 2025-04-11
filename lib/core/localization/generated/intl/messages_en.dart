@@ -45,15 +45,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m11(type) => "Don\'t forget your ${type} workout today!";
 
-  static String m12(hours, minutes) => "${hours} h ${minutes} m";
+  static String m12(amount) => "Dias. ${amount} mmHg";
 
-  static String m13(user) => "Successfully logged in as ${user}";
+  static String m13(amount) => "e.g. ${amount}";
 
-  static String m14(minutes) => "${minutes} m";
+  static String m14(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m15(minutes) => "${minutes} minutes";
+  static String m15(user) => "Successfully logged in as ${user}";
 
-  static String m16(hours, minutes) => "${hours}h ${minutes}m";
+  static String m16(minutes) => "${minutes} m";
+
+  static String m17(minutes) => "${minutes} minutes";
+
+  static String m18(hours, minutes) => "${hours}h ${minutes}m";
+
+  static String m19(sys, diastolic) =>
+      "Systolic: ${sys} mmHg, Diastolic: ${diastolic} mmHg";
+
+  static String m20(amount) => "Sys. ${amount} mmHg";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -63,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "add": MessageLookupByLibrary.simpleMessage("Add"),
     "addANewWorkout": MessageLookupByLibrary.simpleMessage("Add a new workout"),
+    "addBloodPressureMeasurement": MessageLookupByLibrary.simpleMessage(
+      "Add Blood Pressure Measurement",
+    ),
     "addCourse": MessageLookupByLibrary.simpleMessage("Add Course"),
     "addDrug": MessageLookupByLibrary.simpleMessage("Add Drug"),
     "addDrugs": MessageLookupByLibrary.simpleMessage("Add Drugs"),
@@ -99,6 +111,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "applyFilter": MessageLookupByLibrary.simpleMessage("Apply Filter"),
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Blood oxygen saturation",
+    ),
+    "bloodPressureTracking": MessageLookupByLibrary.simpleMessage(
+      "Blood Pressure Tracking",
+    ),
+    "bloodPressureTrackingDescription": MessageLookupByLibrary.simpleMessage(
+      "Blood pressure is the amount of force your blood uses to get through your arteries",
     ),
     "bmrTip": m9,
     "bouldering": MessageLookupByLibrary.simpleMessage("Bouldering"),
@@ -158,6 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteConfirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete this workout?",
     ),
+    "diastolic": MessageLookupByLibrary.simpleMessage("Diastolic"),
+    "diastolicShortAmount": m12,
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "distanceKm": MessageLookupByLibrary.simpleMessage("Distance (km)"),
     "dosage": MessageLookupByLibrary.simpleMessage("Dosage"),
@@ -173,7 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "drugs": MessageLookupByLibrary.simpleMessage("Drugs"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
-    "eg366": MessageLookupByLibrary.simpleMessage("e.g. 36.6"),
+    "egAmount": m13,
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
     ),
@@ -223,7 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
-    "hoursAndMinutesAmount": m12,
+    "hoursAndMinutesAmount": m14,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
@@ -236,6 +256,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "injection": MessageLookupByLibrary.simpleMessage("Injection"),
     "intensity": MessageLookupByLibrary.simpleMessage("Intensity"),
+    "invalidNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid number.",
+    ),
     "invalidTemperature": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid temperature.",
     ),
@@ -251,7 +274,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m13,
+    "loggedInAs": m15,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "measurementAdded": MessageLookupByLibrary.simpleMessage(
@@ -282,8 +305,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
-    "minutesAmount": m14,
-    "minutesAmountLong": m15,
+    "minutesAmount": m16,
+    "minutesAmountLong": m17,
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -346,6 +369,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a workout type",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "recheckBloodPressure": MessageLookupByLibrary.simpleMessage(
+      "Recheck Blood Pressure",
+    ),
+    "recheckBloodPressureDesc": MessageLookupByLibrary.simpleMessage(
+      "Your blood pressure deviated from the normal range. Please recheck it.",
+    ),
     "reminderBody": MessageLookupByLibrary.simpleMessage("Reminder Body"),
     "reminderBodyOptional": MessageLookupByLibrary.simpleMessage(
       "Reminder Body (Optional)",
@@ -390,7 +419,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
     "selectDateTimeValidation": MessageLookupByLibrary.simpleMessage(
-      "Please select both date and time.",
+      "Please select both date and time for measurement, or leave both empty.",
     ),
     "selectGender": MessageLookupByLibrary.simpleMessage("Select Gender"),
     "selectMedicationTime": MessageLookupByLibrary.simpleMessage(
@@ -407,7 +436,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select Workout Type",
     ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m16,
+    "sleepDuration": m18,
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
@@ -415,6 +444,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
     "syrup": MessageLookupByLibrary.simpleMessage("Syrup"),
+    "systolic": MessageLookupByLibrary.simpleMessage("Systolic"),
+    "systolicAndDiastolic": m19,
+    "systolicShortAmount": m20,
     "tablet": MessageLookupByLibrary.simpleMessage("Tablet"),
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(

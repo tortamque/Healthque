@@ -85,6 +85,8 @@ Future<void> _initHive() async {
   Hive.registerAdapter(WaterRecordsAdapter());
   Hive.registerAdapter(TemperatureRecordsAdapter());
   Hive.registerAdapter(TemperatureRecordAdapter());
+  Hive.registerAdapter(BloodPressureRecordAdapter());
+  Hive.registerAdapter(BloodPressureRecordsAdapter());
 }
 
 Future<void> _initHiveManagers() async {
@@ -95,4 +97,5 @@ Future<void> _initHiveManagers() async {
   await sl<CourseTreatmentHiveManager>().init();
   await sl<WaterTrackingHiveManager>().init();
   await sl<TemperatureTrackingHiveManager>().init();
+  await sl<BloodPressureTrackingHiveManager>().init();
 }
