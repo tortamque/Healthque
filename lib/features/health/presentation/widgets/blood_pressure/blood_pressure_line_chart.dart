@@ -49,6 +49,22 @@ class BloodPressureLineChart extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: LineChart(
           LineChartData(
+            extraLinesData: ExtraLinesData(
+              horizontalLines: [
+                HorizontalLine(
+                  y: 120,
+                  color: context.theme.colorScheme.secondary.customOpacity(0.25),
+                  strokeWidth: 2,
+                  dashArray: [6, 4],
+                ),
+                HorizontalLine(
+                  y: 80,
+                  color: context.theme.colorScheme.secondary.customOpacity(0.25),
+                  strokeWidth: 2,
+                  dashArray: [6, 4],
+                ),
+              ],
+            ),
             lineTouchData: LineTouchData(
               enabled: true,
               touchTooltipData: LineTouchTooltipData(
