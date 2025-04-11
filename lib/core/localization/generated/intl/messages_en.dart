@@ -112,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Blood oxygen saturation",
     ),
+    "bloodPressureReminders": MessageLookupByLibrary.simpleMessage(
+      "Blood Pressure Reminders",
+    ),
     "bloodPressureTracking": MessageLookupByLibrary.simpleMessage(
       "Blood Pressure Tracking",
     ),
@@ -167,7 +170,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultReminderBody": MessageLookupByLibrary.simpleMessage(
       "Time to drink water",
     ),
+    "defaultReminderBodyBP": MessageLookupByLibrary.simpleMessage(
+      "Your blood pressure deviated from normal range. Please recheck in 1 hour.",
+    ),
     "defaultReminderTitle": MessageLookupByLibrary.simpleMessage("Drink Water"),
+    "defaultReminderTitleBP": MessageLookupByLibrary.simpleMessage(
+      "Recheck Blood Pressure",
+    ),
     "defaultWorkoutReminderBody": m11,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Workout Reminder",
@@ -430,7 +439,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "selectTimeValidation": MessageLookupByLibrary.simpleMessage(
-      "Please select both date and time for measurement.",
+      "Please select a time for the reminder.",
     ),
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",

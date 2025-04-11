@@ -1835,10 +1835,10 @@ class Strings {
     );
   }
 
-  /// `Please select both date and time for measurement.`
+  /// `Please select a time for the reminder.`
   String get selectTimeValidation {
     return Intl.message(
-      'Please select both date and time for measurement.',
+      'Please select a time for the reminder.',
       name: 'selectTimeValidation',
       desc: '',
       args: [],
@@ -2097,6 +2097,36 @@ class Strings {
       name: 'systolicAndDiastolic',
       desc: '',
       args: [sys, diastolic],
+    );
+  }
+
+  /// `Blood Pressure Reminders`
+  String get bloodPressureReminders {
+    return Intl.message(
+      'Blood Pressure Reminders',
+      name: 'bloodPressureReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recheck Blood Pressure`
+  String get defaultReminderTitleBP {
+    return Intl.message(
+      'Recheck Blood Pressure',
+      name: 'defaultReminderTitleBP',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your blood pressure deviated from normal range. Please recheck in 1 hour.`
+  String get defaultReminderBodyBP {
+    return Intl.message(
+      'Your blood pressure deviated from normal range. Please recheck in 1 hour.',
+      name: 'defaultReminderBodyBP',
+      desc: '',
+      args: [],
     );
   }
 }

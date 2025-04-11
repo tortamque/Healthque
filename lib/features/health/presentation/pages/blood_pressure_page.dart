@@ -13,7 +13,15 @@ class BloodPressurePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(context.strings.bloodPressureTracking),
+        title: Text(
+          context.strings.bloodPressureTracking,
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.alarm_rounded),
+            onPressed: () => context.push(Routes.bloodPressureReminder),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.push(Routes.addBloodPressurePage).then((_) {

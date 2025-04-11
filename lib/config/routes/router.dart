@@ -185,6 +185,10 @@ final GoRouter router = GoRouter(
                 child: const AddBloodPressurePage(),
               ),
             ),
+            GoRoute(
+              path: Routes.bloodPressureReminder,
+              builder: (context, state) => const BloodPressureRemindersPage(),
+            ),
           ],
         ),
         StatefulShellBranch(

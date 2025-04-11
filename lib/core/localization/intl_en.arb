@@ -271,5 +271,20 @@
   "recheckBloodPressureDesc": "Your blood pressure deviated from the normal range. Please recheck it.",
   "systolicShortAmount": "Sys. {amount} mmHg",
   "diastolicShortAmount": "Dias. {amount} mmHg",
-  "systolicAndDiastolic": "Systolic: {sys} mmHg, Diastolic: {diastolic} mmHg"
+  "systolicAndDiastolic": "Systolic: {sys} mmHg, Diastolic: {diastolic} mmHg",
+
+  "bloodPressureReminders": "Blood Pressure Reminders",
+  "defaultReminderTitleBP": "Recheck Blood Pressure",
+  "defaultReminderBodyBP": "Your blood pressure deviated from normal range. Please recheck in 1 hour.",
+  "addNotification": "Add Notification",
+  "reminderTitle": "Reminder Title",
+  "reminderBody": "Reminder Body",
+  "scheduledTime": "Scheduled Time",
+  "selectTime": "Select Time",
+  "saveNotification": "Save Notification",
+  "notificationDeleted": "Notification deleted.",
+  "notificationAdded": "Notification added.",
+  "selectTimeValidation": "Please select a time for the reminder.",
+  "fieldCannotBeEmpty": "This field cannot be empty.",
+  "noNotifications": "No notifications set."
 }
