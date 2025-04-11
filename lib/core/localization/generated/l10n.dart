@@ -2129,6 +2129,36 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Select Theme Color`
+  String get selectThemeColor {
+    return Intl.message(
+      'Select Theme Color',
+      name: 'selectThemeColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Theme Color`
+  String get changeThemeColor {
+    return Intl.message(
+      'Change Theme Color',
+      name: 'changeThemeColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change the app theme color to your preference`
+  String get changeThemeColorDesc {
+    return Intl.message(
+      'Change the app theme color to your preference',
+      name: 'changeThemeColorDesc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

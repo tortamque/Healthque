@@ -51,19 +51,22 @@ class HealthqueApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, Color>(
         builder: (context, state) {
           final themeColor = state;
-
           return ToastificationWrapper(
-            child: MaterialApp.router(
-              theme: themeData(color: themeColor),
-              routerConfig: router,
-              localizationsDelegates: [
-                Strings.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: Strings.delegate.supportedLocales,
-              locale: const Locale('en'),
+            child: AnimatedTheme(
+              data: themeData(color: themeColor),
+              duration: const Duration(milliseconds: 300),
+              child: MaterialApp.router(
+                theme: themeData(color: themeColor),
+                routerConfig: router,
+                localizationsDelegates: [
+                  Strings.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: Strings.delegate.supportedLocales,
+                locale: const Locale('en'),
+              ),
             ),
           );
         },

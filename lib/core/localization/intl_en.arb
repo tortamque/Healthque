@@ -285,5 +285,9 @@
   "notificationAdded": "Notification added.",
   "selectTimeValidation": "Please select a time for the reminder.",
   "fieldCannotBeEmpty": "This field cannot be empty.",
-  "noNotifications": "No notifications set."
+  "noNotifications": "No notifications set.",
+  "profile": "Profile",
+  "selectThemeColor": "Select Theme Color",
+  "changeThemeColor": "Change Theme Color",
+  "changeThemeColorDesc": "Change the app theme color to your preference"
 }
