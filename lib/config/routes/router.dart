@@ -6,11 +6,10 @@ import 'package:healthque/core/injection_container.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
+import 'package:healthque/features/health/health.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
+import 'package:healthque/features/profile/profile.dart';
 import 'package:healthque/features/splash/splash.dart';
-import 'package:healthque/features/temp/temp.dart';
-
-import '../../features/health/health.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
@@ -194,8 +193,8 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: Routes.tempPage4,
-              builder: (context, state) => const TempPage4(),
+              path: Routes.profilePage,
+              builder: (context, state) => const ProfilePage(),
             ),
           ],
         ),

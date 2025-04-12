@@ -3,13 +3,13 @@ import 'package:gap/gap.dart';
 import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
 
-class HealthActionCard extends StatelessWidget {
+class ActionCard extends StatelessWidget {
   final String title;
   final String? subtitle;
   final IconData? icon;
   final VoidCallback? onTap;
 
-  const HealthActionCard({
+  const ActionCard({
     super.key,
     required this.title,
     this.subtitle,

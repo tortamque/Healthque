@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
-import 'package:healthque/features/health/health.dart';
+import 'package:healthque/core/shared/shared.dart';
 export 'temperature_tracking_page.dart';
 
 class HealthPage extends StatelessWidget {
@@ -19,25 +19,25 @@ class HealthPage extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: Column(
             children: [
-              HealthActionCard(
+              ActionCard(
                 title: context.strings.medicationTracking,
                 subtitle: context.strings.medicationTrackingDescription,
                 icon: Icons.medical_services,
                 onTap: () => context.push(Routes.medicationTracking),
               ),
-              HealthActionCard(
+              ActionCard(
                 title: context.strings.waterTracking,
                 subtitle: context.strings.waterTrackingDescription,
                 icon: Icons.water_drop_rounded,
                 onTap: () => context.push(Routes.waterRecordsList),
               ),
-              HealthActionCard(
+              ActionCard(
                 title: context.strings.temperatureMeasurement,
                 subtitle: context.strings.temperatureMeasurementDescription,
                 icon: Icons.thermostat_outlined,
                 onTap: () => context.push(Routes.temperatureTracking),
               ),
-              HealthActionCard(
+              ActionCard(
                 title: context.strings.bloodPressureTracking,
                 subtitle: context.strings.bloodPressureTrackingDescription,
                 icon: Icons.bloodtype_rounded,

@@ -34,5 +34,5 @@ class Routes {
   static const String addBloodPressurePage = '/addBloodPressurePage';
   static const String bloodPressureReminder = '/bloodPressureReminder';
 
-  static const String tempPage4 = '/tempPage4';
+  static const String profilePage = '/profilePage';
 }

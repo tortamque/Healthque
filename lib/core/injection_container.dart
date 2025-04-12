@@ -4,6 +4,7 @@ import 'package:healthque/core/utils/hive/hive.dart';
 import 'package:healthque/core/utils/utils.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/health/health.dart';
+import 'package:healthque/features/profile/profile.dart';
 
 final sl = GetIt.instance;
 
@@ -18,6 +19,7 @@ void initializeDependencies() {
     ..registerSingleton<WaterTrackingHiveManager>(WaterTrackingHiveManager())
     ..registerSingleton<TemperatureTrackingHiveManager>(TemperatureTrackingHiveManager())
     ..registerSingleton<BloodPressureTrackingHiveManager>(BloodPressureTrackingHiveManager())
+    ..registerSingleton<ThemePreferenceHiveManager>(ThemePreferenceHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
@@ -28,6 +30,7 @@ void initializeDependencies() {
     ..registerSingleton<WaterTrackingDbService>(WaterTrackingDbServiceImpl(sl()))
     ..registerSingleton<TemperatureTrackingDbService>(TemperatureTrackingDbServiceImpl(sl()))
     ..registerSingleton<BloodPressureTrackingDbService>(BloodPressureTrackingDbServiceImpl(sl()))
+    ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -38,6 +41,7 @@ void initializeDependencies() {
     ..registerSingleton<WaterTrackingRepository>(WaterTrackingRepositoryImpl(sl()))
     ..registerSingleton<TemperatureTrackingRepository>(TemperatureTrackingRepositoryImpl(sl()))
     ..registerSingleton<BloodPressureTrackingRepository>(BloodPressureTrackingRepositoryImpl(sl()))
+    ..registerSingleton<ThemePreferenceRepository>(ThemePreferenceRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -63,7 +67,9 @@ void initializeDependencies() {
     ..registerSingleton<DeleteTemperatureRecordUseCase>(DeleteTemperatureRecordUseCase(sl()))
     ..registerSingleton<GetBloodPressureRecordsUseCase>(GetBloodPressureRecordsUseCase(sl()))
     ..registerSingleton<SaveBloodPressureRecordsUseCase>(SaveBloodPressureRecordsUseCase(sl()))
-    ..registerSingleton<DeleteBloodPressureRecordUseCase>(DeleteBloodPressureRecordUseCase(sl()));
+    ..registerSingleton<DeleteBloodPressureRecordUseCase>(DeleteBloodPressureRecordUseCase(sl()))
+    ..registerSingleton<GetThemePreferenceUseCase>(GetThemePreferenceUseCase(sl()))
+    ..registerSingleton<SaveThemePreferenceUseCase>(SaveThemePreferenceUseCase(sl()));
 
   // Blocs
 }

@@ -131,6 +131,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "capsule": MessageLookupByLibrary.simpleMessage("Capsule"),
+    "changeThemeColor": MessageLookupByLibrary.simpleMessage(
+      "Change Theme Color",
+    ),
+    "changeThemeColorDesc": MessageLookupByLibrary.simpleMessage(
+      "Change the app theme color to your preference",
+    ),
     "clearFilter": MessageLookupByLibrary.simpleMessage("Clear filter"),
     "configureWorkoutReminder": MessageLookupByLibrary.simpleMessage(
       "Configure Workout Reminder",
@@ -436,6 +442,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMedicationTimeValidation": MessageLookupByLibrary.simpleMessage(
       "Please select the medication time.",
+    ),
+    "selectThemeColor": MessageLookupByLibrary.simpleMessage(
+      "Select Theme Color",
     ),
     "selectTime": MessageLookupByLibrary.simpleMessage("Select Time"),
     "selectTimeValidation": MessageLookupByLibrary.simpleMessage(
