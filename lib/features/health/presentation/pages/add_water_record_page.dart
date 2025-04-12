@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthque/features/health/health.dart';
@@ -46,7 +47,7 @@ class _AddWaterRecordPageState extends State<AddWaterRecordPage> {
                       color: context.theme.primaryColor,
                       boxShadow: [
                         BoxShadow(
-                          color: context.theme.primaryColor.withOpacity(0.5),
+                          color: context.theme.primaryColor.customOpacity(0.5),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         )

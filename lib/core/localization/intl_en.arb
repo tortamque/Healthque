@@ -289,5 +289,18 @@
   "profile": "Profile",
   "selectThemeColor": "Select Theme Color",
   "changeThemeColor": "Change Theme Color",
-  "changeThemeColorDesc": "Change the app theme color to your preference"
+  "changeThemeColorDesc": "Change the app theme color to your preference",
+  "addStressAndMoodMeasurement": "Add Stress & Mood Measurement",
+  "stressAndMoodTracking": "Stress & Mood Tracking",
+  "stress": "Stress",
+  "selectMood": "Select Mood",
+  "selectDateTimeValidation": "Please select both date and time for measurement, or leave both empty.",
+  "measurementAdded": "Measurement added.",
+  "measurementDeleted": "Measurement deleted.",
+  "noMeasurements": "No measurements recorded.",
+  "notEnoughData": "Not enough data for graph.",
+  "stressGraph": "Stress Graph",
+  "moodGraph": "Mood Graph",
+  "selectMoodValidation": "Please select a mood.",
+  "stressAndMoodPoints": "Stress: {stress} points\nMood: {mood}"
 }

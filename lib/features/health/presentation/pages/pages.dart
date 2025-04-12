@@ -1,4 +1,3 @@
-
 export 'add_blood_pressure_page.dart';
 export 'add_course_treatment_page.dart';
 export 'add_temperature_page.dart';
@@ -12,3 +11,5 @@ export 'temperature_reminders_page.dart';
 export 'temperature_tracking_page.dart';
 export 'water_records_list_page.dart';
 export 'water_reminders_page.dart';
+export 'stress_mood_display_page.dart';
+export 'stress_mood_entry_page.dart';

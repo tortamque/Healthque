@@ -99,6 +99,8 @@ Future<void> _initHive() async {
   Hive.registerAdapter(BloodPressureRecordAdapter());
   Hive.registerAdapter(BloodPressureRecordsAdapter());
   Hive.registerAdapter(ThemePreferenceAdapter());
+  Hive.registerAdapter(StressMoodRecordAdapter());
+  Hive.registerAdapter(StressMoodRecordsAdapter());
 }
 
 Future<void> _initHiveManagers() async {
@@ -111,4 +113,5 @@ Future<void> _initHiveManagers() async {
   await sl<TemperatureTrackingHiveManager>().init();
   await sl<BloodPressureTrackingHiveManager>().init();
   await sl<ThemePreferenceHiveManager>().init();
+  await sl<StressMoodTrackingHiveManager>().init();
 }

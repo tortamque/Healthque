@@ -188,6 +188,22 @@ final GoRouter router = GoRouter(
               path: Routes.bloodPressureReminder,
               builder: (context, state) => const BloodPressureRemindersPage(),
             ),
+
+            // Stress and mood Tracking
+            GoRoute(
+              path: Routes.stressAndMoodPage,
+              builder: (context, state) => BlocProvider(
+                create: (context) => StressMoodTrackingCubit(sl(), sl(), sl())..fetchStressMoodRecords(),
+                child: const StressMoodDisplayPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addStressAndMoodPage,
+              builder: (context, state) => BlocProvider(
+                create: (context) => StressMoodTrackingCubit(sl(), sl(), sl()),
+                child: const StressMoodEntryPage(),
+              ),
+            ),
           ],
         ),
         StatefulShellBranch(
