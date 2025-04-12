@@ -20,6 +20,7 @@ void initializeDependencies() {
     ..registerSingleton<TemperatureTrackingHiveManager>(TemperatureTrackingHiveManager())
     ..registerSingleton<BloodPressureTrackingHiveManager>(BloodPressureTrackingHiveManager())
     ..registerSingleton<ThemePreferenceHiveManager>(ThemePreferenceHiveManager())
+    ..registerSingleton<StressMoodTrackingHiveManager>(StressMoodTrackingHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
@@ -31,6 +32,7 @@ void initializeDependencies() {
     ..registerSingleton<TemperatureTrackingDbService>(TemperatureTrackingDbServiceImpl(sl()))
     ..registerSingleton<BloodPressureTrackingDbService>(BloodPressureTrackingDbServiceImpl(sl()))
     ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl()))
+    ..registerSingleton<StressMoodTrackingDbService>(StressMoodTrackingDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -42,6 +44,7 @@ void initializeDependencies() {
     ..registerSingleton<TemperatureTrackingRepository>(TemperatureTrackingRepositoryImpl(sl()))
     ..registerSingleton<BloodPressureTrackingRepository>(BloodPressureTrackingRepositoryImpl(sl()))
     ..registerSingleton<ThemePreferenceRepository>(ThemePreferenceRepositoryImpl(sl()))
+    ..registerSingleton<StressMoodTrackingRepository>(StressMoodTrackingRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -69,7 +72,10 @@ void initializeDependencies() {
     ..registerSingleton<SaveBloodPressureRecordsUseCase>(SaveBloodPressureRecordsUseCase(sl()))
     ..registerSingleton<DeleteBloodPressureRecordUseCase>(DeleteBloodPressureRecordUseCase(sl()))
     ..registerSingleton<GetThemePreferenceUseCase>(GetThemePreferenceUseCase(sl()))
-    ..registerSingleton<SaveThemePreferenceUseCase>(SaveThemePreferenceUseCase(sl()));
+    ..registerSingleton<SaveThemePreferenceUseCase>(SaveThemePreferenceUseCase(sl()))
+    ..registerSingleton<GetStressMoodRecordsUseCase>(GetStressMoodRecordsUseCase(sl()))
+    ..registerSingleton<SaveStressMoodRecordsUseCase>(SaveStressMoodRecordsUseCase(sl()))
+    ..registerSingleton<DeleteStressMoodRecordUseCase>(DeleteStressMoodRecordUseCase(sl()));
 
   // Blocs
 }

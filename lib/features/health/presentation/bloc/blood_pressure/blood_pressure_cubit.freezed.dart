@@ -215,7 +215,10 @@ class __$BloodPressureTrackingStateCopyWithImpl<$Res>
     Object? errorMessage = freezed,
   }) {
     return _then(_BloodPressureTrackingState(
-      isLoading: freezed == isLoading ? _self.isLoading! : isLoading,
+      isLoading: freezed == isLoading
+          ? _self.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       records: null == records
           ? _self.records
           : records // ignore: cast_nullable_to_non_nullable

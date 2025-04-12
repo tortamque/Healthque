@@ -59,10 +59,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m18(hours, minutes) => "${hours}h ${minutes}m";
 
-  static String m19(sys, diastolic) =>
+  static String m19(stress, mood) => "Stress: ${stress} points\nMood: ${mood}";
+
+  static String m20(sys, diastolic) =>
       "Systolic: ${sys} mmHg, Diastolic: ${diastolic} mmHg";
 
-  static String m20(amount) => "Sys. ${amount} mmHg";
+  static String m21(amount) => "Sys. ${amount} mmHg";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -84,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add Medication",
     ),
     "addNotification": MessageLookupByLibrary.simpleMessage("Add Notification"),
+    "addStressAndMoodMeasurement": MessageLookupByLibrary.simpleMessage(
+      "Add Stress & Mood Measurement",
+    ),
     "addWaterRecord": MessageLookupByLibrary.simpleMessage("Add Water Record"),
     "addWorkout": MessageLookupByLibrary.simpleMessage("Add Workout"),
     "addedOn": MessageLookupByLibrary.simpleMessage("Added on"),
@@ -324,6 +329,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "minutesAmountLong": m17,
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+    "moodGraph": MessageLookupByLibrary.simpleMessage("Mood Graph"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameCantBeEmpty": MessageLookupByLibrary.simpleMessage(
       "Name can\'t be empty",
@@ -443,6 +449,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectMedicationTimeValidation": MessageLookupByLibrary.simpleMessage(
       "Please select the medication time.",
     ),
+    "selectMood": MessageLookupByLibrary.simpleMessage("Select Mood"),
+    "selectMoodValidation": MessageLookupByLibrary.simpleMessage(
+      "Please select a mood.",
+    ),
     "selectThemeColor": MessageLookupByLibrary.simpleMessage(
       "Select Theme Color",
     ),
@@ -459,12 +469,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
+    "stress": MessageLookupByLibrary.simpleMessage("Stress"),
+    "stressAndMoodPoints": m19,
+    "stressAndMoodTracking": MessageLookupByLibrary.simpleMessage(
+      "Stress & Mood Tracking",
+    ),
+    "stressGraph": MessageLookupByLibrary.simpleMessage("Stress Graph"),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
     "syrup": MessageLookupByLibrary.simpleMessage("Syrup"),
     "systolic": MessageLookupByLibrary.simpleMessage("Systolic"),
-    "systolicAndDiastolic": m19,
-    "systolicShortAmount": m20,
+    "systolicAndDiastolic": m20,
+    "systolicShortAmount": m21,
     "tablet": MessageLookupByLibrary.simpleMessage("Tablet"),
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(

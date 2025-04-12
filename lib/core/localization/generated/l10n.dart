@@ -2159,6 +2159,71 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Add Stress & Mood Measurement`
+  String get addStressAndMoodMeasurement {
+    return Intl.message(
+      'Add Stress & Mood Measurement',
+      name: 'addStressAndMoodMeasurement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stress & Mood Tracking`
+  String get stressAndMoodTracking {
+    return Intl.message(
+      'Stress & Mood Tracking',
+      name: 'stressAndMoodTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stress`
+  String get stress {
+    return Intl.message('Stress', name: 'stress', desc: '', args: []);
+  }
+
+  /// `Select Mood`
+  String get selectMood {
+    return Intl.message('Select Mood', name: 'selectMood', desc: '', args: []);
+  }
+
+  /// `Stress Graph`
+  String get stressGraph {
+    return Intl.message(
+      'Stress Graph',
+      name: 'stressGraph',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mood Graph`
+  String get moodGraph {
+    return Intl.message('Mood Graph', name: 'moodGraph', desc: '', args: []);
+  }
+
+  /// `Please select a mood.`
+  String get selectMoodValidation {
+    return Intl.message(
+      'Please select a mood.',
+      name: 'selectMoodValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stress: {stress} points\nMood: {mood}`
+  String stressAndMoodPoints(Object stress, Object mood) {
+    return Intl.message(
+      'Stress: $stress points\nMood: $mood',
+      name: 'stressAndMoodPoints',
+      desc: '',
+      args: [stress, mood],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
