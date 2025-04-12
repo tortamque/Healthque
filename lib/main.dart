@@ -36,7 +36,7 @@ class HealthqueApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => ThemeCubit()),
+        BlocProvider(create: (_) => ThemeCubit(sl(), sl())),
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
         BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl())),
@@ -98,6 +98,7 @@ Future<void> _initHive() async {
   Hive.registerAdapter(TemperatureRecordAdapter());
   Hive.registerAdapter(BloodPressureRecordAdapter());
   Hive.registerAdapter(BloodPressureRecordsAdapter());
+  Hive.registerAdapter(ThemePreferenceAdapter());
 }
 
 Future<void> _initHiveManagers() async {
@@ -109,4 +110,5 @@ Future<void> _initHiveManagers() async {
   await sl<WaterTrackingHiveManager>().init();
   await sl<TemperatureTrackingHiveManager>().init();
   await sl<BloodPressureTrackingHiveManager>().init();
+  await sl<ThemePreferenceHiveManager>().init();
 }
