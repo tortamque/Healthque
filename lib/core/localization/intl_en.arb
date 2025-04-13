@@ -415,5 +415,10 @@
   "fieldCannotBeEmpty": "This field cannot be empty.",
   "invalidNumber": "Invalid number.",
   "profileUpdated": "Profile updated successfully.",
-  "profileUpdateFailed": "Profile update failed."
+  "profileUpdateFailed": "Profile update failed.",
+  "changeLanguage": "Change Language",
+  "changeLanguageDesc": "Change the app language",
+  "editProfileDesc": "Edit your profile information",
+  "english": "English",
+  "ukrainian": "Ukrainian"
 }

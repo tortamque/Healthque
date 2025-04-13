@@ -3075,13 +3075,56 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Change Language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change Language',
+      name: 'changeLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change the app language`
+  String get changeLanguageDesc {
+    return Intl.message(
+      'Change the app language',
+      name: 'changeLanguageDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit your profile information`
+  String get editProfileDesc {
+    return Intl.message(
+      'Edit your profile information',
+      name: 'editProfileDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Ukrainian`
+  String get ukrainian {
+    return Intl.message('Ukrainian', name: 'ukrainian', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'uk'),
+    ];
   }
 
   @override

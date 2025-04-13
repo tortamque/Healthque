@@ -48,4 +48,5 @@ class Routes {
 
   static const String profilePage = '/profilePage';
   static const String editProfilePage = '/editProfilePage';
+  static const String localeSettingsPage = '/localeSettingsPage';
 }
