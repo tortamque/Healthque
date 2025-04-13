@@ -165,6 +165,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
     ),
+    "caloriesBurnInOneDay": MessageLookupByLibrary.simpleMessage(
+      "Calories Burned in One Day",
+    ),
     "caloriesBurnedDuringWorkouts": MessageLookupByLibrary.simpleMessage(
       "Calories burned during workouts",
     ),
@@ -230,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteConfirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete this workout?",
     ),
+    "desiredSteps": MessageLookupByLibrary.simpleMessage("Desired Steps"),
     "diastolic": MessageLookupByLibrary.simpleMessage("Diastolic"),
     "diastolicShortAmount": m12,
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
@@ -247,6 +251,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "drugs": MessageLookupByLibrary.simpleMessage("Drugs"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
+    "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "egAmount": m13,
     "egBloodSugar": m14,
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
@@ -292,8 +297,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "firstThingsFirst": MessageLookupByLibrary.simpleMessage(
       "First things first!",
     ),
+    "gender": MessageLookupByLibrary.simpleMessage("Gender"),
     "gymnastics": MessageLookupByLibrary.simpleMessage("Gymnastics"),
     "health": MessageLookupByLibrary.simpleMessage("Health"),
+    "height": MessageLookupByLibrary.simpleMessage("Height (cm)"),
     "heightInCm": MessageLookupByLibrary.simpleMessage("Height (cm)"),
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
@@ -317,9 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidBloodSugar": MessageLookupByLibrary.simpleMessage(
       "Invalid blood sugar value.",
     ),
-    "invalidNumber": MessageLookupByLibrary.simpleMessage(
-      "Please enter a valid number.",
-    ),
+    "invalidNumber": MessageLookupByLibrary.simpleMessage("Invalid number."),
     "invalidTemperature": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid temperature.",
     ),
@@ -436,6 +441,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a workout type",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileUpdateFailed": MessageLookupByLibrary.simpleMessage(
+      "Profile update failed.",
+    ),
+    "profileUpdated": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully.",
+    ),
     "recheckBloodPressure": MessageLookupByLibrary.simpleMessage(
       "Recheck Blood Pressure",
     ),
@@ -464,6 +475,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "saveNotification": MessageLookupByLibrary.simpleMessage(
       "Save Notification",
     ),
+    "saveProfile": MessageLookupByLibrary.simpleMessage("Save Profile"),
     "saveReminder": MessageLookupByLibrary.simpleMessage("Save Reminder"),
     "saveWaterRecord": MessageLookupByLibrary.simpleMessage(
       "Save Water Record",
@@ -717,6 +729,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "waterAmountValidation": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid water amount",
     ),
+    "waterConsumption": MessageLookupByLibrary.simpleMessage(
+      "Water Consumption (ml)",
+    ),
     "waterRecordAdded": MessageLookupByLibrary.simpleMessage(
       "Water record added successfully",
     ),
@@ -732,6 +747,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Water is essential to maintain blood volume and regulate body temperature",
     ),
     "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
+    "weight": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightInKg": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "weightMustBeLessThan500": MessageLookupByLibrary.simpleMessage(
       "Weight must be valid and less than 500 kg",

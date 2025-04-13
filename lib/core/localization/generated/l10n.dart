@@ -2040,10 +2040,10 @@ class Strings {
     return Intl.message('Diastolic', name: 'diastolic', desc: '', args: []);
   }
 
-  /// `Please enter a valid number.`
+  /// `Invalid number.`
   String get invalidNumber {
     return Intl.message(
-      'Please enter a valid number.',
+      'Invalid number.',
       name: 'invalidNumber',
       desc: '',
       args: [],
@@ -2986,6 +2986,91 @@ class Strings {
     return Intl.message(
       'Invalid blood sugar value.',
       name: 'invalidBloodSugar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message('Gender', name: 'gender', desc: '', args: []);
+  }
+
+  /// `Height (cm)`
+  String get height {
+    return Intl.message('Height (cm)', name: 'height', desc: '', args: []);
+  }
+
+  /// `Weight (kg)`
+  String get weight {
+    return Intl.message('Weight (kg)', name: 'weight', desc: '', args: []);
+  }
+
+  /// `Water Consumption (ml)`
+  String get waterConsumption {
+    return Intl.message(
+      'Water Consumption (ml)',
+      name: 'waterConsumption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calories Burned in One Day`
+  String get caloriesBurnInOneDay {
+    return Intl.message(
+      'Calories Burned in One Day',
+      name: 'caloriesBurnInOneDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Desired Steps`
+  String get desiredSteps {
+    return Intl.message(
+      'Desired Steps',
+      name: 'desiredSteps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Profile`
+  String get saveProfile {
+    return Intl.message(
+      'Save Profile',
+      name: 'saveProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully.`
+  String get profileUpdated {
+    return Intl.message(
+      'Profile updated successfully.',
+      name: 'profileUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile update failed.`
+  String get profileUpdateFailed {
+    return Intl.message(
+      'Profile update failed.',
+      name: 'profileUpdateFailed',
       desc: '',
       args: [],
     );
