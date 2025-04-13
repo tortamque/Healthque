@@ -277,6 +277,10 @@ final GoRouter router = GoRouter(
               path: Routes.profilePage,
               builder: (context, state) => const ProfilePage(),
             ),
+            GoRoute(
+              path: Routes.editProfilePage,
+              builder: (context, state) => const EditProfilePage(),
+            ),
           ],
         ),
       ],

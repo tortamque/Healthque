@@ -380,7 +380,6 @@
   "unknown": "Unknown",
   "stressAndMoodTracking": "Stress and Mood Tracking",
   "stressAndMoodTrackingDesc": "Mood is the way someone feels due to a variety of thought, reactions or emotions over a long period of time",
-
   "bloodSugarTracking": "Blood Sugar Tracking",
   "bloodSugarTrackingDesc": "Blood glucose, or blood sugar, is the main sugar found in your blood",
   "bloodSugarReminders": "Blood Sugar Reminders",
@@ -399,5 +398,22 @@
   "selectTime": "Select Time",
   "saveMeasurement": "Save Measurement",
   "measurementAdded": "Measurement added successfully.",
-  "selectTimeValidation": "Please select both a date and time."
+  "selectTimeValidation": "Please select both a date and time.",
+  "editProfile": "Edit Profile",
+  "name": "Name",
+  "surname": "Surname",
+  "age": "Age",
+  "gender": "Gender",
+  "male": "Male",
+  "female": "Female",
+  "height": "Height (cm)",
+  "weight": "Weight (kg)",
+  "waterConsumption": "Water Consumption (ml)",
+  "caloriesBurnInOneDay": "Calories Burned in One Day",
+  "desiredSteps": "Desired Steps",
+  "saveProfile": "Save Profile",
+  "fieldCannotBeEmpty": "This field cannot be empty.",
+  "invalidNumber": "Invalid number.",
+  "profileUpdated": "Profile updated successfully.",
+  "profileUpdateFailed": "Profile update failed."
 }

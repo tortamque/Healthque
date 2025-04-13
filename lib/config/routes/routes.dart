@@ -47,4 +47,5 @@ class Routes {
   static const String bloodSugarReminder = '/bloodSugarReminder';
 
   static const String profilePage = '/profilePage';
+  static const String editProfilePage = '/editProfilePage';
 }
