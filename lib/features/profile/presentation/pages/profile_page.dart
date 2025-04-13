@@ -20,8 +20,14 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             children: [
               ActionCard(
-                title: 'Edit Profile',
-                subtitle: 'Edit your profile information',
+                title: context.strings.changeLanguage,
+                subtitle: context.strings.changeLanguageDesc,
+                icon: Icons.flag_rounded,
+                onTap: () => context.push(Routes.localeSettingsPage),
+              ),
+              ActionCard(
+                title: context.strings.editProfile,
+                subtitle: context.strings.editProfileDesc,
                 icon: Icons.person_rounded,
                 onTap: () => context.push(Routes.editProfilePage),
               ),

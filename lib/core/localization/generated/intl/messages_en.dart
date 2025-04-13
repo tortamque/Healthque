@@ -173,6 +173,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "capsule": MessageLookupByLibrary.simpleMessage("Capsule"),
+    "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
+    "changeLanguageDesc": MessageLookupByLibrary.simpleMessage(
+      "Change the app language",
+    ),
     "changeThemeColor": MessageLookupByLibrary.simpleMessage(
       "Change Theme Color",
     ),
@@ -252,12 +256,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "drugs": MessageLookupByLibrary.simpleMessage("Drugs"),
     "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "editProfileDesc": MessageLookupByLibrary.simpleMessage(
+      "Edit your profile information",
+    ),
     "egAmount": m13,
     "egBloodSugar": m14,
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
     ),
     "energyBurned": MessageLookupByLibrary.simpleMessage("Energy Burned"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "enterAValidDistance": MessageLookupByLibrary.simpleMessage(
       "Enter a valid distance",
     ),
@@ -722,6 +730,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Training evaluation",
     ),
+    "ukrainian": MessageLookupByLibrary.simpleMessage("Ukrainian"),
     "units": MessageLookupByLibrary.simpleMessage("units"),
     "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "walking": MessageLookupByLibrary.simpleMessage("Walking"),

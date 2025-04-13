@@ -281,6 +281,10 @@ final GoRouter router = GoRouter(
               path: Routes.editProfilePage,
               builder: (context, state) => const EditProfilePage(),
             ),
+            GoRoute(
+              path: Routes.localeSettingsPage,
+              builder: (context, state) => const LanguageSettingsPage(),
+            ),
           ],
         ),
       ],

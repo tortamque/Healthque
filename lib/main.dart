@@ -39,6 +39,7 @@ class HealthqueApp extends StatelessWidget {
         BlocProvider(create: (_) => ThemeCubit(sl(), sl())),
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),
+        BlocProvider<LocaleCubit>(create: (_) => LocaleCubit(sl(), sl())),
         BlocProvider<UserCubit>(create: (_) => UserCubit(sl(), sl())),
         BlocProvider<ActivityCubit>(
           create: (_) => ActivityCubit(sl(), sl(), sl())..fetchWorkouts(),
@@ -51,23 +52,30 @@ class HealthqueApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, Color>(
         builder: (context, state) {
           final themeColor = state;
-          return ToastificationWrapper(
-            child: AnimatedTheme(
-              data: themeData(color: themeColor),
-              duration: const Duration(milliseconds: 300),
-              child: MaterialApp.router(
-                theme: themeData(color: themeColor),
-                routerConfig: router,
-                localizationsDelegates: [
-                  Strings.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: Strings.delegate.supportedLocales,
-                locale: const Locale('en'),
-              ),
-            ),
+
+          return BlocBuilder<LocaleCubit, Locale>(
+            builder: (context, state) {
+              final locale = state;
+
+              return ToastificationWrapper(
+                child: AnimatedTheme(
+                  data: themeData(color: themeColor),
+                  duration: const Duration(milliseconds: 300),
+                  child: MaterialApp.router(
+                    theme: themeData(color: themeColor),
+                    routerConfig: router,
+                    localizationsDelegates: [
+                      Strings.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: Strings.delegate.supportedLocales,
+                    locale: locale,
+                  ),
+                ),
+              );
+            },
           );
         },
       ),
@@ -117,4 +125,5 @@ Future<void> _initHiveManagers() async {
   await sl<ThemePreferenceHiveManager>().init();
   await sl<StressMoodTrackingHiveManager>().init();
   await sl<BloodSugarTrackingHiveManager>().init();
+  await sl<LocaleHiveManager>().init();
 }

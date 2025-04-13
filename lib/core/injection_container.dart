@@ -22,6 +22,7 @@ void initializeDependencies() {
     ..registerSingleton<ThemePreferenceHiveManager>(ThemePreferenceHiveManager())
     ..registerSingleton<StressMoodTrackingHiveManager>(StressMoodTrackingHiveManager())
     ..registerSingleton<BloodSugarTrackingHiveManager>(BloodSugarTrackingHiveManager())
+    ..registerSingleton<LocaleHiveManager>(LocaleHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
@@ -35,6 +36,7 @@ void initializeDependencies() {
     ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl()))
     ..registerSingleton<StressMoodTrackingDbService>(StressMoodTrackingDbServiceImpl(sl()))
     ..registerSingleton<BloodSugarTrackingDbService>(BloodSugarTrackingDbServiceImpl(sl()))
+    ..registerSingleton<LocaleDbService>(LocaleDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -48,6 +50,7 @@ void initializeDependencies() {
     ..registerSingleton<ThemePreferenceRepository>(ThemePreferenceRepositoryImpl(sl()))
     ..registerSingleton<StressMoodTrackingRepository>(StressMoodTrackingRepositoryImpl(sl()))
     ..registerSingleton<BloodSugarTrackingRepository>(BloodSugarTrackingRepositoryImpl(sl()))
+    ..registerSingleton<LocaleRepository>(LocaleRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -81,7 +84,9 @@ void initializeDependencies() {
     ..registerSingleton<DeleteStressMoodRecordUseCase>(DeleteStressMoodRecordUseCase(sl()))
     ..registerSingleton<GetBloodSugarRecordsUseCase>(GetBloodSugarRecordsUseCase(sl()))
     ..registerSingleton<SaveBloodSugarRecordsUseCase>(SaveBloodSugarRecordsUseCase(sl()))
-    ..registerSingleton<DeleteBloodSugarRecordUseCase>(DeleteBloodSugarRecordUseCase(sl()));
+    ..registerSingleton<DeleteBloodSugarRecordUseCase>(DeleteBloodSugarRecordUseCase(sl()))
+    ..registerSingleton<SaveLocaleUseCase>(SaveLocaleUseCase(sl()))
+    ..registerSingleton<GetLocaleUseCase>(GetLocaleUseCase(sl()));
 
   // Blocs
 }

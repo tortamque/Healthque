@@ -41,7 +41,7 @@ class _SleepAnalysisPageState extends State<SleepAnalysisPage> {
                     context.strings.selectNight,
                     style: context.textTheme.bodyMedium,
                   ),
-                  TextButton(
+                  OutlinedButton(
                     onPressed: _selectDate,
                     child: Text(
                       _formatDate(_selectedDate),
