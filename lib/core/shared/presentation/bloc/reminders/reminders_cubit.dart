@@ -29,6 +29,8 @@ class RemindersCubit extends Cubit<RemindersState> {
         notifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
     final bloodPressureNotifications =
         notifications.notifications.where((n) => n.type == LocalNotificationType.bloodPressure).toList();
+    final bloodSugarNotifications =
+        notifications.notifications.where((n) => n.type == LocalNotificationType.bloodSugar).toList();
 
     emit(
       RemindersState.reminders(
@@ -37,6 +39,7 @@ class RemindersCubit extends Cubit<RemindersState> {
         waterNotifications: waterNotifications,
         temperatureNotifications: temperatureNotifications,
         bloodPressureNotifications: bloodPressureNotifications,
+        bloodSugarNotifications: bloodSugarNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -83,6 +86,8 @@ class RemindersCubit extends Cubit<RemindersState> {
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
     final bloodPressureNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.bloodPressure).toList();
+    final bloodSugarNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.bloodSugar).toList();
 
     emit(
       RemindersState.reminders(
@@ -91,6 +96,7 @@ class RemindersCubit extends Cubit<RemindersState> {
         waterNotifications: waterNotifications,
         temperatureNotifications: temperatureNotifications,
         bloodPressureNotifications: bloodPressureNotifications,
+        bloodSugarNotifications: bloodSugarNotifications,
         isLoading: false,
         errorMessage: null,
       ),
@@ -110,6 +116,8 @@ class RemindersCubit extends Cubit<RemindersState> {
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.temperature).toList();
     final bloodPressureNotifications =
         updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.bloodPressure).toList();
+    final bloodSugarNotifications =
+        updatedNotifications.notifications.where((n) => n.type == LocalNotificationType.bloodSugar).toList();
 
     emit(
       RemindersState.reminders(
@@ -118,6 +126,7 @@ class RemindersCubit extends Cubit<RemindersState> {
         waterNotifications: waterNotifications,
         temperatureNotifications: temperatureNotifications,
         bloodPressureNotifications: bloodPressureNotifications,
+        bloodSugarNotifications: bloodSugarNotifications,
         isLoading: false,
         errorMessage: null,
       ),

@@ -80,4 +80,5 @@ const _$LocalNotificationTypeEnumMap = {
   LocalNotificationType.courseTreatment: 'courseTreatment',
   LocalNotificationType.temperature: 'temperature',
   LocalNotificationType.bloodPressure: 'bloodPressure',
+  LocalNotificationType.bloodSugar: 'bloodSugar',
 };

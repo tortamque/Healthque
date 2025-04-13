@@ -1815,10 +1815,10 @@ class Strings {
     );
   }
 
-  /// `Notification deleted.`
+  /// `Notification deleted`
   String get notificationDeleted {
     return Intl.message(
-      'Notification deleted.',
+      'Notification deleted',
       name: 'notificationDeleted',
       desc: '',
       args: [],
@@ -1835,10 +1835,10 @@ class Strings {
     );
   }
 
-  /// `Please select a time for the reminder.`
+  /// `Please select both a date and time.`
   String get selectTimeValidation {
     return Intl.message(
-      'Please select a time for the reminder.',
+      'Please select both a date and time.',
       name: 'selectTimeValidation',
       desc: '',
       args: [],
@@ -1930,20 +1930,20 @@ class Strings {
     );
   }
 
-  /// `Measurement deleted.`
+  /// `Measurement deleted`
   String get measurementDeleted {
     return Intl.message(
-      'Measurement deleted.',
+      'Measurement deleted',
       name: 'measurementDeleted',
       desc: '',
       args: [],
     );
   }
 
-  /// `Measurement added.`
+  /// `Measurement added successfully.`
   String get measurementAdded {
     return Intl.message(
-      'Measurement added.',
+      'Measurement added successfully.',
       name: 'measurementAdded',
       desc: '',
       args: [],
@@ -1970,10 +1970,10 @@ class Strings {
     );
   }
 
-  /// `Not enough data for graph.`
+  /// `Not enough data`
   String get notEnoughData {
     return Intl.message(
-      'Not enough data for graph.',
+      'Not enough data',
       name: 'notEnoughData',
       desc: '',
       args: [],
@@ -2170,10 +2170,10 @@ class Strings {
     );
   }
 
-  /// `Stress & Mood Tracking`
+  /// `Stress and Mood Tracking`
   String get stressAndMoodTracking {
     return Intl.message(
-      'Stress & Mood Tracking',
+      'Stress and Mood Tracking',
       name: 'stressAndMoodTracking',
       desc: '',
       args: [],
@@ -2904,6 +2904,91 @@ class Strings {
   /// `Unknown`
   String get unknown {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
+  }
+
+  /// `Mood is the way someone feels due to a variety of thought, reactions or emotions over a long period of time`
+  String get stressAndMoodTrackingDesc {
+    return Intl.message(
+      'Mood is the way someone feels due to a variety of thought, reactions or emotions over a long period of time',
+      name: 'stressAndMoodTrackingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood Sugar Tracking`
+  String get bloodSugarTracking {
+    return Intl.message(
+      'Blood Sugar Tracking',
+      name: 'bloodSugarTracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood glucose, or blood sugar, is the main sugar found in your blood`
+  String get bloodSugarTrackingDesc {
+    return Intl.message(
+      'Blood glucose, or blood sugar, is the main sugar found in your blood',
+      name: 'bloodSugarTrackingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood Sugar Reminders`
+  String get bloodSugarReminders {
+    return Intl.message(
+      'Blood Sugar Reminders',
+      name: 'bloodSugarReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No blood sugar measurements available.`
+  String get noBloodSugarMeasurements {
+    return Intl.message(
+      'No blood sugar measurements available.',
+      name: 'noBloodSugarMeasurements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a reminder to check your blood sugar levels.`
+  String get bloodSugarReminderInfo {
+    return Intl.message(
+      'Set a reminder to check your blood sugar levels.',
+      name: 'bloodSugarReminderInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood Sugar`
+  String get bloodSugar {
+    return Intl.message('Blood Sugar', name: 'bloodSugar', desc: '', args: []);
+  }
+
+  /// `e.g., {amount} mg/dL`
+  String egBloodSugar(Object amount) {
+    return Intl.message(
+      'e.g., $amount mg/dL',
+      name: 'egBloodSugar',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Invalid blood sugar value.`
+  String get invalidBloodSugar {
+    return Intl.message(
+      'Invalid blood sugar value.',
+      name: 'invalidBloodSugar',
+      desc: '',
+      args: [],
+    );
   }
 }
 

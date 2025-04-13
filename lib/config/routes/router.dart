@@ -7,6 +7,7 @@ import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/features/activity/activity.dart';
 import 'package:healthque/features/dashboard/dashboard.dart';
 import 'package:healthque/features/health/health.dart';
+import 'package:healthque/features/health/presentation/pages/blood_sugar_tracking_page.dart';
 import 'package:healthque/features/onboarding/onboarding.dart';
 import 'package:healthque/features/profile/profile.dart';
 import 'package:healthque/features/splash/splash.dart';
@@ -247,6 +248,26 @@ final GoRouter router = GoRouter(
                   lightMinutes: extra.lightMinutes,
                 );
               },
+            ),
+
+            // Blood Sugar Tracking
+            GoRoute(
+              path: Routes.bloodSugarTracking,
+              builder: (context, state) => BlocProvider(
+                create: (context) => BloodSugarTrackingCubit(sl(), sl(), sl())..fetchBloodSugarRecords(),
+                child: const BloodSugarTrackingPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.addBloodSugarTrack,
+              builder: (context, state) => BlocProvider(
+                create: (context) => BloodSugarTrackingCubit(sl(), sl(), sl()),
+                child: const AddBloodSugarPage(),
+              ),
+            ),
+            GoRoute(
+              path: Routes.bloodSugarReminder,
+              builder: (context, state) => const BloodSugarRemindersPage(),
             ),
           ],
         ),
