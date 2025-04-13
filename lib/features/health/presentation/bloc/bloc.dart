@@ -6,3 +6,4 @@ export 'water_tracking/water_tracking_cubit.dart';
 export 'temperature_tracking/temperature_tracking_cubit.dart';
 export 'blood_pressure/blood_pressure_cubit.dart';
 export 'stress_mood_tracking/stress_mood_tracking_cubit.dart';
+export 'blood_sugar_tracking/blood_sugar_tracking_cubit.dart';

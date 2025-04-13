@@ -50,11 +50,16 @@ class HealthPage extends StatelessWidget {
                 onTap: () => context.push(Routes.bloodPressurePage),
               ),
               ActionCard(
-                title: 'Stress and Mood Tracking',
-                subtitle:
-                    'Mood is the way someone feels due to a variety of thought, reactions or emotions over a long period of time',
+                title: context.strings.stressAndMoodTracking,
+                subtitle: context.strings.stressAndMoodTrackingDesc,
                 icon: Icons.emoji_emotions_rounded,
                 onTap: () => context.push(Routes.stressAndMoodPage),
+              ),
+              ActionCard(
+                title: context.strings.bloodSugarTracking,
+                subtitle: context.strings.bloodSugarTrackingDesc,
+                icon: Icons.biotech_outlined,
+                onTap: () => context.push(Routes.bloodSugarTracking),
               ),
             ],
           ),

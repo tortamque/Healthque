@@ -42,5 +42,9 @@ class Routes {
   static const String sleepStatisticsInfoPage = '/sleepStatisticsInfoPage';
   static const String sleepLengthsInfoPage = '/sleepLengthsInfoPage';
 
+  static const String bloodSugarTracking = '/bloodSugarTracking';
+  static const String addBloodSugarTrack = '/addBloodSugarTrack';
+  static const String bloodSugarReminder = '/bloodSugarReminder';
+
   static const String profilePage = '/profilePage';
 }

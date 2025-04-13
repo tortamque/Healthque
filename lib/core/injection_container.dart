@@ -21,6 +21,7 @@ void initializeDependencies() {
     ..registerSingleton<BloodPressureTrackingHiveManager>(BloodPressureTrackingHiveManager())
     ..registerSingleton<ThemePreferenceHiveManager>(ThemePreferenceHiveManager())
     ..registerSingleton<StressMoodTrackingHiveManager>(StressMoodTrackingHiveManager())
+    ..registerSingleton<BloodSugarTrackingHiveManager>(BloodSugarTrackingHiveManager())
 
     // Services
     ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
@@ -33,6 +34,7 @@ void initializeDependencies() {
     ..registerSingleton<BloodPressureTrackingDbService>(BloodPressureTrackingDbServiceImpl(sl()))
     ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl()))
     ..registerSingleton<StressMoodTrackingDbService>(StressMoodTrackingDbServiceImpl(sl()))
+    ..registerSingleton<BloodSugarTrackingDbService>(BloodSugarTrackingDbServiceImpl(sl()))
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -45,6 +47,7 @@ void initializeDependencies() {
     ..registerSingleton<BloodPressureTrackingRepository>(BloodPressureTrackingRepositoryImpl(sl()))
     ..registerSingleton<ThemePreferenceRepository>(ThemePreferenceRepositoryImpl(sl()))
     ..registerSingleton<StressMoodTrackingRepository>(StressMoodTrackingRepositoryImpl(sl()))
+    ..registerSingleton<BloodSugarTrackingRepository>(BloodSugarTrackingRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -75,7 +78,10 @@ void initializeDependencies() {
     ..registerSingleton<SaveThemePreferenceUseCase>(SaveThemePreferenceUseCase(sl()))
     ..registerSingleton<GetStressMoodRecordsUseCase>(GetStressMoodRecordsUseCase(sl()))
     ..registerSingleton<SaveStressMoodRecordsUseCase>(SaveStressMoodRecordsUseCase(sl()))
-    ..registerSingleton<DeleteStressMoodRecordUseCase>(DeleteStressMoodRecordUseCase(sl()));
+    ..registerSingleton<DeleteStressMoodRecordUseCase>(DeleteStressMoodRecordUseCase(sl()))
+    ..registerSingleton<GetBloodSugarRecordsUseCase>(GetBloodSugarRecordsUseCase(sl()))
+    ..registerSingleton<SaveBloodSugarRecordsUseCase>(SaveBloodSugarRecordsUseCase(sl()))
+    ..registerSingleton<DeleteBloodSugarRecordUseCase>(DeleteBloodSugarRecordUseCase(sl()));
 
   // Blocs
 }

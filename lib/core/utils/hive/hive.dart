@@ -8,3 +8,4 @@ export 'temperature_tracking_hive_manager.dart';
 export 'blood_pressure_tracking_hive_manager.dart';
 export 'theme_hive_manager.dart';
 export 'stress_mood_tracking_hive_manager.dart';
+export 'blood_sugar_hive_manager.dart';

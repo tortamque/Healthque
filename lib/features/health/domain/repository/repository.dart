@@ -4,3 +4,4 @@ export 'medication_tracking_repository.dart';
 export 'temperature_tracking_repository.dart';
 export 'water_tracking_repository.dart';
 export 'stress_mood_tracking_repository.dart';
+export 'blood_sugar_repository.dart';

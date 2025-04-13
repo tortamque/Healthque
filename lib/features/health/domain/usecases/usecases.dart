@@ -4,3 +4,4 @@ export 'medication_tracking_usecase.dart';
 export 'temperature_tracking_usecase.dart';
 export 'water_tracking_usecase.dart';
 export 'stress_mood_usecase.dart';
+export 'blood_sugar_use_cases.dart';

@@ -17,3 +17,5 @@ export 'sleep_analysis_page.dart';
 export 'sleep_score_info_page.dart';
 export 'sleep_statistics_info_page.dart';
 export 'sleep_stage_lengths_info_page.dart';
+export 'blood_sugar_reminders_page.dart';
+export 'add_blood_sugar_page.dart';

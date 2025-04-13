@@ -14,4 +14,6 @@ enum LocalNotificationType {
   temperature,
   @HiveField(4)
   bloodPressure,
+  @HiveField(5)
+  bloodSugar,
 }
