@@ -2224,6 +2224,687 @@ class Strings {
       args: [stress, mood],
     );
   }
+
+  /// `Sleep Analysis`
+  String get sleepAnalysisTitle {
+    return Intl.message(
+      'Sleep Analysis',
+      name: 'sleepAnalysisTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep is a body process that allows your body to rest, repair and restore itself`
+  String get sleepAnalysisDesc {
+    return Intl.message(
+      'Sleep is a body process that allows your body to rest, repair and restore itself',
+      name: 'sleepAnalysisDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No sleep data for last night.`
+  String get noSleepDataLastNight {
+    return Intl.message(
+      'No sleep data for last night.',
+      name: 'noSleepDataLastNight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Sleep: {h} h {m} m`
+  String sleepChartOverview(Object h, Object m) {
+    return Intl.message(
+      'Total Sleep: $h h $m m',
+      name: 'sleepChartOverview',
+      desc: '',
+      args: [h, m],
+    );
+  }
+
+  /// `Sleep Segments`
+  String get sleepSegmentsTitle {
+    return Intl.message(
+      'Sleep Segments',
+      name: 'sleepSegmentsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{type}`
+  String sleepSegmentType(Object type) {
+    return Intl.message(
+      '$type',
+      name: 'sleepSegmentType',
+      desc: '',
+      args: [type],
+    );
+  }
+
+  /// `min`
+  String get minutesShort {
+    return Intl.message('min', name: 'minutesShort', desc: '', args: []);
+  }
+
+  /// `Show Sleep Segments`
+  String get showSleepSegments {
+    return Intl.message(
+      'Show Sleep Segments',
+      name: 'showSleepSegments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide Sleep Segments`
+  String get hideSleepSegments {
+    return Intl.message(
+      'Hide Sleep Segments',
+      name: 'hideSleepSegments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Period: {start} - {end}`
+  String sleepPeriod(Object start, Object end) {
+    return Intl.message(
+      'Sleep Period: $start - $end',
+      name: 'sleepPeriod',
+      desc: '',
+      args: [start, end],
+    );
+  }
+
+  /// `Total Sleep (including awake): {time}`
+  String totalSleepIncluding(Object time) {
+    return Intl.message(
+      'Total Sleep (including awake): $time',
+      name: 'totalSleepIncluding',
+      desc: '',
+      args: [time],
+    );
+  }
+
+  /// `Total Sleep (excluding awake): {time}`
+  String totalSleepExcluding(Object time) {
+    return Intl.message(
+      'Total Sleep (excluding awake): $time',
+      name: 'totalSleepExcluding',
+      desc: '',
+      args: [time],
+    );
+  }
+
+  /// `Very Bad`
+  String get sleepScoreVeryBad {
+    return Intl.message(
+      'Very Bad',
+      name: 'sleepScoreVeryBad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `😫`
+  String get sleepScoreEmojiVeryBad {
+    return Intl.message(
+      '😫',
+      name: 'sleepScoreEmojiVeryBad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad`
+  String get sleepScoreBad {
+    return Intl.message('Bad', name: 'sleepScoreBad', desc: '', args: []);
+  }
+
+  /// `😞`
+  String get sleepScoreEmojiBad {
+    return Intl.message('😞', name: 'sleepScoreEmojiBad', desc: '', args: []);
+  }
+
+  /// `Poor`
+  String get sleepScorePoor {
+    return Intl.message('Poor', name: 'sleepScorePoor', desc: '', args: []);
+  }
+
+  /// `😐`
+  String get sleepScoreEmojiPoor {
+    return Intl.message('😐', name: 'sleepScoreEmojiPoor', desc: '', args: []);
+  }
+
+  /// `Average`
+  String get sleepScoreAverage {
+    return Intl.message(
+      'Average',
+      name: 'sleepScoreAverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🙂`
+  String get sleepScoreEmojiAverage {
+    return Intl.message(
+      '🙂',
+      name: 'sleepScoreEmojiAverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good`
+  String get sleepScoreGood {
+    return Intl.message('Good', name: 'sleepScoreGood', desc: '', args: []);
+  }
+
+  /// `😊`
+  String get sleepScoreEmojiGood {
+    return Intl.message('😊', name: 'sleepScoreEmojiGood', desc: '', args: []);
+  }
+
+  /// `Excellent`
+  String get sleepScoreExcellent {
+    return Intl.message(
+      'Excellent',
+      name: 'sleepScoreExcellent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `😄`
+  String get sleepScoreEmojiExcellent {
+    return Intl.message(
+      '😄',
+      name: 'sleepScoreEmojiExcellent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Efficiency`
+  String get sleepStatEfficiency {
+    return Intl.message(
+      'Efficiency',
+      name: 'sleepStatEfficiency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Awake`
+  String get sleepStatAwake {
+    return Intl.message('Awake', name: 'sleepStatAwake', desc: '', args: []);
+  }
+
+  /// `Deep Sleep`
+  String get sleepStatDeep {
+    return Intl.message(
+      'Deep Sleep',
+      name: 'sleepStatDeep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REM Sleep`
+  String get sleepStatRem {
+    return Intl.message('REM Sleep', name: 'sleepStatRem', desc: '', args: []);
+  }
+
+  /// `Light Sleep`
+  String get sleepStatLight {
+    return Intl.message(
+      'Light Sleep',
+      name: 'sleepStatLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Statistics`
+  String get sleepStatisticsTitle {
+    return Intl.message(
+      'Sleep Statistics',
+      name: 'sleepStatisticsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Stage Lengths`
+  String get sleepStageLengthsTitle {
+    return Intl.message(
+      'Sleep Stage Lengths',
+      name: 'sleepStageLengthsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Awake`
+  String get sleepStageAwake {
+    return Intl.message('Awake', name: 'sleepStageAwake', desc: '', args: []);
+  }
+
+  /// `REM`
+  String get sleepStageRem {
+    return Intl.message('REM', name: 'sleepStageRem', desc: '', args: []);
+  }
+
+  /// `Light`
+  String get sleepStageLight {
+    return Intl.message('Light', name: 'sleepStageLight', desc: '', args: []);
+  }
+
+  /// `Deep`
+  String get sleepStageDeep {
+    return Intl.message('Deep', name: 'sleepStageDeep', desc: '', args: []);
+  }
+
+  /// `Select Night`
+  String get selectNight {
+    return Intl.message(
+      'Select Night',
+      name: 'selectNight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Score`
+  String get sleepScoreTitle {
+    return Intl.message(
+      'Sleep Score',
+      name: 'sleepScoreTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Overview`
+  String get sleepOverviewTitle {
+    return Intl.message(
+      'Sleep Overview',
+      name: 'sleepOverviewTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Sleep Score`
+  String get sleepScoreInfoTitle {
+    return Intl.message(
+      'About Sleep Score',
+      name: 'sleepScoreInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is Sleep Score?`
+  String get sleepScoreInfoWhatIsTitle {
+    return Intl.message(
+      'What is Sleep Score?',
+      name: 'sleepScoreInfoWhatIsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Score is a metric that aggregates various aspects of your sleep, including your total sleep duration, sleep efficiency (the percentage of time you actually sleep when in bed), and the quality of your sleep stages. It is expressed as a number between 0 and 100, where higher scores indicate better sleep quality.`
+  String get sleepScoreInfoWhatIsContent {
+    return Intl.message(
+      'Sleep Score is a metric that aggregates various aspects of your sleep, including your total sleep duration, sleep efficiency (the percentage of time you actually sleep when in bed), and the quality of your sleep stages. It is expressed as a number between 0 and 100, where higher scores indicate better sleep quality.',
+      name: 'sleepScoreInfoWhatIsContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How is Sleep Score Calculated?`
+  String get sleepScoreInfoCalculationTitle {
+    return Intl.message(
+      'How is Sleep Score Calculated?',
+      name: 'sleepScoreInfoCalculationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our algorithm calculates your sleep efficiency by dividing your sleep time (excluding periods when you were awake) by your total time in bed. It also compares your total sleep duration to an ideal sleep duration of 8 hours. These two factors are averaged and scaled to a 0–100 metric, resulting in your Sleep Score.`
+  String get sleepScoreInfoCalculationContent {
+    return Intl.message(
+      'Our algorithm calculates your sleep efficiency by dividing your sleep time (excluding periods when you were awake) by your total time in bed. It also compares your total sleep duration to an ideal sleep duration of 8 hours. These two factors are averaged and scaled to a 0–100 metric, resulting in your Sleep Score.',
+      name: 'sleepScoreInfoCalculationContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why is Sleep Score Important?`
+  String get sleepScoreInfoImportanceTitle {
+    return Intl.message(
+      'Why is Sleep Score Important?',
+      name: 'sleepScoreInfoImportanceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Sleep Score gives you a quick insight into the quality of your sleep. A higher score suggests that you are getting restful, restorative sleep, which is crucial for your overall health, mood, and daily performance. Tracking your Sleep Score over time can help you identify patterns, adjust your habits, and take control of your well-being.`
+  String get sleepScoreInfoImportanceContent {
+    return Intl.message(
+      'Your Sleep Score gives you a quick insight into the quality of your sleep. A higher score suggests that you are getting restful, restorative sleep, which is crucial for your overall health, mood, and daily performance. Tracking your Sleep Score over time can help you identify patterns, adjust your habits, and take control of your well-being.',
+      name: 'sleepScoreInfoImportanceContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Sleep Score`
+  String get sleepScoreInfoYourScoreTitle {
+    return Intl.message(
+      'Your Sleep Score',
+      name: 'sleepScoreInfoYourScoreTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on our analysis, your Sleep Score is {score} ({label}). This score reflects your sleep efficiency and total sleep duration. Use this information as a guideline to help improve your sleep habits and overall health.`
+  String sleepScoreInfoYourScoreContent(Object score, Object label) {
+    return Intl.message(
+      'Based on our analysis, your Sleep Score is $score ($label). This score reflects your sleep efficiency and total sleep duration. Use this information as a guideline to help improve your sleep habits and overall health.',
+      name: 'sleepScoreInfoYourScoreContent',
+      desc: '',
+      args: [score, label],
+    );
+  }
+
+  /// `About Sleep Statistics`
+  String get sleepStatisticsInfoTitle {
+    return Intl.message(
+      'About Sleep Statistics',
+      name: 'sleepStatisticsInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What are Sleep Statistics?`
+  String get sleepStatisticsInfoWhatIsTitle {
+    return Intl.message(
+      'What are Sleep Statistics?',
+      name: 'sleepStatisticsInfoWhatIsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep statistics are quantitative measures that provide insight into your sleep quality and architecture. They include metrics such as sleep efficiency, as well as the percentage of time spent in various sleep stages like light, deep, and REM sleep.`
+  String get sleepStatisticsInfoWhatIsContent {
+    return Intl.message(
+      'Sleep statistics are quantitative measures that provide insight into your sleep quality and architecture. They include metrics such as sleep efficiency, as well as the percentage of time spent in various sleep stages like light, deep, and REM sleep.',
+      name: 'sleepStatisticsInfoWhatIsContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Understanding Sleep Efficiency`
+  String get sleepStatisticsInfoEfficiencyTitle {
+    return Intl.message(
+      'Understanding Sleep Efficiency',
+      name: 'sleepStatisticsInfoEfficiencyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep efficiency is the ratio of the time you actually spend asleep to the total time you spend in bed. High sleep efficiency indicates that you are getting continuous and restorative sleep.`
+  String get sleepStatisticsInfoEfficiencyContent {
+    return Intl.message(
+      'Sleep efficiency is the ratio of the time you actually spend asleep to the total time you spend in bed. High sleep efficiency indicates that you are getting continuous and restorative sleep.',
+      name: 'sleepStatisticsInfoEfficiencyContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep Stages Breakdown`
+  String get sleepStatisticsInfoStagesTitle {
+    return Intl.message(
+      'Sleep Stages Breakdown',
+      name: 'sleepStatisticsInfoStagesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your sleep is divided into several distinct stages: Awake, Light Sleep, Deep Sleep, and REM Sleep. Each stage plays a crucial role in recovery, memory consolidation, and overall well-being.`
+  String get sleepStatisticsInfoStagesContent {
+    return Intl.message(
+      'Your sleep is divided into several distinct stages: Awake, Light Sleep, Deep Sleep, and REM Sleep. Each stage plays a crucial role in recovery, memory consolidation, and overall well-being.',
+      name: 'sleepStatisticsInfoStagesContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Sleep Statistics`
+  String get sleepStatisticsInfoYourStatsTitle {
+    return Intl.message(
+      'Your Sleep Statistics',
+      name: 'sleepStatisticsInfoYourStatsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on our analysis, your sleep efficiency is {efficiency}%. Your awake time is {awake}%, Deep Sleep is {deep}%, REM Sleep is {rem}%, and Light Sleep is {light}%. These values help you understand your sleep quality and pinpoint areas for improvement.`
+  String sleepStatisticsInfoYourStatsContent(
+    Object efficiency,
+    Object awake,
+    Object deep,
+    Object rem,
+    Object light,
+  ) {
+    return Intl.message(
+      'Based on our analysis, your sleep efficiency is $efficiency%. Your awake time is $awake%, Deep Sleep is $deep%, REM Sleep is $rem%, and Light Sleep is $light%. These values help you understand your sleep quality and pinpoint areas for improvement.',
+      name: 'sleepStatisticsInfoYourStatsContent',
+      desc: '',
+      args: [efficiency, awake, deep, rem, light],
+    );
+  }
+
+  /// `About Sleep Stage Lengths`
+  String get sleepStageLengthsInfoTitle {
+    return Intl.message(
+      'About Sleep Stage Lengths',
+      name: 'sleepStageLengthsInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What are Sleep Stage Lengths?`
+  String get sleepStageLengthsInfoWhatIsTitle {
+    return Intl.message(
+      'What are Sleep Stage Lengths?',
+      name: 'sleepStageLengthsInfoWhatIsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sleep stage lengths refer to the absolute durations you spend in each stage of sleep—such as time spent awake, in light sleep, deep sleep, and REM sleep. These values provide insights into your sleep architecture and overall sleep quality.`
+  String get sleepStageLengthsInfoWhatIsContent {
+    return Intl.message(
+      'Sleep stage lengths refer to the absolute durations you spend in each stage of sleep—such as time spent awake, in light sleep, deep sleep, and REM sleep. These values provide insights into your sleep architecture and overall sleep quality.',
+      name: 'sleepStageLengthsInfoWhatIsContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Interpret Your Sleep Stage Durations`
+  String get sleepStageLengthsInfoInterpretationTitle {
+    return Intl.message(
+      'How to Interpret Your Sleep Stage Durations',
+      name: 'sleepStageLengthsInfoInterpretationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longer durations in deep and REM sleep often indicate more restorative sleep, while extended periods of being awake or in light sleep might suggest fragmented or less efficient sleep. Knowing these durations can help you understand your sleep patterns and identify areas for improvement.`
+  String get sleepStageLengthsInfoInterpretationContent {
+    return Intl.message(
+      'Longer durations in deep and REM sleep often indicate more restorative sleep, while extended periods of being awake or in light sleep might suggest fragmented or less efficient sleep. Knowing these durations can help you understand your sleep patterns and identify areas for improvement.',
+      name: 'sleepStageLengthsInfoInterpretationContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why are Sleep Stage Lengths Important?`
+  String get sleepStageLengthsInfoImportanceTitle {
+    return Intl.message(
+      'Why are Sleep Stage Lengths Important?',
+      name: 'sleepStageLengthsInfoImportanceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The lengths of each sleep stage affect how well your body and mind recover during sleep. A balanced distribution with sufficient deep and REM sleep is crucial for memory consolidation, physical recovery, and overall well-being.`
+  String get sleepStageLengthsInfoImportanceContent {
+    return Intl.message(
+      'The lengths of each sleep stage affect how well your body and mind recover during sleep. A balanced distribution with sufficient deep and REM sleep is crucial for memory consolidation, physical recovery, and overall well-being.',
+      name: 'sleepStageLengthsInfoImportanceContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Sleep Stage Lengths`
+  String get sleepStageLengthsInfoYourStatsTitle {
+    return Intl.message(
+      'Your Sleep Stage Lengths',
+      name: 'sleepStageLengthsInfoYourStatsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on our analysis, your Awake time is {awake}, Deep Sleep is {deep}, REM Sleep is {rem}, and Light Sleep is {light}. These values help you understand the distribution of your sleep and guide you towards better sleep habits.`
+  String sleepStageLengthsInfoYourStatsContent(
+    Object awake,
+    Object deep,
+    Object rem,
+    Object light,
+  ) {
+    return Intl.message(
+      'Based on our analysis, your Awake time is $awake, Deep Sleep is $deep, REM Sleep is $rem, and Light Sleep is $light. These values help you understand the distribution of your sleep and guide you towards better sleep habits.',
+      name: 'sleepStageLengthsInfoYourStatsContent',
+      desc: '',
+      args: [awake, deep, rem, light],
+    );
+  }
+
+  /// `Awake Stage`
+  String get sleepStageAwakeInfoTitle {
+    return Intl.message(
+      'Awake Stage',
+      name: 'sleepStageAwakeInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Awake Stage represents periods when you are in bed but not sleeping. Occasional brief awakenings are normal; however, extended periods of wakefulness can disrupt sleep quality.`
+  String get sleepStageAwakeInfoContent {
+    return Intl.message(
+      'The Awake Stage represents periods when you are in bed but not sleeping. Occasional brief awakenings are normal; however, extended periods of wakefulness can disrupt sleep quality.',
+      name: 'sleepStageAwakeInfoContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REM Sleep`
+  String get sleepStageRemInfoTitle {
+    return Intl.message(
+      'REM Sleep',
+      name: 'sleepStageRemInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `REM (Rapid Eye Movement) Sleep is when you experience most of your dreams and your brain is highly active. It is important for emotional regulation and memory consolidation.`
+  String get sleepStageRemInfoContent {
+    return Intl.message(
+      'REM (Rapid Eye Movement) Sleep is when you experience most of your dreams and your brain is highly active. It is important for emotional regulation and memory consolidation.',
+      name: 'sleepStageRemInfoContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Sleep`
+  String get sleepStageLightInfoTitle {
+    return Intl.message(
+      'Light Sleep',
+      name: 'sleepStageLightInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Sleep is the transitional phase between wakefulness and deeper sleep stages. It helps your body prepare for deep sleep and is common during a healthy sleep cycle.`
+  String get sleepStageLightInfoContent {
+    return Intl.message(
+      'Light Sleep is the transitional phase between wakefulness and deeper sleep stages. It helps your body prepare for deep sleep and is common during a healthy sleep cycle.',
+      name: 'sleepStageLightInfoContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deep Sleep`
+  String get sleepStageDeepInfoTitle {
+    return Intl.message(
+      'Deep Sleep',
+      name: 'sleepStageDeepInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deep Sleep is the most restorative phase of sleep, crucial for physical recovery and immune system strengthening. Adequate deep sleep is normally associated with feeling refreshed in the morning.`
+  String get sleepStageDeepInfoContent {
+    return Intl.message(
+      'Deep Sleep is the most restorative phase of sleep, crucial for physical recovery and immune system strengthening. Adequate deep sleep is normally associated with feeling refreshed in the morning.',
+      name: 'sleepStageDeepInfoContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

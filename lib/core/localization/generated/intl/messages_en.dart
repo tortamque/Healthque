@@ -57,14 +57,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m17(minutes) => "${minutes} minutes";
 
-  static String m18(hours, minutes) => "${hours}h ${minutes}m";
+  static String m18(h, m) => "Total Sleep: ${h} h ${m} m";
 
-  static String m19(stress, mood) => "Stress: ${stress} points\nMood: ${mood}";
+  static String m19(hours, minutes) => "${hours}h ${minutes}m";
 
-  static String m20(sys, diastolic) =>
+  static String m20(start, end) => "Sleep Period: ${start} - ${end}";
+
+  static String m21(score, label) =>
+      "Based on our analysis, your Sleep Score is ${score} (${label}). This score reflects your sleep efficiency and total sleep duration. Use this information as a guideline to help improve your sleep habits and overall health.";
+
+  static String m22(type) => "${type}";
+
+  static String m23(awake, deep, rem, light) =>
+      "Based on our analysis, your Awake time is ${awake}, Deep Sleep is ${deep}, REM Sleep is ${rem}, and Light Sleep is ${light}. These values help you understand the distribution of your sleep and guide you towards better sleep habits.";
+
+  static String m24(efficiency, awake, deep, rem, light) =>
+      "Based on our analysis, your sleep efficiency is ${efficiency}%. Your awake time is ${awake}%, Deep Sleep is ${deep}%, REM Sleep is ${rem}%, and Light Sleep is ${light}%. These values help you understand your sleep quality and pinpoint areas for improvement.";
+
+  static String m25(stress, mood) => "Stress: ${stress} points\nMood: ${mood}";
+
+  static String m26(sys, diastolic) =>
       "Systolic: ${sys} mmHg, Diastolic: ${diastolic} mmHg";
 
-  static String m21(amount) => "Sys. ${amount} mmHg";
+  static String m27(amount) => "Sys. ${amount} mmHg";
+
+  static String m28(time) => "Total Sleep (excluding awake): ${time}";
+
+  static String m29(time) => "Total Sleep (including awake): ${time}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -263,6 +282,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "heightMustBeLessThan300": MessageLookupByLibrary.simpleMessage(
       "Height must be valid and less than 300 cm",
     ),
+    "hideSleepSegments": MessageLookupByLibrary.simpleMessage(
+      "Hide Sleep Segments",
+    ),
     "hoursAndMinutesAmount": m14,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
@@ -327,6 +349,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
     "minutesAmount": m16,
     "minutesAmountLong": m17,
+    "minutesShort": MessageLookupByLibrary.simpleMessage("min"),
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
     "moodGraph": MessageLookupByLibrary.simpleMessage("Mood Graph"),
@@ -356,6 +379,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noSavedWorkoutsYet": MessageLookupByLibrary.simpleMessage(
       "No saved workouts yet.",
+    ),
+    "noSleepDataLastNight": MessageLookupByLibrary.simpleMessage(
+      "No sleep data for last night.",
     ),
     "noWaterRecords": MessageLookupByLibrary.simpleMessage(
       "No water records found.",
@@ -453,6 +479,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectMoodValidation": MessageLookupByLibrary.simpleMessage(
       "Please select a mood.",
     ),
+    "selectNight": MessageLookupByLibrary.simpleMessage("Select Night"),
     "selectThemeColor": MessageLookupByLibrary.simpleMessage(
       "Select Theme Color",
     ),
@@ -463,14 +490,160 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectWorkoutType": MessageLookupByLibrary.simpleMessage(
       "Select Workout Type",
     ),
+    "showSleepSegments": MessageLookupByLibrary.simpleMessage(
+      "Show Sleep Segments",
+    ),
     "sleep": MessageLookupByLibrary.simpleMessage("Sleep"),
-    "sleepDuration": m18,
+    "sleepAnalysisDesc": MessageLookupByLibrary.simpleMessage(
+      "Sleep is a body process that allows your body to rest, repair and restore itself",
+    ),
+    "sleepAnalysisTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Analysis",
+    ),
+    "sleepChartOverview": m18,
+    "sleepDuration": m19,
+    "sleepOverviewTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Overview",
+    ),
+    "sleepPeriod": m20,
+    "sleepScoreAverage": MessageLookupByLibrary.simpleMessage("Average"),
+    "sleepScoreBad": MessageLookupByLibrary.simpleMessage("Bad"),
+    "sleepScoreEmojiAverage": MessageLookupByLibrary.simpleMessage("🙂"),
+    "sleepScoreEmojiBad": MessageLookupByLibrary.simpleMessage("😞"),
+    "sleepScoreEmojiExcellent": MessageLookupByLibrary.simpleMessage("😄"),
+    "sleepScoreEmojiGood": MessageLookupByLibrary.simpleMessage("😊"),
+    "sleepScoreEmojiPoor": MessageLookupByLibrary.simpleMessage("😐"),
+    "sleepScoreEmojiVeryBad": MessageLookupByLibrary.simpleMessage("😫"),
+    "sleepScoreExcellent": MessageLookupByLibrary.simpleMessage("Excellent"),
+    "sleepScoreGood": MessageLookupByLibrary.simpleMessage("Good"),
+    "sleepScoreInfoCalculationContent": MessageLookupByLibrary.simpleMessage(
+      "Our algorithm calculates your sleep efficiency by dividing your sleep time (excluding periods when you were awake) by your total time in bed. It also compares your total sleep duration to an ideal sleep duration of 8 hours. These two factors are averaged and scaled to a 0–100 metric, resulting in your Sleep Score.",
+    ),
+    "sleepScoreInfoCalculationTitle": MessageLookupByLibrary.simpleMessage(
+      "How is Sleep Score Calculated?",
+    ),
+    "sleepScoreInfoImportanceContent": MessageLookupByLibrary.simpleMessage(
+      "Your Sleep Score gives you a quick insight into the quality of your sleep. A higher score suggests that you are getting restful, restorative sleep, which is crucial for your overall health, mood, and daily performance. Tracking your Sleep Score over time can help you identify patterns, adjust your habits, and take control of your well-being.",
+    ),
+    "sleepScoreInfoImportanceTitle": MessageLookupByLibrary.simpleMessage(
+      "Why is Sleep Score Important?",
+    ),
+    "sleepScoreInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "About Sleep Score",
+    ),
+    "sleepScoreInfoWhatIsContent": MessageLookupByLibrary.simpleMessage(
+      "Sleep Score is a metric that aggregates various aspects of your sleep, including your total sleep duration, sleep efficiency (the percentage of time you actually sleep when in bed), and the quality of your sleep stages. It is expressed as a number between 0 and 100, where higher scores indicate better sleep quality.",
+    ),
+    "sleepScoreInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
+      "What is Sleep Score?",
+    ),
+    "sleepScoreInfoYourScoreContent": m21,
+    "sleepScoreInfoYourScoreTitle": MessageLookupByLibrary.simpleMessage(
+      "Your Sleep Score",
+    ),
+    "sleepScorePoor": MessageLookupByLibrary.simpleMessage("Poor"),
+    "sleepScoreTitle": MessageLookupByLibrary.simpleMessage("Sleep Score"),
+    "sleepScoreVeryBad": MessageLookupByLibrary.simpleMessage("Very Bad"),
+    "sleepSegmentType": m22,
+    "sleepSegmentsTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Segments",
+    ),
+    "sleepStageAwake": MessageLookupByLibrary.simpleMessage("Awake"),
+    "sleepStageAwakeInfoContent": MessageLookupByLibrary.simpleMessage(
+      "The Awake Stage represents periods when you are in bed but not sleeping. Occasional brief awakenings are normal; however, extended periods of wakefulness can disrupt sleep quality.",
+    ),
+    "sleepStageAwakeInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Awake Stage",
+    ),
+    "sleepStageDeep": MessageLookupByLibrary.simpleMessage("Deep"),
+    "sleepStageDeepInfoContent": MessageLookupByLibrary.simpleMessage(
+      "Deep Sleep is the most restorative phase of sleep, crucial for physical recovery and immune system strengthening. Adequate deep sleep is normally associated with feeling refreshed in the morning.",
+    ),
+    "sleepStageDeepInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Deep Sleep",
+    ),
+    "sleepStageLengthsInfoImportanceContent": MessageLookupByLibrary.simpleMessage(
+      "The lengths of each sleep stage affect how well your body and mind recover during sleep. A balanced distribution with sufficient deep and REM sleep is crucial for memory consolidation, physical recovery, and overall well-being.",
+    ),
+    "sleepStageLengthsInfoImportanceTitle":
+        MessageLookupByLibrary.simpleMessage(
+          "Why are Sleep Stage Lengths Important?",
+        ),
+    "sleepStageLengthsInfoInterpretationContent":
+        MessageLookupByLibrary.simpleMessage(
+          "Longer durations in deep and REM sleep often indicate more restorative sleep, while extended periods of being awake or in light sleep might suggest fragmented or less efficient sleep. Knowing these durations can help you understand your sleep patterns and identify areas for improvement.",
+        ),
+    "sleepStageLengthsInfoInterpretationTitle":
+        MessageLookupByLibrary.simpleMessage(
+          "How to Interpret Your Sleep Stage Durations",
+        ),
+    "sleepStageLengthsInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "About Sleep Stage Lengths",
+    ),
+    "sleepStageLengthsInfoWhatIsContent": MessageLookupByLibrary.simpleMessage(
+      "Sleep stage lengths refer to the absolute durations you spend in each stage of sleep—such as time spent awake, in light sleep, deep sleep, and REM sleep. These values provide insights into your sleep architecture and overall sleep quality.",
+    ),
+    "sleepStageLengthsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
+      "What are Sleep Stage Lengths?",
+    ),
+    "sleepStageLengthsInfoYourStatsContent": m23,
+    "sleepStageLengthsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
+      "Your Sleep Stage Lengths",
+    ),
+    "sleepStageLengthsTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Stage Lengths",
+    ),
+    "sleepStageLight": MessageLookupByLibrary.simpleMessage("Light"),
+    "sleepStageLightInfoContent": MessageLookupByLibrary.simpleMessage(
+      "Light Sleep is the transitional phase between wakefulness and deeper sleep stages. It helps your body prepare for deep sleep and is common during a healthy sleep cycle.",
+    ),
+    "sleepStageLightInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Light Sleep",
+    ),
+    "sleepStageRem": MessageLookupByLibrary.simpleMessage("REM"),
+    "sleepStageRemInfoContent": MessageLookupByLibrary.simpleMessage(
+      "REM (Rapid Eye Movement) Sleep is when you experience most of your dreams and your brain is highly active. It is important for emotional regulation and memory consolidation.",
+    ),
+    "sleepStageRemInfoTitle": MessageLookupByLibrary.simpleMessage("REM Sleep"),
+    "sleepStatAwake": MessageLookupByLibrary.simpleMessage("Awake"),
+    "sleepStatDeep": MessageLookupByLibrary.simpleMessage("Deep Sleep"),
+    "sleepStatEfficiency": MessageLookupByLibrary.simpleMessage("Efficiency"),
+    "sleepStatLight": MessageLookupByLibrary.simpleMessage("Light Sleep"),
+    "sleepStatRem": MessageLookupByLibrary.simpleMessage("REM Sleep"),
+    "sleepStatisticsInfoEfficiencyContent": MessageLookupByLibrary.simpleMessage(
+      "Sleep efficiency is the ratio of the time you actually spend asleep to the total time you spend in bed. High sleep efficiency indicates that you are getting continuous and restorative sleep.",
+    ),
+    "sleepStatisticsInfoEfficiencyTitle": MessageLookupByLibrary.simpleMessage(
+      "Understanding Sleep Efficiency",
+    ),
+    "sleepStatisticsInfoStagesContent": MessageLookupByLibrary.simpleMessage(
+      "Your sleep is divided into several distinct stages: Awake, Light Sleep, Deep Sleep, and REM Sleep. Each stage plays a crucial role in recovery, memory consolidation, and overall well-being.",
+    ),
+    "sleepStatisticsInfoStagesTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Stages Breakdown",
+    ),
+    "sleepStatisticsInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "About Sleep Statistics",
+    ),
+    "sleepStatisticsInfoWhatIsContent": MessageLookupByLibrary.simpleMessage(
+      "Sleep statistics are quantitative measures that provide insight into your sleep quality and architecture. They include metrics such as sleep efficiency, as well as the percentage of time spent in various sleep stages like light, deep, and REM sleep.",
+    ),
+    "sleepStatisticsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
+      "What are Sleep Statistics?",
+    ),
+    "sleepStatisticsInfoYourStatsContent": m24,
+    "sleepStatisticsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
+      "Your Sleep Statistics",
+    ),
+    "sleepStatisticsTitle": MessageLookupByLibrary.simpleMessage(
+      "Sleep Statistics",
+    ),
     "steps": MessageLookupByLibrary.simpleMessage("Steps"),
     "stepsTip": MessageLookupByLibrary.simpleMessage(
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "stress": MessageLookupByLibrary.simpleMessage("Stress"),
-    "stressAndMoodPoints": m19,
+    "stressAndMoodPoints": m25,
     "stressAndMoodTracking": MessageLookupByLibrary.simpleMessage(
       "Stress & Mood Tracking",
     ),
@@ -479,8 +652,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
     "syrup": MessageLookupByLibrary.simpleMessage("Syrup"),
     "systolic": MessageLookupByLibrary.simpleMessage("Systolic"),
-    "systolicAndDiastolic": m20,
-    "systolicShortAmount": m21,
+    "systolicAndDiastolic": m26,
+    "systolicShortAmount": m27,
     "tablet": MessageLookupByLibrary.simpleMessage("Tablet"),
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
@@ -509,10 +682,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a time.",
     ),
+    "totalSleepExcluding": m28,
+    "totalSleepIncluding": m29,
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Training evaluation",
     ),
     "units": MessageLookupByLibrary.simpleMessage("units"),
+    "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "walking": MessageLookupByLibrary.simpleMessage("Walking"),
     "waterAmount": MessageLookupByLibrary.simpleMessage("Water Amount"),
     "waterAmountValidation": MessageLookupByLibrary.simpleMessage(

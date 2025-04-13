@@ -20,6 +20,12 @@ class HealthPage extends StatelessWidget {
           child: Column(
             children: [
               ActionCard(
+                title: context.strings.sleepAnalysisTitle,
+                subtitle: context.strings.sleepAnalysisDesc,
+                icon: Icons.bedtime_rounded,
+                onTap: () => context.push(Routes.sleepAnalysisPage),
+              ),
+              ActionCard(
                 title: context.strings.medicationTracking,
                 subtitle: context.strings.medicationTrackingDescription,
                 icon: Icons.medical_services,

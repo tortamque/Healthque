@@ -37,5 +37,10 @@ class Routes {
   static const String stressAndMoodPage = '/stressAndMoodPage';
   static const String addStressAndMoodPage = '/addStressAndMoodPage';
 
+  static const String sleepAnalysisPage = '/sleepAnalysisPage';
+  static const String sleepScoreInfoPage = '/sleepScoreInfoPage';
+  static const String sleepStatisticsInfoPage = '/sleepStatisticsInfoPage';
+  static const String sleepLengthsInfoPage = '/sleepLengthsInfoPage';
+
   static const String profilePage = '/profilePage';
 }
