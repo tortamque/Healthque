@@ -99,9 +99,9 @@
     <uses-permission android:name="android.permission.health.READ_WHEELCHAIR_PUSHES" />
 
     <application
-        android:label="healthque"
+        android:label="Healthque"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
             <intent-filter>
