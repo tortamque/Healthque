@@ -204,6 +204,50 @@ final GoRouter router = GoRouter(
                 child: const StressMoodEntryPage(),
               ),
             ),
+
+            // Sleep analysis
+            GoRoute(
+              path: Routes.sleepAnalysisPage,
+              builder: (context, state) => const SleepAnalysisPage(),
+            ),
+            GoRoute(
+              path: Routes.sleepScoreInfoPage,
+              builder: (context, state) {
+                final extra = state.extra as SleepScoreInfoPageExtra;
+
+                return SleepScoreInfoPage(
+                  score: extra.score,
+                  scoreLabel: extra.scoreLabel,
+                );
+              },
+            ),
+            GoRoute(
+              path: Routes.sleepStatisticsInfoPage,
+              builder: (context, state) {
+                final extra = state.extra as SleepStatisticsInfoPageExtra;
+
+                return SleepStatisticsInfoPage(
+                  efficiency: extra.efficiency,
+                  awake: extra.awake,
+                  deep: extra.deep,
+                  rem: extra.rem,
+                  light: extra.light,
+                );
+              },
+            ),
+            GoRoute(
+              path: Routes.sleepLengthsInfoPage,
+              builder: (context, state) {
+                final extra = state.extra as SleepStageLengthsInfoPageExtra;
+
+                return SleepStageLengthsInfoPage(
+                  awakeMinutes: extra.awakeMinutes,
+                  deepMinutes: extra.deepMinutes,
+                  remMinutes: extra.remMinutes,
+                  lightMinutes: extra.lightMinutes,
+                );
+              },
+            ),
           ],
         ),
         StatefulShellBranch(

@@ -13,3 +13,7 @@ export 'water_records_list_page.dart';
 export 'water_reminders_page.dart';
 export 'stress_mood_display_page.dart';
 export 'stress_mood_entry_page.dart';
+export 'sleep_analysis_page.dart';
+export 'sleep_score_info_page.dart';
+export 'sleep_statistics_info_page.dart';
+export 'sleep_stage_lengths_info_page.dart';
