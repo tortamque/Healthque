@@ -58,7 +58,7 @@ class HealthPage extends StatelessWidget {
               ActionCard(
                 title: context.strings.bloodSugarTracking,
                 subtitle: context.strings.bloodSugarTrackingDesc,
-                icon: Icons.bloodtype_rounded,
+                icon: Icons.biotech_outlined,
                 onTap: () => context.push(Routes.bloodSugarTracking),
               ),
             ],
