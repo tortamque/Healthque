@@ -3115,6 +3115,46 @@ class Strings {
   String get ukrainian {
     return Intl.message('Ukrainian', name: 'ukrainian', desc: '', args: []);
   }
+
+  /// `An error occurred: {error}`
+  String anErrorOccurred(Object error) {
+    return Intl.message(
+      'An error occurred: $error',
+      name: 'anErrorOccurred',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Data synced successfully`
+  String get dataSyncedSuccessfully {
+    return Intl.message(
+      'Data synced successfully',
+      name: 'dataSyncedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sync data to the cloud`
+  String get syncData {
+    return Intl.message(
+      'Sync data to the cloud',
+      name: 'syncData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your data will be synced to the cloud for backup and recovery.`
+  String get syncDataDecs {
+    return Intl.message(
+      'Your data will be synced to the cloud for backup and recovery.',
+      name: 'syncDataDecs',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

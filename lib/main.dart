@@ -19,13 +19,14 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   tz.initializeTimeZones();
   await LocalNotificationService().init();
   await SharedPreferencesManager.init();
   await _initHive();
   initializeDependencies();
   await _initHiveManagers();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const HealthqueApp());
 }
 
@@ -36,6 +37,12 @@ class HealthqueApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<FirebaseSyncCubit>(
+          create: (_) =>
+              FirebaseSyncCubit(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl())
+                ..syncUserData(),
+          lazy: false,
+        ),
         BlocProvider(create: (_) => ThemeCubit(sl(), sl())),
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),

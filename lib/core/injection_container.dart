@@ -37,6 +37,7 @@ void initializeDependencies() {
     ..registerSingleton<StressMoodTrackingDbService>(StressMoodTrackingDbServiceImpl(sl()))
     ..registerSingleton<BloodSugarTrackingDbService>(BloodSugarTrackingDbServiceImpl(sl()))
     ..registerSingleton<LocaleDbService>(LocaleDbServiceImpl(sl()))
+    ..registerSingleton<FirebaseDbService>(FirebaseDbServiceImpl())
 
     // Repositories
     ..registerSingleton<UserRepository>(UserRepositoryImpl(sl()))
@@ -51,6 +52,7 @@ void initializeDependencies() {
     ..registerSingleton<StressMoodTrackingRepository>(StressMoodTrackingRepositoryImpl(sl()))
     ..registerSingleton<BloodSugarTrackingRepository>(BloodSugarTrackingRepositoryImpl(sl()))
     ..registerSingleton<LocaleRepository>(LocaleRepositoryImpl(sl()))
+    ..registerSingleton<FirebaseRepository>(FirebaseRepositoryImpl(sl()))
 
     // Use cases
     ..registerSingleton<GetUserUsecase>(GetUserUsecase(sl()))
@@ -86,7 +88,9 @@ void initializeDependencies() {
     ..registerSingleton<SaveBloodSugarRecordsUseCase>(SaveBloodSugarRecordsUseCase(sl()))
     ..registerSingleton<DeleteBloodSugarRecordUseCase>(DeleteBloodSugarRecordUseCase(sl()))
     ..registerSingleton<SaveLocaleUseCase>(SaveLocaleUseCase(sl()))
-    ..registerSingleton<GetLocaleUseCase>(GetLocaleUseCase(sl()));
+    ..registerSingleton<GetLocaleUseCase>(GetLocaleUseCase(sl()))
+    ..registerSingleton<GetUserDataUseCase>(GetUserDataUseCase(sl()))
+    ..registerSingleton<SaveUserDataUseCase>(SaveUserDataUseCase(sl()));
 
   // Blocs
 }
