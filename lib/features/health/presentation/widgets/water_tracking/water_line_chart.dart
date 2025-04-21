@@ -119,7 +119,7 @@ class WaterLineChart extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         final String text;
                         if (value * 1000 < 1000) {
-                          text = context.strings.amountMl(value * 1000);
+                          text = context.strings.amountMl((value * 1000).toStringAsFixed(2));
                         } else {
                           text = context.strings.amountL(value.toStringAsFixed(2));
                         }
