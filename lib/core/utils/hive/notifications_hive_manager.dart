@@ -1,12 +1,16 @@
 import 'package:healthque/core/shared/shared.dart';
+import 'package:healthque/core/utils/hive/hive_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-class NotificationsHiveManager {
-  late Box<LocalNotifications> notifications;
+class NotificationsHiveManager implements HiveManager<LocalNotifications> {
+  @override
+  late Box<LocalNotifications> box;
 
+  @override
   String get hiveKey => 'local_notifications';
 
+  @override
   Future<void> init() async {
-    notifications = await Hive.openBox<LocalNotifications>(hiveKey);
+    box = await Hive.openBox<LocalNotifications>(hiveKey);
   }
 }

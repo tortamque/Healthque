@@ -25,18 +25,23 @@ void initializeDependencies() {
     ..registerSingleton<LocaleHiveManager>(LocaleHiveManager())
 
     // Services
-    ..registerSingleton<UserDbService>(UserDbServiceImpl(sl()))
-    ..registerSingleton<ActivityDbService>(ActivityDbServiceImpl(sl()))
-    ..registerSingleton<NotificationsDbService>(NotificationsDbServiceImpl(sl()))
-    ..registerSingleton<MedicationTrackingDbService>(MedicationTrackingDbServiceImpl(sl()))
-    ..registerSingleton<CourseTreatmentDbService>(CourseTreatmentDbServiceImpl(sl()))
-    ..registerSingleton<WaterTrackingDbService>(WaterTrackingDbServiceImpl(sl()))
-    ..registerSingleton<TemperatureTrackingDbService>(TemperatureTrackingDbServiceImpl(sl()))
-    ..registerSingleton<BloodPressureTrackingDbService>(BloodPressureTrackingDbServiceImpl(sl()))
-    ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl()))
-    ..registerSingleton<StressMoodTrackingDbService>(StressMoodTrackingDbServiceImpl(sl()))
-    ..registerSingleton<BloodSugarTrackingDbService>(BloodSugarTrackingDbServiceImpl(sl()))
-    ..registerSingleton<LocaleDbService>(LocaleDbServiceImpl(sl()))
+    ..registerSingleton<UserDbService>(UserDbServiceImpl(sl<UserHiveManager>()))
+    ..registerSingleton<ActivityDbService>(ActivityDbServiceImpl(sl<WorkoutsHiveManager>()))
+    ..registerSingleton<NotificationsDbService>(NotificationsDbServiceImpl(sl<NotificationsHiveManager>()))
+    ..registerSingleton<MedicationTrackingDbService>(
+        MedicationTrackingDbServiceImpl(sl<MedicationTrackingHiveManager>()))
+    ..registerSingleton<CourseTreatmentDbService>(CourseTreatmentDbServiceImpl(sl<CourseTreatmentHiveManager>()))
+    ..registerSingleton<WaterTrackingDbService>(WaterTrackingDbServiceImpl(sl<WaterTrackingHiveManager>()))
+    ..registerSingleton<TemperatureTrackingDbService>(
+        TemperatureTrackingDbServiceImpl(sl<TemperatureTrackingHiveManager>()))
+    ..registerSingleton<BloodPressureTrackingDbService>(
+        BloodPressureTrackingDbServiceImpl(sl<BloodPressureTrackingHiveManager>()))
+    ..registerSingleton<ThemePreferenceDbService>(ThemePreferenceDbServiceImpl(sl<ThemePreferenceHiveManager>()))
+    ..registerSingleton<StressMoodTrackingDbService>(
+        StressMoodTrackingDbServiceImpl(sl<StressMoodTrackingHiveManager>()))
+    ..registerSingleton<BloodSugarTrackingDbService>(
+        BloodSugarTrackingDbServiceImpl(sl<BloodSugarTrackingHiveManager>()))
+    ..registerSingleton<LocaleDbService>(LocaleDbServiceImpl(sl<LocaleHiveManager>()))
     ..registerSingleton<FirebaseDbService>(FirebaseDbServiceImpl())
 
     // Repositories

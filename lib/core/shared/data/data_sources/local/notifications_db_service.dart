@@ -9,30 +9,29 @@ abstract class NotificationsDbService {
 }
 
 class NotificationsDbServiceImpl implements NotificationsDbService {
-  final NotificationsHiveManager _manager;
+  final HiveManager _manager;
 
   NotificationsDbServiceImpl(this._manager);
 
   @override
-  LocalNotifications? getNotifications() => _manager.notifications.get(_manager.hiveKey);
+  LocalNotifications? getNotifications() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveNotifications(LocalNotifications notification) =>
-      _manager.notifications.put(_manager.hiveKey, notification);
+  Future<void> saveNotifications(LocalNotifications notification) => _manager.box.put(_manager.hiveKey, notification);
 
   @override
   Future<void> deleteNotificationById(int id) async {
-    final current = _manager.notifications.get(_manager.hiveKey);
+    final current = _manager.box.get(_manager.hiveKey);
     if (current != null) {
       final updatedList = current.notifications.where((n) => n.id != id).toList();
       final updatedContainer = current.copyWith(notifications: updatedList);
-      await _manager.notifications.put(_manager.hiveKey, updatedContainer);
+      await _manager.box.put(_manager.hiveKey, updatedContainer);
     }
   }
 
   @override
   List<LocalNotification> getNotificationsByType(LocalNotificationType type) {
-    final current = _manager.notifications.get(_manager.hiveKey);
+    final current = _manager.box.get(_manager.hiveKey);
     if (current != null) {
       return current.notifications.where((n) => n.type == type).toList();
     }

@@ -12,18 +12,19 @@ part 'firebase_sync_cubit.freezed.dart';
 class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
   final SaveUserDataUseCase _saveUserDataUseCase;
   final GetUserDataUseCase _getUserDataUseCase;
-  final UserHiveManager _userHiveManager;
-  final WorkoutsHiveManager _workoutsHiveManager;
-  final BloodPressureTrackingHiveManager _bloodPressureTrackingHiveManager;
-  final TemperatureTrackingHiveManager _temperatureTrackingHiveManager;
-  final BloodSugarTrackingHiveManager _bloodSugarTrackingHiveManager;
-  final WaterTrackingHiveManager _waterTrackingHiveManager;
-  final StressMoodTrackingHiveManager _stressMoodTrackingHiveManager;
-  final NotificationsHiveManager _notificationsHiveManager;
-  final CourseTreatmentHiveManager _courseTreatmentHiveManager;
-  final MedicationTrackingHiveManager _medicationTrackingHiveManager;
-  final ThemePreferenceHiveManager _themePreferenceHiveManager;
-  final LocaleHiveManager _localeHiveManager;
+
+  final HiveManager _userHiveManager;
+  final HiveManager _workoutsHiveManager;
+  final HiveManager _bloodPressureTrackingHiveManager;
+  final HiveManager _temperatureTrackingHiveManager;
+  final HiveManager _bloodSugarTrackingHiveManager;
+  final HiveManager _waterTrackingHiveManager;
+  final HiveManager _stressMoodTrackingHiveManager;
+  final HiveManager _notificationsHiveManager;
+  final HiveManager _courseTreatmentHiveManager;
+  final HiveManager _medicationTrackingHiveManager;
+  final HiveManager _themePreferenceHiveManager;
+  final HiveManager _localeHiveManager;
 
   FirebaseSyncCubit(
     this._saveUserDataUseCase,
@@ -46,34 +47,29 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
     try {
       emit(state.copyWith(isLoading: true, syncSuccess: false, errorMessage: null));
 
-      final user = _userHiveManager.userBox.get(_userHiveManager.hiveKey);
+      final user = _userHiveManager.box.get(_userHiveManager.hiveKey);
 
-      final workouts = _workoutsHiveManager.workoutsBox.get(_workoutsHiveManager.hiveKey);
+      final workouts = _workoutsHiveManager.box.get(_workoutsHiveManager.hiveKey);
 
-      final bloodPressureRecords =
-          _bloodPressureTrackingHiveManager.bloodPressureBox.get(_bloodPressureTrackingHiveManager.hiveKey);
+      final bloodPressureRecords = _bloodPressureTrackingHiveManager.box.get(_bloodPressureTrackingHiveManager.hiveKey);
 
-      final temperatureRecords =
-          _temperatureTrackingHiveManager.temperatureRecordsBox.get(_temperatureTrackingHiveManager.hiveKey);
+      final temperatureRecords = _temperatureTrackingHiveManager.box.get(_temperatureTrackingHiveManager.hiveKey);
 
-      final bloodSugarRecords =
-          _bloodSugarTrackingHiveManager.bloodSugarRecordsBox.get(_bloodSugarTrackingHiveManager.hiveKey);
+      final bloodSugarRecords = _bloodSugarTrackingHiveManager.box.get(_bloodSugarTrackingHiveManager.hiveKey);
 
-      final waterRecords = _waterTrackingHiveManager.waterRecordsBox.get(_waterTrackingHiveManager.hiveKey);
+      final waterRecords = _waterTrackingHiveManager.box.get(_waterTrackingHiveManager.hiveKey);
 
-      final stressMoodRecords =
-          _stressMoodTrackingHiveManager.stressMoodBox.get(_stressMoodTrackingHiveManager.hiveKey);
+      final stressMoodRecords = _stressMoodTrackingHiveManager.box.get(_stressMoodTrackingHiveManager.hiveKey);
 
-      final notifications = _notificationsHiveManager.notifications.get(_notificationsHiveManager.hiveKey);
+      final notifications = _notificationsHiveManager.box.get(_notificationsHiveManager.hiveKey);
 
-      final courseTreatments = _courseTreatmentHiveManager.courseTreatmentsBox.get(_courseTreatmentHiveManager.hiveKey);
+      final courseTreatments = _courseTreatmentHiveManager.box.get(_courseTreatmentHiveManager.hiveKey);
 
-      final medications =
-          _medicationTrackingHiveManager.medicationTrackingBox.get(_medicationTrackingHiveManager.hiveKey);
+      final medications = _medicationTrackingHiveManager.box.get(_medicationTrackingHiveManager.hiveKey);
 
-      final themePreference = _themePreferenceHiveManager.themePreferenceBox.get(_themePreferenceHiveManager.hiveKey);
+      final themePreference = _themePreferenceHiveManager.box.get(_themePreferenceHiveManager.hiveKey);
 
-      final localeString = _localeHiveManager.localeBox.get(_localeHiveManager.hiveKey);
+      final localeString = _localeHiveManager.box.get(_localeHiveManager.hiveKey);
 
       final SaveUserDataParams params = SaveUserDataParams(
         profile: user?.toJson() ?? {},
@@ -114,25 +110,10 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
         themePreference: themePreference?.toJson() ?? {},
         locale: {"locale": localeString ?? ""},
       );
-      log(courseTreatments == null
-          ? {"courses": []}.toString()
-          : {
-              "courses": courseTreatments.courses.map((course) {
-                final courseMap = course.toJson();
-                if (courseMap["entries"] is List) {
-                  courseMap["entries"] = (courseMap["entries"] as List)
-                      .map((entry) => entry is CourseTreatmentEntry ? entry.toJson() : entry)
-                      .toList();
-                }
-                return courseMap;
-              }).toList()
-            }.toString());
       await _saveUserDataUseCase.call(params);
-      print('2');
 
       emit(state.copyWith(isLoading: false, syncSuccess: true, errorMessage: null));
     } catch (e) {
-      print('error $e');
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }
   }

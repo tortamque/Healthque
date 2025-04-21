@@ -46,9 +46,22 @@ class HealthqueApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<FirebaseSyncCubit>(
-          create: (_) =>
-              FirebaseSyncCubit(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl())
-                ..syncUserData(),
+          create: (_) => FirebaseSyncCubit(
+            sl(),
+            sl(),
+            sl<UserHiveManager>(),
+            sl<WorkoutsHiveManager>(),
+            sl<BloodPressureTrackingHiveManager>(),
+            sl<TemperatureTrackingHiveManager>(),
+            sl<BloodSugarTrackingHiveManager>(),
+            sl<WaterTrackingHiveManager>(),
+            sl<StressMoodTrackingHiveManager>(),
+            sl<NotificationsHiveManager>(),
+            sl<CourseTreatmentHiveManager>(),
+            sl<MedicationTrackingHiveManager>(),
+            sl<ThemePreferenceHiveManager>(),
+            sl<LocaleHiveManager>(),
+          )..syncUserData(),
           lazy: false,
         ),
         BlocProvider(create: (_) => ThemeCubit(sl(), sl())),

@@ -1,4 +1,4 @@
-import 'package:healthque/core/utils/hive/blood_pressure_tracking_hive_manager.dart';
+import 'package:healthque/core/utils/hive/hive.dart';
 import 'package:healthque/features/health/health.dart';
 
 abstract class BloodPressureTrackingDbService {
@@ -8,16 +8,15 @@ abstract class BloodPressureTrackingDbService {
 }
 
 class BloodPressureTrackingDbServiceImpl implements BloodPressureTrackingDbService {
-  final BloodPressureTrackingHiveManager _manager;
+  final HiveManager _manager;
 
   BloodPressureTrackingDbServiceImpl(this._manager);
 
   @override
-  BloodPressureRecords? getBloodPressureRecords() => _manager.bloodPressureBox.get(_manager.hiveKey);
+  BloodPressureRecords? getBloodPressureRecords() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveBloodPressureRecords(BloodPressureRecords records) =>
-      _manager.bloodPressureBox.put(_manager.hiveKey, records);
+  Future<void> saveBloodPressureRecords(BloodPressureRecords records) => _manager.box.put(_manager.hiveKey, records);
 
   @override
   Future<void> deleteBloodPressureRecord(BloodPressureRecord record) async {

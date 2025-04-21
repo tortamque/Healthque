@@ -7,14 +7,14 @@ abstract class ThemePreferenceDbService {
 }
 
 class ThemePreferenceDbServiceImpl implements ThemePreferenceDbService {
-  final ThemePreferenceHiveManager _manager;
+  final HiveManager _manager;
 
   ThemePreferenceDbServiceImpl(this._manager);
 
   @override
-  ThemePreference? getThemePreference() => _manager.themePreferenceBox.get(_manager.hiveKey);
+  ThemePreference? getThemePreference() => _manager.box.get(_manager.hiveKey);
 
   @override
   Future<void> saveThemePreference(ThemePreference themePreference) =>
-      _manager.themePreferenceBox.put(_manager.hiveKey, themePreference);
+      _manager.box.put(_manager.hiveKey, themePreference);
 }

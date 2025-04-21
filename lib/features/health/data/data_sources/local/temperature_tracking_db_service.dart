@@ -1,4 +1,4 @@
-import 'package:healthque/core/utils/hive/temperature_tracking_hive_manager.dart';
+import 'package:healthque/core/utils/hive/hive.dart';
 import 'package:healthque/features/health/health.dart';
 
 abstract class TemperatureTrackingDbService {
@@ -8,16 +8,15 @@ abstract class TemperatureTrackingDbService {
 }
 
 class TemperatureTrackingDbServiceImpl implements TemperatureTrackingDbService {
-  final TemperatureTrackingHiveManager _manager;
+  final HiveManager _manager;
 
   TemperatureTrackingDbServiceImpl(this._manager);
 
   @override
-  TemperatureRecords? getTemperatureRecords() => _manager.temperatureRecordsBox.get(_manager.hiveKey);
+  TemperatureRecords? getTemperatureRecords() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveTemperatureRecords(TemperatureRecords records) =>
-      _manager.temperatureRecordsBox.put(_manager.hiveKey, records);
+  Future<void> saveTemperatureRecords(TemperatureRecords records) => _manager.box.put(_manager.hiveKey, records);
 
   @override
   Future<void> deleteTemperatureRecord(TemperatureRecord record) async {

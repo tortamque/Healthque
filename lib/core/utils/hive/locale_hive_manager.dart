@@ -1,11 +1,15 @@
+import 'package:healthque/core/utils/hive/hive_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-class LocaleHiveManager {
-  late Box<String> localeBox;
+class LocaleHiveManager implements HiveManager<String> {
+  @override
+  late Box<String> box;
 
+  @override
   String get hiveKey => 'appLocale';
 
+  @override
   Future<void> init() async {
-    localeBox = await Hive.openBox<String>('localeBox');
+    box = await Hive.openBox<String>('localeBox');
   }
 }
