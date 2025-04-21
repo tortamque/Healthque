@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:healthque/config/routes/routes.dart';
 import 'package:healthque/core/extensions/context.dart';
+import 'package:healthque/core/localization/generated/l10n.dart';
 import 'package:healthque/features/health/health.dart';
 
 class SleepStageLengthsCard extends StatelessWidget {
@@ -105,7 +106,7 @@ class _StageRow extends StatelessWidget {
           children: [
             Text(label, style: context.textTheme.bodySmall),
             Text(
-              _formatDuration(duration),
+              _formatDuration(duration, context.strings),
               style: context.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
             ),
           ],
@@ -123,13 +124,13 @@ class _StageRow extends StatelessWidget {
     );
   }
 
-  String _formatDuration(int minutes) {
+  String _formatDuration(int minutes, Strings strings) {
     final int hours = minutes ~/ 60;
     final int mins = minutes % 60;
     if (hours > 0) {
-      return "$hours h $mins m";
+      return strings.hoursAndMinutesAmount(hours, mins);
     } else {
-      return "$mins m";
+      return strings.minutesAmount(mins);
     }
   }
 }

@@ -38,54 +38,56 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m8(amount) => "${amount} kcal";
 
-  static String m9(bmr) =>
+  static String m9(error) => "An error occurred: ${error}";
+
+  static String m10(bmr) =>
       "Tip: We calculated it for you (${bmr} calories/day). You can change it if you know your body better.";
 
-  static String m10(drugs) => "Time to take your medications: ${drugs}";
+  static String m11(drugs) => "Time to take your medications: ${drugs}";
 
-  static String m11(type) => "Don\'t forget your ${type} workout today!";
+  static String m12(type) => "Don\'t forget your ${type} workout today!";
 
-  static String m12(amount) => "Dias. ${amount} mmHg";
+  static String m13(amount) => "Dias. ${amount} mmHg";
 
-  static String m13(amount) => "e.g. ${amount}";
+  static String m14(amount) => "e.g. ${amount}";
 
-  static String m14(amount) => "e.g., ${amount} mg/dL";
+  static String m15(amount) => "e.g., ${amount} mg/dL";
 
-  static String m15(hours, minutes) => "${hours} h ${minutes} m";
+  static String m16(hours, minutes) => "${hours} h ${minutes} m";
 
-  static String m16(user) => "Successfully logged in as ${user}";
+  static String m17(user) => "Successfully logged in as ${user}";
 
-  static String m17(minutes) => "${minutes} m";
+  static String m18(minutes) => "${minutes} m";
 
-  static String m18(minutes) => "${minutes} minutes";
+  static String m19(minutes) => "${minutes} minutes";
 
-  static String m19(h, m) => "Total Sleep: ${h} h ${m} m";
+  static String m20(h, m) => "Total Sleep: ${h} h ${m} m";
 
-  static String m20(hours, minutes) => "${hours}h ${minutes}m";
+  static String m21(hours, minutes) => "${hours}h ${minutes}m";
 
-  static String m21(start, end) => "Sleep Period: ${start} - ${end}";
+  static String m22(start, end) => "Sleep Period: ${start} - ${end}";
 
-  static String m22(score, label) =>
+  static String m23(score, label) =>
       "Based on our analysis, your Sleep Score is ${score} (${label}). This score reflects your sleep efficiency and total sleep duration. Use this information as a guideline to help improve your sleep habits and overall health.";
 
-  static String m23(type) => "${type}";
+  static String m24(type) => "${type}";
 
-  static String m24(awake, deep, rem, light) =>
+  static String m25(awake, deep, rem, light) =>
       "Based on our analysis, your Awake time is ${awake}, Deep Sleep is ${deep}, REM Sleep is ${rem}, and Light Sleep is ${light}. These values help you understand the distribution of your sleep and guide you towards better sleep habits.";
 
-  static String m25(efficiency, awake, deep, rem, light) =>
+  static String m26(efficiency, awake, deep, rem, light) =>
       "Based on our analysis, your sleep efficiency is ${efficiency}%. Your awake time is ${awake}%, Deep Sleep is ${deep}%, REM Sleep is ${rem}%, and Light Sleep is ${light}%. These values help you understand your sleep quality and pinpoint areas for improvement.";
 
-  static String m26(stress, mood) => "Stress: ${stress} points\nMood: ${mood}";
+  static String m27(stress, mood) => "Stress: ${stress} points\nMood: ${mood}";
 
-  static String m27(sys, diastolic) =>
+  static String m28(sys, diastolic) =>
       "Systolic: ${sys} mmHg, Diastolic: ${diastolic} mmHg";
 
-  static String m28(amount) => "Sys. ${amount} mmHg";
+  static String m29(amount) => "Sys. ${amount} mmHg";
 
-  static String m29(time) => "Total Sleep (excluding awake): ${time}";
+  static String m30(time) => "Total Sleep (excluding awake): ${time}";
 
-  static String m30(time) => "Total Sleep (including awake): ${time}";
+  static String m31(time) => "Total Sleep (including awake): ${time}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -134,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "amountSteps": m6,
     "amountWorkouts": m7,
     "amoutKcal": m8,
+    "anErrorOccurred": m9,
     "applyFilter": MessageLookupByLibrary.simpleMessage("Apply Filter"),
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Blood oxygen saturation",
@@ -160,7 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bloodSugarTrackingDesc": MessageLookupByLibrary.simpleMessage(
       "Blood glucose, or blood sugar, is the main sugar found in your blood",
     ),
-    "bmrTip": m9,
+    "bmrTip": m10,
     "bouldering": MessageLookupByLibrary.simpleMessage("Bouldering"),
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Calculate BMR using formula",
@@ -201,7 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courseOfTreatment": MessageLookupByLibrary.simpleMessage(
       "Course of Treatment",
     ),
-    "courseReminderBody": m10,
+    "courseReminderBody": m11,
     "courseReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Course Treatment Reminder",
     ),
@@ -216,6 +219,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cycling": MessageLookupByLibrary.simpleMessage("Cycling"),
     "daily": MessageLookupByLibrary.simpleMessage("Daily"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+    "dataSyncedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Data synced successfully",
+    ),
     "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a date.",
     ),
@@ -229,7 +235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultReminderTitleBP": MessageLookupByLibrary.simpleMessage(
       "Recheck Blood Pressure",
     ),
-    "defaultWorkoutReminderBody": m11,
+    "defaultWorkoutReminderBody": m12,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Workout Reminder",
     ),
@@ -239,7 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "desiredSteps": MessageLookupByLibrary.simpleMessage("Desired Steps"),
     "diastolic": MessageLookupByLibrary.simpleMessage("Diastolic"),
-    "diastolicShortAmount": m12,
+    "diastolicShortAmount": m13,
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "distanceKm": MessageLookupByLibrary.simpleMessage("Distance (km)"),
     "dosage": MessageLookupByLibrary.simpleMessage("Dosage"),
@@ -259,8 +265,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "editProfileDesc": MessageLookupByLibrary.simpleMessage(
       "Edit your profile information",
     ),
-    "egAmount": m13,
-    "egBloodSugar": m14,
+    "egAmount": m14,
+    "egBloodSugar": m15,
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       ".g., morning, HIIT, recovery",
     ),
@@ -316,7 +322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideSleepSegments": MessageLookupByLibrary.simpleMessage(
       "Hide Sleep Segments",
     ),
-    "hoursAndMinutesAmount": m15,
+    "hoursAndMinutesAmount": m16,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("How did you feel?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "How many steps you can walk in one day?",
@@ -348,7 +354,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Log in with Google",
     ),
-    "loggedInAs": m16,
+    "loggedInAs": m17,
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage("Mark as Favorite"),
     "measurementAdded": MessageLookupByLibrary.simpleMessage(
@@ -379,8 +385,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("m"),
     "milesShort": MessageLookupByLibrary.simpleMessage("mi"),
-    "minutesAmount": m17,
-    "minutesAmountLong": m18,
+    "minutesAmount": m18,
+    "minutesAmountLong": m19,
     "minutesShort": MessageLookupByLibrary.simpleMessage("min"),
     "ml": MessageLookupByLibrary.simpleMessage("ml"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
@@ -540,12 +546,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepAnalysisTitle": MessageLookupByLibrary.simpleMessage(
       "Sleep Analysis",
     ),
-    "sleepChartOverview": m19,
-    "sleepDuration": m20,
+    "sleepChartOverview": m20,
+    "sleepDuration": m21,
     "sleepOverviewTitle": MessageLookupByLibrary.simpleMessage(
       "Sleep Overview",
     ),
-    "sleepPeriod": m21,
+    "sleepPeriod": m22,
     "sleepScoreAverage": MessageLookupByLibrary.simpleMessage("Average"),
     "sleepScoreBad": MessageLookupByLibrary.simpleMessage("Bad"),
     "sleepScoreEmojiAverage": MessageLookupByLibrary.simpleMessage("🙂"),
@@ -577,14 +583,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepScoreInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "What is Sleep Score?",
     ),
-    "sleepScoreInfoYourScoreContent": m22,
+    "sleepScoreInfoYourScoreContent": m23,
     "sleepScoreInfoYourScoreTitle": MessageLookupByLibrary.simpleMessage(
       "Your Sleep Score",
     ),
     "sleepScorePoor": MessageLookupByLibrary.simpleMessage("Poor"),
     "sleepScoreTitle": MessageLookupByLibrary.simpleMessage("Sleep Score"),
     "sleepScoreVeryBad": MessageLookupByLibrary.simpleMessage("Very Bad"),
-    "sleepSegmentType": m23,
+    "sleepSegmentType": m24,
     "sleepSegmentsTitle": MessageLookupByLibrary.simpleMessage(
       "Sleep Segments",
     ),
@@ -626,7 +632,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepStageLengthsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "What are Sleep Stage Lengths?",
     ),
-    "sleepStageLengthsInfoYourStatsContent": m24,
+    "sleepStageLengthsInfoYourStatsContent": m25,
     "sleepStageLengthsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
       "Your Sleep Stage Lengths",
     ),
@@ -671,7 +677,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepStatisticsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "What are Sleep Statistics?",
     ),
-    "sleepStatisticsInfoYourStatsContent": m25,
+    "sleepStatisticsInfoYourStatsContent": m26,
     "sleepStatisticsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
       "Your Sleep Statistics",
     ),
@@ -683,7 +689,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tip: Regular walking can boost your cardiovascular health, clear your mind, and increase your overall energy-small steps can make a big difference!",
     ),
     "stress": MessageLookupByLibrary.simpleMessage("Stress"),
-    "stressAndMoodPoints": m26,
+    "stressAndMoodPoints": m27,
     "stressAndMoodTracking": MessageLookupByLibrary.simpleMessage(
       "Stress and Mood Tracking",
     ),
@@ -693,10 +699,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "stressGraph": MessageLookupByLibrary.simpleMessage("Stress Graph"),
     "surname": MessageLookupByLibrary.simpleMessage("Surname"),
     "swimming": MessageLookupByLibrary.simpleMessage("Swimming"),
+    "syncData": MessageLookupByLibrary.simpleMessage("Sync data to the cloud"),
+    "syncDataDecs": MessageLookupByLibrary.simpleMessage(
+      "Your data will be synced to the cloud for backup and recovery.",
+    ),
     "syrup": MessageLookupByLibrary.simpleMessage("Syrup"),
     "systolic": MessageLookupByLibrary.simpleMessage("Systolic"),
-    "systolicAndDiastolic": m27,
-    "systolicShortAmount": m28,
+    "systolicAndDiastolic": m28,
+    "systolicShortAmount": m29,
     "tablet": MessageLookupByLibrary.simpleMessage("Tablet"),
     "tags": MessageLookupByLibrary.simpleMessage("Tags"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
@@ -725,8 +735,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Please select a time.",
     ),
-    "totalSleepExcluding": m29,
-    "totalSleepIncluding": m30,
+    "totalSleepExcluding": m30,
+    "totalSleepIncluding": m31,
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Training evaluation",
     ),

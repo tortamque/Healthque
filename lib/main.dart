@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +22,19 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
   tz.initializeTimeZones();
   await LocalNotificationService().init();
   await SharedPreferencesManager.init();
   await _initHive();
   initializeDependencies();
   await _initHiveManagers();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const HealthqueApp());
 }
 
@@ -36,6 +45,25 @@ class HealthqueApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<FirebaseSyncCubit>(
+          create: (_) => FirebaseSyncCubit(
+            sl(),
+            sl(),
+            sl<UserHiveManager>(),
+            sl<WorkoutsHiveManager>(),
+            sl<BloodPressureTrackingHiveManager>(),
+            sl<TemperatureTrackingHiveManager>(),
+            sl<BloodSugarTrackingHiveManager>(),
+            sl<WaterTrackingHiveManager>(),
+            sl<StressMoodTrackingHiveManager>(),
+            sl<NotificationsHiveManager>(),
+            sl<CourseTreatmentHiveManager>(),
+            sl<MedicationTrackingHiveManager>(),
+            sl<ThemePreferenceHiveManager>(),
+            sl<LocaleHiveManager>(),
+          )..syncUserData(),
+          lazy: false,
+        ),
         BlocProvider(create: (_) => ThemeCubit(sl(), sl())),
         BlocProvider<AuthCubit>(create: (_) => AuthCubit()),
         BlocProvider<HealthCubit>(create: (_) => HealthCubit()),

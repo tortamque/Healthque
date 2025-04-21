@@ -7,18 +7,18 @@ abstract class LocaleDbService {
 }
 
 class LocaleDbServiceImpl implements LocaleDbService {
-  final LocaleHiveManager localeHiveManager;
+  final HiveManager localeHiveManager;
   LocaleDbServiceImpl(this.localeHiveManager);
 
   @override
   Future<void> saveLocale(Locale locale) async {
     final localeString = _localeToString(locale);
-    await localeHiveManager.localeBox.put(localeHiveManager.hiveKey, localeString);
+    await localeHiveManager.box.put(localeHiveManager.hiveKey, localeString);
   }
 
   @override
   Locale? getLocale() {
-    final localeString = localeHiveManager.localeBox.get(localeHiveManager.hiveKey);
+    final localeString = localeHiveManager.box.get(localeHiveManager.hiveKey);
     if (localeString == null) return null;
     return _localeFromString(localeString);
   }

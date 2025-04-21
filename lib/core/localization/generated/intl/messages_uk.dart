@@ -38,55 +38,57 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m8(amount) => "${amount} ккал";
 
-  static String m9(bmr) =>
+  static String m9(error) => "Виникла помилка: ${error}";
+
+  static String m10(bmr) =>
       "Порада: ми розрахували це для вас (${bmr} калорій/день). Ви можете змінити, якщо краще знаєте своє тіло.";
 
-  static String m10(drugs) => "Час прийняти ваші медикаменти: ${drugs}";
+  static String m11(drugs) => "Час прийняти ваші медикаменти: ${drugs}";
 
-  static String m11(type) =>
+  static String m12(type) =>
       "Не забудьте про своє ${type} тренування сьогодні!";
 
-  static String m12(amount) => "Діаст. ${amount} мм рт. ст.";
+  static String m13(amount) => "Діаст. ${amount} мм рт. ст.";
 
-  static String m13(amount) => "наприклад, ${amount}";
+  static String m14(amount) => "наприклад, ${amount}";
 
-  static String m14(amount) => "наприклад, ${amount} мг/дл";
+  static String m15(amount) => "наприклад, ${amount} мг/дл";
 
-  static String m15(hours, minutes) => "${hours} г ${minutes} хв";
+  static String m16(hours, minutes) => "${hours} г ${minutes} хв";
 
-  static String m16(user) => "Успішно увійшли як ${user}";
+  static String m17(user) => "Успішно увійшли як ${user}";
 
-  static String m17(minutes) => "${minutes} хв";
+  static String m18(minutes) => "${minutes} хв";
 
-  static String m18(minutes) => "${minutes} хвилин";
+  static String m19(minutes) => "${minutes} хвилин";
 
-  static String m19(h, m) => "Загальний сон: ${h} г ${m} хв";
+  static String m20(h, m) => "Загальний сон: ${h} г ${m} хв";
 
-  static String m20(hours, minutes) => "${hours}г ${minutes}хв";
+  static String m21(hours, minutes) => "${hours}г ${minutes}хв";
 
-  static String m21(start, end) => "Період сну: ${start} - ${end}";
+  static String m22(start, end) => "Період сну: ${start} - ${end}";
 
-  static String m22(score, label) =>
+  static String m23(score, label) =>
       "За нашими аналізами, ваша оцінка сну становить ${score} (${label}). Ця оцінка відображає ефективність вашого сну та загальну тривалість. Використовуйте цю інформацію як орієнтир для покращення звичок сну та загального здоров\'я.";
 
-  static String m23(type) => "${type}";
+  static String m24(type) => "${type}";
 
-  static String m24(awake, deep, rem, light) =>
+  static String m25(awake, deep, rem, light) =>
       "За нашими аналізами, час пробудження становить ${awake}, глибокий сон — ${deep}, REM-сон — ${rem}, а легкий сон — ${light}. Ці показники допомагають вам зрозуміти розподіл сну та скоригувати звички для кращого відпочинку.";
 
-  static String m25(efficiency, awake, deep, rem, light) =>
+  static String m26(efficiency, awake, deep, rem, light) =>
       "За нашими аналізами, ваша ефективність сну становить ${efficiency}%. Час пробудження — ${awake}%, глибокий сон — ${deep}%, REM-сон — ${rem}%, а легкий сон — ${light}%. Ці значення допомагають зрозуміти якість сну та визначити області для покращення.";
 
-  static String m26(stress, mood) => "Стрес: ${stress} балів\nНастрій: ${mood}";
+  static String m27(stress, mood) => "Стрес: ${stress} балів\nНастрій: ${mood}";
 
-  static String m27(sys, diastolic) =>
+  static String m28(sys, diastolic) =>
       "Систолічний: ${sys} мм рт. ст., Діастолічний: ${diastolic} мм рт. ст.";
 
-  static String m28(amount) => "Сист. ${amount} мм рт. ст.";
+  static String m29(amount) => "Сист. ${amount} мм рт. ст.";
 
-  static String m29(time) => "Загальний сон (без часу пробудження): ${time}";
+  static String m30(time) => "Загальний сон (без часу пробудження): ${time}";
 
-  static String m30(time) =>
+  static String m31(time) =>
       "Загальний сон (включаючи час пробудження): ${time}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -146,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "amountSteps": m6,
     "amountWorkouts": m7,
     "amoutKcal": m8,
+    "anErrorOccurred": m9,
     "applyFilter": MessageLookupByLibrary.simpleMessage("Застосувати фільтр"),
     "bloodOxygenSaturation": MessageLookupByLibrary.simpleMessage(
       "Насичення крові киснем",
@@ -172,7 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bloodSugarTrackingDesc": MessageLookupByLibrary.simpleMessage(
       "Глюкоза в крові є основним типом цукру, що знаходиться в крові",
     ),
-    "bmrTip": m9,
+    "bmrTip": m10,
     "bouldering": MessageLookupByLibrary.simpleMessage("Болдерінг"),
     "calculateBmrUsingFormula": MessageLookupByLibrary.simpleMessage(
       "Обчислити базальний метаболізм за формулою",
@@ -211,7 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "courseDuration": MessageLookupByLibrary.simpleMessage("Тривалість курсу"),
     "courseOfTreatment": MessageLookupByLibrary.simpleMessage("Курс лікування"),
-    "courseReminderBody": m10,
+    "courseReminderBody": m11,
     "courseReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Нагадування про курс лікування",
     ),
@@ -224,6 +227,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cycling": MessageLookupByLibrary.simpleMessage("Велоспорт"),
     "daily": MessageLookupByLibrary.simpleMessage("Щодня"),
     "dashboard": MessageLookupByLibrary.simpleMessage("Панель"),
+    "dataSyncedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Дані успішно синхронізовано",
+    ),
     "dateValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Будь ласка, виберіть дату.",
     ),
@@ -237,7 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultReminderTitleBP": MessageLookupByLibrary.simpleMessage(
       "Перевірте кров\'яний тиск",
     ),
-    "defaultWorkoutReminderBody": m11,
+    "defaultWorkoutReminderBody": m12,
     "defaultWorkoutReminderTitle": MessageLookupByLibrary.simpleMessage(
       "Нагадування про тренування",
     ),
@@ -249,7 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Бажана кількість кроків",
     ),
     "diastolic": MessageLookupByLibrary.simpleMessage("Діастолічний"),
-    "diastolicShortAmount": m12,
+    "diastolicShortAmount": m13,
     "distance": MessageLookupByLibrary.simpleMessage("Відстань"),
     "distanceKm": MessageLookupByLibrary.simpleMessage("Відстань (км)"),
     "dosage": MessageLookupByLibrary.simpleMessage("Доза"),
@@ -269,8 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "editProfileDesc": MessageLookupByLibrary.simpleMessage(
       "Редагувати інформацію вашого профілю",
     ),
-    "egAmount": m13,
-    "egBloodSugar": m14,
+    "egAmount": m14,
+    "egBloodSugar": m15,
     "egMorningHIIT": MessageLookupByLibrary.simpleMessage(
       "н-р, ранок, HIIT, відновлення",
     ),
@@ -324,7 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hideSleepSegments": MessageLookupByLibrary.simpleMessage(
       "Приховати сегменти сну",
     ),
-    "hoursAndMinutesAmount": m15,
+    "hoursAndMinutesAmount": m16,
     "howDidYouFeel": MessageLookupByLibrary.simpleMessage("Як ви почувалися?"),
     "howManyStepsYouCanWalk": MessageLookupByLibrary.simpleMessage(
       "Скільки кроків ви можете пройти за один день?",
@@ -356,7 +362,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logInWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Увійдіть через Google",
     ),
-    "loggedInAs": m16,
+    "loggedInAs": m17,
     "male": MessageLookupByLibrary.simpleMessage("Чоловік"),
     "markAsFavorite": MessageLookupByLibrary.simpleMessage(
       "Позначити як улюблене",
@@ -391,8 +397,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "metersShort": MessageLookupByLibrary.simpleMessage("м"),
     "milesShort": MessageLookupByLibrary.simpleMessage("ми"),
-    "minutesAmount": m17,
-    "minutesAmountLong": m18,
+    "minutesAmount": m18,
+    "minutesAmountLong": m19,
     "minutesShort": MessageLookupByLibrary.simpleMessage("хв"),
     "ml": MessageLookupByLibrary.simpleMessage("мл"),
     "monthly": MessageLookupByLibrary.simpleMessage("Щомісяця"),
@@ -558,10 +564,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Сон - це процес, який дозволяє вашому організму відпочити, відновитися та набрати сили.",
     ),
     "sleepAnalysisTitle": MessageLookupByLibrary.simpleMessage("Аналіз сну"),
-    "sleepChartOverview": m19,
-    "sleepDuration": m20,
+    "sleepChartOverview": m20,
+    "sleepDuration": m21,
     "sleepOverviewTitle": MessageLookupByLibrary.simpleMessage("Огляд сну"),
-    "sleepPeriod": m21,
+    "sleepPeriod": m22,
     "sleepScoreAverage": MessageLookupByLibrary.simpleMessage("Середньо"),
     "sleepScoreBad": MessageLookupByLibrary.simpleMessage("Погано"),
     "sleepScoreEmojiAverage": MessageLookupByLibrary.simpleMessage("🙂"),
@@ -593,14 +599,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepScoreInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "Що таке оцінка сну?",
     ),
-    "sleepScoreInfoYourScoreContent": m22,
+    "sleepScoreInfoYourScoreContent": m23,
     "sleepScoreInfoYourScoreTitle": MessageLookupByLibrary.simpleMessage(
       "Ваша оцінка сну",
     ),
     "sleepScorePoor": MessageLookupByLibrary.simpleMessage("Незадовільно"),
     "sleepScoreTitle": MessageLookupByLibrary.simpleMessage("Оцінка сну"),
     "sleepScoreVeryBad": MessageLookupByLibrary.simpleMessage("Дуже погано"),
-    "sleepSegmentType": m23,
+    "sleepSegmentType": m24,
     "sleepSegmentsTitle": MessageLookupByLibrary.simpleMessage("Сегменти сну"),
     "sleepStageAwake": MessageLookupByLibrary.simpleMessage("Пробудження"),
     "sleepStageAwakeInfoContent": MessageLookupByLibrary.simpleMessage(
@@ -640,7 +646,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepStageLengthsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "Що таке тривалість стадій сну?",
     ),
-    "sleepStageLengthsInfoYourStatsContent": m24,
+    "sleepStageLengthsInfoYourStatsContent": m25,
     "sleepStageLengthsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
       "Тривалість ваших стадій сну",
     ),
@@ -685,7 +691,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sleepStatisticsInfoWhatIsTitle": MessageLookupByLibrary.simpleMessage(
       "Що таке статистика сну?",
     ),
-    "sleepStatisticsInfoYourStatsContent": m25,
+    "sleepStatisticsInfoYourStatsContent": m26,
     "sleepStatisticsInfoYourStatsTitle": MessageLookupByLibrary.simpleMessage(
       "Ваша статистика сну",
     ),
@@ -697,7 +703,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Порада: регулярна ходьба сприяє здоров\'ю серцево-судинної системи, очищує розум і підвищує загальну енергію – навіть маленькі кроки можуть мати велике значення!",
     ),
     "stress": MessageLookupByLibrary.simpleMessage("Стрес"),
-    "stressAndMoodPoints": m26,
+    "stressAndMoodPoints": m27,
     "stressAndMoodTracking": MessageLookupByLibrary.simpleMessage(
       "Відстеження стресу та настрою",
     ),
@@ -707,10 +713,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "stressGraph": MessageLookupByLibrary.simpleMessage("Графік стресу"),
     "surname": MessageLookupByLibrary.simpleMessage("Прізвище"),
     "swimming": MessageLookupByLibrary.simpleMessage("Плавання"),
+    "syncData": MessageLookupByLibrary.simpleMessage(
+      "Синхронізувати дані в хмару",
+    ),
+    "syncDataDecs": MessageLookupByLibrary.simpleMessage(
+      "Ваші дані будуть синхронізовані в хмару для резервного копіювання та відновлення.",
+    ),
     "syrup": MessageLookupByLibrary.simpleMessage("Сироп"),
     "systolic": MessageLookupByLibrary.simpleMessage("Систолічний"),
-    "systolicAndDiastolic": m27,
-    "systolicShortAmount": m28,
+    "systolicAndDiastolic": m28,
+    "systolicShortAmount": m29,
     "tablet": MessageLookupByLibrary.simpleMessage("Таблетка"),
     "tags": MessageLookupByLibrary.simpleMessage("Теги"),
     "tagsCommaSeparated": MessageLookupByLibrary.simpleMessage(
@@ -739,8 +751,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeValidationMessage": MessageLookupByLibrary.simpleMessage(
       "Будь ласка, виберіть час.",
     ),
-    "totalSleepExcluding": m29,
-    "totalSleepIncluding": m30,
+    "totalSleepExcluding": m30,
+    "totalSleepIncluding": m31,
     "trainingEvaluation": MessageLookupByLibrary.simpleMessage(
       "Оцінка тренування",
     ),

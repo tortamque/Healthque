@@ -420,5 +420,9 @@
   "changeLanguageDesc": "Change the app language",
   "editProfileDesc": "Edit your profile information",
   "english": "English",
-  "ukrainian": "Ukrainian"
+  "ukrainian": "Ukrainian",
+  "anErrorOccurred": "An error occurred: {error}",
+  "dataSyncedSuccessfully": "Data synced successfully",
+  "syncData": "Sync data to the cloud",
+  "syncDataDecs": "Your data will be synced to the cloud for backup and recovery."
 }

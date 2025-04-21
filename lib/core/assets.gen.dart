@@ -9,9 +9,20 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconGen {
+  const $AssetsIconGen();
+
+  /// File path: assets/icon/app_icon.png
+  AssetGenImage get appIcon => const AssetGenImage('assets/icon/app_icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [appIcon];
+}
+
 class Assets {
   const Assets._();
 
+  static const $AssetsIconGen icon = $AssetsIconGen();
   static const AssetGenImage watch = AssetGenImage('assets/watch.png');
 
   /// List of all assets

@@ -8,15 +8,15 @@ abstract class ActivityDbService {
 }
 
 class ActivityDbServiceImpl implements ActivityDbService {
-  final WorkoutsHiveManager _manager;
+  final HiveManager _manager;
 
   ActivityDbServiceImpl(this._manager);
 
   @override
-  Workouts? getWorkouts() => _manager.workoutsBox.get(_manager.hiveKey);
+  Workouts? getWorkouts() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveWorkouts(Workouts workouts) => _manager.workoutsBox.put(_manager.hiveKey, workouts);
+  Future<void> saveWorkouts(Workouts workouts) => _manager.box.put(_manager.hiveKey, workouts);
 
   @override
   Future<void> deleteWorkout(Workout workout) async {

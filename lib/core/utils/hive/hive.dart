@@ -10,3 +10,4 @@ export 'theme_hive_manager.dart';
 export 'stress_mood_tracking_hive_manager.dart';
 export 'blood_sugar_hive_manager.dart';
 export 'locale_hive_manager.dart';
+export 'hive_manager.dart';

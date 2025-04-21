@@ -8,16 +8,15 @@ abstract class BloodSugarTrackingDbService {
 }
 
 class BloodSugarTrackingDbServiceImpl implements BloodSugarTrackingDbService {
-  final BloodSugarTrackingHiveManager _manager;
+  final HiveManager _manager;
 
   BloodSugarTrackingDbServiceImpl(this._manager);
 
   @override
-  BloodSugarRecords? getBloodSugarRecords() => _manager.bloodSugarRecordsBox.get(_manager.hiveKey);
+  BloodSugarRecords? getBloodSugarRecords() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveBloodSugarRecords(BloodSugarRecords records) =>
-      _manager.bloodSugarRecordsBox.put(_manager.hiveKey, records);
+  Future<void> saveBloodSugarRecords(BloodSugarRecords records) => _manager.box.put(_manager.hiveKey, records);
 
   @override
   Future<void> deleteBloodSugarRecord(BloodSugarRecord record) async {

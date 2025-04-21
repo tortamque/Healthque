@@ -1,5 +1,5 @@
 import 'package:healthque/core/shared/shared.dart';
-import 'package:healthque/core/utils/hive/user_hive_manager.dart';
+import 'package:healthque/core/utils/hive/hive.dart';
 
 abstract class UserDbService {
   User? getUser();
@@ -7,13 +7,13 @@ abstract class UserDbService {
 }
 
 class UserDbServiceImpl implements UserDbService {
-  final UserHiveManager _manager;
+  final HiveManager _manager;
 
   UserDbServiceImpl(this._manager);
 
   @override
-  User? getUser() => _manager.userBox.get(_manager.hiveKey);
+  User? getUser() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveUser(User user) => _manager.userBox.put(_manager.hiveKey, user);
+  Future<void> saveUser(User user) => _manager.box.put(_manager.hiveKey, user);
 }

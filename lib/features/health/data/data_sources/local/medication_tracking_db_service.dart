@@ -8,16 +8,15 @@ abstract class MedicationTrackingDbService {
 }
 
 class MedicationTrackingDbServiceImpl implements MedicationTrackingDbService {
-  final MedicationTrackingHiveManager _manager;
+  final HiveManager _manager;
 
   MedicationTrackingDbServiceImpl(this._manager);
 
   @override
-  Medications? getMedications() => _manager.medicationTrackingBox.get(_manager.hiveKey);
+  Medications? getMedications() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveMedications(Medications medications) =>
-      _manager.medicationTrackingBox.put(_manager.hiveKey, medications);
+  Future<void> saveMedications(Medications medications) => _manager.box.put(_manager.hiveKey, medications);
 
   @override
   Future<void> deleteMedication(Medication medication) async {

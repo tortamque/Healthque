@@ -39,6 +39,9 @@ dependencies:
   toastification: ^3.0.2
   flutter_local_notifications: ^18.0.1
   timezone: ^0.10.0
+  firebase_database: ^11.3.5
+  firebase_analytics: ^11.4.5
+  firebase_crashlytics: ^4.3.5
 
 dev_dependencies:
   flutter_test:

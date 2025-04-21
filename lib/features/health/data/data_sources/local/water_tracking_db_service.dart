@@ -8,14 +8,14 @@ abstract class WaterTrackingDbService {
 }
 
 class WaterTrackingDbServiceImpl implements WaterTrackingDbService {
-  final WaterTrackingHiveManager _manager;
+  final HiveManager _manager;
   WaterTrackingDbServiceImpl(this._manager);
 
   @override
-  WaterRecords? getWaterRecords() => _manager.waterRecordsBox.get(_manager.hiveKey);
+  WaterRecords? getWaterRecords() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveWaterRecords(WaterRecords records) => _manager.waterRecordsBox.put(_manager.hiveKey, records);
+  Future<void> saveWaterRecords(WaterRecords records) => _manager.box.put(_manager.hiveKey, records);
 
   @override
   Future<void> deleteWaterRecord(WaterRecord record) async {

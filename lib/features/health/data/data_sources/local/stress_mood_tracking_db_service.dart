@@ -8,16 +8,15 @@ abstract class StressMoodTrackingDbService {
 }
 
 class StressMoodTrackingDbServiceImpl implements StressMoodTrackingDbService {
-  final StressMoodTrackingHiveManager _manager;
+  final HiveManager _manager;
 
   StressMoodTrackingDbServiceImpl(this._manager);
 
   @override
-  StressMoodRecords? getStressMoodRecords() => _manager.stressMoodBox.get(_manager.hiveKey);
+  StressMoodRecords? getStressMoodRecords() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveStressMoodRecords(StressMoodRecords records) =>
-      _manager.stressMoodBox.put(_manager.hiveKey, records);
+  Future<void> saveStressMoodRecords(StressMoodRecords records) => _manager.box.put(_manager.hiveKey, records);
 
   @override
   Future<void> deleteStressMoodRecord(StressMoodRecord record) async {

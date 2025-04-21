@@ -1,12 +1,16 @@
+import 'package:healthque/core/utils/hive/hive_manager.dart';
 import 'package:healthque/features/health/health.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-class BloodSugarTrackingHiveManager {
-  late Box<BloodSugarRecords> bloodSugarRecordsBox;
+class BloodSugarTrackingHiveManager implements HiveManager<BloodSugarRecords> {
+  @override
+  late Box<BloodSugarRecords> box;
 
+  @override
   String get hiveKey => 'bloodSugarRecords';
 
+  @override
   Future<void> init() async {
-    bloodSugarRecordsBox = await Hive.openBox<BloodSugarRecords>(hiveKey);
+    box = await Hive.openBox<BloodSugarRecords>(hiveKey);
   }
 }

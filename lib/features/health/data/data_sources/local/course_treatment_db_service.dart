@@ -1,4 +1,4 @@
-import 'package:healthque/core/utils/hive/course_treatment_hive_manager.dart';
+import 'package:healthque/core/utils/hive/hive.dart';
 import 'package:healthque/features/health/health.dart';
 
 abstract class CourseTreatmentDbService {
@@ -8,14 +8,14 @@ abstract class CourseTreatmentDbService {
 }
 
 class CourseTreatmentDbServiceImpl implements CourseTreatmentDbService {
-  final CourseTreatmentHiveManager _manager;
+  final HiveManager _manager;
   CourseTreatmentDbServiceImpl(this._manager);
 
   @override
-  CourseTreatments? getCourses() => _manager.courseTreatmentsBox.get(_manager.hiveKey);
+  CourseTreatments? getCourses() => _manager.box.get(_manager.hiveKey);
 
   @override
-  Future<void> saveCourses(CourseTreatments courses) => _manager.courseTreatmentsBox.put(_manager.hiveKey, courses);
+  Future<void> saveCourses(CourseTreatments courses) => _manager.box.put(_manager.hiveKey, courses);
 
   @override
   Future<void> deleteCourse(CourseTreatment course) async {
