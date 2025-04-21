@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:healthque/core/shared/shared.dart';
@@ -48,27 +46,16 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
       emit(state.copyWith(isLoading: true, syncSuccess: false, errorMessage: null));
 
       final user = _userHiveManager.box.get(_userHiveManager.hiveKey);
-
       final workouts = _workoutsHiveManager.box.get(_workoutsHiveManager.hiveKey);
-
       final bloodPressureRecords = _bloodPressureTrackingHiveManager.box.get(_bloodPressureTrackingHiveManager.hiveKey);
-
       final temperatureRecords = _temperatureTrackingHiveManager.box.get(_temperatureTrackingHiveManager.hiveKey);
-
       final bloodSugarRecords = _bloodSugarTrackingHiveManager.box.get(_bloodSugarTrackingHiveManager.hiveKey);
-
       final waterRecords = _waterTrackingHiveManager.box.get(_waterTrackingHiveManager.hiveKey);
-
       final stressMoodRecords = _stressMoodTrackingHiveManager.box.get(_stressMoodTrackingHiveManager.hiveKey);
-
       final notifications = _notificationsHiveManager.box.get(_notificationsHiveManager.hiveKey);
-
       final courseTreatments = _courseTreatmentHiveManager.box.get(_courseTreatmentHiveManager.hiveKey);
-
       final medications = _medicationTrackingHiveManager.box.get(_medicationTrackingHiveManager.hiveKey);
-
       final themePreference = _themePreferenceHiveManager.box.get(_themePreferenceHiveManager.hiveKey);
-
       final localeString = _localeHiveManager.box.get(_localeHiveManager.hiveKey);
 
       final SaveUserDataParams params = SaveUserDataParams(
@@ -113,16 +100,6 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
       await _saveUserDataUseCase.call(params);
 
       emit(state.copyWith(isLoading: false, syncSuccess: true, errorMessage: null));
-    } catch (e) {
-      emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
-    }
-  }
-
-  Future<void> loadUserData() async {
-    try {
-      emit(state.copyWith(isLoading: true, errorMessage: null));
-      final data = await _getUserDataUseCase(null);
-      emit(state.copyWith(isLoading: false, data: data, errorMessage: null));
     } catch (e) {
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }

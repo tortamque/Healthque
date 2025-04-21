@@ -54,7 +54,6 @@ class _CoursesListPageState extends State<CoursesListPage> {
                 return CourseTreatmentCard(
                   course: course,
                   onDelete: () async {
-                    //TODO: Link notification id to the course and delete notification when course is deleted
                     await context.read<CourseTreatmentCubit>().deleteCourse(course);
 
                     if (!context.mounted) return;
