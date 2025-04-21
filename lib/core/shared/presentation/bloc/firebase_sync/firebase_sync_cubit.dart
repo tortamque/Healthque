@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:healthque/core/shared/shared.dart';
 import 'package:healthque/core/utils/hive/hive.dart';
+import 'package:healthque/features/health/domain/entities/medication_tracking/course_treatment.dart';
 
 part 'firebase_sync_state.dart';
 part 'firebase_sync_cubit.freezed.dart';
@@ -41,8 +44,7 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
 
   Future<void> syncUserData() async {
     try {
-      print('here');
-      emit(state.copyWith(isLoading: true, syncSuccess: false));
+      emit(state.copyWith(isLoading: true, syncSuccess: false, errorMessage: null));
 
       final user = _userHiveManager.userBox.get(_userHiveManager.hiveKey);
 
@@ -75,7 +77,7 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
 
       final SaveUserDataParams params = SaveUserDataParams(
         profile: user?.toJson() ?? {},
-        workouts: workouts?.toJson() ?? {"workouts": []},
+        workouts: workouts == null ? {"workouts": []} : {"workouts": workouts.workouts.map((e) => e.toJson()).toList()},
         bloodPressureRecords: bloodPressureRecords == null
             ? {"records": []}
             : {"records": bloodPressureRecords.records.map((e) => e.toJson()).toList()},
@@ -95,27 +97,51 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
             : {"notifications": notifications.notifications.map((e) => e.toJson()).toList()},
         courseTreatments: courseTreatments == null
             ? {"courses": []}
-            : {"courses": courseTreatments.courses.map((e) => e.toJson()).toList()},
+            : {
+                "courses": courseTreatments.courses.map((course) {
+                  final courseMap = course.toJson();
+                  if (courseMap["entries"] is List) {
+                    courseMap["entries"] = (courseMap["entries"] as List)
+                        .map((entry) => entry is CourseTreatmentEntry ? entry.toJson() : entry)
+                        .toList();
+                  }
+                  return courseMap;
+                }).toList()
+              },
         medications: medications == null
             ? {"medications": []}
             : {"medications": medications.medications.map((e) => e.toJson()).toList()},
         themePreference: themePreference?.toJson() ?? {},
         locale: {"locale": localeString ?? ""},
       );
-
+      log(courseTreatments == null
+          ? {"courses": []}.toString()
+          : {
+              "courses": courseTreatments.courses.map((course) {
+                final courseMap = course.toJson();
+                if (courseMap["entries"] is List) {
+                  courseMap["entries"] = (courseMap["entries"] as List)
+                      .map((entry) => entry is CourseTreatmentEntry ? entry.toJson() : entry)
+                      .toList();
+                }
+                return courseMap;
+              }).toList()
+            }.toString());
       await _saveUserDataUseCase.call(params);
+      print('2');
 
-      emit(state.copyWith(isLoading: false, syncSuccess: true));
+      emit(state.copyWith(isLoading: false, syncSuccess: true, errorMessage: null));
     } catch (e) {
+      print('error $e');
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }
   }
 
   Future<void> loadUserData() async {
     try {
-      emit(state.copyWith(isLoading: true));
+      emit(state.copyWith(isLoading: true, errorMessage: null));
       final data = await _getUserDataUseCase(null);
-      emit(state.copyWith(isLoading: false, data: data));
+      emit(state.copyWith(isLoading: false, data: data, errorMessage: null));
     } catch (e) {
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }

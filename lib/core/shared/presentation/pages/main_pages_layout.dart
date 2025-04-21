@@ -1,13 +1,27 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:healthque/core/extensions/color.dart';
 import 'package:healthque/core/extensions/context.dart';
 
-class MainPagesLayout extends StatelessWidget {
+class MainPagesLayout extends StatefulWidget {
   const MainPagesLayout({super.key, required this.navigationShell});
 
   final StatefulNavigationShell navigationShell;
+
+  @override
+  State<MainPagesLayout> createState() => _MainPagesLayoutState();
+}
+
+class _MainPagesLayoutState extends State<MainPagesLayout> {
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    analytics.setAnalyticsCollectionEnabled(true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +31,20 @@ class MainPagesLayout extends StatelessWidget {
     final tabBackgroundColor = context.theme.primaryColor.customOpacity(0.1);
 
     return Scaffold(
-      body: navigationShell,
+      body: widget.navigationShell,
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: GNav(
             gap: 8,
-            selectedIndex: navigationShell.currentIndex,
-            onTabChange: (index) => navigationShell.goBranch(index),
+            selectedIndex: widget.navigationShell.currentIndex,
+            onTabChange: (index) async {
+              widget.navigationShell.goBranch(index);
+              await analytics.logEvent(
+                name: 'pages',
+                parameters: {'page': index},
+              );
+            },
             backgroundColor: backgroundColor,
             color: inactiveColor,
             activeColor: activeColor,
