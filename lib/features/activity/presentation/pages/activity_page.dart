@@ -89,8 +89,11 @@ class ActivityPage extends StatelessWidget {
                       ),
                       Gap(16),
                       Column(
-                        children: workout.map((record) => WorkoutCard(record: record)).toList(),
-                      ),
+                        children: [
+                          for (final record in [...workout]..sort((a, b) => b.date.compareTo(a.date)))
+                            WorkoutCard(record: record),
+                        ],
+                      )
                     ],
                   )
               };
