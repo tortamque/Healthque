@@ -18,10 +18,9 @@ class OnboardingLoginPage extends StatelessWidget {
           listener: (context, state) {
             if (state case AuthStateAuthenticated(:final user)) {
               context.read<UserCubit>().saveEmailAndAvatar(
-                    email: user.email ?? '',
                     avatarUrl: user.photoURL ?? '',
                   );
-              context.push(Routes.onboardingNamePage, extra: user.displayName ?? '');
+              context.push(Routes.onboardingAgeGenderParamsPage);
             }
           },
           child: SizedBox(
@@ -62,8 +61,7 @@ class OnboardingLoginPage extends StatelessWidget {
                                   onPressed: () {
                                     final authState = context.read<AuthCubit>().state;
                                     if (authState is AuthStateAuthenticated) {
-                                      final displayName = authState.user.displayName ?? '';
-                                      context.push(Routes.onboardingNamePage, extra: displayName);
+                                      context.push(Routes.onboardingAgeGenderParamsPage);
                                     }
                                   },
                                   label: Text(context.strings.nextStep),

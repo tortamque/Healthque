@@ -16,8 +16,6 @@ class EditProfilePage extends StatefulWidget {
 class _EditProfilePageState extends State<EditProfilePage> {
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _surnameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   final TextEditingController _heightController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
@@ -31,8 +29,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   void initState() {
     super.initState();
     final user = context.read<UserCubit>().state.user;
-    _nameController.text = user.name ?? '';
-    _surnameController.text = user.surname ?? '';
+
     _ageController.text = user.age?.toString() ?? '';
     _heightController.text = user.height?.toString() ?? '';
     _weightController.text = user.weight?.toString() ?? '';
@@ -62,28 +59,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    TextFormField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        labelText: context.strings.name,
-                        prefixIcon: const Icon(Icons.person),
-                      ),
-                      validator: (value) {
-                        if (value == null || value.trim().isEmpty) {
-                          return context.strings.fieldCannotBeEmpty;
-                        }
-                        return null;
-                      },
-                    ),
-                    const Gap(12),
-                    TextFormField(
-                      controller: _surnameController,
-                      decoration: InputDecoration(
-                        labelText: context.strings.surname,
-                        prefixIcon: const Icon(Icons.person_outline),
-                      ),
-                    ),
-                    const Gap(12),
                     TextFormField(
                       controller: _ageController,
                       decoration: InputDecoration(
@@ -239,8 +214,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Future<void> _saveProfile() async {
     if (!_formKey.currentState!.validate()) return;
 
-    final name = _nameController.text.trim();
-    final surname = _surnameController.text.trim();
     final age = int.parse(_ageController.text.trim());
     final height = double.parse(_heightController.text.trim());
     final weight = double.parse(_weightController.text.trim());
@@ -251,10 +224,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
     final userCubit = context.read<UserCubit>();
 
-    userCubit.saveNameAndSurname(
-      name: name,
-      surname: surname.isEmpty ? null : surname,
-    );
     userCubit.saveAgeWeightHeightGender(
       age: age,
       height: height,
@@ -298,8 +267,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   @override
   void dispose() {
-    _nameController.dispose();
-    _surnameController.dispose();
     _ageController.dispose();
     _heightController.dispose();
     _weightController.dispose();

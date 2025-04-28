@@ -9,7 +9,6 @@ part 'firebase_sync_cubit.freezed.dart';
 
 class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
   final SaveUserDataUseCase _saveUserDataUseCase;
-  final GetUserDataUseCase _getUserDataUseCase;
 
   final HiveManager _userHiveManager;
   final HiveManager _workoutsHiveManager;
@@ -26,7 +25,6 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
 
   FirebaseSyncCubit(
     this._saveUserDataUseCase,
-    this._getUserDataUseCase,
     this._userHiveManager,
     this._workoutsHiveManager,
     this._bloodPressureTrackingHiveManager,

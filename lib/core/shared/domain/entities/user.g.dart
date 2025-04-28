@@ -17,10 +17,7 @@ class UserAdapter extends TypeAdapter<_User> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return _User(
-      email: fields[0] as String?,
       avatarUrl: fields[1] as String?,
-      name: fields[2] as String?,
-      surname: fields[3] as String?,
       age: fields[4] as int?,
       gender: fields[5] as Gender?,
       height: fields[6] as double?,
@@ -34,15 +31,9 @@ class UserAdapter extends TypeAdapter<_User> {
   @override
   void write(BinaryWriter writer, _User obj) {
     writer
-      ..writeByte(11)
-      ..writeByte(0)
-      ..write(obj.email)
+      ..writeByte(8)
       ..writeByte(1)
       ..write(obj.avatarUrl)
-      ..writeByte(2)
-      ..write(obj.name)
-      ..writeByte(3)
-      ..write(obj.surname)
       ..writeByte(4)
       ..write(obj.age)
       ..writeByte(5)
@@ -75,10 +66,7 @@ class UserAdapter extends TypeAdapter<_User> {
 // **************************************************************************
 
 _User _$UserFromJson(Map<String, dynamic> json) => _User(
-      email: json['email'] as String?,
       avatarUrl: json['avatarUrl'] as String?,
-      name: json['name'] as String?,
-      surname: json['surname'] as String?,
       age: (json['age'] as num?)?.toInt(),
       gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']),
       height: (json['height'] as num?)?.toDouble(),
@@ -89,10 +77,7 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
     );
 
 Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
-      'email': instance.email,
       'avatarUrl': instance.avatarUrl,
-      'name': instance.name,
-      'surname': instance.surname,
       'age': instance.age,
       'gender': _$GenderEnumMap[instance.gender],
       'height': instance.height,

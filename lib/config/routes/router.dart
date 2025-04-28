@@ -30,14 +30,6 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const OnboardingLoginPage(),
         ),
         GoRoute(
-          path: Routes.onboardingNamePage,
-          builder: (context, state) {
-            final extra = state.extra as String;
-
-            return OnboardingNamePage(firstName: extra);
-          },
-        ),
-        GoRoute(
           path: Routes.onboardingAgeGenderParamsPage,
           builder: (context, state) => OnboardingAgeGenderParamsPage(),
         ),

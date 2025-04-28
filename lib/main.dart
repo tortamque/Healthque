@@ -48,7 +48,6 @@ class HealthqueApp extends StatelessWidget {
         BlocProvider<FirebaseSyncCubit>(
           create: (_) => FirebaseSyncCubit(
             sl(),
-            sl(),
             sl<UserHiveManager>(),
             sl<WorkoutsHiveManager>(),
             sl<BloodPressureTrackingHiveManager>(),

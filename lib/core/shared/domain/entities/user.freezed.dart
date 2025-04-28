@@ -15,14 +15,8 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$User {
-  @HiveField(0)
-  String? get email;
   @HiveField(1)
   String? get avatarUrl;
-  @HiveField(2)
-  String? get name;
-  @HiveField(3)
-  String? get surname;
   @HiveField(4)
   int? get age;
   @HiveField(5)
@@ -53,11 +47,8 @@ mixin _$User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is User &&
-            (identical(other.email, email) || other.email == email) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.age, age) || other.age == age) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
@@ -72,23 +63,12 @@ mixin _$User {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      email,
-      avatarUrl,
-      name,
-      surname,
-      age,
-      gender,
-      height,
-      weight,
-      waterConsumption,
-      caloriesBurnInOneDay,
-      desiredSteps);
+  int get hashCode => Object.hash(runtimeType, avatarUrl, age, gender, height,
+      weight, waterConsumption, caloriesBurnInOneDay, desiredSteps);
 
   @override
   String toString() {
-    return 'User(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'User(avatarUrl: $avatarUrl, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -98,10 +78,7 @@ abstract mixin class $UserCopyWith<$Res> {
       _$UserCopyWithImpl;
   @useResult
   $Res call(
-      {@HiveField(0) String? email,
-      @HiveField(1) String? avatarUrl,
-      @HiveField(2) String? name,
-      @HiveField(3) String? surname,
+      {@HiveField(1) String? avatarUrl,
       @HiveField(4) int? age,
       @HiveField(5) Gender? gender,
       @HiveField(6) double? height,
@@ -123,10 +100,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
     Object? avatarUrl = freezed,
-    Object? name = freezed,
-    Object? surname = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? height = freezed,
@@ -136,21 +110,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? desiredSteps = freezed,
   }) {
     return _then(_self.copyWith(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
       avatarUrl: freezed == avatarUrl
           ? _self.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: freezed == surname
-          ? _self.surname
-          : surname // ignore: cast_nullable_to_non_nullable
               as String?,
       age: freezed == age
           ? _self.age
@@ -189,10 +151,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 @HiveType(typeId: 0, adapterName: 'UserAdapter')
 class _User implements User {
   const _User(
-      {@HiveField(0) this.email,
-      @HiveField(1) this.avatarUrl,
-      @HiveField(2) this.name,
-      @HiveField(3) this.surname,
+      {@HiveField(1) this.avatarUrl,
       @HiveField(4) this.age,
       @HiveField(5) this.gender,
       @HiveField(6) this.height,
@@ -203,17 +162,8 @@ class _User implements User {
   factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   @override
-  @HiveField(0)
-  final String? email;
-  @override
   @HiveField(1)
   final String? avatarUrl;
-  @override
-  @HiveField(2)
-  final String? name;
-  @override
-  @HiveField(3)
-  final String? surname;
   @override
   @HiveField(4)
   final int? age;
@@ -256,11 +206,8 @@ class _User implements User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _User &&
-            (identical(other.email, email) || other.email == email) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.age, age) || other.age == age) &&
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.height, height) || other.height == height) &&
@@ -275,23 +222,12 @@ class _User implements User {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      email,
-      avatarUrl,
-      name,
-      surname,
-      age,
-      gender,
-      height,
-      weight,
-      waterConsumption,
-      caloriesBurnInOneDay,
-      desiredSteps);
+  int get hashCode => Object.hash(runtimeType, avatarUrl, age, gender, height,
+      weight, waterConsumption, caloriesBurnInOneDay, desiredSteps);
 
   @override
   String toString() {
-    return 'User(email: $email, avatarUrl: $avatarUrl, name: $name, surname: $surname, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
+    return 'User(avatarUrl: $avatarUrl, age: $age, gender: $gender, height: $height, weight: $weight, waterConsumption: $waterConsumption, caloriesBurnInOneDay: $caloriesBurnInOneDay, desiredSteps: $desiredSteps)';
   }
 }
 
@@ -302,10 +238,7 @@ abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@HiveField(0) String? email,
-      @HiveField(1) String? avatarUrl,
-      @HiveField(2) String? name,
-      @HiveField(3) String? surname,
+      {@HiveField(1) String? avatarUrl,
       @HiveField(4) int? age,
       @HiveField(5) Gender? gender,
       @HiveField(6) double? height,
@@ -327,10 +260,7 @@ class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? email = freezed,
     Object? avatarUrl = freezed,
-    Object? name = freezed,
-    Object? surname = freezed,
     Object? age = freezed,
     Object? gender = freezed,
     Object? height = freezed,
@@ -340,21 +270,9 @@ class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
     Object? desiredSteps = freezed,
   }) {
     return _then(_User(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
       avatarUrl: freezed == avatarUrl
           ? _self.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: freezed == surname
-          ? _self.surname
-          : surname // ignore: cast_nullable_to_non_nullable
               as String?,
       age: freezed == age
           ? _self.age

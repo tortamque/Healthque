@@ -25,28 +25,12 @@ class UserCubit extends Cubit<UserState> {
   }
 
   void saveEmailAndAvatar({
-    required String email,
     required String avatarUrl,
   }) {
     emit(
       state.copyWith(
         user: state.user.copyWith(
-          email: email,
           avatarUrl: avatarUrl,
-        ),
-      ),
-    );
-  }
-
-  void saveNameAndSurname({
-    required String name,
-    required String? surname,
-  }) {
-    emit(
-      state.copyWith(
-        user: state.user.copyWith(
-          name: name,
-          surname: surname,
         ),
       ),
     );
@@ -104,9 +88,7 @@ class UserCubit extends Cubit<UserState> {
       );
 
   Future<void> storeUser() async {
-    if (state.user.email == null ||
-        state.user.name == null ||
-        state.user.age == null ||
+    if (state.user.age == null ||
         state.user.gender == null ||
         state.user.height == null ||
         state.user.weight == null ||
