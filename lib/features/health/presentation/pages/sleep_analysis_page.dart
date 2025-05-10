@@ -62,7 +62,7 @@ class _SleepAnalysisPageState extends State<SleepAnalysisPage> {
                       child: Text(state.message),
                     );
                   } else if (state is HealthStateLoaded) {
-                    final sleepRecords = _filterSleepRecords(state, windowStart, windowEnd);
+                    final sleepRecords = SleepAnalysisHelper.filterSleepRecords(state, windowStart, windowEnd);
 
                     if (sleepRecords.isEmpty) {
                       return Center(
@@ -70,31 +70,35 @@ class _SleepAnalysisPageState extends State<SleepAnalysisPage> {
                       );
                     }
 
-                    final timelineStart = _computeTimelineStart(sleepRecords);
-                    final timelineEnd = _computeTimelineEnd(sleepRecords);
+                    final timelineStart = SleepAnalysisHelper.computeTimelineStart(sleepRecords);
+                    final timelineEnd = SleepAnalysisHelper.computeTimelineEnd(sleepRecords);
 
-                    final totalIncluding = _computeTotalIncludingMinutes(timelineStart, timelineEnd);
+                    final totalIncluding = SleepAnalysisHelper.computeTotalIncludingMinutes(timelineStart, timelineEnd);
                     final incHours = totalIncluding ~/ 60;
                     final incMins = totalIncluding % 60;
 
-                    final totalExcluding = _computeTotalExcludingMinutes(sleepRecords);
+                    final totalExcluding = SleepAnalysisHelper.computeTotalExcludingMinutes(sleepRecords);
                     final excHours = totalExcluding ~/ 60;
                     final excMins = totalExcluding % 60;
 
-                    final efficiencyPercent = _computeEfficiencyPercent(totalIncluding, totalExcluding);
-                    final awakePercent = _computeAwakePercent(totalIncluding, totalExcluding);
+                    final efficiencyPercent =
+                        SleepAnalysisHelper.computeEfficiencyPercent(totalIncluding, totalExcluding);
+                    final awakePercent = SleepAnalysisHelper.computeAwakePercent(totalIncluding, totalExcluding);
 
-                    final deepMinutes = _computeStageMinutes(sleepRecords, HealthDataType.SLEEP_DEEP);
+                    final deepMinutes =
+                        SleepAnalysisHelper.computeStageMinutes(sleepRecords, HealthDataType.SLEEP_DEEP);
                     final deepPercent = totalExcluding > 0 ? (deepMinutes / totalExcluding) * 100.0 : 0.0;
 
-                    final remMinutes = _computeStageMinutes(sleepRecords, HealthDataType.SLEEP_REM);
+                    final remMinutes = SleepAnalysisHelper.computeStageMinutes(sleepRecords, HealthDataType.SLEEP_REM);
                     final remPercent = totalExcluding > 0 ? (remMinutes / totalExcluding) * 100.0 : 0.0;
 
-                    final lightMinutes = _computeStageMinutes(sleepRecords, HealthDataType.SLEEP_LIGHT);
+                    final lightMinutes =
+                        SleepAnalysisHelper.computeStageMinutes(sleepRecords, HealthDataType.SLEEP_LIGHT);
                     final lightPercent = totalExcluding > 0 ? (lightMinutes / totalExcluding) * 100.0 : 0.0;
 
-                    final sleepScoreResult = _computeSleepScore(totalIncluding, totalExcluding, context);
-                    final overallSleep = _computeOverallSleepMinutes(sleepRecords);
+                    final sleepScoreResult =
+                        SleepAnalysisHelper.computeSleepScore(totalIncluding, totalExcluding, context.strings);
+                    final overallSleep = SleepAnalysisHelper.computeOverallSleepMinutes(sleepRecords);
                     final overallHours = overallSleep ~/ 60;
                     final overallMins = overallSleep % 60;
 
@@ -189,114 +193,13 @@ class _SleepAnalysisPageState extends State<SleepAnalysisPage> {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _selectedDate,
-      firstDate: DateTime(2020),
+      firstDate: DateTime.now().subtract(const Duration(days: 6)),
       lastDate: DateTime.now(),
     );
     if (picked != null && picked != _selectedDate) {
       setState(() {
         _selectedDate = picked;
       });
-    }
-  }
-
-  List<HealthRecord> _filterSleepRecords(
-    HealthStateLoaded state,
-    DateTime windowStart,
-    DateTime windowEnd,
-  ) =>
-      state.sleep
-          .where(
-            (record) => record.dataPoint.dateFrom.isAfter(windowStart) && record.dataPoint.dateFrom.isBefore(windowEnd),
-          )
-          .toList()
-        ..sort((a, b) => a.dataPoint.dateFrom.compareTo(b.dataPoint.dateFrom));
-
-  DateTime _computeTimelineStart(List<HealthRecord> records) =>
-      records.map((record) => record.dataPoint.dateFrom).reduce((a, b) => a.isBefore(b) ? a : b);
-
-  DateTime _computeTimelineEnd(List<HealthRecord> records) =>
-      records.map((record) => record.dataPoint.dateTo).reduce((a, b) => a.isAfter(b) ? a : b);
-
-  int _computeTotalIncludingMinutes(DateTime timelineStart, DateTime timelineEnd) =>
-      timelineEnd.difference(timelineStart).inMinutes;
-
-  int _computeTotalExcludingMinutes(List<HealthRecord> records) => records.fold<int>(
-        0,
-        (sum, record) => record.dataPoint.type == HealthDataType.SLEEP_AWAKE
-            ? sum
-            : sum + record.dataPoint.dateTo.difference(record.dataPoint.dateFrom).inMinutes,
-      );
-
-  double _computeEfficiencyPercent(
-    int totalIncluding,
-    int totalExcluding,
-  ) =>
-      totalIncluding > 0 ? (totalExcluding / totalIncluding) * 100.0 : 0.0;
-
-  double _computeAwakePercent(
-    int totalIncluding,
-    int totalExcluding,
-  ) =>
-      totalIncluding > 0 ? ((totalIncluding - totalExcluding) / totalIncluding) * 100.0 : 0.0;
-
-  int _computeStageMinutes(
-    List<HealthRecord> records,
-    HealthDataType type,
-  ) =>
-      records
-          .where((r) => r.dataPoint.type == type)
-          .fold(0, (prev, r) => prev + r.dataPoint.dateTo.difference(r.dataPoint.dateFrom).inMinutes);
-
-  int _computeOverallSleepMinutes(List<HealthRecord> records) => records.fold<int>(
-        0,
-        (sum, r) => sum + r.dataPoint.dateTo.difference(r.dataPoint.dateFrom).inMinutes,
-      );
-
-  SleepScoreResult _computeSleepScore(
-    int totalIncludingMinutes,
-    int totalExcludingMinutes,
-    BuildContext context,
-  ) {
-    final double efficiency = totalIncludingMinutes > 0 ? totalExcludingMinutes / totalIncludingMinutes : 0.0;
-    final double durationFactor = (totalIncludingMinutes / 480).clamp(0.0, 1.0);
-    final double score = ((efficiency + durationFactor) / 2) * 100;
-
-    if (score < 20) {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScoreVeryBad,
-        emoji: context.strings.sleepScoreEmojiVeryBad,
-      );
-    } else if (score < 40) {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScoreBad,
-        emoji: context.strings.sleepScoreEmojiBad,
-      );
-    } else if (score < 60) {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScorePoor,
-        emoji: context.strings.sleepScoreEmojiPoor,
-      );
-    } else if (score < 70) {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScoreAverage,
-        emoji: context.strings.sleepScoreEmojiAverage,
-      );
-    } else if (score < 90) {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScoreGood,
-        emoji: context.strings.sleepScoreEmojiGood,
-      );
-    } else {
-      return SleepScoreResult(
-        score: score,
-        label: context.strings.sleepScoreExcellent,
-        emoji: context.strings.sleepScoreEmojiExcellent,
-      );
     }
   }
 }

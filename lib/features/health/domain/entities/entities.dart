@@ -6,3 +6,4 @@ export 'temperature_tracking/temperature_tracking.dart';
 export 'water_tracking/water_tracking.dart';
 export 'health_record.dart';
 export 'blood_sugar/blood_sugar.dart';
+export 'sleep_analysis_helper.dart';

@@ -93,7 +93,7 @@ class FirebaseSyncCubit extends Cubit<FirebaseSyncState> {
             ? {"medications": []}
             : {"medications": medications.medications.map((e) => e.toJson()).toList()},
         themePreference: themePreference?.toJson() ?? {},
-        locale: {"locale": localeString ?? ""},
+        locale: {"locale": localeString ?? "en"},
       );
       await _saveUserDataUseCase.call(params);
 

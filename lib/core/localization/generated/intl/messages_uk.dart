@@ -419,7 +419,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Будь ласка, додайте принаймні один препарат.",
     ),
     "noMeasurements": MessageLookupByLibrary.simpleMessage(
-      "Вимірювань не записано.",
+      "Недостатньо даних для візуалізації.",
     ),
     "noMedications": MessageLookupByLibrary.simpleMessage(
       "Медикаменти не знайдено.",
@@ -437,9 +437,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Даних про сон за останню ніч немає.",
     ),
     "noWaterRecords": MessageLookupByLibrary.simpleMessage(
-      "Записів про воду не знайдено.",
+      "Недостатньо даних для візуалізації записів про воду.",
     ),
-    "notEnoughData": MessageLookupByLibrary.simpleMessage("Недостатньо даних"),
+    "notEnoughData": MessageLookupByLibrary.simpleMessage(
+      "Недостатньо даних для графіка.",
+    ),
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Примітка: Зріст в см та вага в кг",
     ),

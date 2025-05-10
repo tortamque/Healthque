@@ -407,7 +407,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please add at least one drug.",
     ),
     "noMeasurements": MessageLookupByLibrary.simpleMessage(
-      "No measurements recorded.",
+      "Not enough data for visualization.",
     ),
     "noMedications": MessageLookupByLibrary.simpleMessage(
       "No medications found.",
@@ -425,9 +425,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "No sleep data for last night.",
     ),
     "noWaterRecords": MessageLookupByLibrary.simpleMessage(
-      "No water records found.",
+      "Not enough data to visualize water records.",
     ),
-    "notEnoughData": MessageLookupByLibrary.simpleMessage("Not enough data"),
+    "notEnoughData": MessageLookupByLibrary.simpleMessage(
+      "Not enough data for graph.",
+    ),
     "noteHeightInCmAndWeightInKg": MessageLookupByLibrary.simpleMessage(
       "Note: Height in cm and Weight in kg",
     ),
