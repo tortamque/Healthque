@@ -1630,10 +1630,10 @@ class Strings {
     );
   }
 
-  /// `No water records found.`
+  /// `Not enough data to visualize water records.`
   String get noWaterRecords {
     return Intl.message(
-      'No water records found.',
+      'Not enough data to visualize water records.',
       name: 'noWaterRecords',
       desc: '',
       args: [],
@@ -1960,20 +1960,20 @@ class Strings {
     );
   }
 
-  /// `No measurements recorded.`
+  /// `Not enough data for visualization.`
   String get noMeasurements {
     return Intl.message(
-      'No measurements recorded.',
+      'Not enough data for visualization.',
       name: 'noMeasurements',
       desc: '',
       args: [],
     );
   }
 
-  /// `Not enough data`
+  /// `Not enough data for graph.`
   String get notEnoughData {
     return Intl.message(
-      'Not enough data',
+      'Not enough data for graph.',
       name: 'notEnoughData',
       desc: '',
       args: [],

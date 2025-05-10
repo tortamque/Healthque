@@ -91,6 +91,7 @@ class HealthqueApp extends StatelessWidget {
                   child: MaterialApp.router(
                     theme: themeData(color: themeColor),
                     routerConfig: router,
+                    debugShowCheckedModeBanner: false,
                     localizationsDelegates: [
                       Strings.delegate,
                       GlobalMaterialLocalizations.delegate,
