@@ -85,9 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m29(amount) => "Sys. ${amount} mmHg";
 
-  static String m30(time) => "Total Sleep (excluding awake): ${time}";
+  static String m30(h, min) => "Total Sleep (excluding awake): ${h}h ${min}";
 
-  static String m31(time) => "Total Sleep (including awake): ${time}";
+  static String m31(h, min) => "Total Sleep (including awake): ${h}h ${min}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{

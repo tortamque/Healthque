@@ -2320,23 +2320,23 @@ class Strings {
     );
   }
 
-  /// `Total Sleep (including awake): {time}`
-  String totalSleepIncluding(Object time) {
+  /// `Total Sleep (including awake): {h}h {min}`
+  String totalSleepIncluding(Object h, Object min) {
     return Intl.message(
-      'Total Sleep (including awake): $time',
+      'Total Sleep (including awake): ${h}h $min',
       name: 'totalSleepIncluding',
       desc: '',
-      args: [time],
+      args: [h, min],
     );
   }
 
-  /// `Total Sleep (excluding awake): {time}`
-  String totalSleepExcluding(Object time) {
+  /// `Total Sleep (excluding awake): {h}h {min}`
+  String totalSleepExcluding(Object h, Object min) {
     return Intl.message(
-      'Total Sleep (excluding awake): $time',
+      'Total Sleep (excluding awake): ${h}h $min',
       name: 'totalSleepExcluding',
       desc: '',
-      args: [time],
+      args: [h, min],
     );
   }
 
