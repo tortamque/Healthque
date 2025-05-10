@@ -86,10 +86,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m29(amount) => "Сист. ${amount} мм рт. ст.";
 
-  static String m30(time) => "Загальний сон (без часу пробудження): ${time}";
+  static String m30(h, min) =>
+      "Загальний сон (без часу пробудження): ${h}г ${min}хв";
 
-  static String m31(time) =>
-      "Загальний сон (включаючи час пробудження): ${time}";
+  static String m31(h, min) =>
+      "Загальний сон (включаючи час пробудження): ${h}г ${min}хв";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
