@@ -70,7 +70,7 @@ class SleepOverviewCard extends StatelessWidget {
                 ),
                 const Gap(8),
                 Text(
-                  context.strings.totalSleepExcluding(incHours, incMins),
+                  context.strings.totalSleepExcluding(excHours, excHours),
                   style: context.textTheme.bodySmall,
                 ),
               ],
