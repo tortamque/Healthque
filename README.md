@@ -106,8 +106,6 @@ To deploy the Healthque app, follow these steps:
 1. Ensure the Flutter SDK is installed.
 2. Clone the repository and install dependencies:
    ```bash
-   git clone https://github.com/yourusername/Healthque.git
-   cd Healthque
    flutter pub get
     ```
 3. In the Firebase Console, create a new project and add an Android app using your package name (found in ```android/app/src/main/AndroidManifest.xml```).
@@ -283,9 +281,6 @@ flutterfire configure
 
 <a name="comparison"></a>
 ## Comparison with Analogues
-
-This table provides a comparative analysis of Healthque with similar applications, highlighting key features and distinctions.
-
 | Feature  | Healthque | [Samsung Health](https://play.google.com/store/apps/details?id=com.sec.android.app.shealth) | [TakeYourPills](https://play.google.com/store/apps/details?id=com.bestfuncoolapps.TakeYourPills) | [Guava](https://play.google.com/store/apps/details?id=com.guavahealth.app) |
 |----------------------------|-----------|--------------------|---------------|-------|
 | User Registration & Login         | Yes       | Yes                | No            | Yes   |
